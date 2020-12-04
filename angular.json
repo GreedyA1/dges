@@ -1,0 +1,146 @@
+{
+  "version": 1,
+  "projects": {
+    "dges-front": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "apps/dges-front",
+      "sourceRoot": "apps/dges-front/src",
+      "prefix": "dges",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/dges-front",
+            "index": "apps/dges-front/src/index.html",
+            "main": "apps/dges-front/src/main.ts",
+            "polyfills": "apps/dges-front/src/polyfills.ts",
+            "tsConfig": "apps/dges-front/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/dges-front/src/favicon.ico",
+              "apps/dges-front/src/assets"
+            ],
+            "styles": ["apps/dges-front/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/dges-front/src/environments/environment.ts",
+                  "with": "apps/dges-front/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "dges-front:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "dges-front:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "dges-front:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/dges-front/src/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/dges-front/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "dges-front-e2e": {
+      "root": "apps/dges-front-e2e",
+      "sourceRoot": "apps/dges-front-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/dges-front-e2e/cypress.json",
+            "tsConfig": "apps/dges-front-e2e/tsconfig.e2e.json",
+            "devServerTarget": "dges-front:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "dges-front:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/dges-front-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/angular",
+    "analytics": "acaac004-cb9f-4dd3-a9f6-26afef75d747"
+  },
+  "schematics": {
+    "@nrwl/angular": {
+      "application": {
+        "linter": "eslint"
+      },
+      "library": {
+        "linter": "eslint"
+      },
+      "storybook-configuration": {
+        "linter": "eslint"
+      }
+    },
+    "@nrwl/angular:application": {
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "unitTestRunner": "jest"
+    }
+  },
+  "defaultProject": "dges-front"
+}
