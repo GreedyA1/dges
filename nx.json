@@ -29,6 +29,9 @@
     "dges-front-e2e": {
       "tags": [],
       "implicitDependencies": ["dges-front"]
+    },
+    "ui": {
+      "tags": []
     }
   }
 }
