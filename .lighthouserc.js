@@ -1,7 +1,8 @@
 module.exports = {
     ci: {
       collect: {
-        staticDistDir: './dist',
+        numberOfRuns: 3,
+        staticDistDir: './dist/dges-front',
       },
       upload: {
         target: 'temporary-public-storage',
