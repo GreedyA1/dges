@@ -8,6 +8,7 @@ defaults: &defaults
   working_directory: ~/repo
   docker:
     - image: circleci/node:12-browsers
+  resource_class: large
 
 set_env: &set_env
   name: Setup Environment Variables
