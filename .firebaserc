@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "dges-ed94f": {
+      "hosting": {
+        "dges-front": [
+          "dges-ed94f"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "dges-ed94f"
+  }
+}

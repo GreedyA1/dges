@@ -1,7 +1,7 @@
 {
   "npmScope": "dges",
   "affected": {
-    "defaultBase": "master"
+    "defaultBase": "develop"
   },
   "implicitDependencies": {
     "angular.json": "*",
