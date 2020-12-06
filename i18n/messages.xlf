@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="99458775b4596175ee11637ce70db6896e7ae97c" datatype="html">
+        <source>skills works!</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../libs/ui/src/lib/skills/skills.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="251ffac80a8bf8f5e8f2ba8f6367c2ddddbcd647" datatype="html">
+        <source>education-card works!</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../libs/ui/src/lib/education-card/education-card.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c10af16929d8d702eeefbb6fa688ef54cb54652d" datatype="html">
+        <source>project-card works!</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../libs/ui/src/lib/project-card/project-card.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="fa355b48e7f4d1f1676afbe2c6437aa2883e6593" datatype="html">
+        <source>job-card works!</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../libs/ui/src/lib/job-card/job-card.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b37a6a67c85d126d8c8fed1fd4b388872ca518a8" datatype="html">
+        <source>contact-form works!</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../libs/ui/src/lib/contact-form/contact-form.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ca93b3e0c1dba8cf7bddf4a5cd8d4b91e1946439" datatype="html">
+        <source>contact-card works!</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../libs/ui/src/lib/contact-card/contact-card.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5710422e22d0a3d2e245348825ee02e19906df46" datatype="html">
+        <source>project-details works!</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../libs/ui/src/lib/project-details/project-details.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="85cb864a491c7e8e422bd2373e34db91e6af23c1" datatype="html">
+        <source>job-details works!</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../libs/ui/src/lib/job-details/job-details.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e1de81b391d90965b85955b2687c7c1c8ddadef4" datatype="html">
+        <source>education-details works!</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../libs/ui/src/lib/education-details/education-details.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4ac6d2ec505003eeb650c7eee0d2723ff9266af7" datatype="html">
+        <source>certificate-card works!</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../libs/ui/src/lib/certificate-card/certificate-card.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="89b265bacf1f4fa6b1ccecfba01f19909329eb3e" datatype="html">
+        <source>tools works!</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../libs/ui/src/lib/tools/tools.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="dd33f846111e8770affdad27a033515b6f3aeacf" datatype="html">
+        <source>not-found works!</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../libs/ui/src/lib/not-found/not-found.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a63c4d93e07fa20c3f95882dc21f9601c25c2a90" datatype="html">
+        <source>projects works!</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/projects/projects.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9bc852687e0a5ea9605a67d54f3665180b052ef1" datatype="html">
+        <source>jobs works!</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/jobs/jobs.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8444264b0e3ee8c83f6e0603e0da8c56c2cee8de" datatype="html">
+        <source>educations works!</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/educations/educations.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5820d1be4ef311d7c652e21cd86934e6a688f2ec" datatype="html">
+        <source>certificates works!</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/certificates/certificates.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="775d937d05102a24014014116d8334b56b662488" datatype="html">
+        <source>resume works!</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/resume/resume.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b3b60392650d6c31d8926471cb303adc5bb8a07d" datatype="html">
+        <source>contact works!</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/contact/contact.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="12c89c86c381b60617c1f2237e816e6111ec4122" datatype="html">
+        <source>timeline works!</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/timeline/timeline.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

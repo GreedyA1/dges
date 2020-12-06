@@ -11,6 +11,12 @@
       "root": "apps/dges-front",
       "sourceRoot": "apps/dges-front/src",
       "prefix": "dges",
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": {
+          "ka": "i18n/messages.ka.xlf"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -73,6 +79,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
+            "outputPath": "i18n/",
             "browserTarget": "dges-front:build"
           }
         },
@@ -122,6 +129,12 @@
       "root": "libs/ui",
       "sourceRoot": "libs/ui/src",
       "prefix": "dges",
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": {
+          "ka": "i18n/messages.ka.xlf"
+        }
+      },
       "architect": {
         "lint": {
           "builder": "@nrwl/linter:eslint",
