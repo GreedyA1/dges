@@ -25,9 +25,7 @@
               "apps/dges-front/src/favicon.ico",
               "apps/dges-front/src/assets"
             ],
-            "styles": [
-              "apps/dges-front/src/styles.scss"
-            ],
+            "styles": ["apps/dges-front/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -81,9 +79,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/dges-front/src/**/*.ts"
-            ]
+            "lintFilePatterns": ["apps/dges-front/src/**/*.ts"]
           }
         },
         "test": {
@@ -120,9 +116,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/dges-front-e2e/**/*.{js,ts}"
-            ]
+            "lintFilePatterns": ["apps/dges-front-e2e/**/*.{js,ts}"]
           }
         }
       }
@@ -136,9 +130,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/ui/src/**/*.ts"
-            ]
+            "lintFilePatterns": ["libs/ui/src/**/*.ts"]
           }
         },
         "test": {
