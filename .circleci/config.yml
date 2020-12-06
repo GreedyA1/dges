@@ -9,7 +9,7 @@ defaults: &defaults
   docker:
     - image: circleci/node:12-browsers
       environment: 
-        NODE_OPTIONS=--max_old_space_size=4096
+        NODE_OPTIONS=--max_old_space_size=8192
   resource_class: large
 
 set_env: &set_env
