@@ -15,7 +15,33 @@ import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   imports: [CommonModule],
-  declarations: [SkillsComponent,  ProjectCardComponent, EducationCardComponent, JobCardComponent, ContactFormComponent, ContactCardComponent, ProjectDetailsComponent, JobDetailsComponent, EducationDetailsComponent, CertificateCardComponent, ToolsComponent, NotFoundComponent],
-  exports: [SkillsComponent, ProjectCardComponent, EducationCardComponent, JobCardComponent, ContactFormComponent, ContactCardComponent, ProjectDetailsComponent, JobDetailsComponent, EducationDetailsComponent, CertificateCardComponent, ToolsComponent, NotFoundComponent],
+  declarations: [
+    SkillsComponent,
+    ProjectCardComponent,
+    EducationCardComponent,
+    JobCardComponent,
+    ContactFormComponent,
+    ContactCardComponent,
+    ProjectDetailsComponent,
+    JobDetailsComponent,
+    EducationDetailsComponent,
+    CertificateCardComponent,
+    ToolsComponent,
+    NotFoundComponent,
+  ],
+  exports: [
+    SkillsComponent,
+    ProjectCardComponent,
+    EducationCardComponent,
+    JobCardComponent,
+    ContactFormComponent,
+    ContactCardComponent,
+    ProjectDetailsComponent,
+    JobDetailsComponent,
+    EducationDetailsComponent,
+    CertificateCardComponent,
+    ToolsComponent,
+    NotFoundComponent,
+  ],
 })
 export class UiModule {}

@@ -2,7 +2,11 @@ import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { MockComponent } from 'ng-mocks';
 
-import { MatSidenav, MatSidenavContainer, MatSidenavContent } from '@angular/material/sidenav';
+import {
+  MatSidenav,
+  MatSidenavContainer,
+  MatSidenavContent,
+} from '@angular/material/sidenav';
 import { MatIcon } from '@angular/material/icon';
 import { MatButton } from '@angular/material/button';
 import { MatToolbar } from '@angular/material/toolbar';
@@ -12,10 +16,9 @@ import { RouterTestingModule } from '@angular/router/testing';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
-
     Object.defineProperty(window, 'matchMedia', {
       writable: true,
-      value: jest.fn().mockImplementation(query => ({
+      value: jest.fn().mockImplementation((query) => ({
         matches: false,
         media: query,
         onchange: null,
@@ -38,9 +41,7 @@ describe('AppComponent', () => {
         MockComponent(MatSidenavContent),
         MockComponent(MatNavList),
       ],
-      imports: [
-        RouterTestingModule
-      ]
+      imports: [RouterTestingModule],
     }).compileComponents();
   });
 
@@ -60,8 +61,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain(
-      'dges-front'
-    );
+    expect(compiled.querySelector('h1').textContent).toContain('dges-front');
   });
 });

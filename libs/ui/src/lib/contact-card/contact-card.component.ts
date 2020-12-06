@@ -3,13 +3,14 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'dges-contact-card',
   templateUrl: './contact-card.component.html',
-  styleUrls: ['./contact-card.component.scss']
+  styleUrls: ['./contact-card.component.scss'],
 })
 export class ContactCardComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor() {
+    console.log('test');
   }
 
+  ngOnInit(): void {
+    console.log('test');
+  }
 }
