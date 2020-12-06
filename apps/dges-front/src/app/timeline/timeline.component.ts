@@ -1,0 +1,16 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'dges-timeline',
+  templateUrl: './timeline.component.html',
+  styleUrls: ['./timeline.component.scss'],
+})
+export class TimelineComponent implements OnInit {
+  constructor() {
+    console.log('test');
+  }
+
+  ngOnInit(): void {
+    console.log('test');
+  }
+}
