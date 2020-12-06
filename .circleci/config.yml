@@ -10,6 +10,7 @@ defaults: &defaults
     - image: circleci/node:12-browsers
       environment: 
         NODE_OPTIONS=--max_old_space_size=8192
+        LHCI_GITHUB_APP_TOKEN=${{ secrets.LHCI_GITHUB_APP_TOKEN }}
   resource_class: large
 
 set_env: &set_env
