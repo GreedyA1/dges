@@ -100,6 +100,8 @@ jobs:
             - dist
       - store_artifacts:
           path: dist
+      - run: sudo yarn global add @lhci/cli@0.6.x
+      - run: lhci autorun
   test:
     <<: *defaults
     steps:
