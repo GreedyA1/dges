@@ -5,7 +5,7 @@
 version: 2
 
 defaults: &defaults
-  working_directory: ~/repo
+  working_directory: ~/dges
   docker:
     - image: circleci/node:12-browsers
       environment: 
