@@ -101,8 +101,6 @@ jobs:
             - dist
       - store_artifacts:
           path: dist
-      - run: sudo yarn global add @lhci/cli@0.6.x
-      - run: lhci autorun
   test:
     <<: *defaults
     steps:
@@ -146,6 +144,20 @@ jobs:
           key: last-deploy-sha
           paths:
             - dist/last-deploy.txt
+  lighthouse:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          <<: *deploy_cache
+      - run:
+          <<: *set_env
+      - restore_cache:
+          <<: *yarn_cache
+      - restore_cache:
+          key: build-{{ .Environment.CIRCLE_WORKFLOW_ID }}
+      - run: sudo yarn global add @lhci/cli@0.6.x
+      - run: lhci autorun
 
 workflows:
   version: 2
@@ -162,6 +174,10 @@ workflows:
           requires:
             - install
       - build:
+          filters:
+            branches:
+              only:
+                - develop
           requires:
             - install
       - e2e:
@@ -171,10 +187,17 @@ workflows:
           filters:
             branches:
               only:
-                - master
+                - develop
           requires:
             - check-formatting
             - lint
             - test
             - build
             - e2e
+      - deploy:
+          filters:
+            branches:
+              only:
+                - develop
+          requires:
+            - deploy
