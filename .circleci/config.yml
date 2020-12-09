@@ -10,6 +10,7 @@ defaults: &defaults
     - image: circleci/node:12-browsers
       environment: 
         NODE_OPTIONS=--max_old_space_size=8192
+        LHCI_GITHUB_APP_TOKEN=${{ secrets.LHCI_GITHUB_APP_TOKEN }}
   resource_class: large
 
 set_env: &set_env
@@ -143,6 +144,20 @@ jobs:
           key: last-deploy-sha
           paths:
             - dist/last-deploy.txt
+  lighthouse:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          <<: *deploy_cache
+      - run:
+          <<: *set_env
+      - restore_cache:
+          <<: *yarn_cache
+      - restore_cache:
+          key: build-{{ .Environment.CIRCLE_WORKFLOW_ID }}
+      - run: sudo yarn global add @lhci/cli@0.6.x
+      - run: lhci autorun
 
 workflows:
   version: 2
@@ -159,6 +174,10 @@ workflows:
           requires:
             - install
       - build:
+          filters:
+            branches:
+              only:
+                - develop
           requires:
             - install
       - e2e:
@@ -168,10 +187,17 @@ workflows:
           filters:
             branches:
               only:
-                - master
+                - develop
           requires:
             - check-formatting
             - lint
             - test
             - build
             - e2e
+      - lighthouse:
+          filters:
+            branches:
+              only:
+                - develop
+          requires:
+            - deploy
