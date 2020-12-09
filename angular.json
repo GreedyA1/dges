@@ -88,6 +88,10 @@
             "jestConfig": "apps/dges-front/jest.config.js",
             "passWithNoTests": true
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
     },
