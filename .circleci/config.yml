@@ -138,7 +138,7 @@ jobs:
           <<: *yarn_cache
       - restore_cache:
           key: build-{{ .Environment.CIRCLE_WORKFLOW_ID }}
-      - run: yarn affected -- --target deploy ${AFFECTED_ARGS}  --token ${FIREBASE_TOKEN}
+      - run: yarn affected -- --target deploy ${AFFECTED_ARGS}
       - run: git rev-parse HEAD > dist/last-deploy.txt
       - save_cache:
           key: last-deploy-sha
