@@ -158,24 +158,6 @@ jobs:
           key: build-{{ .Environment.CIRCLE_WORKFLOW_ID }}
       - run: sudo yarn global add @lhci/cli@0.6.x
       - run: lhci autorun
-      - run:
-          name: "What was my custom environment FIREBASE_TOKEN?"
-          command: echo ${FIREBASE_TOKEN}
-      - run:
-          name: "What was my custom environment LHCI_GITHUB_APP_TOKEN?"
-          command: echo ${LHCI_GITHUB_APP_TOKEN}
-      - run:
-          name: "What was my custom environment LHCI_GITHUB_TOKEN?"
-          command: echo ${LHCI_GITHUB_TOKEN}
-      - run:
-          name: "What was my custom environment LHCI_TOKEN?"
-          command: echo ${LHCI_TOKEN}
-      - run:
-          name: "What was my custom environment LHCI_SERVER_BASE_URL?"
-          command: echo ${{secrets.LHCI_SERVER_BASE_URL}}
-      - run:
-          name: "What was my custom environment LHCI_TOKEN?"
-          command: echo ${{secrets.LHCI_TOKEN}}
 
 workflows:
   version: 2
