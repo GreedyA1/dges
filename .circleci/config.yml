@@ -164,36 +164,36 @@ workflows:
   pr_check:
     jobs:
       - install
-      - check-formatting:
-          requires:
-            - install
-      - lint:
-          requires:
-            - install
-      - test:
-          requires:
-            - install
-      - build:
-          filters:
-            branches:
-              only:
-                - develop
-          requires:
-            - install
-      - e2e:
-          requires:
-            - install
-      - deploy:
-          filters:
-            branches:
-              only:
-                - develop
-          requires:
-            - check-formatting
-            - lint
-            - test
-            - build
-            - e2e
+      # - check-formatting:
+      #     requires:
+      #       - install
+      # - lint:
+      #     requires:
+      #       - install
+      # - test:
+      #     requires:
+      #       - install
+      # - build:
+      #     filters:
+      #       branches:
+      #         only:
+      #           - develop
+      #     requires:
+      #       - install
+      # - e2e:
+      #     requires:
+      #       - install
+      # - deploy:
+      #     filters:
+      #       branches:
+      #         only:
+      #           - develop
+      #     requires:
+      #       - check-formatting
+      #       - lint
+      #       - test
+      #       - build
+      #       - e2e
       - lighthouse:
           filters:
             branches:
