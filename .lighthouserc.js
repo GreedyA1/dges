@@ -10,7 +10,7 @@ module.exports = {
     },
     upload: {
       target: 'lhci',
-      serverBaseUrl: 'https://limitless-lowlands-77781.herokuapp.com/',
+      serverBaseUrl: '${{secrets.LHCI_SERVER_BASE_URL}}',
       token: '${{secrets.LHCI_TOKEN}}', // could also use LHCI_TOKEN variable instead
     },
   },
