@@ -10,10 +10,10 @@ module.exports = {
     },
     upload: {
       target: 'lhci',
-      serverBaseUrl: '${LHCI_SERVER_BASE_URL}',
-      token: '${LHCI_TOKEN}', // could also use LHCI_TOKEN variable instead
+      serverBaseUrl: 'process.env.LHCI_SERVER_BASE_URL',
+      token: 'process.env.LHCI_TOKEN', // could also use LHCI_TOKEN variable instead
     },
   },
 };
 
-console.log('this is server url ${LHCI_SERVER_BASE_URL}')
+console.log('this is server url', process.env.LHCI_SERVER_BASE_URL)
