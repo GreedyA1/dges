@@ -6,9 +6,6 @@ module.exports = {
       // staticDistDir: './dist/apps/dges-front/',
     },
     upload: {
-      target: 'temporary-public-storage',
-    },
-    upload: {
       target: 'lhci',
       serverBaseUrl: process.env.LHCI_SERVER_BASE_URL,
       token: process.env.LHCI_TOKEN, // could also use LHCI_TOKEN variable instead
