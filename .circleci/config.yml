@@ -170,7 +170,7 @@ jobs:
       - run:
           name: "What was my custom environment LHCI_TOKEN?"
           command: echo ${LHCI_TOKEN}
-            - run:
+      - run:
           name: "What was my custom environment LHCI_SERVER_BASE_URL?"
           command: echo ${{secrets.LHCI_SERVER_BASE_URL}}
       - run:
