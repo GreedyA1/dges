@@ -16,4 +16,4 @@ module.exports = {
   },
 };
 
-console.log('this is server url', process.env.LHCI_SERVER_BASE_URL)
+console.log('this is server url', process.env.LHCI_TOKEN)
