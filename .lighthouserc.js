@@ -15,5 +15,3 @@ module.exports = {
     },
   },
 };
-
-console.log('${{secrets.LHCI_SERVER_BASE_URL}}','${{secrets.LHCI_TOKEN}}')
