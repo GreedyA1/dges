@@ -10,10 +10,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
-import {AngularFireModule} from "@angular/fire";
+import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
-import {EffectsModule} from "@ngrx/effects";
-import {StoreModule} from "@ngrx/store";
 
 @NgModule({
   declarations: [AppComponent],
@@ -26,7 +24,7 @@ import {StoreModule} from "@ngrx/store";
     MatButtonModule,
     MatToolbarModule,
     MatListModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig)
+    AngularFireModule.initializeApp(environment.firebaseConfig),
   ],
   providers: [],
   bootstrap: [AppComponent],

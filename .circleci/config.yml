@@ -8,7 +8,7 @@ defaults: &defaults
   working_directory: ~/repo
   docker:
     - image: circleci/node:12-browsers
-      environment: 
+      environment:
         NODE_OPTIONS=--max_old_space_size=8192
         LHCI_GITHUB_APP_TOKEN=${LHCI_GITHUB_APP_TOKEN}
   resource_class: large
@@ -164,40 +164,40 @@ workflows:
   pr_check:
     jobs:
       - install
-      # - check-formatting:
-      #     requires:
-      #       - install
-      # - lint:
-      #     requires:
-      #       - install
-      # - test:
-      #     requires:
-      #       - install
-      # - build:
-      #     filters:
-      #       branches:
-      #         only:
-      #           - develop
-      #     requires:
-      #       - install
-      # - e2e:
-      #     requires:
-      #       - install
-      # - deploy:
-      #     filters:
-      #       branches:
-      #         only:
-      #           - develop
-      #     requires:
-      #       - check-formatting
-      #       - lint
-      #       - test
-      #       - build
-      #       - e2e
+       - check-formatting:
+           requires:
+             - install
+       - lint:
+           requires:
+             - install
+       - test:
+           requires:
+             - install
+       - build:
+           filters:
+             branches:
+               only:
+                 - develop
+           requires:
+             - install
+       - e2e:
+           requires:
+             - install
+       - deploy:
+           filters:
+             branches:
+               only:
+                 - develop
+           requires:
+             - check-formatting
+             - lint
+             - test
+             - build
+             - e2e
       - lighthouse:
           filters:
             branches:
               only:
                 - develop
-          # requires:
-          #   - deploy
+           requires:
+             - deploy

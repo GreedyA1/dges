@@ -9,5 +9,5 @@ export {
   ProjectsActions,
   ProjectsReducers,
   ProjectsEffects,
-  ProjectsState
-}
+  ProjectsState,
+};
