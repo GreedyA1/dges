@@ -30,7 +30,25 @@
       "tags": [],
       "implicitDependencies": ["dges-front"]
     },
-    "ui": {
+    "ui-project-card": {
+      "tags": []
+    },
+    "ui-project-details": {
+      "tags": []
+    },
+    "store-projects-projects-firebase": {
+      "tags": []
+    },
+    "store-projects-projects-api": {
+      "tags": []
+    },
+    "types-project": {
+      "tags": []
+    },
+    "data-projects": {
+      "tags": []
+    },
+    "api-projects-firebase": {
       "tags": []
     }
   }

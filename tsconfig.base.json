@@ -16,7 +16,17 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@dges/ui": ["libs/ui/src/index.ts"]
+      "@dges/ui/project-card": ["libs/ui/project-card/src/index.ts"],
+      "@dges/ui/project-details": ["libs/ui/project-details/src/index.ts"],
+      "@dges/store/projects/projects-firebase": [
+        "libs/store/projects/projects-firebase/src/index.ts"
+      ],
+      "@dges/store/projects/projects-api": [
+        "libs/store/projects/projects-api/src/index.ts"
+      ],
+      "@dges/types/project": ["libs/types/project/src/index.ts"],
+      "@dges/data/projects": ["libs/data/projects/src/index.ts"],
+      "@dges/api/projects/firebase": ["libs/api/projects/firebase/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
