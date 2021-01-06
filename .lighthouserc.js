@@ -7,8 +7,8 @@ module.exports = {
     },
     upload: {
       target: 'lhci',
-      serverBaseUrl: 'https://limitless-lowlands-77781.herokuapp.com',
-      token: 'cd36d33e-f72a-46db-ab2c-3bce75b07741', // could also use LHCI_TOKEN variable instead
+      serverBaseUrl: 'https://morning-ravine-50826.herokuapp.com/',
+      token: 'f6e59884-50ef-47a5-8a8e-27864e1c1ade', // could also use LHCI_TOKEN variable instead
     },
   },
 };
