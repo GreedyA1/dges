@@ -156,7 +156,7 @@ jobs:
           <<: *yarn_cache
       - restore_cache:
           key: build-{{ .Environment.CIRCLE_WORKFLOW_ID }}
-      - run: sudo yarn global add @lhci/cli@0.6.x
+      - run: sudo yarn global add @lhci/cli@0.6.1
       - run: lhci autorun
 
 workflows:
