@@ -156,6 +156,7 @@ jobs:
           <<: *yarn_cache
       - restore_cache:
           key: build-{{ .Environment.CIRCLE_WORKFLOW_ID }}
+      - run: export LHCI_BUILD_CONTEXT__CURRENT_BRANCH = $CI_BRANCH
       - run: sudo yarn global add @lhci/cli@0.6.1
       - run: lhci autorun
 

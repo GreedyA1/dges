@@ -8,7 +8,7 @@ module.exports = {
     upload: {
       target: 'lhci',
       serverBaseUrl: 'https://morning-ravine-50826.herokuapp.com/',
-      token: '5cd5bfab-c0ee-4f2d-b3b0-c98d32078846', // could also use LHCI_TOKEN variable instead
+      token: '6bb4c65c-699b-421d-92b2-917f0e567d58', // could also use LHCI_TOKEN variable instead
     },
   },
 };
