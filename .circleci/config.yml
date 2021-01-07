@@ -148,15 +148,15 @@ jobs:
     <<: *defaults
     steps:
       - checkout
-#      - restore_cache:
-#          <<: *deploy_cache
-#      - run:
-#          <<: *set_env
-#      - restore_cache:
-#          <<: *yarn_cache
-#      - restore_cache:
-#          key: build-{{ .Environment.CIRCLE_WORKFLOW_ID }}
-#      - run: export LHCI_BUILD_CONTEXT__CURRENT_BRANCH = $CI_BRANCH
+      - restore_cache:
+          <<: *deploy_cache
+      - run:
+          <<: *set_env
+      - restore_cache:
+          <<: *yarn_cache
+      - restore_cache:
+          key: build-{{ .Environment.CIRCLE_WORKFLOW_ID }}
+      - run: export LHCI_BUILD_CONTEXT__CURRENT_BRANCH = $CI_BRANCH
       - run: sudo yarn global add @lhci/cli@0.6.1
       - run: lhci autorun
 
@@ -171,9 +171,9 @@ workflows:
       - lint:
          requires:
            - install
-#      - test:
-#         requires:
-#           - install
+      - test:
+         requires:
+           - install
       - build:
          filters:
            branches:
@@ -192,7 +192,7 @@ workflows:
          requires:
            - check-formatting
            - lint
-#           - test
+           - test
            - build
            - e2e
       - lighthouse:
