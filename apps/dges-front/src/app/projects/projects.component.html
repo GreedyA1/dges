@@ -1,14 +1,3 @@
-<!--<dges-project-card></dges-project-card>-->
-
-{{ projects$ | async }}
-
-<div *ngFor="let vehicle of projects$ | async">
-  {{ projects$ | json }}
-</div>
-
-<!--  <div *ngFor="let vehicle of projects$ | async">-->
-<!--    yooo-->
-<!--    {{ vehicle | json }}-->
-<!--  </div>-->
-
-ffsadf
+<dges-project-card *ngFor="let vehicle of projects$ | async">
+  {{ vehicle | json }}
+</dges-project-card>
