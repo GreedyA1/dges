@@ -6,20 +6,16 @@ import { ProjectsComponent } from './projects.component';
 import { UiProjectCardModule } from '@dges/ui/project-card';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
-import {
-  ProjectsEffects,
-  ProjectsReducers,
-
-} from '@dges/store/projects/projects-firebase';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from "../../environments/environment";
 
 @NgModule({
   imports: [
     CommonModule,
     ProjectsRoutingModule,
     UiProjectCardModule,
-    StoreModule.forRoot(ProjectsReducers.projectsReducer),
-    EffectsModule.forRoot([ProjectsEffects.ProjectsEffects]),
+    StoreModule.forRoot(environment.projectsReducer),
+    EffectsModule.forRoot([environment.projectsEffect]),
     StoreDevtoolsModule.instrument({}),
   ],
   declarations: [ProjectsComponent],

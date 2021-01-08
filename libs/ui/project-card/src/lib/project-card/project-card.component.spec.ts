@@ -1,6 +1,14 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { MockComponent } from 'ng-mocks';
 import { ProjectCardComponent } from './project-card.component';
+import {
+  MatCard,
+  MatCardActions,
+  MatCardContent,
+  MatCardHeader,
+  MatCardSubtitle,
+  MatCardTitle
+} from '@angular/material/card'
 
 describe('ProjectCardComponent', () => {
   let component: ProjectCardComponent;
@@ -8,7 +16,14 @@ describe('ProjectCardComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ProjectCardComponent],
+      declarations: [ProjectCardComponent,
+        MockComponent(MatCard),
+        MockComponent(MatCardHeader),
+        MockComponent(MatCardContent),
+        MockComponent(MatCardActions),
+        MockComponent(MatCardTitle),
+        MockComponent(MatCardSubtitle),
+      ],
     }).compileComponents();
   });
 

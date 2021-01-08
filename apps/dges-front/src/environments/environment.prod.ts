@@ -1,3 +1,5 @@
+import { ProjectsEffects, ProjectsReducers } from "@dges/store/projects/projects-firebase";
+
 export const environment = {
   production: true,
   firebaseConfig: {
@@ -10,4 +12,6 @@ export const environment = {
     appId: '1:1038181456176:web:689079ec60a04d665d90f5',
     measurementId: 'G-3MHENET84P',
   },
+  projectsReducer: ProjectsReducers.projectsReducer,
+  projectsEffect: ProjectsEffects.ProjectsEffects
 };
