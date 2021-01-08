@@ -9,6 +9,7 @@ import { StoreModule } from '@ngrx/store';
 import {
   ProjectsEffects,
   ProjectsReducers,
+
 } from '@dges/store/projects/projects-firebase';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
