@@ -1,10 +1,9 @@
 import { createAction, props } from '@ngrx/store';
-import { Project } from '@dges/types/project';
 
 export const loadProjects = createAction('[projects] LOAD_PROJECTS');
 export const loadProjectsSuccess = createAction(
   '[projects] LOAD_PROJECTS_SUCCESS',
-  props<{ projects: any }>()
+  props<{ projects: unknown }>()
 );
 export const loadProjectsFail = createAction(
   '[projects] LLOAD_PROJECTS_FAIL',
