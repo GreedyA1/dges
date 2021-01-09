@@ -6,6 +6,8 @@ import {
 } from '@angular/fire/firestore';
 import {Project} from '@dges/types/project';
 import {Observable} from 'rxjs';
+import firebase from "firebase";
+import DocumentReference = firebase.firestore.DocumentReference;
 
 @Injectable({
   providedIn: 'root',
@@ -24,5 +26,10 @@ export class ProjectsCollectionService {
 
   public projectsGet(): Observable<Project[]> {
     return this.projectsCollection.valueChanges();
+  }
+
+  public addProject(project: Project): Promise<DocumentReference<Project>> {
+    return this.projectsCollection
+      .add(project)
   }
 }

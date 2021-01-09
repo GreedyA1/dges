@@ -9,6 +9,7 @@ import {
   MatCardSubtitle,
   MatCardTitle
 } from '@angular/material/card'
+import {project} from "@dges/data/projects";
 
 describe('ProjectCardComponent', () => {
   let component: ProjectCardComponent;
@@ -30,6 +31,7 @@ describe('ProjectCardComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(ProjectCardComponent);
     component = fixture.componentInstance;
+    component.project = project
     fixture.detectChanges();
   });
 

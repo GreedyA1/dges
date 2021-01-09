@@ -50,6 +50,15 @@
     },
     "api-projects-firebase": {
       "tags": []
+    },
+    "forms-project-form": {
+      "tags": []
+    },
+    "forms-login-form": {
+      "tags": []
+    },
+    "ui-login-dialog": {
+      "tags": []
     }
   }
 }

@@ -14,6 +14,15 @@
   z-index: 2;
 }
 
+.example-toolbar {
+  display: flex;
+  flex-direction: row;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
 h1.example-app-name {
   margin-left: 8px;
 }

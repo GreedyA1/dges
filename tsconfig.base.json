@@ -26,8 +26,14 @@
       ],
       "@dges/types/project": ["libs/types/project/src/index.ts"],
       "@dges/data/projects": ["libs/data/projects/src/index.ts"],
-      "@dges/api/projects/firebase": ["libs/api/projects/firebase/src/index.ts"]
+      "@dges/api/projects/firebase": [
+        "libs/api/projects/firebase/src/index.ts"
+      ],
+      "@dges/forms/project-form": ["libs/forms/project-form/src/index.ts"],
+      "@dges/forms/login-form": ["libs/forms/login-form/src/index.ts"],
+      "@dges/ui/login-dialog": ["libs/ui/login-dialog/src/index.ts"]
     }
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": ["node_modules", "tmp"],
+  "include": ["**/*.ts"]
 }

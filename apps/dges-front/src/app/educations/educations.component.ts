@@ -7,10 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EducationsComponent implements OnInit {
   constructor() {
-    console.log('test');
+    console.log('');
   }
 
   ngOnInit(): void {
-    console.log('test');
+    console.log('');
   }
 }

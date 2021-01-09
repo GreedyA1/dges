@@ -17,11 +17,9 @@ export class ProjectsComponent implements OnInit {
   projects$: Observable<Project[]>;
 
   constructor(private store: Store<ProjectsRootState>) {
-    console.log('test');
   }
 
   ngOnInit(): void {
-    console.log('test');
     this.store.dispatch(ProjectsActions.loadProjects());
     this.projects$ = this.store.select(ProjectsSelectors.getProjectsData);
   }

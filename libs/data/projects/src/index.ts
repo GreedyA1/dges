@@ -1,2 +1,2 @@
-export * from './lib/data-projects.module';
 export * from './lib/project';
+export * from './lib/projects';

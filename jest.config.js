@@ -8,5 +8,8 @@ module.exports = {
     '<rootDir>/libs/types/project',
     '<rootDir>/libs/data/projects',
     '<rootDir>/libs/api/projects/firebase',
+    '<rootDir>/libs/forms/project-form',
+    '<rootDir>/libs/forms/login-form',
+    '<rootDir>/libs/ui/login-dialog',
   ],
 };

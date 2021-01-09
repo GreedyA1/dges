@@ -1,6 +1,11 @@
-import { MediaMatcher } from '@angular/cdk/layout';
-import { ChangeDetectorRef, Component, OnDestroy } from '@angular/core';
-import { Router } from '@angular/router';
+import {MediaMatcher} from '@angular/cdk/layout';
+import {ChangeDetectorRef, Component, OnDestroy} from '@angular/core';
+import {Router} from '@angular/router';
+import {AngularFireAuth} from "@angular/fire/auth";
+import {MatDialog} from '@angular/material/dialog';
+import {LoginDialogComponent} from "@dges/ui/login-dialog";
+
+
 @Component({
   selector: 'dges-root',
   templateUrl: './app.component.html',
@@ -15,7 +20,9 @@ export class AppComponent implements OnDestroy {
   constructor(
     changeDetectorRef: ChangeDetectorRef,
     media: MediaMatcher,
-    router: Router
+    public dialog: MatDialog,
+    router: Router,
+    public auth: AngularFireAuth
   ) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
@@ -23,6 +30,20 @@ export class AppComponent implements OnDestroy {
     this.fillerNav.push(
       ...router.config.filter((route) => route.path).map((route) => route.path)
     );
+  }
+
+  openLogin(): void {
+    const dialogRef = this.dialog.open(LoginDialogComponent)
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.auth.signInWithEmailAndPassword(result.emailFormControl, result.passwordFormControl)
+      }
+    });
+  }
+
+  logout(): void {
+    this.auth.signOut();
   }
 
   ngOnDestroy(): void {

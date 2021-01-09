@@ -1,3 +1,9 @@
-<dges-project-card *ngFor="let vehicle of projects$ | async">
-  {{ vehicle | json }}
-</dges-project-card>
+<div class="full-page">
+  <dges-project-card class="project-card"
+                     *ngFor="let project of projects$ | async"
+                     [project]="project"
+                     >
+  </dges-project-card>
+</div>
+
+

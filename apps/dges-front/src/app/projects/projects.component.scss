@@ -1,0 +1,13 @@
+.full-page {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.project-card {
+  margin: 1rem;
+}
