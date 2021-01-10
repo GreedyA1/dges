@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjectFormComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+    console.log('Yo')
+  }
 
   ngOnInit(): void {
+    console.log('Yo')
   }
 
 }
