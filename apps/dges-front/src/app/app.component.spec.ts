@@ -14,10 +14,7 @@ import { MatNavList } from '@angular/material/list';
 
 import { RouterTestingModule } from '@angular/router/testing';
 import {MatDialog} from "@angular/material/dialog";
-import {ProjectsCollectionService} from "@dges/api/projects/firebase";
 import {of} from "rxjs";
-import {project} from "@dges/data/projects";
-import {AngularFirestore} from "@angular/fire/firestore";
 import {AngularFireAuth} from "@angular/fire/auth";
 
 describe('AppComponent', () => {
