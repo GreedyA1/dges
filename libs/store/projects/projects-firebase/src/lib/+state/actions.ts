@@ -1,3 +1,4 @@
+import { DocumentReference } from '@angular/fire/firestore';
 import { Project } from '@dges/types/project';
 import { createAction, props } from '@ngrx/store';
 
@@ -12,12 +13,12 @@ export const loadProjectsFail = createAction(
 );
 export const addProject = createAction(
   '[projects] ADD_PROJECTS',
-  props<{ project: Project }>()
+  props<{ project: unknown }>()
 );
 
 export const addProjectSuccess = createAction(
   '[projects] ADD_PROJECTS_SUCCESS',
-  props<{ project: unknown }>()
+  props<{ project: DocumentReference<Project> }>()
 );
 
 export const addProjectFail = createAction(

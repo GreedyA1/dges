@@ -27,7 +27,7 @@ export class ProjectsEffects {
     this.actions$.pipe(
       ofType(ProjectActions.addProject),
       switchMap((project) =>
-        from(this.angularFire.addProject(project.project)).pipe(
+        from(this.angularFire.addProject(project)).pipe(
           map((project) => {
             return ProjectActions.addProjectSuccess({ project: project });
           }),

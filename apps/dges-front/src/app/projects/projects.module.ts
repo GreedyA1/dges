@@ -5,6 +5,8 @@ import { ProjectsRoutingModule } from './projects-routing.module';
 import { ProjectsComponent } from './projects.component';
 import { UiProjectCardModule } from '@dges/ui/project-card';
 import { ProjectFormModule } from '@dges/forms/project-form';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   imports: [
@@ -12,7 +14,11 @@ import { ProjectFormModule } from '@dges/forms/project-form';
     ProjectsRoutingModule,
     UiProjectCardModule,
     ProjectFormModule,
+    MatButtonModule,
+    ReactiveFormsModule
   ],
-  declarations: [ProjectsComponent],
+  declarations: [
+    ProjectsComponent
+  ],
 })
 export class ProjectsModule {}

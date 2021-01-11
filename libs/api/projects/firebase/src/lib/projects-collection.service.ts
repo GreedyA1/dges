@@ -29,7 +29,7 @@ export class ProjectsCollectionService {
     return this.projectsCollection.valueChanges();
   }
 
-  public addProject(project: Project): Promise<DocumentReference<Project>> {
+  public addProject(project: any): Promise<DocumentReference<Project>> {
     return this.projectsCollection.add(project);
   }
 }

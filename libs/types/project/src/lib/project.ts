@@ -1,7 +1,8 @@
 export interface Project {
   title: string;
   description: string;
-  date: string;
+  startDate: Date;
+  endDate: Date;
   link: string;
   tools: string[];
   images: string[];

@@ -40,17 +40,6 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 export class LoginFormComponent implements ControlValueAccessor {
   public isDisabled = false;
 
-  loginForm = new FormGroup({
-    emailFormControl: new FormControl(
-      { value: null, disabled: this.isDisabled },
-      [Validators.required, Validators.email]
-    ),
-    passwordFormControl: new FormControl(
-      { value: null, disabled: this.isDisabled },
-      [Validators.required]
-    ),
-  });
-
   // Function to call when the input is touched (when a star is clicked).
   onTouched: () => void;
 
@@ -75,6 +64,17 @@ export class LoginFormComponent implements ControlValueAccessor {
   setDisabledState?(isDisabled: boolean): void {
     this.isDisabled = isDisabled;
   }
+
+  loginForm = new FormGroup({
+    emailFormControl: new FormControl(
+      { value: null, disabled: this.isDisabled },
+      [Validators.required, Validators.email]
+    ),
+    passwordFormControl: new FormControl(
+      { value: null, disabled: this.isDisabled },
+      [Validators.required]
+    ),
+  });
 
   get emailFormControl() {
     return this.loginForm.controls['emailFormControl'];

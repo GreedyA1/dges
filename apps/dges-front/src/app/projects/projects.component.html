@@ -1,4 +1,11 @@
 <div class="full-page">
+
+  {{projectForm.value | json}}
+
+  <project-form [formControl]="projectForm"> </project-form>
+
+  <button mat-raised-button (click)="addProject()">Add Project</button>
+  
   <dges-project-card
     class="project-card"
     *ngFor="let project of projects$ | async"
@@ -6,5 +13,3 @@
   >
   </dges-project-card>
 </div>
-
-<project-form> </project-form>

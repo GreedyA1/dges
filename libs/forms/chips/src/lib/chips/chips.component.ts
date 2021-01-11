@@ -1,10 +1,10 @@
-import { Component, ElementRef, Input, ViewChild } from '@angular/core';
+import { Component, ElementRef, forwardRef, Input, ViewChild } from '@angular/core';
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import {
   MatAutocomplete,
   MatAutocompleteSelectedEvent,
 } from '@angular/material/autocomplete';
-import { FormControl } from '@angular/forms';
+import { ControlValueAccessor, FormArray, FormControl, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { MatChipInputEvent } from '@angular/material/chips';
 import { map, startWith } from 'rxjs/operators';
 import { Observable } from 'rxjs';
@@ -13,8 +13,15 @@ import { Observable } from 'rxjs';
   selector: 'dges-chips',
   templateUrl: './chips.component.html',
   styleUrls: ['./chips.component.scss'],
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => ChipsComponent),
+      multi: true,
+    },
+  ],
 })
-export class ChipsComponent {
+export class ChipsComponent implements ControlValueAccessor{
   visible = true;
   selectable = true;
   removable = true;
@@ -22,7 +29,7 @@ export class ChipsComponent {
 
   chipCtrl = new FormControl();
   filteredChips: Observable<string[]>;
-  @Input() chips: string[] = ['Lemon'];
+  @Input() chipCategory: string;
   @Input() allChips: string[] = [
     'Apple',
     'Lemon',
@@ -33,6 +40,34 @@ export class ChipsComponent {
 
   @ViewChild('chipInput') chipInput: ElementRef<HTMLInputElement>;
   @ViewChild('auto') matAutocomplete: MatAutocomplete;
+
+  skills = new FormControl([]);
+
+  public isDisabled = false;
+  // Function to call when the input is touched (when a star is clicked).
+  onTouched: () => void;
+
+  onChanged: any;
+
+  writeValue(obj: any): void {
+    this.skills.setValue(obj);
+
+    this.skills.valueChanges.subscribe(() => {
+      if (this.onChanged) this.onChanged(this.skills.value);
+    });
+  }
+
+  registerOnChange(fn: any): void {
+    this.onChanged = fn;
+  }
+
+  registerOnTouched(fn: any): void {
+    this.onTouched = fn;
+  }
+
+  setDisabledState?(isDisabled: boolean): void {
+    this.isDisabled = isDisabled;
+  }
 
   constructor() {
     this.filteredChips = this.chipCtrl.valueChanges.pipe(
@@ -49,7 +84,7 @@ export class ChipsComponent {
 
     // Add our chip
     if ((value || '').trim()) {
-      this.chips.push(value.trim());
+      this.skills.value.push(value.trim());
     }
 
     // Reset the input value
@@ -61,15 +96,15 @@ export class ChipsComponent {
   }
 
   remove(chip: string): void {
-    const index = this.chips.indexOf(chip);
+    const index = this.skills.value.indexOf(chip);
 
     if (index >= 0) {
-      this.chips.splice(index, 1);
+      this.skills.value.splice(index, 1);
     }
   }
 
   selected(event: MatAutocompleteSelectedEvent): void {
-    this.chips.push(event.option.viewValue);
+    this.skills.value.push(event.option.viewValue);
     this.chipInput.nativeElement.value = '';
     this.chipCtrl.setValue(null);
   }
