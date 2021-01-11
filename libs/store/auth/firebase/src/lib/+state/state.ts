@@ -1,4 +1,4 @@
-import {User} from "@dges/types/auth";
+import { User } from '@dges/types/auth';
 
 export interface AuthState {
   loading: boolean;
@@ -9,5 +9,5 @@ export interface AuthState {
 export const initialAuthState: AuthState = {
   loading: false,
   loaded: false,
-  user: null
+  user: null,
 };

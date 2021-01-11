@@ -1,8 +1,7 @@
 <form class="example-form" [formGroup]="projectForm">
-
   <mat-form-field appearance="outline">
     <mat-label>Title</mat-label>
-    <input matInput placeholder="Placeholder" formControlName="title">
+    <input matInput placeholder="Placeholder" formControlName="title" />
     <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
     <mat-hint>Hint</mat-hint>
   </mat-form-field>
@@ -15,29 +14,23 @@
   </mat-form-field>
 
   <mat-date-range-input appearance="outline" [rangePicker]="picker">
-    <input matStartDate placeholder="Start date">
-    <input matEndDate placeholder="End date">
+    <input matStartDate placeholder="Start date" />
+    <input matEndDate placeholder="End date" />
   </mat-date-range-input>
 
   <mat-date-range-picker #picker></mat-date-range-picker>
 
   <mat-form-field appearance="outline">
     <mat-label>Link</mat-label>
-    <input matInput placeholder="Placeholder" formControlName="link">
+    <input matInput placeholder="Placeholder" formControlName="link" />
     <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
     <mat-hint>Hint</mat-hint>
   </mat-form-field>
 
-  <dges-chips [chips]="''" [allChips]="[]">
+  <dges-chips [chips]="''" [allChips]="[]"> </dges-chips>
 
-  </dges-chips>
-
-  <dges-chips [chips]="''" [allChips]="[]">
-
-  </dges-chips>
-
+  <dges-chips [chips]="''" [allChips]="[]"> </dges-chips>
 </form>
-
 
 <!--title-->
 <!--description-->

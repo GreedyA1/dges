@@ -1,5 +1,5 @@
 import { Project } from '@dges/types/project';
-import {createAction, props} from '@ngrx/store';
+import { createAction, props } from '@ngrx/store';
 
 export const loadProjects = createAction('[projects] LOAD_PROJECTS');
 export const loadProjectsSuccess = createAction(

@@ -1,11 +1,11 @@
-import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
-import {canActivate, loggedIn} from "@angular/fire/auth-guard";
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { canActivate, loggedIn } from '@angular/fire/auth-guard';
 
 const adminOnly = () => loggedIn;
 
 const routes: Routes = [
-  {path: '', pathMatch: 'full', redirectTo: 'timeline'},
+  { path: '', pathMatch: 'full', redirectTo: 'timeline' },
   {
     path: 'projects',
     loadChildren: () =>
@@ -49,5 +49,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' })],
   exports: [RouterModule],
 })
-export class AppRoutingModule {
-}
+export class AppRoutingModule {}

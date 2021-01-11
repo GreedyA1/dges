@@ -1,15 +1,14 @@
 <mat-card class="example-card">
   <mat-card-header>
     <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title>{{project.title}}</mat-card-title>
-    <mat-card-subtitle>Date: {{project.date}}</mat-card-subtitle>
+    <mat-card-title>{{ project.title }}</mat-card-title>
+    <mat-card-subtitle>Date: {{ project.date }}</mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
     <ng-content></ng-content>
     <p>
-      {{project.description}}
+      {{ project.description }}
     </p>
   </mat-card-content>
-  <mat-card-actions>
-  </mat-card-actions>
+  <mat-card-actions> </mat-card-actions>
 </mat-card>

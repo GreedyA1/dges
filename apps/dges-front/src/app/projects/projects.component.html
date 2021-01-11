@@ -1,13 +1,10 @@
 <div class="full-page">
-  <dges-project-card class="project-card"
-                     *ngFor="let project of projects$ | async"
-                     [project]="project"
-                     >
+  <dges-project-card
+    class="project-card"
+    *ngFor="let project of projects$ | async"
+    [project]="project"
+  >
   </dges-project-card>
 </div>
 
-  <project-form>
-
-  </project-form>
-
-
+<project-form> </project-form>

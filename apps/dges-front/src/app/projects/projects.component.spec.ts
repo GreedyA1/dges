@@ -6,8 +6,8 @@ import { of } from 'rxjs';
 import { ProjectsState } from '@dges/store/projects/projects-firebase';
 import { ProjectsCollectionService } from '@dges/api/projects/firebase';
 import { project } from '@dges/data/projects';
-import {MockComponent} from "ng-mocks";
-import {ProjectCardComponent} from "@dges/ui/project-card";
+import { MockComponent } from 'ng-mocks';
+import { ProjectCardComponent } from '@dges/ui/project-card';
 
 describe('ProjectsComponent', () => {
   let component: ProjectsComponent;
@@ -16,10 +16,7 @@ describe('ProjectsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [
-        ProjectsComponent,
-        MockComponent(ProjectCardComponent)
-      ],
+      declarations: [ProjectsComponent, MockComponent(ProjectCardComponent)],
       providers: [
         provideMockStore({}),
         {

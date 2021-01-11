@@ -1,11 +1,11 @@
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {ChipsComponent} from './chips/chips.component';
-import {MatInputModule} from "@angular/material/input";
-import {MatAutocompleteModule} from "@angular/material/autocomplete";
-import {MatChipsModule} from "@angular/material/chips";
-import {ReactiveFormsModule} from "@angular/forms";
-import {MatIconModule} from "@angular/material/icon";
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { ChipsComponent } from './chips/chips.component';
+import { MatInputModule } from '@angular/material/input';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatChipsModule } from '@angular/material/chips';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   imports: [
@@ -14,10 +14,9 @@ import {MatIconModule} from "@angular/material/icon";
     MatAutocompleteModule,
     MatChipsModule,
     ReactiveFormsModule,
-    MatIconModule
+    MatIconModule,
   ],
   declarations: [ChipsComponent],
-  exports: [ChipsComponent]
+  exports: [ChipsComponent],
 })
-export class FormsChipsModule {
-}
+export class FormsChipsModule {}

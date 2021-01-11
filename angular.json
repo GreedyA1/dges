@@ -25,9 +25,7 @@
               "apps/dges-front/src/favicon.ico",
               "apps/dges-front/src/assets"
             ],
-            "styles": [
-              "apps/dges-front/src/styles.scss"
-            ],
+            "styles": ["apps/dges-front/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -59,9 +57,7 @@
               ]
             }
           },
-          "outputs": [
-            "{options.outputPath}"
-          ]
+          "outputs": ["{options.outputPath}"]
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -95,9 +91,7 @@
             "jestConfig": "apps/dges-front/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": [
-            "coverage/apps/dges-front"
-          ]
+          "outputs": ["coverage/apps/dges-front"]
         },
         "deploy": {
           "builder": "@angular/fire:deploy",
@@ -128,9 +122,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/dges-front-e2e/**/*.{js,ts}"
-            ]
+            "lintFilePatterns": ["apps/dges-front-e2e/**/*.{js,ts}"]
           }
         }
       }
@@ -156,9 +148,7 @@
             "jestConfig": "libs/ui/project-card/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": [
-            "coverage/libs/ui/project-card"
-          ]
+          "outputs": ["coverage/libs/ui/project-card"]
         }
       },
       "schematics": {
@@ -188,9 +178,7 @@
             "jestConfig": "libs/ui/project-details/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": [
-            "coverage/libs/ui/project-details"
-          ]
+          "outputs": ["coverage/libs/ui/project-details"]
         }
       },
       "schematics": {
@@ -220,9 +208,7 @@
             "jestConfig": "libs/store/projects/projects-firebase/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": [
-            "coverage/libs/store/projects/projects-firebase"
-          ]
+          "outputs": ["coverage/libs/store/projects/projects-firebase"]
         }
       },
       "schematics": {
@@ -252,9 +238,7 @@
             "jestConfig": "libs/store/projects/projects-api/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": [
-            "coverage/libs/store/projects/projects-api"
-          ]
+          "outputs": ["coverage/libs/store/projects/projects-api"]
         }
       },
       "schematics": {
@@ -272,9 +256,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/types/project/src/**/*.ts"
-            ]
+            "lintFilePatterns": ["libs/types/project/src/**/*.ts"]
           }
         },
         "test": {
@@ -283,9 +265,7 @@
             "jestConfig": "libs/types/project/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": [
-            "coverage/libs/types/project"
-          ]
+          "outputs": ["coverage/libs/types/project"]
         }
       },
       "schematics": {
@@ -303,9 +283,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/data/projects/src/**/*.ts"
-            ]
+            "lintFilePatterns": ["libs/data/projects/src/**/*.ts"]
           }
         },
         "test": {
@@ -314,9 +292,7 @@
             "jestConfig": "libs/data/projects/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": [
-            "coverage/libs/data/projects"
-          ]
+          "outputs": ["coverage/libs/data/projects"]
         }
       },
       "schematics": {
@@ -346,9 +322,7 @@
             "jestConfig": "libs/api/projects/firebase/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": [
-            "coverage/libs/api/projects/firebase"
-          ]
+          "outputs": ["coverage/libs/api/projects/firebase"]
         }
       },
       "schematics": {
@@ -378,9 +352,7 @@
             "jestConfig": "libs/forms/project-form/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": [
-            "coverage/libs/forms/project-form"
-          ]
+          "outputs": ["coverage/libs/forms/project-form"]
         }
       }
     },
@@ -405,9 +377,7 @@
             "jestConfig": "libs/forms/login-form/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": [
-            "coverage/libs/forms/login-form"
-          ]
+          "outputs": ["coverage/libs/forms/login-form"]
         }
       },
       "schematics": {
@@ -437,9 +407,7 @@
             "jestConfig": "libs/ui/login-dialog/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": [
-            "coverage/libs/ui/login-dialog"
-          ]
+          "outputs": ["coverage/libs/ui/login-dialog"]
         }
       },
       "schematics": {
@@ -469,9 +437,7 @@
             "jestConfig": "libs/api/auth/firebase/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": [
-            "coverage/libs/api/auth/firebase"
-          ]
+          "outputs": ["coverage/libs/api/auth/firebase"]
         }
       },
       "schematics": {
@@ -501,9 +467,7 @@
             "jestConfig": "libs/store/auth/firebase/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": [
-            "coverage/libs/store/auth/firebase"
-          ]
+          "outputs": ["coverage/libs/store/auth/firebase"]
         }
       },
       "schematics": {
@@ -521,9 +485,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/types/auth/src/**/*.ts"
-            ]
+            "lintFilePatterns": ["libs/types/auth/src/**/*.ts"]
           }
         },
         "test": {
@@ -532,9 +494,7 @@
             "jestConfig": "libs/types/auth/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": [
-            "coverage/libs/types/auth"
-          ]
+          "outputs": ["coverage/libs/types/auth"]
         }
       },
       "schematics": {
@@ -564,9 +524,7 @@
             "jestConfig": "libs/forms/chips/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": [
-            "coverage/libs/forms/chips"
-          ]
+          "outputs": ["coverage/libs/forms/chips"]
         }
       },
       "schematics": {

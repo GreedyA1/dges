@@ -2,8 +2,11 @@
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
-import {ProjectsEffects, ProjectsReducers} from "@dges/store/projects/projects-firebase";
-import {AuthEffects, AuthReducers} from "@dges/store/auth/firebase";
+import {
+  ProjectsEffects,
+  ProjectsReducers,
+} from '@dges/store/projects/projects-firebase';
+import { AuthEffects, AuthReducers } from '@dges/store/auth/firebase';
 
 export const environment = {
   production: false,
@@ -22,7 +25,7 @@ export const environment = {
   projectsFeatureKey: ProjectsReducers.projectsFeatureKey,
   authReducer: AuthReducers.authReducer,
   authEffect: AuthEffects.AuthEffects,
-  authFeatureKey: AuthReducers.authFeatureKey
+  authFeatureKey: AuthReducers.authFeatureKey,
 };
 
 /*

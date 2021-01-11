@@ -4,10 +4,4 @@ import * as AuthState from './state';
 import * as AuthActions from './actions';
 import * as AuthSelectors from './selectors';
 
-export {
-  AuthSelectors,
-  AuthActions,
-  AuthReducers,
-  AuthEffects,
-  AuthState,
-};
+export { AuthSelectors, AuthActions, AuthReducers, AuthEffects, AuthState };

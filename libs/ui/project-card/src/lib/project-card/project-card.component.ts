@@ -1,5 +1,5 @@
-import {Component, ChangeDetectionStrategy, Input} from '@angular/core';
-import {Project} from "@dges/types/project";
+import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
+import { Project } from '@dges/types/project';
 
 @Component({
   selector: 'dges-project-card',
@@ -8,7 +8,5 @@ import {Project} from "@dges/types/project";
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProjectCardComponent {
-
   @Input() project: Project;
-
 }

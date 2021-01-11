@@ -1,6 +1,6 @@
-import {Component} from '@angular/core';
-import {FormControl, FormGroup} from '@angular/forms';
-import {MatDialogRef} from "@angular/material/dialog";
+import { Component } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'dges-login-dialog',
@@ -8,16 +8,14 @@ import {MatDialogRef} from "@angular/material/dialog";
   styleUrls: ['./login-dialog.component.scss'],
 })
 export class LoginDialogComponent {
-
   form = new FormGroup({
     loginForm: new FormControl({
       emailFormControl: '',
-      passwordFormControl: ''
-    })
-  })
+      passwordFormControl: '',
+    }),
+  });
 
-  constructor(public dialogRef: MatDialogRef<LoginDialogComponent>) {
-  }
+  constructor(public dialogRef: MatDialogRef<LoginDialogComponent>) {}
 
   login() {
     this.dialogRef.close(this.form.controls.loginForm.value);
@@ -26,5 +24,4 @@ export class LoginDialogComponent {
   cancel() {
     this.dialogRef.close();
   }
-
 }

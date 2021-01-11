@@ -1,18 +1,20 @@
-import {Component, ElementRef, Input, ViewChild} from '@angular/core';
-import {COMMA, ENTER} from "@angular/cdk/keycodes";
-import {MatAutocomplete, MatAutocompleteSelectedEvent} from "@angular/material/autocomplete";
-import {FormControl} from "@angular/forms";
-import {MatChipInputEvent} from "@angular/material/chips";
-import {map, startWith} from "rxjs/operators";
-import {Observable} from "rxjs";
+import { Component, ElementRef, Input, ViewChild } from '@angular/core';
+import { COMMA, ENTER } from '@angular/cdk/keycodes';
+import {
+  MatAutocomplete,
+  MatAutocompleteSelectedEvent,
+} from '@angular/material/autocomplete';
+import { FormControl } from '@angular/forms';
+import { MatChipInputEvent } from '@angular/material/chips';
+import { map, startWith } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'dges-chips',
   templateUrl: './chips.component.html',
-  styleUrls: ['./chips.component.scss']
+  styleUrls: ['./chips.component.scss'],
 })
 export class ChipsComponent {
-
   visible = true;
   selectable = true;
   removable = true;
@@ -21,7 +23,13 @@ export class ChipsComponent {
   chipCtrl = new FormControl();
   filteredChips: Observable<string[]>;
   @Input() chips: string[] = ['Lemon'];
-  @Input() allChips: string[] = ['Apple', 'Lemon', 'Lime', 'Orange', 'Strawberry'];
+  @Input() allChips: string[] = [
+    'Apple',
+    'Lemon',
+    'Lime',
+    'Orange',
+    'Strawberry',
+  ];
 
   @ViewChild('chipInput') chipInput: ElementRef<HTMLInputElement>;
   @ViewChild('auto') matAutocomplete: MatAutocomplete;
@@ -29,7 +37,10 @@ export class ChipsComponent {
   constructor() {
     this.filteredChips = this.chipCtrl.valueChanges.pipe(
       startWith(null),
-      map((chip: string | null) => chip ? this._filter(chip) : this.allChips.slice()));
+      map((chip: string | null) =>
+        chip ? this._filter(chip) : this.allChips.slice()
+      )
+    );
   }
 
   add(event: MatChipInputEvent): void {
@@ -66,7 +77,8 @@ export class ChipsComponent {
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();
 
-    return this.allChips.filter(chip => chip.toLowerCase().indexOf(filterValue) === 0);
+    return this.allChips.filter(
+      (chip) => chip.toLowerCase().indexOf(filterValue) === 0
+    );
   }
-
 }

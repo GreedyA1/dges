@@ -13,9 +13,9 @@ import { MatToolbar } from '@angular/material/toolbar';
 import { MatNavList } from '@angular/material/list';
 
 import { RouterTestingModule } from '@angular/router/testing';
-import {MatDialog} from "@angular/material/dialog";
-import {of} from "rxjs";
-import {AngularFireAuth} from "@angular/fire/auth";
+import { MatDialog } from '@angular/material/dialog';
+import { of } from 'rxjs';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -44,7 +44,7 @@ describe('AppComponent', () => {
         MockComponent(MatSidenavContent),
         MockComponent(MatNavList),
       ],
-      providers:[
+      providers: [
         {
           provide: MatDialog,
           useValue: {
@@ -57,7 +57,7 @@ describe('AppComponent', () => {
             signOut: jest.fn().mockReturnValue(of()),
             signInWithEmailAndPassword: jest.fn().mockReturnValue(of()),
           },
-        }
+        },
       ],
       imports: [RouterTestingModule],
     }).compileComponents();

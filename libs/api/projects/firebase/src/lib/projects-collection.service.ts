@@ -1,12 +1,12 @@
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 import {
   AngularFirestore,
   AngularFirestoreCollection,
   DocumentChangeAction,
 } from '@angular/fire/firestore';
-import {Project} from '@dges/types/project';
-import {Observable} from 'rxjs';
-import firebase from "firebase";
+import { Project } from '@dges/types/project';
+import { Observable } from 'rxjs';
+import firebase from 'firebase';
 import DocumentReference = firebase.firestore.DocumentReference;
 
 @Injectable({
@@ -15,10 +15,11 @@ import DocumentReference = firebase.firestore.DocumentReference;
 export class ProjectsCollectionService {
   private readonly PROJECTS_COLLECTION_NAME = 'projects';
 
-  private projectsCollection: AngularFirestoreCollection<Project> = this.angularFire.collection(this.PROJECTS_COLLECTION_NAME);
+  private projectsCollection: AngularFirestoreCollection<
+    Project
+  > = this.angularFire.collection(this.PROJECTS_COLLECTION_NAME);
 
-  constructor(private angularFire: AngularFirestore) {
-  }
+  constructor(private angularFire: AngularFirestore) {}
 
   public projectsStateChanges(): Observable<DocumentChangeAction<Project>[]> {
     return this.projectsCollection.stateChanges();
@@ -29,7 +30,6 @@ export class ProjectsCollectionService {
   }
 
   public addProject(project: Project): Promise<DocumentReference<Project>> {
-    return this.projectsCollection
-      .add(project)
+    return this.projectsCollection.add(project);
   }
 }

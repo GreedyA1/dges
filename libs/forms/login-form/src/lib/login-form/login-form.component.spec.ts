@@ -1,10 +1,15 @@
-import {ComponentFixture, TestBed} from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import {LoginFormComponent} from './login-form.component';
-import {ReactiveFormsModule} from "@angular/forms";
-import {MockComponent} from "ng-mocks";
-import {MatError, MatFormField, MatHint, MatLabel} from "@angular/material/form-field";
-import {MatInput} from "@angular/material/input";
+import { LoginFormComponent } from './login-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MockComponent } from 'ng-mocks';
+import {
+  MatError,
+  MatFormField,
+  MatHint,
+  MatLabel,
+} from '@angular/material/form-field';
+import { MatInput } from '@angular/material/input';
 
 describe('LoginFormComponent', () => {
   let component: LoginFormComponent;
@@ -12,19 +17,16 @@ describe('LoginFormComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
-        ReactiveFormsModule
-      ],
+      imports: [ReactiveFormsModule],
       declarations: [
         LoginFormComponent,
         MockComponent(MatLabel),
         MockComponent(MatError),
         MockComponent(MatHint),
         MockComponent(MatFormField),
-        MockComponent(MatInput)
-      ]
-    })
-      .compileComponents();
+        MockComponent(MatInput),
+      ],
+    }).compileComponents();
   });
 
   beforeEach(() => {
