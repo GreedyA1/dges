@@ -11,5 +11,8 @@ module.exports = {
     '<rootDir>/libs/forms/project-form',
     '<rootDir>/libs/forms/login-form',
     '<rootDir>/libs/ui/login-dialog',
+    '<rootDir>/libs/api/auth/firebase',
+    '<rootDir>/libs/store/auth/firebase',
+    '<rootDir>/libs/types/auth',
   ],
 };

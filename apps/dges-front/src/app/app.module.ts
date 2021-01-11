@@ -14,6 +14,7 @@ import {AngularFireModule} from '@angular/fire';
 import {environment} from '../environments/environment';
 import {MatDialogModule} from '@angular/material/dialog';
 import {UiLoginDialogModule} from "@dges/ui/login-dialog";
+import {RootStoreModule} from "./+store/root-store.module";
 
 @NgModule({
   declarations: [AppComponent],
@@ -29,6 +30,7 @@ import {UiLoginDialogModule} from "@dges/ui/login-dialog";
     AngularFireModule.initializeApp(environment.firebaseConfig),
     MatDialogModule,
     UiLoginDialogModule,
+    RootStoreModule
   ],
   providers: [],
   bootstrap: [AppComponent],

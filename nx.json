@@ -59,6 +59,15 @@
     },
     "ui-login-dialog": {
       "tags": []
+    },
+    "api-auth-firebase": {
+      "tags": []
+    },
+    "store-auth-firebase": {
+      "tags": []
+    },
+    "types-auth": {
+      "tags": []
     }
   }
 }

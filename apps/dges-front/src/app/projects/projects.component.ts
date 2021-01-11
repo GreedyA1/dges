@@ -6,7 +6,7 @@ import {
 import { Project } from '@dges/types/project';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { ProjectsRootState } from './+state/projects-root.state';
+import {RootStoreModule} from "../+store/root-store.module";
 
 @Component({
   selector: 'dges-projects',
@@ -16,7 +16,7 @@ import { ProjectsRootState } from './+state/projects-root.state';
 export class ProjectsComponent implements OnInit {
   projects$: Observable<Project[]>;
 
-  constructor(private store: Store<ProjectsRootState>) {
+  constructor(private store: Store<RootStoreModule>) {
   }
 
   ngOnInit(): void {

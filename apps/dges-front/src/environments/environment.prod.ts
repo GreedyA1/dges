@@ -1,4 +1,5 @@
 import { ProjectsEffects, ProjectsReducers } from "@dges/store/projects/projects-firebase";
+import {AuthEffects, AuthReducers} from "../../../../libs/store/auth/firebase/src/lib/+state";
 
 export const environment = {
   production: true,
@@ -13,5 +14,9 @@ export const environment = {
     measurementId: 'G-3MHENET84P',
   },
   projectsReducer: ProjectsReducers.projectsReducer,
-  projectsEffect: ProjectsEffects.ProjectsEffects
+  projectsEffect: ProjectsEffects.ProjectsEffects,
+  projectsFeatureKey: ProjectsReducers.projectsFeatureKey,
+  authReducer: AuthReducers.authReducer,
+  authEffect: AuthEffects.AuthEffects,
+  authFeatureKey: AuthReducers.authFeatureKey
 };

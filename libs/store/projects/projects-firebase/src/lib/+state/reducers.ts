@@ -14,14 +14,4 @@ export const projectsReducer = createReducer(
       loading: false,
     };
   })
-  // on(ProjectsCollectionService.projectsStateChanges(), (state, action) => ({
-  //   ...state,
-  //   projects: action.projects,
-  //   loaded: true,
-  //   loading: false,
-  // })),
 );
-
-// export function projectsReducer(state: ProjectsState | undefined, action: Action): ProjectsState {
-//   return reducer(state, action);
-// }

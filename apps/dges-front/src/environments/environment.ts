@@ -3,6 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 import {ProjectsEffects, ProjectsReducers} from "@dges/store/projects/projects-firebase";
+import {AuthEffects, AuthReducers} from "@dges/store/auth/firebase";
 
 export const environment = {
   production: false,
@@ -17,7 +18,11 @@ export const environment = {
     measurementId: 'G-3MHENET84P',
   },
   projectsReducer: ProjectsReducers.projectsReducer,
-  projectsEffect: ProjectsEffects.ProjectsEffects
+  projectsEffect: ProjectsEffects.ProjectsEffects,
+  projectsFeatureKey: ProjectsReducers.projectsFeatureKey,
+  authReducer: AuthReducers.authReducer,
+  authEffect: AuthEffects.AuthEffects,
+  authFeatureKey: AuthReducers.authFeatureKey
 };
 
 /*
