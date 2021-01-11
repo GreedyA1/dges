@@ -34,7 +34,8 @@
       "@dges/ui/login-dialog": ["libs/ui/login-dialog/src/index.ts"],
       "@dges/api/auth/firebase": ["libs/api/auth/firebase/src/index.ts"],
       "@dges/store/auth/firebase": ["libs/store/auth/firebase/src/index.ts"],
-      "@dges/types/auth": ["libs/types/auth/src/index.ts"]
+      "@dges/types/auth": ["libs/types/auth/src/index.ts"],
+      "@dges/forms/chips": ["libs/forms/chips/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"],

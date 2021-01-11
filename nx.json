@@ -68,6 +68,9 @@
     },
     "types-auth": {
       "tags": []
+    },
+    "forms-chips": {
+      "tags": []
     }
   }
 }

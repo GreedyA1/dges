@@ -14,5 +14,6 @@ module.exports = {
     '<rootDir>/libs/api/auth/firebase',
     '<rootDir>/libs/store/auth/firebase',
     '<rootDir>/libs/types/auth',
+    '<rootDir>/libs/forms/chips',
   ],
 };

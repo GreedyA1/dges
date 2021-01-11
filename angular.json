@@ -457,6 +457,32 @@
           "style": "scss"
         }
       }
+    },
+    "forms-chips": {
+      "projectType": "library",
+      "root": "libs/forms/chips",
+      "sourceRoot": "libs/forms/chips/src",
+      "prefix": "dges",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/forms/chips/src/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/forms/chips/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
     }
   },
   "cli": {

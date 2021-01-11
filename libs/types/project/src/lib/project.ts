@@ -1,10 +1,9 @@
 export interface Project {
-  Date: string;
-  Title: string;
-  Description: string;
-  Link: string;
-  Responsibilities: string[];
-  Used: string[];
-  Picture: string[];
-  Color: string;
+  title: string;
+  description: string;
+  date: string;
+  link: string;
+  tools: string[];
+  images: string[];
+  skills: string[];
 }
