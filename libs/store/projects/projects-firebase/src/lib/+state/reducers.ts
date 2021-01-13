@@ -6,6 +6,13 @@ export const projectsFeatureKey = 'projects';
 
 export const projectsReducer = createReducer(
   initialProjectsState,
+  on(ProjectsActions.loadProjects, (state, action) => {
+    return {
+      ...state,
+      loaded: false,
+      loading: true,
+    };
+  }),
   on(ProjectsActions.loadProjectsSuccess, (state, action) => {
     return {
       ...state,

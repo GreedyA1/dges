@@ -1,5 +1,5 @@
-import { Component, forwardRef, OnInit } from '@angular/core';
-import { ControlValueAccessor, FormArray, FormControl, FormGroup, NG_VALUE_ACCESSOR, Validators } from '@angular/forms';
+import { Component, forwardRef, Input, OnInit } from '@angular/core';
+import { AbstractControl, ControlValueAccessor, FormControl, FormGroup, NgControl, NG_VALIDATORS, NG_VALUE_ACCESSOR, ValidationErrors, Validators } from '@angular/forms';
 
 @Component({
   selector: 'project-form',
@@ -11,24 +11,36 @@ import { ControlValueAccessor, FormArray, FormControl, FormGroup, NG_VALUE_ACCES
       useExisting: forwardRef(() => ProjectFormComponent),
       multi: true,
     },
+    {
+      provide: NG_VALIDATORS,
+      useExisting: forwardRef(() => ProjectFormComponent),
+      multi: true,
+    },
   ],
 })
 export class ProjectFormComponent implements OnInit, ControlValueAccessor {
+
+  @Input() choiceArray: string[];
   
   public isDisabled = false;
-  private readonly URL_REGEXP = '(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})';
+  expression = /(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/gi;
+
+  constructor(
+    ) {}
+
+  ngOnInit(): void {
+    this.projectForm.valueChanges.subscribe((res) => {
+      if (this.onChanged) this.onChanged(this.projectForm.value);
+    });
+  }
 
   // Function to call when the input is touched (when a star is clicked).
   onTouched: () => void;
 
   onChanged: any;
 
-  writeValue(obj: any): void {
-    this.projectForm.setValue(obj);
-
-    this.projectForm.valueChanges.subscribe((res) => {
-      if (this.onChanged) this.onChanged(this.projectForm.value);
-    });
+  writeValue(val: any): void {
+    val && this.projectForm.patchValue(val);
   }
 
   registerOnChange(fn: any): void {
@@ -42,8 +54,13 @@ export class ProjectFormComponent implements OnInit, ControlValueAccessor {
   setDisabledState?(isDisabled: boolean): void {
     this.isDisabled = isDisabled;
   }
+
+  validate(c: AbstractControl): ValidationErrors | null {
+    return this.projectForm.valid ? null : {subformerror: 'Problems in subform!'};
+  }
   
   public projectForm = new FormGroup({
+    id: new FormControl({ value: null, disabled: this.isDisabled }, []), 
     title: new FormControl({ value: '', disabled: this.isDisabled }, [
       Validators.required,
     ]),
@@ -51,22 +68,19 @@ export class ProjectFormComponent implements OnInit, ControlValueAccessor {
       Validators.required,
     ]),
     startDate: new FormControl({ value: '', disabled: this.isDisabled }, [
-      Validators.required,
-      Validators.pattern(this.URL_REGEXP)
+      Validators.required
     ]),
     endDate: new FormControl({ value: '', disabled: this.isDisabled }, [
-      Validators.required,
-      Validators.pattern(this.URL_REGEXP)
+      Validators.required
     ]),
     link: new FormControl({ value: '', disabled: this.isDisabled }, [
       Validators.required,
-      Validators.pattern(this.URL_REGEXP)
+      Validators.pattern(this.expression)
     ]),
     tools: new FormControl([], [
       Validators.minLength(1),
     ]),
     images: new FormControl([], [
-      Validators.required,
     ]),
     skills: new FormControl([], [
       Validators.minLength(1),
@@ -103,14 +117,5 @@ export class ProjectFormComponent implements OnInit, ControlValueAccessor {
 
   get skillsFormControl() {
     return this.projectForm.controls['skills'];
-  }
-
-
-  constructor() {
-    console.log('');
-  }
-
-  ngOnInit(): void {
-    console.log('');
   }
 }

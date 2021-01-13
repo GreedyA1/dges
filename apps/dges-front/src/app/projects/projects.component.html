@@ -1,15 +1,23 @@
 <div class="full-page">
+  <mat-spinner *ngIf="loading$ | async"></mat-spinner>
 
-  {{projectForm.value | json}}
+  <button
+    *ngIf="user$ | async"
+    mat-fab
+    color="primary"
+    (click)="addProject()"
+    aria-label="Example icon button with a delete icon"
+  >
+    <mat-icon>add</mat-icon>
+  </button>
 
-  <project-form [formControl]="projectForm"> </project-form>
-
-  <button mat-raised-button (click)="addProject()">Add Project</button>
-  
   <dges-project-card
     class="project-card"
     *ngFor="let project of projects$ | async"
+    [loggedIn]="user$ | async"
     [project]="project"
+    (edit)="editProject($event)"
+    (delete)="deleteProject($event)"
   >
   </dges-project-card>
 </div>

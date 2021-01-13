@@ -46,6 +46,26 @@ export class AuthEffects {
     )
   );
 
+  laodUser$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(AuthActions.loadUser),
+      switchMap(() =>
+        from(this.authFire.user$).pipe(
+          map(user => {
+            const a: User = {
+              email: user.email,
+              displayName: user.displayName,
+            };
+            return AuthActions.loginSuccess({user: a});
+          }),
+          catchError((error) => {
+            return of(AuthActions.loginFail(error));
+          })
+        )
+      )
+    )
+  );
+
   constructor(
     private actions$: Actions,
     private authFire: FirebaseAuthService

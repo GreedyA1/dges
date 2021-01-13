@@ -11,8 +11,6 @@ import {
 } from '../../../../libs/store/auth/firebase/src/lib/+state';
 import { Observable } from 'rxjs';
 import { User } from '@dges/types/auth';
-import { skip, tap } from 'rxjs/operators';
-import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({
   selector: 'dges-root',
@@ -40,10 +38,8 @@ export class AppComponent implements OnDestroy {
     this.fillerNav.push(
       ...router.config.filter((route) => route.path).map((route) => route.path)
     );
-    this.user$ = this.store.select(AuthSelectors.getCurrentUser).pipe(
-      // skip(1)
-      tap(console.log)
-    );
+    this.store.dispatch(AuthActions.loadUser());
+    this.user$ = this.store.select(AuthSelectors.getCurrentUser);
   }
 
   openLogin(): void {
@@ -51,9 +47,6 @@ export class AppComponent implements OnDestroy {
 
     dialogRef.afterClosed().subscribe((result) => {
       if (result) {
-        // this.auth.signInWithEmailAndPassword(result.emailFormControl, result.passwordFormControl).then( res =>
-        //   console.log('THISS ISSS ', res)
-        // )
         this.store.dispatch(
           AuthActions.login({
             email: result.emailFormControl,

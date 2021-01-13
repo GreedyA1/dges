@@ -22,14 +22,22 @@ export class ProjectsCollectionService {
   constructor(private angularFire: AngularFirestore) {}
 
   public projectsStateChanges(): Observable<DocumentChangeAction<Project>[]> {
-    return this.projectsCollection.stateChanges();
+    return this.projectsCollection.snapshotChanges();
   }
 
   public projectsGet(): Observable<Project[]> {
-    return this.projectsCollection.valueChanges();
+    return this.projectsCollection.valueChanges({idField: 'id'});
   }
 
   public addProject(project: any): Promise<DocumentReference<Project>> {
     return this.projectsCollection.add(project);
+  }
+
+  public editProject(project: any): Promise<void> {
+    return this.projectsCollection.doc(project.id).update(project);
+  }
+
+  public deleteProject(project: any): Promise<void> {
+    return this.projectsCollection.doc(project.id).delete()
   }
 }

@@ -2,7 +2,7 @@
   <mat-label>Used {{chipCategory}}s</mat-label>
   <mat-chip-list #chipList aria-label="Chip selection">
     <mat-chip
-      *ngFor="let chip of skills.value"
+      *ngFor="let chip of chipsControl.value"
       [selectable]="selectable"
       [removable]="removable"
       (removed)="remove(chip)"

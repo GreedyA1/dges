@@ -1,6 +1,9 @@
 import { createAction, props } from '@ngrx/store';
 import { User } from '@dges/types/auth';
 
+export const loadUser = createAction(
+  '[OnStart]'
+);
 export const login = createAction(
   '[auth] LOGIN',
   props<{ email: string; password: string }>()

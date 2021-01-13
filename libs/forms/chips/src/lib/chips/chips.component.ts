@@ -41,7 +41,7 @@ export class ChipsComponent implements ControlValueAccessor{
   @ViewChild('chipInput') chipInput: ElementRef<HTMLInputElement>;
   @ViewChild('auto') matAutocomplete: MatAutocomplete;
 
-  skills = new FormControl([]);
+  chipsControl = new FormControl([]);
 
   public isDisabled = false;
   // Function to call when the input is touched (when a star is clicked).
@@ -50,10 +50,10 @@ export class ChipsComponent implements ControlValueAccessor{
   onChanged: any;
 
   writeValue(obj: any): void {
-    this.skills.setValue(obj);
+    this.chipsControl.setValue(obj);
 
-    this.skills.valueChanges.subscribe(() => {
-      if (this.onChanged) this.onChanged(this.skills.value);
+    this.chipsControl.valueChanges.subscribe(() => {
+      if (this.onChanged) this.onChanged(this.chipsControl.value);
     });
   }
 
@@ -79,32 +79,32 @@ export class ChipsComponent implements ControlValueAccessor{
   }
 
   add(event: MatChipInputEvent): void {
-    const input = event.input;
-    const value = event.value;
+    // const input = event.input;
+    // const value = event.value;
 
-    // Add our chip
-    if ((value || '').trim()) {
-      this.skills.value.push(value.trim());
-    }
+    // // Add our chip
+    // if ((value || '').trim()) {
+    //   this.chipsControl.value.push(value.trim());
+    // }
 
-    // Reset the input value
-    if (input) {
-      input.value = '';
-    }
+    // // Reset the input value
+    // if (input) {
+    //   input.value = '';
+    // }
 
-    this.chipCtrl.setValue(null);
+    // this.chipCtrl.setValue(null);
   }
 
   remove(chip: string): void {
-    const index = this.skills.value.indexOf(chip);
+    const index = this.chipsControl.value.indexOf(chip);
 
     if (index >= 0) {
-      this.skills.value.splice(index, 1);
+      this.chipsControl.value.splice(index, 1);
     }
   }
 
   selected(event: MatAutocompleteSelectedEvent): void {
-    this.skills.value.push(event.option.viewValue);
+    this.chipsControl.value.push(event.option.viewValue);
     this.chipInput.nativeElement.value = '';
     this.chipCtrl.setValue(null);
   }
