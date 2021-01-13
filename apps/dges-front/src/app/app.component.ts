@@ -18,7 +18,7 @@ import { User } from '@dges/types/auth';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnDestroy {
-  title = 'dges-front';
+  title = 'DGes';
   mobileQuery: MediaQueryList;
   private _mobileQueryListener: () => void;
   public fillerNav = [];

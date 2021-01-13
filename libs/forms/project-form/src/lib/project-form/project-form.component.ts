@@ -18,21 +18,12 @@ import { AbstractControl, ControlValueAccessor, FormControl, FormGroup, NgContro
     },
   ],
 })
-export class ProjectFormComponent implements OnInit, ControlValueAccessor {
+export class ProjectFormComponent implements ControlValueAccessor {
 
   @Input() choiceArray: string[];
   
   public isDisabled = false;
   expression = /(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/gi;
-
-  constructor(
-    ) {}
-
-  ngOnInit(): void {
-    this.projectForm.valueChanges.subscribe((res) => {
-      if (this.onChanged) this.onChanged(this.projectForm.value);
-    });
-  }
 
   // Function to call when the input is touched (when a star is clicked).
   onTouched: () => void;
@@ -44,7 +35,9 @@ export class ProjectFormComponent implements OnInit, ControlValueAccessor {
   }
 
   registerOnChange(fn: any): void {
-    this.onChanged = fn;
+    this.projectForm.valueChanges.subscribe((res) => {
+      if (this.onChanged) fn(this.projectForm.value);
+    });
   }
 
   registerOnTouched(fn: any): void {

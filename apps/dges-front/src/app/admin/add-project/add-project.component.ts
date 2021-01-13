@@ -3,7 +3,6 @@ import { FormControl } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import {
   ProjectsActions,
-  ProjectsEffects,
 } from '@dges/store/projects/projects-firebase';
 import { Project } from '@dges/types/project';
 import { Actions, ofType } from '@ngrx/effects';
@@ -44,10 +43,6 @@ export class AddProjectComponent implements OnInit {
       images: [],
       skills: [],
     })
-  }
-
-  transformDates(): void {
-
   }
 
   public addOrEditProject(): void {
