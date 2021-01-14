@@ -532,6 +532,56 @@
           "style": "scss"
         }
       }
+    },
+    "ui-snackbar": {
+      "projectType": "library",
+      "root": "libs/ui/snackbar",
+      "sourceRoot": "libs/ui/snackbar/src",
+      "prefix": "dges",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/ui/snackbar/src/**/*.ts",
+              "libs/ui/snackbar/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/ui/snackbar"],
+          "options": {
+            "jestConfig": "libs/ui/snackbar/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "ui-confirm-dialog": {
+      "projectType": "library",
+      "root": "libs/ui/confirm-dialog",
+      "sourceRoot": "libs/ui/confirm-dialog/src",
+      "prefix": "dges",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/ui/confirm-dialog/src/**/*.ts",
+              "libs/ui/confirm-dialog/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/ui/confirm-dialog"],
+          "options": {
+            "jestConfig": "libs/ui/confirm-dialog/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {
@@ -556,6 +606,9 @@
     },
     "@nrwl/angular:library": {
       "unitTestRunner": "jest"
+    },
+    "@nrwl/angular:component": {
+      "style": "scss"
     }
   },
   "defaultProject": "dges-front"

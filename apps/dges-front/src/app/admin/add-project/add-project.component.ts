@@ -31,8 +31,7 @@ export class AddProjectComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.project = this.data?.project;
-    this.projectForm = new FormControl(this.project || {
+    this.project = this.data?.project || {
       id: null,
       title: '',
       description: '',
@@ -42,7 +41,8 @@ export class AddProjectComponent implements OnInit {
       tools: [],
       images: [],
       skills: [],
-    })
+    };
+    this.projectForm = new FormControl(this.project)
   }
 
   public addOrEditProject(): void {

@@ -1,11 +1,12 @@
-<mat-card class="example-card">
+<mat-card class="example-card mx-5">
   <mat-card-header>
     <div mat-card-avatar class="example-header-image"></div>
     <mat-card-title>
       {{ project.title }}
     </mat-card-title>
     <mat-card-subtitle
-      >Date: {{ project.startDate | date}} - {{ project.endDate | date}}</mat-card-subtitle
+      >Date: {{ project.startDate | date }} -
+      {{ project.endDate | date }}</mat-card-subtitle
     >
     <button
       *ngIf="loggedIn"

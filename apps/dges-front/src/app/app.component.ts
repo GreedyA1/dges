@@ -8,9 +8,10 @@ import { RootStoreModule } from './+store/root-store.module';
 import {
   AuthActions,
   AuthSelectors,
-} from '../../../../libs/store/auth/firebase/src/lib/+state';
+} from '@dges/store/auth/firebase';
 import { Observable } from 'rxjs';
 import { User } from '@dges/types/auth';
+import { SnackbarService }  from '@dges/ui/snackbar';
 
 @Component({
   selector: 'dges-root',
@@ -30,7 +31,7 @@ export class AppComponent implements OnDestroy {
     public dialog: MatDialog,
     router: Router,
     private store: Store<RootStoreModule>
-  ) // private auth: AngularFireAuth
+  )
   {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();

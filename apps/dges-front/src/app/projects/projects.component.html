@@ -1,5 +1,4 @@
 <div class="full-page">
-  <mat-spinner *ngIf="loading$ | async"></mat-spinner>
 
   <button
     *ngIf="user$ | async"
@@ -10,6 +9,8 @@
   >
     <mat-icon>add</mat-icon>
   </button>
+
+  <mat-spinner class="mx-5" *ngIf="loading$ | async"></mat-spinner>
 
   <dges-project-card
     class="project-card"

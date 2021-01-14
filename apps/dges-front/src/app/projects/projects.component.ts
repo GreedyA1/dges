@@ -34,25 +34,13 @@ export class ProjectsComponent implements OnInit {
   }
 
   addProject(): void {
-    const dialogRef = this.dialog.open(AddProjectComponent);
-
-    dialogRef.afterClosed().subscribe((result) => {
-      // if (result) {
-      //   this.store.dispatch(ProjectsActions.addProject(result));
-      // }
-    });
+    this.dialog.open(AddProjectComponent);
   }
 
   editProject(project: Project): void {
-    const dialogRef = this.dialog.open(AddProjectComponent, {data: {
+    this.dialog.open(AddProjectComponent, {data: {
       project: project
     }});
-
-    dialogRef.afterClosed().subscribe((result) => {
-      // if (result) {
-      //   this.store.dispatch(ProjectsActions.addProject(result));
-      // }
-    });
   }
 
   deleteProject(project: Project): void {

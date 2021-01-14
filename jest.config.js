@@ -15,5 +15,7 @@ module.exports = {
     '<rootDir>/libs/store/auth/firebase',
     '<rootDir>/libs/types/auth',
     '<rootDir>/libs/forms/chips',
+    '<rootDir>/libs/ui/snackbar',
+    '<rootDir>/libs/ui/confirm-dialog',
   ],
 };

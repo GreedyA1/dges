@@ -71,6 +71,12 @@
     },
     "forms-chips": {
       "tags": []
+    },
+    "ui-snackbar": {
+      "tags": []
+    },
+    "ui-confirm-dialog": {
+      "tags": []
     }
   }
 }

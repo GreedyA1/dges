@@ -35,7 +35,9 @@
       "@dges/api/auth/firebase": ["libs/api/auth/firebase/src/index.ts"],
       "@dges/store/auth/firebase": ["libs/store/auth/firebase/src/index.ts"],
       "@dges/types/auth": ["libs/types/auth/src/index.ts"],
-      "@dges/forms/chips": ["libs/forms/chips/src/index.ts"]
+      "@dges/forms/chips": ["libs/forms/chips/src/index.ts"],
+      "@dges/ui/snackbar": ["libs/ui/snackbar/src/index.ts"],
+      "@dges/ui/confirm-dialog": ["libs/ui/confirm-dialog/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"],

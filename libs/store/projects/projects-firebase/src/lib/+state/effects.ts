@@ -5,7 +5,8 @@ import { from, of } from 'rxjs';
 import * as ProjectActions from './actions';
 import { ProjectsCollectionService } from '@dges/api/projects/firebase';
 import { Project, ProjectWithTimestamp } from '@dges/types/project';
-import firebase from "firebase";
+import firebase from 'firebase';
+import { SnackbarService } from '@dges/ui/snackbar';
 
 @Injectable()
 export class ProjectsEffects {
@@ -15,7 +16,7 @@ export class ProjectsEffects {
       switchMap(() =>
         this.angularFire.projectsGet().pipe(
           map((projects: ProjectWithTimestamp[]) =>
-            projects.map((project: Project) => {
+            projects.map((project: ProjectWithTimestamp) => {
               return {
                 ...project,
                 endDate: ((project.endDate as unknown) as firebase.firestore.Timestamp).toDate(),
@@ -35,10 +36,11 @@ export class ProjectsEffects {
       ofType(ProjectActions.addProject),
       switchMap((actionProps) =>
         from(this.angularFire.addProject(actionProps.project)).pipe(
-          map((project) => {
+          map(() => {
             return ProjectActions.addProjectSuccess();
           }),
           catchError((error) => {
+            this.snackBar.queueSnackBar(error.message);
             return of(ProjectActions.addProjectFail(error));
           })
         )
@@ -55,6 +57,7 @@ export class ProjectsEffects {
             return ProjectActions.deleteProjectSuccess();
           }),
           catchError((error) => {
+            this.snackBar.queueSnackBar(error.message);
             return of(ProjectActions.deleteProjectFail(error));
           })
         )
@@ -71,7 +74,7 @@ export class ProjectsEffects {
             return ProjectActions.editProjectSuccess();
           }),
           catchError((error) => {
-            console.log(error);
+            this.snackBar.queueSnackBar(error.message);
             return of(ProjectActions.editProjectFail(error));
           })
         )
@@ -81,6 +84,7 @@ export class ProjectsEffects {
 
   constructor(
     private actions$: Actions,
-    private angularFire: ProjectsCollectionService
+    private angularFire: ProjectsCollectionService,
+    private snackBar: SnackbarService
   ) {}
 }

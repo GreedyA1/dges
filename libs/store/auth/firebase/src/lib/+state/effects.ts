@@ -6,7 +6,9 @@ import { FirebaseAuthService } from '@dges/api/auth/firebase';
 import * as AuthActions from './actions';
 import firebase from 'firebase';
 import UserCredential = firebase.auth.UserCredential;
+import AuthError = firebase.auth.Error;
 import { User } from '@dges/types/auth';
+import { SnackbarService } from '@dges/ui/snackbar';
 
 @Injectable()
 export class AuthEffects {
@@ -22,8 +24,9 @@ export class AuthEffects {
             };
             return AuthActions.loginSuccess({ user: a });
           }),
-          catchError((error) => {
-            return of(AuthActions.loginFail(error));
+          catchError((error: AuthError) => {
+            this.snackBar.queueSnackBar(error.message);
+            return of(AuthActions.loginFail({ error: error }));
           })
         )
       )
@@ -38,8 +41,9 @@ export class AuthEffects {
           map(() => {
             return AuthActions.logoutSuccess();
           }),
-          catchError((error) => {
-            return of(AuthActions.loginFail(error));
+          catchError((error: AuthError) => {
+            this.snackBar.queueSnackBar(error.message);
+            return of(AuthActions.logoutFail({ error: error }));
           })
         )
       )
@@ -51,15 +55,15 @@ export class AuthEffects {
       ofType(AuthActions.loadUser),
       switchMap(() =>
         from(this.authFire.user$).pipe(
-          map(user => {
+          map((user) => {
             const a: User = {
               email: user.email,
               displayName: user.displayName,
             };
-            return AuthActions.loginSuccess({user: a});
+            return AuthActions.loadUserSuccess({ user: a });
           }),
-          catchError((error) => {
-            return of(AuthActions.loginFail(error));
+          catchError((error: AuthError) => {
+            return of(AuthActions.loginFail({ error: error }));
           })
         )
       )
@@ -68,6 +72,7 @@ export class AuthEffects {
 
   constructor(
     private actions$: Actions,
-    private authFire: FirebaseAuthService
+    private authFire: FirebaseAuthService,
+    private snackBar: SnackbarService
   ) {}
 }

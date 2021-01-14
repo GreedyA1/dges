@@ -15,6 +15,8 @@ import { environment } from '../environments/environment';
 import { MatDialogModule } from '@angular/material/dialog';
 import { UiLoginDialogModule } from '@dges/ui/login-dialog';
 import { RootStoreModule } from './+store/root-store.module';
+import { MatMenuModule } from '@angular/material/menu';
+import { UiSnackbarModule } from '@dges/ui/snackbar';
 
 @NgModule({
   declarations: [AppComponent],
@@ -31,6 +33,8 @@ import { RootStoreModule } from './+store/root-store.module';
     MatDialogModule,
     UiLoginDialogModule,
     RootStoreModule,
+    UiSnackbarModule,
+    MatMenuModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

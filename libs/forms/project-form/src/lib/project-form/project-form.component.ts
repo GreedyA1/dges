@@ -1,5 +1,14 @@
-import { Component, forwardRef, Input, OnInit } from '@angular/core';
-import { AbstractControl, ControlValueAccessor, FormControl, FormGroup, NgControl, NG_VALIDATORS, NG_VALUE_ACCESSOR, ValidationErrors, Validators } from '@angular/forms';
+import { Component, forwardRef, Input } from '@angular/core';
+import {
+  AbstractControl,
+  ControlValueAccessor,
+  FormControl,
+  FormGroup,
+  NG_VALIDATORS,
+  NG_VALUE_ACCESSOR,
+  ValidationErrors,
+  Validators,
+} from '@angular/forms';
 
 @Component({
   selector: 'project-form',
@@ -19,16 +28,36 @@ import { AbstractControl, ControlValueAccessor, FormControl, FormGroup, NgContro
   ],
 })
 export class ProjectFormComponent implements ControlValueAccessor {
-
   @Input() choiceArray: string[];
-  
+
   public isDisabled = false;
   expression = /(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/gi;
 
+  public projectForm = new FormGroup({
+    id: new FormControl({ value: null, disabled: this.isDisabled }, []),
+    title: new FormControl({ value: '', disabled: this.isDisabled }, [
+      Validators.required,
+    ]),
+    description: new FormControl({ value: '', disabled: this.isDisabled }, [
+      Validators.required,
+    ]),
+    startDate: new FormControl({ value: '', disabled: this.isDisabled }, [
+      Validators.required,
+    ]),
+    endDate: new FormControl({ value: '', disabled: this.isDisabled }, [
+      Validators.required,
+    ]),
+    link: new FormControl({ value: '', disabled: this.isDisabled }, [
+      Validators.required,
+      Validators.pattern(this.expression),
+    ]),
+    tools: new FormControl([], [Validators.minLength(1)]),
+    images: new FormControl([], []),
+    skills: new FormControl([], [Validators.minLength(1)]),
+  });
+
   // Function to call when the input is touched (when a star is clicked).
   onTouched: () => void;
-
-  onChanged: any;
 
   writeValue(val: any): void {
     val && this.projectForm.patchValue(val);
@@ -36,7 +65,7 @@ export class ProjectFormComponent implements ControlValueAccessor {
 
   registerOnChange(fn: any): void {
     this.projectForm.valueChanges.subscribe((res) => {
-      if (this.onChanged) fn(this.projectForm.value);
+      fn(this.projectForm.value);
     });
   }
 
@@ -48,37 +77,11 @@ export class ProjectFormComponent implements ControlValueAccessor {
     this.isDisabled = isDisabled;
   }
 
-  validate(c: AbstractControl): ValidationErrors | null {
-    return this.projectForm.valid ? null : {subformerror: 'Problems in subform!'};
+  validate(): ValidationErrors | null {
+    return this.projectForm.valid
+      ? null
+      : { subformerror: 'Problems in subform!' };
   }
-  
-  public projectForm = new FormGroup({
-    id: new FormControl({ value: null, disabled: this.isDisabled }, []), 
-    title: new FormControl({ value: '', disabled: this.isDisabled }, [
-      Validators.required,
-    ]),
-    description: new FormControl({ value: '', disabled: this.isDisabled }, [
-      Validators.required,
-    ]),
-    startDate: new FormControl({ value: '', disabled: this.isDisabled }, [
-      Validators.required
-    ]),
-    endDate: new FormControl({ value: '', disabled: this.isDisabled }, [
-      Validators.required
-    ]),
-    link: new FormControl({ value: '', disabled: this.isDisabled }, [
-      Validators.required,
-      Validators.pattern(this.expression)
-    ]),
-    tools: new FormControl([], [
-      Validators.minLength(1),
-    ]),
-    images: new FormControl([], [
-    ]),
-    skills: new FormControl([], [
-      Validators.minLength(1),
-    ]),
-  });
 
   get titleFormControl() {
     return this.projectForm.controls['title'];
