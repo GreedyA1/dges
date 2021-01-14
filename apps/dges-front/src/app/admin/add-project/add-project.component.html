@@ -1,15 +1,19 @@
-<h1 mat-dialog-title>Add new project</h1>
+<h1 mat-dialog-title>{{ data ? 'Edit' : 'Add new' }} project</h1>
 <div mat-dialog-content>
-  <project-form [choiceArray]="['fruity', 'duity']" [formControl]="projectForm">
-  </project-form>
+  <dges-project-form
+    [choiceArray]="['fruity', 'duity']"
+    [formControl]="projectForm"
+  >
+  </dges-project-form>
 </div>
 <div mat-dialog-actions>
   <button
-    mat-raised-button
+    mat-button
+    cdkFocusInitial
     [disabled]="!projectForm.valid"
     (click)="addOrEditProject()"
   >
-    Add Project
+    {{ data ? 'Edit' : 'Add' }} Project
   </button>
-  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button class="m-1" (click)="onNoClick()">No Thanks</button>
 </div>

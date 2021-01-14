@@ -3,7 +3,6 @@
   <mat-form-field appearance="outline" class="example-full-width">
     <mat-label>Title</mat-label>
     <input matInput placeholder="Placeholder" formControlName="title" />
-    <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
     <mat-hint>Project Title</mat-hint>
     <mat-error *ngIf="titleFormControl.hasError('required')">
       Title is <strong>required</strong>
@@ -13,7 +12,6 @@
   <mat-form-field appearance="outline" class="example-full-width">
     <mat-label>Description</mat-label>
     <textarea matInput formControlName="description"></textarea>
-    <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
     <mat-hint>Describe the Project</mat-hint>
     <mat-error *ngIf="descriptionFormControl.hasError('required')">
       Description is <strong>required</strong>
@@ -39,7 +37,6 @@
   <mat-form-field class="example-full-width" appearance="outline">
     <mat-label>Link</mat-label>
     <input matInput placeholder="Placeholder" formControlName="link" />
-    <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
     <mat-hint>URL for your project</mat-hint>
     <mat-error
     *ngIf="
@@ -53,16 +50,8 @@
       Link is <strong>required</strong>
     </mat-error>
   </mat-form-field>
-
+  
   <dges-chips [chipCategory]="'tool'" formControlName="tools" [allChips]="choiceArray"> </dges-chips>
 
   <dges-chips [chipCategory]="'skill'" formControlName="skills" [allChips]="choiceArray"> </dges-chips>
 </form>
-
-<!--title-->
-<!--description-->
-<!--date-->
-<!--link-->
-<!--tools-->
-<!--skills-->
-<!--images-->

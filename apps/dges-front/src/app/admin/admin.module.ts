@@ -6,6 +6,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ProjectFormModule } from '@dges/forms/project-form'
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatDialogModule } from '@angular/material/dialog';
 import { UiProjectCardModule } from '@dges/ui/project-card';
 import { ProjectsRoutingModule } from '../projects/projects-routing.module';
 
@@ -17,7 +18,8 @@ import { ProjectsRoutingModule } from '../projects/projects-routing.module';
     MatButtonModule,
     ReactiveFormsModule,
     MatIconModule,
-    ProjectFormModule
+    ProjectFormModule,
+    MatDialogModule
   ],
   declarations: [AddProjectComponent],
 })

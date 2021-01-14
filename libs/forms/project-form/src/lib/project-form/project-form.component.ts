@@ -11,7 +11,7 @@ import {
 } from '@angular/forms';
 
 @Component({
-  selector: 'project-form',
+  selector: 'dges-project-form',
   templateUrl: './project-form.component.html',
   styleUrls: ['./project-form.component.scss'],
   providers: [
@@ -31,7 +31,9 @@ export class ProjectFormComponent implements ControlValueAccessor {
   @Input() choiceArray: string[];
 
   public isDisabled = false;
-  expression = /(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/gi;
+  expression =
+    '/(https?://(?:www.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9].[^s]{2,}|www.[a-zA-Z0-9]' +
+    '[a-zA-Z0-9-]+[a-zA-Z0-9].[^s]{2,}|https?://(?:www.|(?!www))[a-zA-Z0-9]+.[^s]{2,}|www.[a-zA-Z0-9]+.[^s]{2,})/gi';
 
   public projectForm = new FormGroup({
     id: new FormControl({ value: null, disabled: this.isDisabled }, []),
@@ -49,22 +51,28 @@ export class ProjectFormComponent implements ControlValueAccessor {
     ]),
     link: new FormControl({ value: '', disabled: this.isDisabled }, [
       Validators.required,
-      Validators.pattern(this.expression),
+      // Validators.pattern(this.expression),
     ]),
-    tools: new FormControl([], [Validators.minLength(1)]),
-    images: new FormControl([], []),
-    skills: new FormControl([], [Validators.minLength(1)]),
+    tools: new FormControl({ value: [], disabled: this.isDisabled }, [
+      Validators.minLength(0),
+    ]),
+    images: new FormControl({ value: [], disabled: this.isDisabled }, [
+      Validators.minLength(0),
+    ]),
+    skills: new FormControl({ value: [], disabled: this.isDisabled }, [
+      Validators.minLength(0),
+    ]),
   });
 
   // Function to call when the input is touched (when a star is clicked).
   onTouched: () => void;
 
   writeValue(val: any): void {
-    val && this.projectForm.patchValue(val);
+    val && this.projectForm.setValue(val);
   }
 
   registerOnChange(fn: any): void {
-    this.projectForm.valueChanges.subscribe((res) => {
+    this.projectForm.valueChanges.subscribe(() => {
       fn(this.projectForm.value);
     });
   }
@@ -83,35 +91,35 @@ export class ProjectFormComponent implements ControlValueAccessor {
       : { subformerror: 'Problems in subform!' };
   }
 
-  get titleFormControl() {
+  get titleFormControl(): AbstractControl {
     return this.projectForm.controls['title'];
   }
 
-  get descriptionFormControl() {
+  get descriptionFormControl(): AbstractControl {
     return this.projectForm.controls['description'];
   }
 
-  get startDateFormControl() {
+  get startDateFormControl(): AbstractControl {
     return this.projectForm.controls['startDate'];
   }
 
-  get endDateFormControl() {
+  get endDateFormControl(): AbstractControl {
     return this.projectForm.controls['endDate'];
   }
 
-  get linkFormControl() {
+  get linkFormControl(): AbstractControl {
     return this.projectForm.controls['link'];
   }
 
-  get toolsFormControl() {
+  get toolsFormControl(): AbstractControl {
     return this.projectForm.controls['tools'];
   }
 
-  get imagesFormControl() {
+  get imagesFormControl(): AbstractControl {
     return this.projectForm.controls['images'];
   }
 
-  get skillsFormControl() {
+  get skillsFormControl(): AbstractControl {
     return this.projectForm.controls['skills'];
   }
 }

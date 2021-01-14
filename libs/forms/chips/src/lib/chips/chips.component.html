@@ -2,10 +2,10 @@
   <mat-label>Used {{chipCategory}}s</mat-label>
   <mat-chip-list #chipList aria-label="Chip selection">
     <mat-chip
-      *ngFor="let chip of chipsControl.value"
+      *ngFor="let chip of chips; let i = index"
       [selectable]="selectable"
       [removable]="removable"
-      (removed)="remove(chip)"
+      (removed)="remove(i)"
     >
       {{ chip }}
       <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
@@ -17,6 +17,7 @@
       [matAutocomplete]="auto"
       [matChipInputFor]="chipList"
       [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+      (click)="open($event)"
       (matChipInputTokenEnd)="add($event)"
     />
   </mat-chip-list>
@@ -24,9 +25,11 @@
     At least one {{chipCategory}} is <strong>required</strong>
   </mat-error>
   <mat-hint>Choose {{chipCategory}}s used in this project</mat-hint>
-  <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+  <mat-autocomplete #auto="matAutocomplete" #inputAutoComplete (optionSelected)="selected($event)">
     <mat-option *ngFor="let chip of filteredChips | async" [value]="chip">
       {{ chip }}
     </mat-option>
   </mat-autocomplete>
 </mat-form-field>
+
+{{ this.chipsControl.value }}

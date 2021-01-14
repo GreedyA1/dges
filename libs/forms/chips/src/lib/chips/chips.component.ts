@@ -1,10 +1,22 @@
-import { Component, ElementRef, forwardRef, Input, ViewChild } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  forwardRef,
+  Input,
+  ViewChild,
+} from '@angular/core';
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import {
   MatAutocomplete,
   MatAutocompleteSelectedEvent,
+  MatAutocompleteTrigger,
 } from '@angular/material/autocomplete';
-import { ControlValueAccessor, FormArray, FormControl, NG_VALUE_ACCESSOR } from '@angular/forms';
+import {
+  ControlValueAccessor,
+  FormArray,
+  FormControl,
+  NG_VALUE_ACCESSOR,
+} from '@angular/forms';
 import { MatChipInputEvent } from '@angular/material/chips';
 import { map, startWith } from 'rxjs/operators';
 import { Observable } from 'rxjs';
@@ -21,7 +33,7 @@ import { Observable } from 'rxjs';
     },
   ],
 })
-export class ChipsComponent implements ControlValueAccessor{
+export class ChipsComponent implements ControlValueAccessor {
   visible = true;
   selectable = true;
   removable = true;
@@ -39,26 +51,25 @@ export class ChipsComponent implements ControlValueAccessor{
   ];
 
   @ViewChild('chipInput') chipInput: ElementRef<HTMLInputElement>;
+  @ViewChild(MatAutocompleteTrigger, { read: MatAutocompleteTrigger })
+  inputAutoComplete: MatAutocompleteTrigger;
   @ViewChild('auto') matAutocomplete: MatAutocomplete;
 
-  chipsControl = new FormControl([]);
+  chipsControl: FormArray;
 
   public isDisabled = false;
   // Function to call when the input is touched (when a star is clicked).
   onTouched: () => void;
 
-  onChanged: any;
-
   writeValue(obj: any): void {
-    this.chipsControl.setValue(obj);
-
-    this.chipsControl.valueChanges.subscribe(() => {
-      if (this.onChanged) this.onChanged(this.chipsControl.value);
-    });
+    this.chipsControl = new FormArray([]);
+    for (const value of obj) this.chipsControl.push(new FormControl(value));
   }
 
   registerOnChange(fn: any): void {
-    this.onChanged = fn;
+    this.chipsControl.valueChanges.subscribe((value) => {
+      return fn(value);
+    });
   }
 
   registerOnTouched(fn: any): void {
@@ -81,30 +92,33 @@ export class ChipsComponent implements ControlValueAccessor{
   add(event: MatChipInputEvent): void {
     // const input = event.input;
     // const value = event.value;
-
     // // Add our chip
     // if ((value || '').trim()) {
-    //   this.chipsControl.value.push(value.trim());
+    //   this.chips.push(value.trim());
     // }
-
     // // Reset the input value
     // if (input) {
     //   input.value = '';
     // }
-
     // this.chipCtrl.setValue(null);
   }
 
-  remove(chip: string): void {
-    const index = this.chipsControl.value.indexOf(chip);
+  get chips(): string[] {
+    return this.chipsControl.value;
+  }
 
-    if (index >= 0) {
-      this.chipsControl.value.splice(index, 1);
-    }
+  open(event: Event) {
+    event.stopPropagation();
+    this.inputAutoComplete.openPanel();
+  }
+
+  remove(index: number): void {
+    index >= 0 && this.chipsControl.removeAt(index);
   }
 
   selected(event: MatAutocompleteSelectedEvent): void {
-    this.chipsControl.value.push(event.option.viewValue);
+    this.chips.indexOf(event.option.viewValue) >= 0 ||
+      this.chipsControl.push(new FormControl(event.option.viewValue));
     this.chipInput.nativeElement.value = '';
     this.chipCtrl.setValue(null);
   }

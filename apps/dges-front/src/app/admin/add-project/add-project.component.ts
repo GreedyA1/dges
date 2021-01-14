@@ -1,10 +1,8 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import {
-  ProjectsActions,
-} from '@dges/store/projects/projects-firebase';
-import { Project } from '@dges/types/project';
+import { ProjectsActions } from '@dges/store/projects/projects-firebase';
+import { EMPTY_PROJECT, Project } from '@dges/types/project';
 import { Actions, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
 import { RootStoreModule } from '../../+store/root-store.module';
@@ -19,38 +17,36 @@ export class AddProjectComponent implements OnInit {
     public dialogRef: MatDialogRef<AddProjectComponent>,
     private store: Store<RootStoreModule>,
     private readonly actions$: Actions,
-    @Inject(MAT_DIALOG_DATA) public data: {project: Project}
+    @Inject(MAT_DIALOG_DATA) public data: { project: Project }
   ) {}
 
   public projectForm: FormControl;
-
-  private project;
+  private project: Project;
 
   onNoClick(): void {
     this.dialogRef.close();
   }
 
   ngOnInit(): void {
-    this.project = this.data?.project || {
-      id: null,
-      title: '',
-      description: '',
-      startDate: '',
-      endDate: '',
-      link: '',
-      tools: [],
-      images: [],
-      skills: [],
-    };
-    this.projectForm = new FormControl(this.project)
+    this.project = this.data?.project || EMPTY_PROJECT;
+    this.projectForm = new FormControl(this.project);
   }
 
   public addOrEditProject(): void {
-    if(this.data){
-      this.store.dispatch(ProjectsActions.editProject({project: this.projectForm.value}));
-    } else this.store.dispatch(ProjectsActions.addProject({project: this.projectForm.value}));
+    
+    this.store.dispatch(
+      this.data
+        ? ProjectsActions.editProject({ project: this.projectForm.value })
+        : ProjectsActions.addProject({ project: this.projectForm.value })
+    );
+
     this.actions$
-      .pipe(ofType(ProjectsActions.addProjectSuccess, ProjectsActions.editProjectSuccess))
+      .pipe(
+        ofType(
+          ProjectsActions.addProjectSuccess,
+          ProjectsActions.editProjectSuccess
+        )
+      )
       .subscribe(() => this.dialogRef.close(this.projectForm.value));
   }
 }

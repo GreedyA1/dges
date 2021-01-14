@@ -22,3 +22,15 @@ export interface ProjectWithTimestamp {
   skills: string[];
 }
 
+export const EMPTY_PROJECT: Project = {
+  id: null,
+  title: null,
+  description: null,
+  startDate: null,
+  endDate: null,
+  link: null,
+  tools: [],
+  images: [],
+  skills: [],
+};
+

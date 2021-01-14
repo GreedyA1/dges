@@ -7,6 +7,7 @@ import {
 } from '@dges/store/projects/projects-firebase';
 import { User } from '@dges/types/auth';
 import { Project } from '@dges/types/project';
+import { ConfirmDialogComponent } from '@dges/ui/confirm-dialog';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { RootStoreModule } from '../+store/root-store.module';
@@ -23,8 +24,10 @@ export class ProjectsComponent implements OnInit {
   loading$: Observable<boolean>;
   loaded$: Observable<boolean>;
 
-  constructor(private store: Store<RootStoreModule>, 
-    public dialog: MatDialog,) {}
+  constructor(
+    private store: Store<RootStoreModule>,
+    public dialog: MatDialog
+  ) {}
 
   ngOnInit(): void {
     this.store.dispatch(ProjectsActions.loadProjects());
@@ -38,12 +41,25 @@ export class ProjectsComponent implements OnInit {
   }
 
   editProject(project: Project): void {
-    this.dialog.open(AddProjectComponent, {data: {
-      project: project
-    }});
+    this.dialog.open(AddProjectComponent, {
+      data: {
+        project: project,
+      },
+    });
   }
 
   deleteProject(project: Project): void {
-    this.store.dispatch(ProjectsActions.deleteProject({project: project}));
+    const dialogRef = this.dialog.open(ConfirmDialogComponent, {
+      data: 'Are you sure you want to delete the project',
+    });
+    dialogRef
+      .afterClosed()
+      .subscribe(
+        (approved) =>
+          approved &&
+          this.store.dispatch(
+            ProjectsActions.deleteProject({ project: project })
+          )
+      );
   }
 }
