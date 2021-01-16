@@ -91,6 +91,10 @@ export class ProjectFormComponent implements ControlValueAccessor {
       : { subformerror: 'Problems in subform!' };
   }
 
+  uploadImages(imageURLS: string[]): void{
+    this.imagesFormControl.setValue(imageURLS);
+  }
+
   get titleFormControl(): AbstractControl {
     return this.projectForm.controls['title'];
   }

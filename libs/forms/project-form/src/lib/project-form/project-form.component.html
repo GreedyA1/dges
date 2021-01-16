@@ -54,4 +54,12 @@
   <dges-chips [chipCategory]="'tool'" formControlName="tools" [allChips]="choiceArray"> </dges-chips>
 
   <dges-chips [chipCategory]="'skill'" formControlName="skills" [allChips]="choiceArray"> </dges-chips>
+
+  <div *ngFor="let url of imagesFormControl.value">
+    <h3>Results!</h3>
+    <img [src]="url" /><br />
+    <a [href]="url" target="_blank" rel="noopener">Download Me!</a>
+  </div>
+
+  <dges-upload-images (fileURL)="uploadImages($event)"></dges-upload-images>
 </form>

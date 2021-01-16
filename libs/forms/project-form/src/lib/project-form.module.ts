@@ -8,6 +8,7 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { FormsChipsModule } from '@dges/forms/chips';
 import { MatNativeDateModule } from '@angular/material/core';
+import { UiUploadImagesModule } from '@dges/ui/upload-images';
 
 @NgModule({
   declarations: [ProjectFormComponent],
@@ -19,7 +20,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatAutocompleteModule,
     MatDatepickerModule,
     FormsChipsModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    UiUploadImagesModule
   ],
   providers: [MatDatepickerModule],
   exports: [ProjectFormComponent],

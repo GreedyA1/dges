@@ -17,5 +17,9 @@ module.exports = {
     '<rootDir>/libs/forms/chips',
     '<rootDir>/libs/ui/snackbar',
     '<rootDir>/libs/ui/confirm-dialog',
+    '<rootDir>/libs/api/storage/firebase',
+    '<rootDir>/libs/ui/drop-zone',
+    '<rootDir>/libs/ui/upload-images',
+    '<rootDir>/libs/ui/upload-task',
   ],
 };

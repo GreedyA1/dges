@@ -77,6 +77,18 @@
     },
     "ui-confirm-dialog": {
       "tags": []
+    },
+    "api-storage-firebase": {
+      "tags": []
+    },
+    "ui-drop-zone": {
+      "tags": []
+    },
+    "ui-upload-images": {
+      "tags": []
+    },
+    "ui-upload-task": {
+      "tags": []
     }
   }
 }

@@ -8,6 +8,10 @@
   right: 0;
 }
 
+.no-overflow {
+  overflow: hidden;
+}
+
 .example-is-mobile .example-toolbar {
   position: fixed;
   /* Make sure the toolbar will stay on top of the content as it scrolls past. */

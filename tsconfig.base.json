@@ -37,7 +37,11 @@
       "@dges/types/auth": ["libs/types/auth/src/index.ts"],
       "@dges/forms/chips": ["libs/forms/chips/src/index.ts"],
       "@dges/ui/snackbar": ["libs/ui/snackbar/src/index.ts"],
-      "@dges/ui/confirm-dialog": ["libs/ui/confirm-dialog/src/index.ts"]
+      "@dges/ui/confirm-dialog": ["libs/ui/confirm-dialog/src/index.ts"],
+      "@dges/api/storage/firebase": ["libs/api/storage/firebase/src/index.ts"],
+      "@dges/ui/drop-zone": ["libs/ui/drop-zone/src/index.ts"],
+      "@dges/ui/upload-images": ["libs/ui/upload-images/src/index.ts"],
+      "@dges/ui/upload-task": ["libs/ui/upload-task/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"],

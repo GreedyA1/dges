@@ -582,6 +582,106 @@
           }
         }
       }
+    },
+    "api-storage-firebase": {
+      "projectType": "library",
+      "root": "libs/api/storage/firebase",
+      "sourceRoot": "libs/api/storage/firebase/src",
+      "prefix": "dges",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/api/storage/firebase/src/**/*.ts",
+              "libs/api/storage/firebase/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/api/storage/firebase"],
+          "options": {
+            "jestConfig": "libs/api/storage/firebase/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "ui-drop-zone": {
+      "projectType": "library",
+      "root": "libs/ui/drop-zone",
+      "sourceRoot": "libs/ui/drop-zone/src",
+      "prefix": "dges",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/ui/drop-zone/src/**/*.ts",
+              "libs/ui/drop-zone/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/ui/drop-zone"],
+          "options": {
+            "jestConfig": "libs/ui/drop-zone/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "ui-upload-images": {
+      "projectType": "library",
+      "root": "libs/ui/upload-images",
+      "sourceRoot": "libs/ui/upload-images/src",
+      "prefix": "dges",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/ui/upload-images/src/**/*.ts",
+              "libs/ui/upload-images/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/ui/upload-images"],
+          "options": {
+            "jestConfig": "libs/ui/upload-images/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "ui-upload-task": {
+      "projectType": "library",
+      "root": "libs/ui/upload-task",
+      "sourceRoot": "libs/ui/upload-task/src",
+      "prefix": "dges",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/ui/upload-task/src/**/*.ts",
+              "libs/ui/upload-task/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/ui/upload-task"],
+          "options": {
+            "jestConfig": "libs/ui/upload-task/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {

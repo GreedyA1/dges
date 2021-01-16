@@ -8,14 +8,14 @@ import UserCredential = firebase.auth.UserCredential;
   providedIn: 'root',
 })
 export class FirebaseAuthService {
-  private readonly _user: Observable<firebase.User>;
+  private readonly _user$: Observable<firebase.User>;
   
   get user$() {
-    return this._user;
+    return this._user$;
   }
 
   constructor(public auth: AngularFireAuth) {
-    this._user = this.auth.user;
+    this._user$ = this.auth.user;
   }
 
   login(email: string, password: string): Promise<UserCredential> {
