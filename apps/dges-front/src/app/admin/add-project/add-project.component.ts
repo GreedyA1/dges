@@ -6,6 +6,8 @@ import { EMPTY_PROJECT, Project } from '@dges/types/project';
 import { Actions, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
 import { RootStoreModule } from '../../+store/root-store.module';
+import { init, UploadEntity } from '@dges/store/storage/firebase';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'dges-add-project',
@@ -22,10 +24,20 @@ export class AddProjectComponent implements OnInit {
 
   public projectForm: FormControl;
   private project: Project;
+  public files: File[];
+  public uploads$: Observable<UploadEntity>;
 
   onNoClick(): void {
     this.dialogRef.close();
   }
+
+  updateFiles(files: File[]): void {
+    this.files = files;
+    this.store.dispatch(init({files: files}));
+    //load store here
+  }
+
+  onUploaded($event): void {}
 
   ngOnInit(): void {
     this.project = this.data?.project || EMPTY_PROJECT;
@@ -33,7 +45,6 @@ export class AddProjectComponent implements OnInit {
   }
 
   public addOrEditProject(): void {
-    
     this.store.dispatch(
       this.data
         ? ProjectsActions.editProject({ project: this.projectForm.value })

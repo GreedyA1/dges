@@ -21,5 +21,8 @@ module.exports = {
     '<rootDir>/libs/ui/drop-zone',
     '<rootDir>/libs/ui/upload-images',
     '<rootDir>/libs/ui/upload-task',
+    '<rootDir>/libs/forms/upload-task',
+    '<rootDir>/libs/forms/upload-images',
+    '<rootDir>/libs/store/storage/firebase',
   ],
 };

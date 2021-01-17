@@ -1,4 +1,11 @@
 <mat-card class="example-card m-1">
+  <img
+  class="example-card"
+    *ngIf="this.project?.images[0]"
+    mat-card-image
+    src="{{ this.project?.images[0] }}"
+    alt="Photo of a Shiba Inu"
+  />
   <mat-card-header>
     <div mat-card-avatar class="example-header-image"></div>
     <mat-card-title>
@@ -8,6 +15,7 @@
       >Date: {{ project.startDate | date }} -
       {{ project.endDate | date }}</mat-card-subtitle
     >
+    <span class="flex-grow-1 flex-shrink-0"></span>
     <button
       *ngIf="loggedIn"
       mat-icon-button

@@ -1,0 +1,41 @@
+import { Injectable } from '@angular/core';
+import { createEffect, Actions, ofType } from '@ngrx/effects';
+import { fetch } from '@nrwl/angular';
+import { FirebaseStorageService } from '@dges/api/storage/firebase';
+import { AngularFireUploadTask } from '@angular/fire/storage';
+
+import * as UploadFeature from './upload.reducer';
+import * as UploadActions from './upload.actions';
+
+@Injectable()
+export class UploadEffects {
+  init$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(UploadActions.init),
+      fetch({
+        run: (action) => {
+          console.log(action.files);
+
+          const uploads: AngularFireUploadTask[] = [];
+
+          action.files.forEach((file) => {
+            uploads.push(this.firebaseStorage.startUpload(file));
+          });
+
+          // Your custom service 'load' logic goes here. For now just return a success action...
+          return UploadActions.loadUploadSuccess({ upload: uploads });
+        },
+
+        onError: (action, error) => {
+          console.error('Error', error);
+          return UploadActions.loadUploadFailure({ error });
+        },
+      })
+    )
+  );
+
+  constructor(
+    private actions$: Actions,
+    private firebaseStorage: FirebaseStorageService
+  ) {}
+}

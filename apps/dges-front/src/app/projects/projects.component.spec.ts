@@ -1,11 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { MockStore, provideMockStore } from '@ngrx/store/testing';
+import { MockStore } from '@ngrx/store/testing';
 
 import { ProjectsComponent } from './projects.component';
-import { of } from 'rxjs';
 import { ProjectsState } from '@dges/store/projects/projects-firebase';
-import { ProjectsCollectionService } from '@dges/api/projects/firebase';
-import { project } from '@dges/data/projects';
+// import { ProjectsCollectionService } from '@dges/api/projects/firebase';
 import { MockComponent } from 'ng-mocks';
 import { ProjectCardComponent } from '@dges/ui/project-card';
 
@@ -17,15 +15,15 @@ describe('ProjectsComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ProjectsComponent, MockComponent(ProjectCardComponent)],
-      providers: [
-        provideMockStore({}),
-        {
-          provide: ProjectsCollectionService,
-          useValue: {
-            projectsGet: jest.fn().mockReturnValue(of([project])),
-          },
-        },
-      ],
+      // providers: [
+      //   provideMockStore({}),
+      //   {
+      //     provide: ProjectsCollectionService,
+      //     useValue: {
+      //       projectsGet: jest.fn().mockReturnValue(of([project])),
+      //     },
+      //   },
+      // ],
     }).compileComponents();
   });
 

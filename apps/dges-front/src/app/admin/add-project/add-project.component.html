@@ -5,12 +5,21 @@
     [formControl]="projectForm"
   >
   </dges-project-form>
+
+  <dges-upload-images (filesUpdate)="updateFiles($event)"></dges-upload-images>
+
+  <div *ngFor="let file of uploads$ | async">
+    {{ file }}
+    <dges-upload-task
+      [file]="file"
+      (fileURL)="onUploaded($event)"
+    ></dges-upload-task>
+  </div>
 </div>
 <div mat-dialog-actions>
   <button
     mat-stroked-button
     color="primary"
-    cdkFocusInitial
     [disabled]="!projectForm.valid"
     (click)="addOrEditProject()"
   >

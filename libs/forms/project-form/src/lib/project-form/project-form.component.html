@@ -1,8 +1,12 @@
 <form class="example-form" [formGroup]="projectForm">
-
   <mat-form-field appearance="outline" class="example-full-width">
     <mat-label>Title</mat-label>
-    <input matInput placeholder="Placeholder" formControlName="title" />
+    <input
+      matInput
+      cdkFocusInitial
+      placeholder="Placeholder"
+      formControlName="title"
+    />
     <mat-hint>Project Title</mat-hint>
     <mat-error *ngIf="titleFormControl.hasError('required')">
       Title is <strong>required</strong>
@@ -21,10 +25,19 @@
   <mat-form-field appearance="outline" class="example-full-width">
     <mat-label>Enter a date range</mat-label>
     <mat-date-range-input [rangePicker]="picker">
-      <input matStartDate placeholder="Start date" formControlName="startDate">
-      <input matEndDate placeholder="End date" formControlName="endDate">
+      <input
+        matStartDate
+        placeholder="Start date"
+        formControlName="startDate"
+      />
+      <input matEndDate placeholder="End date" formControlName="endDate" />
     </mat-date-range-input>
-    <mat-error *ngIf="startDateFormControl.hasError('required') || endDateFormControl.hasError('required')">
+    <mat-error
+      *ngIf="
+        startDateFormControl.hasError('required') ||
+        endDateFormControl.hasError('required')
+      "
+    >
       Date is <strong>required</strong>
     </mat-error>
     <mat-hint>Enter start and end date of the project</mat-hint>
@@ -39,27 +52,29 @@
     <input matInput placeholder="Placeholder" formControlName="link" />
     <mat-hint>URL for your project</mat-hint>
     <mat-error
-    *ngIf="
-    linkFormControl.hasError('pattern') &&
-      !linkFormControl.hasError('required')
-    "
-  >
-    Please enter a valid URL
-  </mat-error>
+      *ngIf="
+        linkFormControl.hasError('pattern') &&
+        !linkFormControl.hasError('required')
+      "
+    >
+      Please enter a valid URL
+    </mat-error>
     <mat-error *ngIf="linkFormControl.hasError('required')">
       Link is <strong>required</strong>
     </mat-error>
   </mat-form-field>
-  
-  <dges-chips [chipCategory]="'tool'" formControlName="tools" [allChips]="choiceArray"> </dges-chips>
 
-  <dges-chips [chipCategory]="'skill'" formControlName="skills" [allChips]="choiceArray"> </dges-chips>
+  <dges-chips
+    [chipCategory]="'tool'"
+    formControlName="tools"
+    [allChips]="choiceArray"
+  >
+  </dges-chips>
 
-  <div *ngFor="let url of imagesFormControl.value">
-    <h3>Results!</h3>
-    <img [src]="url" /><br />
-    <a [href]="url" target="_blank" rel="noopener">Download Me!</a>
-  </div>
-
-  <dges-upload-images (fileURL)="uploadImages($event)"></dges-upload-images>
+  <dges-chips
+    [chipCategory]="'skill'"
+    formControlName="skills"
+    [allChips]="choiceArray"
+  >
+  </dges-chips>
 </form>

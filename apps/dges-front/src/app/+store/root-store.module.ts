@@ -5,6 +5,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { ProjectCardsModule } from './project-cards/project-cards.module';
 import { AuthModule } from './auth/auth.module';
+import { StoreStorageFirebaseModule } from '@dges/store/storage/firebase'
 
 @NgModule({
   declarations: [],
@@ -12,6 +13,7 @@ import { AuthModule } from './auth/auth.module';
     CommonModule,
     ProjectCardsModule,
     AuthModule,
+    StoreStorageFirebaseModule,
     StoreModule.forRoot({}),
     EffectsModule.forRoot([]),
     StoreDevtoolsModule.instrument({}),

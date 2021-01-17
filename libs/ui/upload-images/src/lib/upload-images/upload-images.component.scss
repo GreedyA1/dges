@@ -1,152 +1,26 @@
-.dropzone { 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column; 
-    min-width: 100%;
-    font-weight: 200;
-    height: 300px;
-    border: 2px dashed #f16624;
-    border-radius: 5px;
-    background: white;
-    margin: 10px 0;
-  
-    &.hovering {
-        border: 2px solid #f16624;
-        color: #dadada !important;
-    }
-  
-    .file-label {
-        font-size: 1.2em;
-    }
-  }
-  
-  progress::-webkit-progress-value {
-    transition: width 0.1s ease;
+.dropzone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-width: 100%;
+  font-weight: 200;
+  height: 300px;
+  border: 2px dashed #f16624;
+  border-radius: 5px;
+  background: white;
+  margin: 10px 0;
+
+  &.hovering {
+    border: 2px solid #f16624;
+    color: #dadada !important;
   }
 
+  .file-label {
+    font-size: 1.2em;
+  }
+}
 
-  .questionImage {
-    max-width: 30rem;
-    max-height: 30rem;
-    transition: all 1s;
-    &:active {
-      max-width: 70rem;
-      max-height: 70rem;
-    }
-  }
-  
-  [type="file"] {
-    height: 0;
-    overflow: hidden;
-    width: 0;
-  }
-  
-  [type="file"] + label {
-    background: #f15d22;
-    border: none;
-    border-radius: 5px;
-    color: #fff;
-    cursor: pointer;
-    display: inline-block;
-    font-family: "Poppins", sans-serif;
-    font-size: inherit;
-    font-weight: 600;
-    outline: none;
-    padding: 0.5rem 2.5px;
-    position: relative;
-    transition: all 0.3s;
-    vertical-align: middle;
-  
-    &.btn-3 {
-      background-color: #99c793;
-      border-radius: 8px;
-      overflow: hidden;
-      text-align: center;
-      
-      span {
-        display: inline-block;
-        height: 100%;
-        transition: all 0.3s;
-        width: 100%;
-      }
-  
-      &::before {
-        color: #fff;
-        content: '\e2c6';
-        font-family: "Material Icons";
-        font-size: 130%;
-        height: 100%;
-        left: 0;
-        line-height: 2.6;
-        position: absolute;
-        top: 0;
-        transition: all 0.3s;
-        width: 100%;
-      }
-  
-      &::after {
-        color: #fff;
-        content: '\e2c6';
-        font-family: "Material Icons";
-        font-size: 130%;
-        height: 100%;
-        left: 0;
-        line-height: 2.6;
-        position: absolute;
-        top: 180%;
-        transition: all 0.3s;
-        width: 100%;
-      }
-  
-      &:hover {
-        background-color: darken(#99c793, 30%);
-  
-        span {
-          transform: translateY(180%);
-        }
-  
-        &::before {
-          top: -180%;
-        }
-        &::after {
-          top: 0;
-        }
-      }
-    }
-  }
-  
-  .deletePhoto {
-    background: #f79159;
-    border: none;
-    border-radius: 5px;
-    color: #fff;
-    cursor: pointer;
-    display: inline-block;
-    font-family: "Poppins", sans-serif;
-    font-size: inherit;
-    font-weight: 600;
-    outline: none;
-    padding: 0.5rem 2.5px;
-    position: relative;
-    transition: all 0.3s;
-    vertical-align: middle;
-  
-    &.btn-3 {
-      background-color: #f79159;
-      border-radius: 8px;
-      overflow: hidden;
-      text-align: center;
-      
-      span {
-        display: inline-block;
-        height: 100%;
-        transition: all 0.3s;
-        width: 100%;
-      }
-      
-      &:hover {
-        background-color: darken(#f79159, 30%);
-      }
-    }
-  }
+progress::-webkit-progress-value {
+  transition: width 0.1s ease;
+}

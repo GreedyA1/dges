@@ -7,12 +7,10 @@ interface HTMLInputEvent extends Event {
 @Component({
   selector: 'dges-upload-images',
   templateUrl: './upload-images.component.html',
-  styleUrls: ['./upload-images.component.scss']
+  styleUrls: ['./upload-images.component.scss'],
 })
 export class UploadImagesComponent {
-
-  
-  @Output() fileURL = new EventEmitter<string[]>();
+  @Output() filesUpdate = new EventEmitter<File[]>();
 
   isHovering: boolean;
 
@@ -28,13 +26,6 @@ export class UploadImagesComponent {
     for (let i = 0; i < uploadFiles.length; i++) {
       this.files.push(uploadFiles.item(i));
     }
+    this.filesUpdate.emit(this.files);
   }
-
-  onUploaded(fileURL: string) {
-    this.filesURLS.push(fileURL)
-    if(this.filesURLS.length && (this.filesURLS.length === this.files.length)){
-      this.fileURL.emit(this.filesURLS)
-    }
-  }
-
 }

@@ -41,7 +41,12 @@
       "@dges/api/storage/firebase": ["libs/api/storage/firebase/src/index.ts"],
       "@dges/ui/drop-zone": ["libs/ui/drop-zone/src/index.ts"],
       "@dges/ui/upload-images": ["libs/ui/upload-images/src/index.ts"],
-      "@dges/ui/upload-task": ["libs/ui/upload-task/src/index.ts"]
+      "@dges/ui/upload-task": ["libs/ui/upload-task/src/index.ts"],
+      "@dges/forms/upload-task": ["libs/forms/upload-task/src/index.ts"],
+      "@dges/forms/upload-images": ["libs/forms/upload-images/src/index.ts"],
+      "@dges/store/storage/firebase": [
+        "libs/store/storage/firebase/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"],

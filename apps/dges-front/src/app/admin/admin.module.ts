@@ -9,6 +9,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { UiProjectCardModule } from '@dges/ui/project-card';
 import { ProjectsRoutingModule } from '../projects/projects-routing.module';
+import { UiUploadImagesModule } from '@dges/ui/upload-images';
+import { UiUploadTaskModule } from '@dges/ui/upload-task';
 
 @NgModule({
   imports: [
@@ -19,7 +21,9 @@ import { ProjectsRoutingModule } from '../projects/projects-routing.module';
     ReactiveFormsModule,
     MatIconModule,
     ProjectFormModule,
-    MatDialogModule
+    MatDialogModule,
+    UiUploadImagesModule,
+    UiUploadTaskModule
   ],
   declarations: [AddProjectComponent],
 })

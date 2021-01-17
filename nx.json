@@ -89,6 +89,15 @@
     },
     "ui-upload-task": {
       "tags": []
+    },
+    "forms-upload-task": {
+      "tags": []
+    },
+    "forms-upload-images": {
+      "tags": []
+    },
+    "store-storage-firebase": {
+      "tags": []
     }
   }
 }
