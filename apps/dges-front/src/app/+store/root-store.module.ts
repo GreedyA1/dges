@@ -14,7 +14,12 @@ import { StoreStorageFirebaseModule } from '@dges/store/storage/firebase'
     ProjectCardsModule,
     AuthModule,
     StoreStorageFirebaseModule,
-    StoreModule.forRoot({}),
+    StoreModule.forRoot({},{
+      runtimeChecks: {
+        strictStateImmutability: false,
+        strictActionImmutability: false,
+      },
+    }),
     EffectsModule.forRoot([]),
     StoreDevtoolsModule.instrument({}),
   ],

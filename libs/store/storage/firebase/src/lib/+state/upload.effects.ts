@@ -14,18 +14,15 @@ export class UploadEffects {
       ofType(UploadActions.init),
       fetch({
         run: (action) => {
-          console.log(action.files);
-
           const uploads: AngularFireUploadTask[] = [];
-
           action.files.forEach((file) => {
             uploads.push(this.firebaseStorage.startUpload(file));
           });
-
-          // Your custom service 'load' logic goes here. For now just return a success action...
-          return UploadActions.loadUploadSuccess({ upload: uploads });
+          console.log(uploads[0].task);
+          return UploadActions.loadUploadSuccess({
+            upload: uploads,
+          });
         },
-
         onError: (action, error) => {
           console.error('Error', error);
           return UploadActions.loadUploadFailure({ error });

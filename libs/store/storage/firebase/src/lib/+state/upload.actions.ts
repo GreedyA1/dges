@@ -1,3 +1,4 @@
+import { AngularFireUploadTask } from '@angular/fire/storage/task';
 import { createAction, props } from '@ngrx/store';
 import { UploadEntity } from './upload.models';
 
@@ -6,7 +7,7 @@ props<{ files: File[] }>());
 
 export const loadUploadSuccess = createAction(
   '[Upload/API] Load Upload Success',
-  props<{ upload: UploadEntity[] }>()
+  props<{ upload: any[] }>()
 );
 
 export const loadUploadFailure = createAction(

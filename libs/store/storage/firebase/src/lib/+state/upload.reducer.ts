@@ -30,8 +30,8 @@ const uploadReducer = createReducer(
   initialState,
   on(UploadActions.init, (state) => ({ ...state, loaded: false, error: null })),
   on(UploadActions.loadUploadSuccess, (state, { upload }) => {
-    console.log(upload);
-    return uploadAdapter.setAll(upload, { ...state, loaded: true });
+    console.log('yooo', upload);
+    return uploadAdapter.setAll(upload as UploadEntity[], { ...state, loaded: true });
   }),
   on(UploadActions.loadUploadFailure, (state, { error }) => ({
     ...state,
