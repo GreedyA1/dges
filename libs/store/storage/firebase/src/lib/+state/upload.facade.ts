@@ -22,7 +22,11 @@ export class UploadFacade {
    * Use the initialization action to perform one
    * or more tasks in your Effects.
    */
-  init() {
-    // this.store.dispatch(UploadActions.init());
+  init(files: File[]) {
+    this.store.dispatch(UploadActions.init({ files: files }));
+  }
+
+  cleanUploads() {
+    this.store.dispatch(UploadActions.cleanUploads());
   }
 }

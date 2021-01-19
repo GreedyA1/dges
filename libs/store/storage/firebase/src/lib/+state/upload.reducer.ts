@@ -31,12 +31,15 @@ const uploadReducer = createReducer(
   on(UploadActions.init, (state) => ({ ...state, loaded: false, error: null })),
   on(UploadActions.loadUploadSuccess, (state, { upload }) => {
     console.log('yooo', upload);
-    return uploadAdapter.setAll(upload as UploadEntity[], { ...state, loaded: true });
+    return uploadAdapter.setAll(upload, { ...state, loaded: true });
   }),
   on(UploadActions.loadUploadFailure, (state, { error }) => ({
     ...state,
     error,
-  }))
+  })),
+  on(UploadActions.cleanUploads, (state) => {
+    return uploadAdapter.removeAll({ ...state, loaded: true });
+  })
 );
 
 export function reducer(state: State | undefined, action: Action) {

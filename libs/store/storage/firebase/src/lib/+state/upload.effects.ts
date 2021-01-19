@@ -6,6 +6,7 @@ import { AngularFireUploadTask } from '@angular/fire/storage';
 
 import * as UploadFeature from './upload.reducer';
 import * as UploadActions from './upload.actions';
+import { UploadEntity } from './upload.models';
 
 @Injectable()
 export class UploadEffects {
@@ -14,11 +15,14 @@ export class UploadEffects {
       ofType(UploadActions.init),
       fetch({
         run: (action) => {
-          const uploads: AngularFireUploadTask[] = [];
+          const uploads: UploadEntity[] = [];
           action.files.forEach((file) => {
-            uploads.push(this.firebaseStorage.startUpload(file));
+            uploads.push({
+              id: new Date().getTime(),
+              ...this.firebaseStorage.startUpload(file),
+            });
           });
-          console.log(uploads[0].task);
+          console.log(uploads[0]);
           return UploadActions.loadUploadSuccess({
             upload: uploads,
           });

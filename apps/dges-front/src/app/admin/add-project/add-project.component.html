@@ -6,17 +6,34 @@
   >
   </dges-project-form>
 
+  <!-- <div> 
+    <div *ngFor="let image of projectForm.value.images">
+      <img [src]="image" />
+    </div>
+  </div> -->
+
+  <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+    <div
+      class="example-box"
+      *ngFor="let image of projectForm.value.images"
+      cdkDrag
+    >
+      <div class="example-custom-placeholder" *cdkDragPlaceholder></div>
+      <img class="max-width-100" [src]="image" />
+    </div>
+  </div>
+
   <dges-upload-images (filesUpdate)="updateFiles($event)"></dges-upload-images>
 
   <div *ngFor="let file of uploads$ | async">
-    {{ file }}
     <dges-upload-task
-      [file]="file"
+      [task]="file"
       (fileURL)="onUploaded($event)"
     ></dges-upload-task>
   </div>
 </div>
 <div mat-dialog-actions>
+  <!-- {{ this.projectForm.value | json }} -->
   <button
     mat-stroked-button
     color="primary"

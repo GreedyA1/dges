@@ -98,6 +98,9 @@
     },
     "store-storage-firebase": {
       "tags": []
+    },
+    "types-facades-upload-facade": {
+      "tags": []
     }
   }
 }

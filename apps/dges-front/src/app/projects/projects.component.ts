@@ -5,6 +5,7 @@ import {
   ProjectsActions,
   ProjectsSelectors,
 } from '@dges/store/projects/projects-firebase';
+import { cleanUploads, UploadFacade } from '@dges/store/storage/firebase';
 import { User } from '@dges/types/auth';
 import { Project } from '@dges/types/project';
 import { ConfirmDialogComponent } from '@dges/ui/confirm-dialog';
@@ -12,11 +13,13 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { RootStoreModule } from '../+store/root-store.module';
 import { AddProjectComponent } from '../admin/add-project/add-project.component';
+import { environment } from './../../environments/environment';
 
 @Component({
   selector: 'dges-projects',
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss'],
+  // providers: [{ provide: MinimalLogger, useExisting: LoggerService }]
 })
 export class ProjectsComponent implements OnInit {
   projects$: Observable<Project[]>;
@@ -26,7 +29,8 @@ export class ProjectsComponent implements OnInit {
 
   constructor(
     private store: Store<RootStoreModule>,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private uploadFacade: UploadFacade
   ) {}
 
   ngOnInit(): void {
@@ -52,14 +56,12 @@ export class ProjectsComponent implements OnInit {
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
       data: 'Are you sure you want to delete the project',
     });
-    dialogRef
-      .afterClosed()
-      .subscribe(
-        (approved) =>
-          approved &&
-          this.store.dispatch(
-            ProjectsActions.deleteProject({ project: project })
-          )
-      );
+    dialogRef.afterClosed().subscribe((approved) => {
+      this.uploadFacade.cleanUploads();
+      approved &&
+        this.store.dispatch(
+          ProjectsActions.deleteProject({ project: project })
+        );
+    });
   }
 }

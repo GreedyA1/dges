@@ -24,5 +24,6 @@ module.exports = {
     '<rootDir>/libs/forms/upload-task',
     '<rootDir>/libs/forms/upload-images',
     '<rootDir>/libs/store/storage/firebase',
+    '<rootDir>/libs/types/facades/upload-facade',
   ],
 };

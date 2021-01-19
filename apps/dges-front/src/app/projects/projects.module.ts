@@ -10,6 +10,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ProjectFormModule } from '@dges/forms/project-form';
 import { AdminModule } from '../admin/admin.module';
+import { environment } from '../../environments/environment';
+import { UploadFacade } from '@dges/types/facades/upload-facade';
 
 @NgModule({
   imports: [
@@ -21,10 +23,9 @@ import { AdminModule } from '../admin/admin.module';
     MatIconModule,
     ProjectFormModule,
     AdminModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
   ],
-  declarations: [
-    ProjectsComponent
-  ],
+  declarations: [ProjectsComponent],
+  providers: [{ provide: UploadFacade, useValue: environment.uploadFacade }],
 })
 export class ProjectsModule {}

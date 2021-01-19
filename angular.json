@@ -757,6 +757,31 @@
           }
         }
       }
+    },
+    "types-facades-upload-facade": {
+      "projectType": "library",
+      "root": "libs/types/facades/upload-facade",
+      "sourceRoot": "libs/types/facades/upload-facade/src",
+      "prefix": "dges",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/types/facades/upload-facade/src/**/*.ts",
+              "libs/types/facades/upload-facade/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/types/facades/upload-facade"],
+          "options": {
+            "jestConfig": "libs/types/facades/upload-facade/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {

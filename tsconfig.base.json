@@ -46,6 +46,9 @@
       "@dges/forms/upload-images": ["libs/forms/upload-images/src/index.ts"],
       "@dges/store/storage/firebase": [
         "libs/store/storage/firebase/src/index.ts"
+      ],
+      "@dges/types/facades/upload-facade": [
+        "libs/types/facades/upload-facade/src/index.ts"
       ]
     }
   },
