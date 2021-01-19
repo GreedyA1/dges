@@ -12,6 +12,7 @@ import { ProjectsRoutingModule } from '../projects/projects-routing.module';
 import { UiUploadImagesModule } from '@dges/ui/upload-images';
 import { UiUploadTaskModule } from '@dges/ui/upload-task';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { environment } from '../../environments/environment';
 
 @NgModule({
   imports: [
@@ -25,8 +26,9 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     MatDialogModule,
     UiUploadImagesModule,
     UiUploadTaskModule,
-    DragDropModule
+    DragDropModule,
   ],
   declarations: [AddProjectComponent],
+  providers: [{ provide: 'UploadFacade', useClass: environment.uploadFacade }],
 })
 export class AdminModule {}

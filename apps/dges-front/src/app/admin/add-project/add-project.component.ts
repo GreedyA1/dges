@@ -6,10 +6,10 @@ import { EMPTY_PROJECT, Project } from '@dges/types/project';
 import { Actions, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
 import { RootStoreModule } from '../../+store/root-store.module';
-import { getAllUpload, init, UploadEntity, UploadFacade } from '@dges/store/storage/firebase';
+import { UploadEntity } from '@dges/store/storage/firebase';
+import { UploadFacade } from '@dges/types/facades/upload-facade';
 import { Observable } from 'rxjs';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
-import  environment.uploadFacade as UploadFacade from '../../../environments/environment'
 
 @Component({
   selector: 'dges-add-project',
@@ -21,7 +21,7 @@ export class AddProjectComponent implements OnInit {
     public dialogRef: MatDialogRef<AddProjectComponent>,
     private store: Store<RootStoreModule>,
     private readonly actions$: Actions,
-    private uploadFacade: UploadFacade,
+    @Inject('UploadFacade') private uploadFacade: UploadFacade,
     @Inject(MAT_DIALOG_DATA) public data: { project: Project }
   ) {}
 
@@ -37,8 +37,8 @@ export class AddProjectComponent implements OnInit {
 
   updateFiles(files: File[]): void {
     this.files = files;
-    this.uploadFacade.init(files)
-    this.uploads$ = this.uploadFacade.allUpload$
+    this.uploadFacade.init(files);
+    this.uploads$ = this.uploadFacade.allUpload$;
     //load store here
   }
 

@@ -5,7 +5,7 @@ import {
   ProjectsActions,
   ProjectsSelectors,
 } from '@dges/store/projects/projects-firebase';
-import { cleanUploads, UploadFacade } from '@dges/store/storage/firebase';
+import { UploadFacade } from '@dges/types/facades/upload-facade';
 import { User } from '@dges/types/auth';
 import { Project } from '@dges/types/project';
 import { ConfirmDialogComponent } from '@dges/ui/confirm-dialog';
@@ -13,13 +13,12 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { RootStoreModule } from '../+store/root-store.module';
 import { AddProjectComponent } from '../admin/add-project/add-project.component';
-import { environment } from './../../environments/environment';
+import { Inject } from '@angular/core';
 
 @Component({
   selector: 'dges-projects',
   templateUrl: './projects.component.html',
-  styleUrls: ['./projects.component.scss'],
-  // providers: [{ provide: MinimalLogger, useExisting: LoggerService }]
+  styleUrls: ['./projects.component.scss']
 })
 export class ProjectsComponent implements OnInit {
   projects$: Observable<Project[]>;
@@ -30,7 +29,7 @@ export class ProjectsComponent implements OnInit {
   constructor(
     private store: Store<RootStoreModule>,
     public dialog: MatDialog,
-    private uploadFacade: UploadFacade
+    @Inject('UploadFacade') private uploadFacade: UploadFacade
   ) {}
 
   ngOnInit(): void {

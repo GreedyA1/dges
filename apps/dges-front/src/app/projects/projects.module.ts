@@ -11,7 +11,6 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ProjectFormModule } from '@dges/forms/project-form';
 import { AdminModule } from '../admin/admin.module';
 import { environment } from '../../environments/environment';
-import { UploadFacade } from '@dges/types/facades/upload-facade';
 
 @NgModule({
   imports: [
@@ -26,6 +25,6 @@ import { UploadFacade } from '@dges/types/facades/upload-facade';
     MatProgressSpinnerModule,
   ],
   declarations: [ProjectsComponent],
-  providers: [{ provide: UploadFacade, useValue: environment.uploadFacade }],
+  providers: [{provide : 'UploadFacade', useClass: environment.uploadFacade}],
 })
 export class ProjectsModule {}

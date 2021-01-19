@@ -5,9 +5,10 @@ import { select, Store, Action } from '@ngrx/store';
 import * as UploadActions from './upload.actions';
 import * as UploadFeature from './upload.reducer';
 import * as UploadSelectors from './upload.selectors';
+import { UploadFacade } from '@dges/types/facades/upload-facade';
 
 @Injectable()
-export class UploadFacade {
+export class FirebaseUploadFacade implements UploadFacade {
   /**
    * Combine pieces of state using createSelector,
    * and expose them as observables through the facade.
