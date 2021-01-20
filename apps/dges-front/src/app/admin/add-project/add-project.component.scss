@@ -5,14 +5,18 @@
     }
 }
 
+.fullscreen {
+  width: 100vw;
+  height: 100vh;
+}
+
 .max-width-100 {
     max-width: 100%;
   }
 
 
 .example-list {
-    width: 500px;
-    max-width: 100%;
+    max-width: 500px;
     border: solid 1px #ccc;
     min-height: 60px;
     display: block;

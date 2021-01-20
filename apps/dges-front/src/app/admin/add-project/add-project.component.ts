@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { FormArray, FormControl } from '@angular/forms';
+import { FormControl } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ProjectsActions } from '@dges/store/projects/projects-firebase';
 import { EMPTY_PROJECT, Project } from '@dges/types/project';
@@ -39,14 +39,9 @@ export class AddProjectComponent implements OnInit {
     this.files = files;
     this.uploadFacade.init(files);
     this.uploads$ = this.uploadFacade.allUpload$;
-    //load store here
   }
 
   onUploaded($event): void {
-    // const a: Project = this.projectForm.value;
-    // a.images.push($event);
-    // console.log(a);
-    // this.projectForm = new FormControl(a);
     this.uploaded.push($event);
   }
 

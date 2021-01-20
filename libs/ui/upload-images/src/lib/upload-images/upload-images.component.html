@@ -2,6 +2,7 @@
   class="dropzone"
   dropzone
   (hovered)="toggleHover($event)"
+  (click)="userPhoto.click()"
   (dropped)="onDrop($event)"
   [class.hovering]="isHovering"
 >

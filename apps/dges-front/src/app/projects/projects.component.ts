@@ -18,7 +18,7 @@ import { Inject } from '@angular/core';
 @Component({
   selector: 'dges-projects',
   templateUrl: './projects.component.html',
-  styleUrls: ['./projects.component.scss']
+  styleUrls: ['./projects.component.scss'],
 })
 export class ProjectsComponent implements OnInit {
   projects$: Observable<Project[]>;
@@ -40,11 +40,14 @@ export class ProjectsComponent implements OnInit {
   }
 
   addProject(): void {
-    this.dialog.open(AddProjectComponent);
+    this.dialog.open(AddProjectComponent, {
+      panelClass: 'full-screen-dialog',
+    });
   }
 
   editProject(project: Project): void {
     this.dialog.open(AddProjectComponent, {
+      panelClass: 'full-screen-dialog',
       data: {
         project: project,
       },

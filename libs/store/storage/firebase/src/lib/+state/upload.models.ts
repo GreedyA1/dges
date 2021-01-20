@@ -5,4 +5,5 @@ import { AngularFireUploadTask } from '@angular/fire/storage';
  */
 export interface UploadEntity extends AngularFireUploadTask {
   id?: string | number; // Primary ID
+  
 }
