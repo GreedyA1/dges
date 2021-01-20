@@ -22,7 +22,6 @@ export class UploadEffects {
               ...this.firebaseStorage.startUpload(file),
             });
           });
-          console.log(uploads[0]);
           return UploadActions.loadUploadSuccess({
             upload: uploads,
           });
