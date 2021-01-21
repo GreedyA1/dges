@@ -20,7 +20,7 @@ describe('ProjectsComponent', () => {
       //   {
       //     provide: ProjectsCollectionService,
       //     useValue: {
-      //       projectsGet: jest.fn().mockReturnValue(of([project])),
+      //       getProjects: jest.fn().mockReturnValue(of([project])),
       //     },
       //   },
       // ],

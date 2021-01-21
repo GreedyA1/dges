@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 interface HTMLInputEvent extends Event {
   target: HTMLInputElement & EventTarget;
@@ -11,7 +11,7 @@ interface HTMLInputEvent extends Event {
 })
 export class UploadImagesComponent {
   @Output() filesUpdate = new EventEmitter<File[]>();
-
+  @Input() multi: boolean;
   isHovering: boolean;
 
   files: File[] = [];

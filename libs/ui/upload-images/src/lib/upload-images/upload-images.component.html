@@ -12,7 +12,7 @@
     <input
       type="file"
       id="file"
-      multiple
+      [multiple]="multi"
       #userPhoto
       (change)="onDrop($event)"
       name="image"

@@ -25,8 +25,8 @@ export class ProjectsCollectionService {
     return this.projectsCollection.snapshotChanges();
   }
 
-  public projectsGet(): Observable<Project[]> {
-    return this.projectsCollection.valueChanges({idField: 'id'});
+  public getProjects(): Observable<Project[]> {
+    return this.projectsCollection.valueChanges({ idField: 'id' });
   }
 
   public addProject(project: any): Promise<DocumentReference<Project>> {
@@ -38,6 +38,6 @@ export class ProjectsCollectionService {
   }
 
   public deleteProject(project: any): Promise<void> {
-    return this.projectsCollection.doc(project.id).delete()
+    return this.projectsCollection.doc(project.id).delete();
   }
 }

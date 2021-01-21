@@ -6,30 +6,13 @@
   >
   </dges-project-form>
 
-  <div
-    cdkDropList
-    *ngIf="projectForm.value.images.length > 0"
-    class="example-list"
-    (cdkDropListDropped)="drop($event)"
+  <dges-images-control
+    (updateFiles)="updateFiles($event)"
+    [multi]="true"
+    [uploads$]="uploads$"
+    [images]="projectForm.value.images"
   >
-    <div
-      class="example-box"
-      *ngFor="let image of projectForm.value.images"
-      cdkDrag
-    >
-      <div class="example-custom-placeholder" *cdkDragPlaceholder></div>
-      <img class="max-width-100" [src]="image" />
-    </div>
-  </div>
-
-  <dges-upload-images (filesUpdate)="updateFiles($event)"></dges-upload-images>
-
-  <div *ngFor="let task of uploads$ | async">
-    <dges-upload-task
-      [task]="task"
-      (fileURL)="onUploaded($event)"
-    ></dges-upload-task>
-  </div>
+  </dges-images-control>
 </div>
 <div mat-dialog-actions class="d-flex justify-content-end">
   <button

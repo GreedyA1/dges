@@ -25,5 +25,10 @@ module.exports = {
     '<rootDir>/libs/forms/upload-images',
     '<rootDir>/libs/store/storage/firebase',
     '<rootDir>/libs/types/facades/upload-facade',
+    '<rootDir>/libs/forms/skills',
+    '<rootDir>/libs/store/skills/firebase',
+    '<rootDir>/libs/api/skills/firebase',
+    '<rootDir>/libs/types/skill',
+    '<rootDir>/libs/ui/images-control',
   ],
 };

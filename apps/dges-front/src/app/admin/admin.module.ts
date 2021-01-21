@@ -9,10 +9,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { UiProjectCardModule } from '@dges/ui/project-card';
 import { ProjectsRoutingModule } from '../projects/projects-routing.module';
-import { UiUploadImagesModule } from '@dges/ui/upload-images';
-import { UiUploadTaskModule } from '@dges/ui/upload-task';
-import { DragDropModule } from '@angular/cdk/drag-drop';
+import { UiImagesControlModule } from '@dges/ui/images-control';
 import { environment } from '../../environments/environment';
+import { AddSkillComponent } from './add-skill/add-skill.component';
 
 @NgModule({
   imports: [
@@ -24,11 +23,9 @@ import { environment } from '../../environments/environment';
     MatIconModule,
     ProjectFormModule,
     MatDialogModule,
-    UiUploadImagesModule,
-    UiUploadTaskModule,
-    DragDropModule,
+    UiImagesControlModule,
   ],
-  declarations: [AddProjectComponent],
+  declarations: [AddProjectComponent, AddSkillComponent],
   providers: [{ provide: 'UploadFacade', useClass: environment.uploadFacade }],
 })
 export class AdminModule {}

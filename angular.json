@@ -782,6 +782,131 @@
           }
         }
       }
+    },
+    "forms-skills": {
+      "projectType": "library",
+      "root": "libs/forms/skills",
+      "sourceRoot": "libs/forms/skills/src",
+      "prefix": "dges",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/forms/skills/src/**/*.ts",
+              "libs/forms/skills/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/forms/skills"],
+          "options": {
+            "jestConfig": "libs/forms/skills/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "store-skills-firebase": {
+      "projectType": "library",
+      "root": "libs/store/skills/firebase",
+      "sourceRoot": "libs/store/skills/firebase/src",
+      "prefix": "dges",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/store/skills/firebase/src/**/*.ts",
+              "libs/store/skills/firebase/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/store/skills/firebase"],
+          "options": {
+            "jestConfig": "libs/store/skills/firebase/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "api-skills-firebase": {
+      "projectType": "library",
+      "root": "libs/api/skills/firebase",
+      "sourceRoot": "libs/api/skills/firebase/src",
+      "prefix": "dges",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/api/skills/firebase/src/**/*.ts",
+              "libs/api/skills/firebase/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/api/skills/firebase"],
+          "options": {
+            "jestConfig": "libs/api/skills/firebase/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "types-skill": {
+      "projectType": "library",
+      "root": "libs/types/skill",
+      "sourceRoot": "libs/types/skill/src",
+      "prefix": "dges",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/types/skill/src/**/*.ts",
+              "libs/types/skill/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/types/skill"],
+          "options": {
+            "jestConfig": "libs/types/skill/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "ui-images-control": {
+      "projectType": "library",
+      "root": "libs/ui/images-control",
+      "sourceRoot": "libs/ui/images-control/src",
+      "prefix": "dges",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/ui/images-control/src/**/*.ts",
+              "libs/ui/images-control/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/ui/images-control"],
+          "options": {
+            "jestConfig": "libs/ui/images-control/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {

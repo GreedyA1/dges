@@ -27,7 +27,6 @@ export class AddProjectComponent implements OnInit {
 
   public projectForm: FormControl;
   private project: Project;
-  public files: File[];
   public uploads$: Observable<UploadEntity[]>;
   public uploaded: string[];
 
@@ -36,13 +35,9 @@ export class AddProjectComponent implements OnInit {
   }
 
   updateFiles(files: File[]): void {
-    this.files = files;
+    console.log(files)
     this.uploadFacade.init(files);
     this.uploads$ = this.uploadFacade.allUpload$;
-  }
-
-  onUploaded($event): void {
-    this.uploaded.push($event);
   }
 
   ngOnInit(): void {

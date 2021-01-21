@@ -49,7 +49,14 @@
       ],
       "@dges/types/facades/upload-facade": [
         "libs/types/facades/upload-facade/src/index.ts"
-      ]
+      ],
+      "@dges/forms/skills": ["libs/forms/skills/src/index.ts"],
+      "@dges/store/skills/firebase": [
+        "libs/store/skills/firebase/src/index.ts"
+      ],
+      "@dges/api/skills/firebase": ["libs/api/skills/firebase/src/index.ts"],
+      "@dges/types/skill": ["libs/types/skill/src/index.ts"],
+      "@dges/ui/images-control": ["libs/ui/images-control/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"],

@@ -14,7 +14,7 @@ export class ProjectsEffects {
     this.actions$.pipe(
       ofType(ProjectActions.loadProjects),
       switchMap(() =>
-        this.angularFire.projectsGet().pipe(
+        this.angularFire.getProjects().pipe(
           map((projects: ProjectWithTimestamp[]) =>
             projects.map((project: ProjectWithTimestamp) => {
               return {
@@ -24,7 +24,9 @@ export class ProjectsEffects {
               };
             })
           ),
-          map((projects: Project[]) => ProjectActions.loadProjectsSuccess({ projects: projects })),
+          map((projects: Project[]) =>
+            ProjectActions.loadProjectsSuccess({ projects: projects })
+          ),
           catchError((error) => of(ProjectActions.loadProjectsFail(error)))
         )
       )

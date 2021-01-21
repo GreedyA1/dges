@@ -101,6 +101,21 @@
     },
     "types-facades-upload-facade": {
       "tags": []
+    },
+    "forms-skills": {
+      "tags": []
+    },
+    "store-skills-firebase": {
+      "tags": []
+    },
+    "api-skills-firebase": {
+      "tags": []
+    },
+    "types-skill": {
+      "tags": []
+    },
+    "ui-images-control": {
+      "tags": []
     }
   }
 }
