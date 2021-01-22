@@ -24,7 +24,10 @@ export class UploadImagesComponent {
   onDrop(files: HTMLInputEvent) {
     const uploadFiles = files.target.files;
     for (let i = 0; i < uploadFiles.length; i++) {
-      this.files.push(uploadFiles.item(i));
+      if (
+        !this.files.find((element) => element.name === uploadFiles.item(i).name)
+      )
+        this.files.push(uploadFiles.item(i));
     }
     this.filesUpdate.emit(this.files);
   }

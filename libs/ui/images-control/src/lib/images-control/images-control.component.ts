@@ -1,5 +1,5 @@
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -12,15 +12,19 @@ export class ImagesControlComponent {
   @Input() uploads$: Observable<any[]>;
   @Input() images: string[];
   @Output() updateFiles = new EventEmitter<File[]>();
-  @Output() onUploaded = new EventEmitter<string>();
+  uploading = 0;
 
   emitOnUploaded($event) {
+    console.log($event);
     this.images.push($event);
-    this.onUploaded.emit($event);
+    this.uploading--;
+    console.log('THIS IS IMAGES', this.images);
   }
 
   emitUpdateFiles($event) {
-    console.log($event)
+    console.log('emitUpdateFiles', $event);
+    this.images = [];
+    this.uploading = $event.length;
     this.updateFiles.emit($event);
   }
 

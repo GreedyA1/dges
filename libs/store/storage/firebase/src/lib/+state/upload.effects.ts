@@ -18,10 +18,11 @@ export class UploadEffects {
           const uploads: UploadEntity[] = [];
           action.files.forEach((file) => {
             uploads.push({
-              id: new Date().getTime(),
+              id: new Date().getTime() + file.name, 
               ...this.firebaseStorage.startUpload(file),
             });
           });
+          console.log(uploads)
           return UploadActions.loadUploadSuccess({
             upload: uploads,
           });

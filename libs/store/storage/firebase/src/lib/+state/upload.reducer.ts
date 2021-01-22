@@ -22,15 +22,15 @@ export const uploadAdapter: EntityAdapter<UploadEntity> = createEntityAdapter<
 
 export const initialState: State = uploadAdapter.getInitialState({
   // set initial required properties
-  entities: [{ id: '123123' }],
+  entities: [],
   loaded: false,
 });
 
 const uploadReducer = createReducer(
   initialState,
-  on(UploadActions.init, (state) => ({ ...state, loaded: false, error: null })),
+  // on(UploadActions.init, (state) => ({ ...state, loaded: false, error: null })),
   on(UploadActions.loadUploadSuccess, (state, { upload }) => {
-    return uploadAdapter.setAll(upload, { ...state, loaded: true });
+    return uploadAdapter.addMany(upload, { ...state, loaded: true });
   }),
   on(UploadActions.loadUploadFailure, (state, { error }) => ({
     ...state,

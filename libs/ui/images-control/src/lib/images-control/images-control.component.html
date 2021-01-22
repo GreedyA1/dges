@@ -5,10 +5,11 @@
   (cdkDropListDropped)="drop($event)"
 >
   <div
-    class="example-box"
-    *ngFor="let image of images"
+    *ngFor="let image of images; let i = index"
+    class="example-box {{ !i ? 'first' : '' }}"
     cdkDrag
   >
+    <div *ngIf="!i" mat-subheader><mat-icon>image</mat-icon>Cover Image</div>
     <div class="example-custom-placeholder" *cdkDragPlaceholder></div>
     <img class="max-width-100" [src]="image" />
   </div>
@@ -21,6 +22,7 @@
 
 <div *ngFor="let task of uploads$ | async">
   <dges-upload-task
+    *ngIf="this.uploading"
     [task]="task"
     (fileURL)="emitOnUploaded($event)"
   ></dges-upload-task>

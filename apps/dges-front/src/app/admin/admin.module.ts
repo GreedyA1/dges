@@ -12,6 +12,7 @@ import { ProjectsRoutingModule } from '../projects/projects-routing.module';
 import { UiImagesControlModule } from '@dges/ui/images-control';
 import { environment } from '../../environments/environment';
 import { AddSkillComponent } from './add-skill/add-skill.component';
+import { FormsSkillsModule } from '@dges/forms/skills';
 
 @NgModule({
   imports: [
@@ -24,6 +25,7 @@ import { AddSkillComponent } from './add-skill/add-skill.component';
     ProjectFormModule,
     MatDialogModule,
     UiImagesControlModule,
+    FormsSkillsModule,
   ],
   declarations: [AddProjectComponent, AddSkillComponent],
   providers: [{ provide: 'UploadFacade', useClass: environment.uploadFacade }],

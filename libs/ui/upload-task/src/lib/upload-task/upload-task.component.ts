@@ -29,7 +29,6 @@ export class UploadTaskComponent implements OnInit {
     this.percentage$ = this.task.percentageChanges();
 
     this.snapshot$ = this.task.snapshotChanges().pipe(
-      tap(console.log),
       // The file's download URL
       finalize(async () => {
         this.downloadURL = await ref.getDownloadURL();

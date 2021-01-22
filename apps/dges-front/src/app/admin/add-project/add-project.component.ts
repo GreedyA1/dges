@@ -18,10 +18,10 @@ import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 })
 export class AddProjectComponent implements OnInit {
   constructor(
-    public dialogRef: MatDialogRef<AddProjectComponent>,
     private store: Store<RootStoreModule>,
     private readonly actions$: Actions,
     @Inject('UploadFacade') private uploadFacade: UploadFacade,
+    public dialogRef: MatDialogRef<AddProjectComponent>,
     @Inject(MAT_DIALOG_DATA) public data: { project: Project }
   ) {}
 
@@ -35,7 +35,7 @@ export class AddProjectComponent implements OnInit {
   }
 
   updateFiles(files: File[]): void {
-    console.log(files)
+    console.log('updateFiles',files)
     this.uploadFacade.init(files);
     this.uploads$ = this.uploadFacade.allUpload$;
   }
