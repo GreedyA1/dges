@@ -8,6 +8,7 @@ import {
 } from '@dges/store/projects/projects-firebase';
 import { AuthEffects, AuthReducers } from '@dges/store/auth/firebase';
 import { FirebaseUploadFacade } from '@dges/store/storage/firebase';
+import { SkillsFacade } from '@dges/store/skills/firebase';
 
 export const environment = {
   production: false,
@@ -28,6 +29,7 @@ export const environment = {
   authEffect: AuthEffects.AuthEffects,
   authFeatureKey: AuthReducers.authFeatureKey,
   uploadFacade: FirebaseUploadFacade,
+  skillsFacade: SkillsFacade
 };
 
 /*

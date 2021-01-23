@@ -14,6 +14,7 @@ import { Observable } from 'rxjs';
 import { RootStoreModule } from '../+store/root-store.module';
 import { AddProjectComponent } from '../admin/add-project/add-project.component';
 import { Inject } from '@angular/core';
+import { AddSkillComponent } from '../admin/add-skill/add-skill.component';
 
 @Component({
   selector: 'dges-projects',
@@ -41,6 +42,12 @@ export class ProjectsComponent implements OnInit {
 
   addProject(): void {
     this.dialog.open(AddProjectComponent, {
+      panelClass: 'full-screen-dialog',
+    });
+  }
+
+  addSkill(): void {
+    this.dialog.open(AddSkillComponent, {
       panelClass: 'full-screen-dialog',
     });
   }

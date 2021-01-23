@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Skill } from '@dges/types/skill';
 
 import { select, Store, Action } from '@ngrx/store';
 
@@ -23,6 +24,16 @@ export class SkillsFacade {
    * or more tasks in your Effects.
    */
   init() {
+    console.log('in facade');
     this.store.dispatch(SkillsActions.init());
   }
+
+  addSkill(skill: Skill) {
+    this.store.dispatch(SkillsActions.addSkill({ skill: skill }));
+  }
+
+  editSkill(skill: Skill) {
+    this.store.dispatch(SkillsActions.editSkill({ skill: skill }));
+  }
+
 }

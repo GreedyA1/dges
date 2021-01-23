@@ -27,7 +27,7 @@ export const initialState: State = skillsAdapter.getInitialState({
 
 const skillsReducer = createReducer(
   initialState,
-  on(SkillsActions.init, (state) => ({ ...state, loaded: false, error: null })),
+  // on(SkillsActions.init, (state) => ({ ...state, loaded: false, error: null })),
   on(SkillsActions.loadSkillsSuccess, (state, { skills }) =>
     skillsAdapter.setAll(skills, { ...state, loaded: true })
   ),

@@ -1,8 +1,10 @@
 import { createAction, props } from '@ngrx/store';
 import { SkillsEntity } from './skills.models';
-import { Skill } from '@dges/types/skill'
+import { Skill } from '@dges/types/skill';
 
 export const init = createAction('[Skills Page] Init');
+
+export const getSkills = createAction('[Skills/API] Load Skills');
 
 export const loadSkillsSuccess = createAction(
   '[Skills/API] Load Skills Success',

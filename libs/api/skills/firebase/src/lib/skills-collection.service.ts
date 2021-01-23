@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Skill } from '@dges/type/skill';
+import { Skill } from '@dges/types/skill';
 import {
   AngularFirestore,
   AngularFirestoreCollection,
@@ -26,6 +26,7 @@ export class SkillsCollectionService {
   }
 
   public getSkills(): Observable<Skill[]> {
+    console.log('HEREEE')
     return this.skillsCollection.valueChanges({ idField: 'id' });
   }
 

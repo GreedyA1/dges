@@ -1,17 +1,31 @@
 <h1 mat-dialog-title>{{ data ? 'Edit' : 'Add new' }} skill</h1>
 <div mat-dialog-content>
-  <!-- <dges-images-control
+  {{ skillForm.value | json }}
+  {{ uploaded | json }}
+
+  <dges-skill-form [formControl]="skillForm"> </dges-skill-form>
+
+  <dges-images-control
     (updateFiles)="updateFiles($event)"
+    (uploaded)="onUploaded($event)"
     [multi]="false"
     [uploads$]="uploads$"
-    [images]="skillForm.value.images"
+    [images]="skillForm.value.image"
   >
-  </dges-images-control> -->
+  </dges-images-control>
 
-  <dges-skill-form> </dges-skill-form>
+  <div *ngFor="let skill of skills$ | async">
+    {{ skill.title }}
+    <img class="max-width-100" [src]="skill.image" />
+  </div>
 </div>
 <div mat-dialog-actions class="d-flex justify-content-end">
-  <button mat-stroked-button color="primary" [disabled]="!skillForm.valid">
+  <button
+    mat-stroked-button
+    (click)="addOrEditSkill()"
+    color="primary"
+    [disabled]="!skillForm.valid"
+  >
     {{ data ? 'EDIT' : 'ADD' }} SKILL
   </button>
   <button mat-button class="m-1">NO THANKS</button>

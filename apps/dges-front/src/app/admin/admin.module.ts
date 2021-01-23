@@ -28,6 +28,9 @@ import { FormsSkillsModule } from '@dges/forms/skills';
     FormsSkillsModule,
   ],
   declarations: [AddProjectComponent, AddSkillComponent],
-  providers: [{ provide: 'UploadFacade', useClass: environment.uploadFacade }],
+  providers: [
+    { provide: 'UploadFacade', useClass: environment.uploadFacade },
+    { provide: 'SkillsFacade', useClass: environment.skillsFacade },
+  ],
 })
 export class AdminModule {}

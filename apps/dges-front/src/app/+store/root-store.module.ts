@@ -5,7 +5,8 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { ProjectCardsModule } from './project-cards/project-cards.module';
 import { AuthModule } from './auth/auth.module';
-import { StoreStorageFirebaseModule } from '@dges/store/storage/firebase'
+import { StoreStorageFirebaseModule } from '@dges/store/storage/firebase';
+import { StoreSkillsFirebaseModule } from '@dges/store/skills/firebase';
 
 @NgModule({
   declarations: [],
@@ -14,12 +15,16 @@ import { StoreStorageFirebaseModule } from '@dges/store/storage/firebase'
     ProjectCardsModule,
     AuthModule,
     StoreStorageFirebaseModule,
-    StoreModule.forRoot({},{
-      runtimeChecks: {
-        strictStateImmutability: false,
-        strictActionImmutability: false,
-      },
-    }),
+    StoreSkillsFirebaseModule,
+    StoreModule.forRoot(
+      {},
+      {
+        runtimeChecks: {
+          strictStateImmutability: false,
+          strictActionImmutability: false,
+        },
+      }
+    ),
     EffectsModule.forRoot([]),
     StoreDevtoolsModule.instrument({}),
   ],

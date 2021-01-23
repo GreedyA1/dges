@@ -35,7 +35,7 @@ export class AddProjectComponent implements OnInit {
   }
 
   updateFiles(files: File[]): void {
-    console.log('updateFiles',files)
+    console.log('updateFiles', files);
     this.uploadFacade.init(files);
     this.uploads$ = this.uploadFacade.allUpload$;
   }
@@ -48,6 +48,10 @@ export class AddProjectComponent implements OnInit {
 
   drop(event: CdkDragDrop<string[]>) {
     moveItemInArray(this.uploaded, event.previousIndex, event.currentIndex);
+  }
+
+  onUploaded(images: string[]) {
+    this.uploaded = images;
   }
 
   public addOrEditProject(): void {

@@ -1,10 +1,12 @@
 export interface Skill {
-    name: string;
+    id: string | number;
+    title: string;
     image: string;
   }
   
-  export const EMPTY_PROJECT: Skill = {
-    name: null,
+  export const EMPTY_SKILL: Skill = {
+    id: null,
+    title: null,
     image: null,
   };
   

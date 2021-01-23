@@ -1,6 +1,6 @@
 <div
   cdkDropList
-  *ngIf="images.length > 0"
+  *ngIf="images?.length > 0"
   class="example-list"
   (cdkDropListDropped)="drop($event)"
 >

@@ -15,17 +15,14 @@ export class SkillsEffects {
   init$ = createEffect(() =>
     this.actions$.pipe(
       ofType(SkillsActions.init),
-      fetch({
-        run: (action) => {
-          // Your custom service 'load' logic goes here. For now just return a success action...
-          return SkillsActions.loadSkillsSuccess({ skills: [] });
-        },
-
-        onError: (action, error) => {
-          console.error('Error', error);
-          return SkillsActions.loadSkillsFailure({ error });
-        },
-      })
+      switchMap(() =>
+        this.angularFire.getSkills().pipe(
+          map((action) => {
+            return SkillsActions.loadSkillsSuccess({ skills: action });
+          }),
+          catchError((error) => of(SkillsActions.loadSkillsFailure(error)))
+        )
+      )
     )
   );
 
