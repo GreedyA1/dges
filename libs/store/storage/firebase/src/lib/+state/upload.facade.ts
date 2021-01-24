@@ -23,8 +23,10 @@ export class FirebaseUploadFacade implements UploadFacade {
    * Use the initialization action to perform one
    * or more tasks in your Effects.
    */
-  init(files: File[]) {
-    this.store.dispatch(UploadActions.init({ files: files }));
+  upload(files: File[], folderName: string) {
+    this.store.dispatch(
+      UploadActions.upload({ files: files, folderName: folderName })
+    );
   }
 
   cleanUploads() {

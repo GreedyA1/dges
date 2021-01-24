@@ -35,9 +35,9 @@ export class FirebaseStorageService {
     return downloadUrl;
   }
 
-  startUpload(file: File): AngularFireUploadTask {
+  startUpload(file: File, folderName: string): AngularFireUploadTask {
     // The storage path
-    const path = `projects/${Date.now()}_${file.name}`;
+    const path = `${folderName}/${Date.now()}_${file.name}`;
 
     // Reference to storage bucket
     const ref = this.storage.ref(path);

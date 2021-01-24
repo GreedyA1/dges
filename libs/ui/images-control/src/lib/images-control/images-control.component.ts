@@ -10,23 +10,29 @@ import { Observable } from 'rxjs';
 export class ImagesControlComponent {
   @Input() multi: boolean;
   @Input() uploads$: Observable<any[]>;
-  @Input() images: string[] | null;
+
+  @Input()
+  get images(): string[] {
+    return this._images;
+  }
+  set images(images: string[]) {
+    this._images = images || [];
+  }
+  private _images: string[] = [];
+
   @Output() updateFiles = new EventEmitter<File[]>();
   @Output() uploaded = new EventEmitter<string[] | string>();
   uploading = 0;
 
   emitOnUploaded($event) {
-    console.log($event);
     this.images.push($event);
     this.uploading--;
     if (!this.uploading) {
       this.uploaded.emit(this.images);
     }
-    console.log('THIS IS IMAGES', this.images);
   }
 
   emitUpdateFiles($event) {
-    console.log('emitUpdateFiles', $event);
     this.images = [];
     this.uploading = $event.length;
     this.updateFiles.emit($event);

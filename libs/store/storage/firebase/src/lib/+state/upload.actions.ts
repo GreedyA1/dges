@@ -2,9 +2,9 @@ import { AngularFireUploadTask } from '@angular/fire/storage/task';
 import { createAction, props } from '@ngrx/store';
 import { UploadEntity } from './upload.models';
 
-export const init = createAction(
-  '[Upload Page] Init',
-  props<{ files: File[] }>()
+export const upload = createAction(
+  '[Upload Page] upload',
+  props<{ files: File[]; folderName: string }>()
 );
 
 export const loadUploadSuccess = createAction(

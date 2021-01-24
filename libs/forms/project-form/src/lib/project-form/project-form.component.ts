@@ -9,6 +9,7 @@ import {
   ValidationErrors,
   Validators,
 } from '@angular/forms';
+import { Skill } from '@dges/types/skill';
 
 @Component({
   selector: 'dges-project-form',
@@ -29,6 +30,7 @@ import {
 })
 export class ProjectFormComponent implements ControlValueAccessor {
   @Input() choiceArray: string[];
+  @Input() skills: Skill[];
 
   public isDisabled = false;
   expression =

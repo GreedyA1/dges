@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Skill } from '@dges/types/skill';
+import { Actions, ofType } from '@ngrx/effects';
 
-import { select, Store, Action } from '@ngrx/store';
+import { select, Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
 
 import * as SkillsActions from './skills.actions';
 import * as SkillsFeature from './skills.reducer';
@@ -17,14 +19,13 @@ export class SkillsFacade {
   allSkills$ = this.store.pipe(select(SkillsSelectors.getAllSkills));
   selectedSkills$ = this.store.pipe(select(SkillsSelectors.getSelected));
 
-  constructor(private store: Store) {}
+  constructor(private store: Store, private actions$: Actions) {}
 
   /**
    * Use the initialization action to perform one
    * or more tasks in your Effects.
    */
   init() {
-    console.log('in facade');
     this.store.dispatch(SkillsActions.init());
   }
 
@@ -38,5 +39,11 @@ export class SkillsFacade {
 
   deleteSkill(skill: Skill) {
     this.store.dispatch(SkillsActions.deleteSkill({ skill: skill }));
+  }
+
+  editOrAddSuccess(): Observable<Actions> {
+    return this.actions$.pipe(
+      ofType(SkillsActions.addSkillSuccess, SkillsActions.editSkillSuccess)
+    );
   }
 }

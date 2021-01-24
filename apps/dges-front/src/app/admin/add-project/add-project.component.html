@@ -1,10 +1,9 @@
 <h1 mat-dialog-title>{{ data ? 'Edit' : 'Add new' }} project</h1>
 <div mat-dialog-content>
-  {{ projectForm.value | json }}
-  {{ uploaded | json }}
   <dges-project-form
     [choiceArray]="['fruity', 'duity']"
     [formControl]="projectForm"
+    [skills]="skills$ | async"
   >
   </dges-project-form>
 

@@ -10,6 +10,7 @@ import { UploadEntity } from '@dges/store/storage/firebase';
 import { UploadFacade } from '@dges/types/facades/upload-facade';
 import { Observable } from 'rxjs';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
+import { SkillsEntity, SkillsFacade } from '@dges/store/skills/firebase';
 
 @Component({
   selector: 'dges-add-project',
@@ -22,6 +23,7 @@ export class AddProjectComponent implements OnInit {
     private readonly actions$: Actions,
     @Inject('UploadFacade') private uploadFacade: UploadFacade,
     public dialogRef: MatDialogRef<AddProjectComponent>,
+    @Inject('SkillsFacade') private skillsFacade: SkillsFacade,
     @Inject(MAT_DIALOG_DATA) public data: { project: Project }
   ) {}
 
@@ -29,18 +31,20 @@ export class AddProjectComponent implements OnInit {
   private project: Project;
   public uploads$: Observable<UploadEntity[]>;
   public uploaded: string[];
+  public skills$: Observable<SkillsEntity[]>;
+  public readonly folderName = 'projects';
 
   onNoClick(): void {
     this.dialogRef.close();
   }
 
   updateFiles(files: File[]): void {
-    console.log('updateFiles', files);
-    this.uploadFacade.init(files);
+    this.uploadFacade.upload(files, this.folderName);
     this.uploads$ = this.uploadFacade.allUpload$;
   }
 
   ngOnInit(): void {
+    this.skills$ = this.skillsFacade.allSkills$;
     this.project = this.data?.project || EMPTY_PROJECT;
     this.projectForm = new FormControl(this.project);
     this.uploaded = this.project.images;

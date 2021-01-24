@@ -20,6 +20,7 @@ import {
 import { MatChipInputEvent } from '@angular/material/chips';
 import { map, startWith } from 'rxjs/operators';
 import { Observable } from 'rxjs';
+import { Skill } from '@dges/types/skill';
 
 @Component({
   selector: 'dges-chips',
@@ -40,15 +41,9 @@ export class ChipsComponent implements ControlValueAccessor {
   separatorKeysCodes: number[] = [ENTER, COMMA];
 
   chipCtrl = new FormControl();
-  filteredChips: Observable<string[]>;
+  filteredChips: Observable<Skill[]>;
   @Input() chipCategory: string;
-  @Input() allChips: string[] = [
-    'Apple',
-    'Lemon',
-    'Lime',
-    'Orange',
-    'Strawberry',
-  ];
+  @Input() allChips: Skill[] = [];
 
   @ViewChild('chipInput') chipInput: ElementRef<HTMLInputElement>;
   @ViewChild(MatAutocompleteTrigger, { read: MatAutocompleteTrigger })
@@ -83,8 +78,8 @@ export class ChipsComponent implements ControlValueAccessor {
   constructor() {
     this.filteredChips = this.chipCtrl.valueChanges.pipe(
       startWith(null),
-      map((chip: string | null) =>
-        chip ? this._filter(chip) : this.allChips.slice()
+      map((chip: Skill | null) =>
+        chip ? this._filter(chip.title) : this.allChips.slice()
       )
     );
   }
@@ -103,7 +98,7 @@ export class ChipsComponent implements ControlValueAccessor {
     // this.chipCtrl.setValue(null);
   }
 
-  get chips(): string[] {
+  get chips(): Skill[] {
     return this.chipsControl.value;
   }
 
@@ -117,17 +112,17 @@ export class ChipsComponent implements ControlValueAccessor {
   }
 
   selected(event: MatAutocompleteSelectedEvent): void {
-    this.chips.indexOf(event.option.viewValue) >= 0 ||
-      this.chipsControl.push(new FormControl(event.option.viewValue));
+    this.chips.find((chip) => chip.title === event.option.viewValue) ||
+      this.chipsControl.push(new FormControl(event.option.value));
     this.chipInput.nativeElement.value = '';
     this.chipCtrl.setValue(null);
   }
 
-  private _filter(value: string): string[] {
+  private _filter(value: string): Skill[] {
     const filterValue = value.toLowerCase();
 
     return this.allChips.filter(
-      (chip) => chip.toLowerCase().indexOf(filterValue) === 0
+      (chip) => chip.title.toLowerCase().indexOf(filterValue) === 0
     );
   }
 }

@@ -1,3 +1,5 @@
+import { Skill } from '@dges/types/skill';
+
 export interface Project {
   id: string;
   title: string;
@@ -5,9 +7,9 @@ export interface Project {
   startDate: Date;
   endDate: Date;
   link: string;
-  tools: string[];
   images: string[];
-  skills: string[];
+  tools: Skill[];
+  skills: Skill[];
 }
 
 export interface ProjectWithTimestamp {
@@ -17,9 +19,9 @@ export interface ProjectWithTimestamp {
   startDate: unknown;
   endDate: unknown;
   link: string;
-  tools: string[];
   images: string[];
-  skills: string[];
+  tools: Skill[];
+  skills: Skill[];
 }
 
 export const EMPTY_PROJECT: Project = {
@@ -33,4 +35,3 @@ export const EMPTY_PROJECT: Project = {
   images: [],
   skills: [],
 };
-

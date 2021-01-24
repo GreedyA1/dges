@@ -18,6 +18,7 @@ export class AddSkillComponent implements OnInit {
   public uploads$: Observable<UploadEntity[]>;
   public skills$: Observable<SkillsEntity[]>;
   public uploaded: string;
+  public readonly folderName = 'skills';
 
   constructor(
     public dialogRef: MatDialogRef<AddSkillComponent>,
@@ -27,8 +28,7 @@ export class AddSkillComponent implements OnInit {
   ) {}
 
   updateFiles(files: File[]): void {
-    console.log('updateFiles', files);
-    this.uploadFacade.init(files);
+    this.uploadFacade.upload(files, this.folderName);
     this.uploads$ = this.uploadFacade.allUpload$;
   }
 
@@ -59,8 +59,17 @@ export class AddSkillComponent implements OnInit {
           image: this.uploaded,
         });
 
+    this.skillsFacade.editOrAddSuccess().subscribe(() => {
+      this.skillForm.reset(EMPTY_SKILL);
+      this.uploaded = null;
+      this.uploadFacade.cleanUploads();
+    });
     // this.actions$
     //   .pipe(ofType(addSkillSuccess, editSkillSuccess))
     //   .subscribe(() => this.dialogRef.close(this.skillForm.value));
+  }
+
+  onNoClick(): void {
+    this.dialogRef.close();
   }
 }

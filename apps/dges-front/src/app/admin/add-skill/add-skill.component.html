@@ -1,8 +1,5 @@
 <h1 mat-dialog-title>{{ data ? 'Edit' : 'Add new' }} skill</h1>
 <div mat-dialog-content>
-  {{ skillForm.value | json }}
-  {{ uploaded | json }}
-
   <dges-skill-form [formControl]="skillForm"> </dges-skill-form>
 
   <dges-images-control
@@ -10,11 +7,14 @@
     (uploaded)="onUploaded($event)"
     [multi]="false"
     [uploads$]="uploads$"
-    [images]="skillForm.value.image"
+    [images]="[uploaded]"
   >
   </dges-images-control>
 
+  {{ skillForm.value | json }}
+
   <dges-skills-group-chips
+    class="example-skills-group"
     [skills]="skills$ | async"
     [showDelete]="false"
     (delete)="deleteSkill($event)"
@@ -34,5 +34,5 @@
   >
     {{ data ? 'EDIT' : 'ADD' }} SKILL
   </button>
-  <button mat-button class="m-1">NO THANKS</button>
+  <button mat-button class="m-1" (click)="onNoClick()">NO THANKS</button>
 </div>

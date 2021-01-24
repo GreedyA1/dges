@@ -10,19 +10,18 @@ import { UploadEntity } from './upload.models';
 
 @Injectable()
 export class UploadEffects {
-  init$ = createEffect(() =>
+  upload$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(UploadActions.init),
+      ofType(UploadActions.upload),
       fetch({
         run: (action) => {
           const uploads: UploadEntity[] = [];
           action.files.forEach((file) => {
             uploads.push({
-              id: new Date().getTime() + file.name, 
-              ...this.firebaseStorage.startUpload(file),
+              id: new Date().getTime() + file.name,
+              ...this.firebaseStorage.startUpload(file, action.folderName),
             });
           });
-          console.log(uploads)
           return UploadActions.loadUploadSuccess({
             upload: uploads,
           });

@@ -1,5 +1,5 @@
 <mat-form-field appearance="outline" class="example-chip-list">
-  <mat-label>Used {{chipCategory}}s</mat-label>
+  <mat-label>Used {{ chipCategory }}s</mat-label>
   <mat-chip-list #chipList aria-label="Chip selection">
     <mat-chip
       *ngFor="let chip of chips; let i = index"
@@ -7,11 +7,17 @@
       [removable]="removable"
       (removed)="remove(i)"
     >
-      {{ chip }}
+      <img
+        class="example-option-img"
+        aria-hidden
+        [src]="chip.image"
+        height="25"
+      />
+      {{ chip.title }}
       <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
     </mat-chip>
     <input
-      placeholder="New {{chipCategory}}..."
+      placeholder="New {{ chipCategory }}..."
       #chipInput
       [formControl]="chipCtrl"
       [matAutocomplete]="auto"
@@ -22,12 +28,22 @@
     />
   </mat-chip-list>
   <mat-error *ngIf="chipCtrl.errors">
-    At least one {{chipCategory}} is <strong>required</strong>
+    At least one {{ chipCategory }} is <strong>required</strong>
   </mat-error>
-  <mat-hint>Choose {{chipCategory}}s used in this project</mat-hint>
-  <mat-autocomplete #auto="matAutocomplete" #inputAutoComplete (optionSelected)="selected($event)">
+  <mat-hint>Choose {{ chipCategory }}s used in this project</mat-hint>
+  <mat-autocomplete
+    #auto="matAutocomplete"
+    #inputAutoComplete
+    (optionSelected)="selected($event)"
+  >
     <mat-option *ngFor="let chip of filteredChips | async" [value]="chip">
-      {{ chip }}
+      <img
+        class="example-option-img"
+        aria-hidden
+        [src]="chip.image"
+        height="25"
+      />
+      {{ chip.title }}
     </mat-option>
   </mat-autocomplete>
 </mat-form-field>
