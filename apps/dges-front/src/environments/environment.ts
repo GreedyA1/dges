@@ -29,7 +29,7 @@ export const environment = {
   authEffect: AuthEffects.AuthEffects,
   authFeatureKey: AuthReducers.authFeatureKey,
   uploadFacade: FirebaseUploadFacade,
-  skillsFacade: SkillsFacade
+  skillsFacade: SkillsFacade,
 };
 
 /*

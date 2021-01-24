@@ -1,12 +1,11 @@
 import { Directive, HostListener, Output, EventEmitter } from '@angular/core';
 
 @Directive({
-  selector: '[dgesDropzone]'
+  selector: '[dgesDropzone]',
 })
 export class DropzoneDirective {
-
-  @Output() dropped =  new EventEmitter<FileList>();
-  @Output() hovered =  new EventEmitter<boolean>();
+  @Output() dropped = new EventEmitter<FileList>();
+  @Output() hovered = new EventEmitter<boolean>();
 
   @HostListener('drop', ['$event'])
   onDrop($event) {
@@ -26,5 +25,4 @@ export class DropzoneDirective {
     $event.preventDefault();
     this.hovered.emit(false);
   }
-
 }

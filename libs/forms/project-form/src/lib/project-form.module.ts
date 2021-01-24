@@ -19,7 +19,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatAutocompleteModule,
     MatDatepickerModule,
     FormsChipsModule,
-    MatNativeDateModule
+    MatNativeDateModule,
   ],
   providers: [MatDatepickerModule],
   exports: [ProjectFormComponent],

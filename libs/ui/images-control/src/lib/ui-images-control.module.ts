@@ -4,9 +4,9 @@ import { ImagesControlComponent } from './images-control/images-control.componen
 import { UiUploadImagesModule } from '@dges/ui/upload-images';
 import { UiUploadTaskModule } from '@dges/ui/upload-task';
 import { DragDropModule } from '@angular/cdk/drag-drop';
-import { MatCardModule } from '@angular/material/card'
-import { MatListModule } from '@angular/material/list'
-import { MatIconModule } from '@angular/material/icon'
+import { MatCardModule } from '@angular/material/card';
+import { MatListModule } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   imports: [
@@ -15,7 +15,7 @@ import { MatIconModule } from '@angular/material/icon'
     UiUploadTaskModule,
     DragDropModule,
     MatListModule,
-    MatIconModule
+    MatIconModule,
   ],
   declarations: [ImagesControlComponent],
   exports: [ImagesControlComponent],

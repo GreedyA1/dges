@@ -5,13 +5,10 @@ import { MatDialog } from '@angular/material/dialog';
 import { LoginDialogComponent } from '@dges/ui/login-dialog';
 import { Store } from '@ngrx/store';
 import { RootStoreModule } from './+store/root-store.module';
-import {
-  AuthActions,
-  AuthSelectors,
-} from '@dges/store/auth/firebase';
+import { AuthActions, AuthSelectors } from '@dges/store/auth/firebase';
 import { Observable } from 'rxjs';
 import { User } from '@dges/types/auth';
-import { SnackbarService }  from '@dges/ui/snackbar';
+import { SnackbarService } from '@dges/ui/snackbar';
 
 @Component({
   selector: 'dges-root',
@@ -31,8 +28,7 @@ export class AppComponent implements OnDestroy {
     public dialog: MatDialog,
     router: Router,
     private store: Store<RootStoreModule>
-  )
-  {
+  ) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addEventListener('change', this._mobileQueryListener);

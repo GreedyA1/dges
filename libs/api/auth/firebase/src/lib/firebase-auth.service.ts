@@ -9,7 +9,7 @@ import UserCredential = firebase.auth.UserCredential;
 })
 export class FirebaseAuthService {
   private readonly _user$: Observable<firebase.User>;
-  
+
   get user$() {
     return this._user$;
   }

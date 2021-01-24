@@ -8,14 +8,18 @@ export const authFeatureKey = 'auth';
 
 export const authReducer = createReducer(
   initialAuthState,
-  on(AuthActions.loginSuccess, AuthActions.loadUserSuccess, (state, payload) => {
-    return {
-      ...state,
-      user: payload.user,
-      loaded: true,
-      loading: false,
-    };
-  }),
+  on(
+    AuthActions.loginSuccess,
+    AuthActions.loadUserSuccess,
+    (state, payload) => {
+      return {
+        ...state,
+        user: payload.user,
+        loaded: true,
+        loading: false,
+      };
+    }
+  ),
   on(AuthActions.logoutSuccess, (state) => {
     return {
       ...state,

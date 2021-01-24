@@ -1,2 +1,2 @@
 export * from './lib/types-skill.module';
-export * from './lib/skill'
+export * from './lib/skill';

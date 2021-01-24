@@ -36,7 +36,7 @@ import { UiConfirmDialogModule } from '@dges/ui/confirm-dialog';
     RootStoreModule,
     UiSnackbarModule,
     MatMenuModule,
-    UiConfirmDialogModule
+    UiConfirmDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

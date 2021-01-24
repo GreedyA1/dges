@@ -3,16 +3,12 @@ import { User } from '@dges/types/auth';
 import firebase from 'firebase';
 import AuthError = firebase.auth.Error;
 
-export const loadUser = createAction(
-  '[OnStart]'
-);
+export const loadUser = createAction('[OnStart]');
 export const loadUserSuccess = createAction(
   '[OnStart LOAD_USER_SUCCESS]',
   props<{ user: User }>()
 );
-export const loadUserFail = createAction(
-  '[OnStart LOAD_USER_FAIL]'
-);
+export const loadUserFail = createAction('[OnStart LOAD_USER_FAIL]');
 export const login = createAction(
   '[auth] LOGIN',
   props<{ email: string; password: string }>()

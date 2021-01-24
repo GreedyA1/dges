@@ -19,5 +19,5 @@ export const getProjectsLoading = createSelector(
 export const projectsQuery = {
   getProjectsData,
   getProjectsLoaded,
-  getProjectsLoading
+  getProjectsLoading,
 };

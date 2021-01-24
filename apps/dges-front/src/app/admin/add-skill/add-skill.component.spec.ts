@@ -8,9 +8,8 @@ describe('AddSkillComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AddSkillComponent ]
-    })
-    .compileComponents();
+      declarations: [AddSkillComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
