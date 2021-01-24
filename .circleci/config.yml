@@ -189,12 +189,12 @@ workflows:
            branches:
              only:
                - develop
-         requires:
-           - check-formatting
-           - lint
-           - test
-           - build
-           - e2e
+        #  requires:
+        #    - check-formatting
+        #    - lint
+        #    - test
+        #    - build
+        #    - e2e
       - lighthouse:
           filters:
             branches:
