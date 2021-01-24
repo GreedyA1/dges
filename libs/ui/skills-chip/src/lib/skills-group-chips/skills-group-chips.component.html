@@ -1,4 +1,6 @@
-<div class="skills-group">
+<!-- <div class="skills-group"></div>
+<mat-label>Used {{ chipCategory }}s</mat-label> -->
+<mat-chip-list #chipList aria-label="Chip selection">
   <dges-skill-chip
     *ngFor="let skill of skills"
     [skill]="skill"
@@ -6,4 +8,4 @@
     (delete)="deleteSkill($event)"
   >
   </dges-skill-chip>
-</div>
+</mat-chip-list>

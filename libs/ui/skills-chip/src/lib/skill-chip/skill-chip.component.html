@@ -1,4 +1,10 @@
-<div class="skill-chip">
-  <img [src]="skill.image" />
-  {{ skill.title }}
-</div>
+<mat-chip
+  [selectable]="false"
+  matTooltip="{{ skill.title }}"
+  [removable]="showDelete"
+  (removed)="onDelete()"
+>
+  <img class="example-option-img" aria-hidden [src]="skill.image" height="25" />
+  &nbsp;&nbsp;{{ skill.title }}
+  <mat-icon matChipRemove *ngIf="showDelete">cancel</mat-icon>
+</mat-chip>
