@@ -2,13 +2,12 @@ import {
   ProjectsEffects,
   ProjectsReducers,
 } from '@dges/store/projects/projects-firebase';
-import {
-  AuthEffects,
-  AuthReducers,
-} from '../../../../libs/store/auth/firebase/src/lib/+state';
+import { AuthEffects, AuthReducers } from '@dges/store/auth/firebase';
+import { FirebaseUploadFacade } from '@dges/store/storage/firebase';
+import { SkillsFacade } from '@dges/store/skills/firebase';
 
 export const environment = {
-  production: true,
+  production: false,
   firebaseConfig: {
     apiKey: 'AIzaSyAB3yJSPHHhOwPBa4buvNl4DT0TjR28X2I',
     authDomain: 'dges-ed94f.firebaseapp.com',
@@ -25,4 +24,6 @@ export const environment = {
   authReducer: AuthReducers.authReducer,
   authEffect: AuthEffects.AuthEffects,
   authFeatureKey: AuthReducers.authFeatureKey,
+  uploadFacade: FirebaseUploadFacade,
+  skillsFacade: SkillsFacade,
 };

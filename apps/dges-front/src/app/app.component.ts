@@ -8,7 +8,6 @@ import { RootStoreModule } from './+store/root-store.module';
 import { AuthActions, AuthSelectors } from '@dges/store/auth/firebase';
 import { Observable } from 'rxjs';
 import { User } from '@dges/types/auth';
-import { SnackbarService } from '@dges/ui/snackbar';
 
 @Component({
   selector: 'dges-root',
