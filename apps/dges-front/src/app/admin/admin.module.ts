@@ -13,6 +13,7 @@ import { UiImagesControlModule } from '@dges/ui/images-control';
 import { environment } from '../../environments/environment';
 import { AddSkillComponent } from './add-skill/add-skill.component';
 import { FormsSkillsModule } from '@dges/forms/skills';
+import { UiSkillsChipModule } from '@dges/ui/skills-chip';
 
 @NgModule({
   imports: [
@@ -26,6 +27,7 @@ import { FormsSkillsModule } from '@dges/forms/skills';
     MatDialogModule,
     UiImagesControlModule,
     FormsSkillsModule,
+    UiSkillsChipModule,
   ],
   declarations: [AddProjectComponent, AddSkillComponent],
   providers: [

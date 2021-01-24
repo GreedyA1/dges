@@ -14,10 +14,16 @@
   >
   </dges-images-control>
 
-  <div *ngFor="let skill of skills$ | async">
+  <dges-skills-group-chips
+    [skills]="skills$ | async"
+    [showDelete]="false"
+    (delete)="deleteSkill($event)"
+  >
+  </dges-skills-group-chips>
+  <!-- <div>
     {{ skill.title }}
     <img class="max-width-100" [src]="skill.image" />
-  </div>
+  </div> -->
 </div>
 <div mat-dialog-actions class="d-flex justify-content-end">
   <button

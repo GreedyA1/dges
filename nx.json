@@ -116,6 +116,9 @@
     },
     "ui-images-control": {
       "tags": []
+    },
+    "ui-skills-chip": {
+      "tags": []
     }
   }
 }

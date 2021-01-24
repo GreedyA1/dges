@@ -36,4 +36,7 @@ export class SkillsFacade {
     this.store.dispatch(SkillsActions.editSkill({ skill: skill }));
   }
 
+  deleteSkill(skill: Skill) {
+    this.store.dispatch(SkillsActions.deleteSkill({ skill: skill }));
+  }
 }

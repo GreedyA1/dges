@@ -26,8 +26,13 @@ export class UploadImagesComponent {
     for (let i = 0; i < uploadFiles.length; i++) {
       if (
         !this.files.find((element) => element.name === uploadFiles.item(i).name)
-      )
-        this.files.push(uploadFiles.item(i));
+      ) {
+        if (this.multi) {
+          this.files.push(uploadFiles.item(i));
+        } else {
+          this.files = [uploadFiles.item(0)];
+        }
+      }
     }
     this.filesUpdate.emit(this.files);
   }

@@ -1,0 +1,9 @@
+<div class="skills-group">
+  <dges-skill-chip
+    *ngFor="let skill of skills"
+    [skill]="skill"
+    [showDelete]="false"
+    (delete)="deleteSkill($event)"
+  >
+  </dges-skill-chip>
+</div>

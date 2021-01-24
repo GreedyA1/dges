@@ -907,6 +907,31 @@
           }
         }
       }
+    },
+    "ui-skills-chip": {
+      "projectType": "library",
+      "root": "libs/ui/skills-chip",
+      "sourceRoot": "libs/ui/skills-chip/src",
+      "prefix": "dges",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/ui/skills-chip/src/**/*.ts",
+              "libs/ui/skills-chip/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/ui/skills-chip"],
+          "options": {
+            "jestConfig": "libs/ui/skills-chip/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {

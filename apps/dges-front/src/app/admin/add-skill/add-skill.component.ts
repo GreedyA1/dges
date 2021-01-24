@@ -44,6 +44,10 @@ export class AddSkillComponent implements OnInit {
     this.uploaded = images[0];
   }
 
+  deleteSkill(skill: Skill): void {
+    this.skillsFacade.deleteSkill(skill);
+  }
+
   addOrEditSkill(): void {
     this.data
       ? this.skillsFacade.editSkill({
