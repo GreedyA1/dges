@@ -6,7 +6,6 @@ import { SnackbarService } from '@dges/ui/snackbar';
 
 import * as SkillsFeature from './skills.reducer';
 import * as SkillsActions from './skills.actions';
-import { Skill } from '@dges/types/skill';
 import { of, from } from 'rxjs';
 import { switchMap, map, catchError } from 'rxjs/operators';
 

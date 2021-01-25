@@ -4,8 +4,6 @@
   class="example-list"
   (cdkDropListDropped)="drop($event)"
 >
-  {{ images | json }}
-
   <div
     *ngFor="let image of images; let i = index"
     class="example-box {{ !i ? 'first' : '' }}"

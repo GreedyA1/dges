@@ -6,6 +6,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatMenuModule } from '@angular/material/menu';
+import { UiSkillsChipModule } from '@dges/ui/skills-chip'
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { MatMenuModule } from '@angular/material/menu';
     MatIconModule,
     MatButtonModule,
     MatMenuModule,
+    UiSkillsChipModule
   ],
   declarations: [ProjectCardComponent],
   exports: [ProjectCardComponent],

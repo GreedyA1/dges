@@ -53,15 +53,13 @@
     </p>
   </mat-card-content>
   <mat-card-actions>
-    <mat-chip-list aria-label="Fish selection">
-      <mat-chip color="primary" *ngFor="let skill of project.skills">{{
-        skill
-      }}</mat-chip>
-    </mat-chip-list>
-    <mat-chip-list aria-label="Fish selection">
-      <mat-chip color="accent" *ngFor="let tool of project.tools">{{
-        tool
-      }}</mat-chip>
-    </mat-chip-list>
+    <dges-skills-group-chips
+    [skills]="project.skills"
+    [showDelete]="false"
+    ></dges-skills-group-chips>
+    <dges-skills-group-chips
+    [skills]="project.tools"
+    [showDelete]="false"
+    ></dges-skills-group-chips>
   </mat-card-actions>
 </mat-card>

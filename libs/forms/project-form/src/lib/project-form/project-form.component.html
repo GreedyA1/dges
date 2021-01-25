@@ -4,6 +4,7 @@
     <input
       matInput
       cdkFocusInitial
+      (blur)="onBlur()"
       placeholder="Placeholder"
       formControlName="title"
     />
@@ -15,7 +16,11 @@
 
   <mat-form-field appearance="outline" class="example-full-width">
     <mat-label>Description</mat-label>
-    <textarea matInput formControlName="description"></textarea>
+    <textarea
+      matInput
+      (blur)="onBlur()"
+      formControlName="description"
+    ></textarea>
     <mat-hint>Describe the Project</mat-hint>
     <mat-error *ngIf="descriptionFormControl.hasError('required')">
       Description is <strong>required</strong>
@@ -27,10 +32,16 @@
     <mat-date-range-input [rangePicker]="picker">
       <input
         matStartDate
+        (blur)="onBlur()"
         placeholder="Start date"
         formControlName="startDate"
       />
-      <input matEndDate placeholder="End date" formControlName="endDate" />
+      <input
+        matEndDate
+        placeholder="End date"
+        (blur)="onBlur()"
+        formControlName="endDate"
+      />
     </mat-date-range-input>
     <mat-error
       *ngIf="
@@ -49,7 +60,12 @@
 
   <mat-form-field class="example-full-width" appearance="outline">
     <mat-label>Link</mat-label>
-    <input matInput placeholder="Placeholder" formControlName="link" />
+    <input
+      matInput
+      (blur)="onBlur()"
+      placeholder="Placeholder"
+      formControlName="link"
+    />
     <mat-hint>URL for your project</mat-hint>
     <mat-error
       *ngIf="
@@ -67,6 +83,7 @@
   <dges-chips
     [chipCategory]="'tool'"
     formControlName="tools"
+    (blur)="onBlur()"
     [allChips]="skills"
   >
   </dges-chips>
@@ -74,6 +91,7 @@
   <dges-chips
     [chipCategory]="'skill'"
     formControlName="skills"
+    (blur)="onBlur()"
     [allChips]="skills"
   >
   </dges-chips>

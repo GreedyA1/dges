@@ -1,5 +1,6 @@
 <h1 mat-dialog-title>{{ data ? 'Edit' : 'Add new' }} project</h1>
 <div mat-dialog-content>
+
   <dges-project-form
     [choiceArray]="['fruity', 'duity']"
     [formControl]="projectForm"
@@ -20,7 +21,7 @@
   <button
     mat-stroked-button
     color="primary"
-    [disabled]="!projectForm.valid"
+    [disabled]="!projectForm.valid || !projectForm.touched"
     (click)="addOrEditProject()"
   >
     {{ data ? 'EDIT' : 'ADD' }} PROJECT

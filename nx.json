@@ -119,6 +119,9 @@
     },
     "ui-skills-chip": {
       "tags": []
+    },
+    "store-tools-firebase": {
+      "tags": []
     }
   }
 }

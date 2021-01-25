@@ -14,6 +14,7 @@ import { environment } from '../../environments/environment';
 import { AddSkillComponent } from './add-skill/add-skill.component';
 import { FormsSkillsModule } from '@dges/forms/skills';
 import { UiSkillsChipModule } from '@dges/ui/skills-chip';
+import { AddToolsComponent } from './add-tools/add-tools.component';
 
 @NgModule({
   imports: [
@@ -29,7 +30,7 @@ import { UiSkillsChipModule } from '@dges/ui/skills-chip';
     FormsSkillsModule,
     UiSkillsChipModule,
   ],
-  declarations: [AddProjectComponent, AddSkillComponent],
+  declarations: [AddProjectComponent, AddSkillComponent, AddToolsComponent],
   providers: [
     { provide: 'UploadFacade', useClass: environment.uploadFacade },
     { provide: 'SkillsFacade', useClass: environment.skillsFacade },

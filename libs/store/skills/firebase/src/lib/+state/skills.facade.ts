@@ -6,7 +6,6 @@ import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
 import * as SkillsActions from './skills.actions';
-import * as SkillsFeature from './skills.reducer';
 import * as SkillsSelectors from './skills.selectors';
 
 @Injectable()

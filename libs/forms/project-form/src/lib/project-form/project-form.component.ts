@@ -69,6 +69,10 @@ export class ProjectFormComponent implements ControlValueAccessor {
   // Function to call when the input is touched (when a star is clicked).
   onTouched: () => void;
 
+  onBlur() {
+    this.onTouched();
+  }
+
   writeValue(val: any): void {
     val && this.projectForm.setValue(val);
   }
