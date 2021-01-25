@@ -34,6 +34,7 @@ import { AddToolsComponent } from './add-tools/add-tools.component';
   providers: [
     { provide: 'UploadFacade', useClass: environment.uploadFacade },
     { provide: 'SkillsFacade', useClass: environment.skillsFacade },
+    { provide: 'ToolsFacade', useClass: environment.toolsFacade },
   ],
 })
 export class AdminModule {}

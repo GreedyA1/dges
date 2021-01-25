@@ -43,7 +43,17 @@ export class ChipsComponent implements ControlValueAccessor {
   chipCtrl = new FormControl();
   filteredChips: Observable<Skill[]>;
   @Input() chipCategory: string;
-  @Input() allChips: Skill[] = [];
+
+  @Input()
+  
+  get allChips(): Skill[] {
+    return this._allChips;
+  }
+  set allChips(allChips: Skill[]) {
+    console.log('chips',allChips)
+    this._allChips = allChips;
+  }
+  _allChips: Skill[] = [];
 
   @ViewChild('chipInput') chipInput: ElementRef<HTMLInputElement>;
   @ViewChild(MatAutocompleteTrigger, { read: MatAutocompleteTrigger })

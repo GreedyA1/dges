@@ -81,18 +81,16 @@
   </mat-form-field>
 
   <dges-chips
-    [chipCategory]="'tool'"
-    formControlName="tools"
-    (blur)="onBlur()"
+    [chipCategory]="'skill'"
+    formControlName="skills"
     [allChips]="skills"
   >
   </dges-chips>
 
   <dges-chips
-    [chipCategory]="'skill'"
-    formControlName="skills"
-    (blur)="onBlur()"
-    [allChips]="skills"
+    [chipCategory]="'tool'"
+    formControlName="tools"
+    [allChips]="tools"
   >
   </dges-chips>
 </form>

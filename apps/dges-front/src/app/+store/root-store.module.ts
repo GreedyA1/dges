@@ -7,6 +7,7 @@ import { ProjectCardsModule } from './project-cards/project-cards.module';
 import { AuthModule } from './auth/auth.module';
 import { StoreStorageFirebaseModule } from '@dges/store/storage/firebase';
 import { StoreSkillsFirebaseModule } from '@dges/store/skills/firebase';
+import { StoreToolsFirebaseModule } from '@dges/store/tools/firebase';
 
 @NgModule({
   declarations: [],
@@ -16,6 +17,7 @@ import { StoreSkillsFirebaseModule } from '@dges/store/skills/firebase';
     AuthModule,
     StoreStorageFirebaseModule,
     StoreSkillsFirebaseModule,
+    StoreToolsFirebaseModule,
     StoreModule.forRoot(
       {},
       {

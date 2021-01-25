@@ -15,6 +15,7 @@ import { RootStoreModule } from '../+store/root-store.module';
 import { AddProjectComponent } from '../admin/add-project/add-project.component';
 import { Inject } from '@angular/core';
 import { AddSkillComponent } from '../admin/add-skill/add-skill.component';
+import { AddToolsComponent } from '../admin/add-tools/add-tools.component';
 
 @Component({
   selector: 'dges-projects',
@@ -47,7 +48,7 @@ export class ProjectsComponent implements OnInit {
   }
 
   addSkill(): void {
-    this.dialog.open(AddSkillComponent, {
+    this.dialog.open(AddToolsComponent, {
       panelClass: 'full-screen-dialog',
     });
   }

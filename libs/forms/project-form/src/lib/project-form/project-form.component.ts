@@ -30,7 +30,24 @@ import { Skill } from '@dges/types/skill';
 })
 export class ProjectFormComponent implements ControlValueAccessor {
   @Input() choiceArray: string[];
-  @Input() skills: Skill[];
+
+  @Input()
+  get skills(): Skill[] {
+    return this._skills;
+  }
+  set skills(skills: Skill[]) {
+    this._skills = skills;
+  }
+  _skills: Skill[] = [];
+
+  @Input()
+  get tools(): Skill[] {
+    return this._tools;
+  }
+  set tools(tools: Skill[]) {
+    this._tools = tools;
+  }
+  _tools: Skill[] = [];
 
   public isDisabled = false;
   expression =
