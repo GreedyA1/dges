@@ -8,3 +8,7 @@
   flex-direction: row;
   flex-wrap: wrap;
 }
+
+mat-chip-list:focus {
+  outline: 0;
+}

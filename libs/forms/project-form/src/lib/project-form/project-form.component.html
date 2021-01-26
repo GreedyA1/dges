@@ -80,17 +80,25 @@
     </mat-error>
   </mat-form-field>
 
-  <dges-chips
-    [chipCategory]="'skill'"
-    formControlName="skills"
-    [allChips]="skills"
-  >
-  </dges-chips>
+  <ng-container *ngIf="skills$ | async as skills">
+    <mat-progress-bar class="my-5" *ngIf="!skills.length" mode="buffer"></mat-progress-bar>
+    <dges-chips
+      *ngIf="skills.length"
+      [chipCategory]="'skill'"
+      formControlName="skills"
+      [allChips]="skills"
+    >
+    </dges-chips>
+  </ng-container>
 
-  <dges-chips
-    [chipCategory]="'tool'"
-    formControlName="tools"
-    [allChips]="tools"
-  >
-  </dges-chips>
+  <ng-container *ngIf="tools$ | async as tools">
+    <mat-progress-bar class="my-5" *ngIf="!tools.length" mode="buffer"></mat-progress-bar>
+    <dges-chips
+      *ngIf="tools.length"
+      [chipCategory]="'tool'"
+      formControlName="tools"
+      [allChips]="tools"
+    >
+    </dges-chips>
+  </ng-container>
 </form>

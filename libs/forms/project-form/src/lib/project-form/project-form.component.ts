@@ -10,6 +10,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { Skill } from '@dges/types/skill';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'dges-project-form',
@@ -32,22 +33,22 @@ export class ProjectFormComponent implements ControlValueAccessor {
   @Input() choiceArray: string[];
 
   @Input()
-  get skills(): Skill[] {
-    return this._skills;
+  get skills$(): Observable<Skill[]> {
+    return this._skills$;
   }
-  set skills(skills: Skill[]) {
-    this._skills = skills;
+  set skills$(skills: Observable<Skill[]>) {
+    this._skills$ = skills;
   }
-  _skills: Skill[] = [];
+  _skills$: Observable<Skill[]>;
 
   @Input()
-  get tools(): Skill[] {
-    return this._tools;
+  get tools$(): Observable<Skill[]> {
+    return this._tools$;
   }
-  set tools(tools: Skill[]) {
-    this._tools = tools;
+  set tools$(tools: Observable<Skill[]>) {
+    this._tools$ = tools;
   }
-  _tools: Skill[] = [];
+  _tools$: Observable<Skill[]>;
 
   public isDisabled = false;
   expression =

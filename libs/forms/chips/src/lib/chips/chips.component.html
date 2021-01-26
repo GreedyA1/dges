@@ -1,8 +1,13 @@
 <mat-form-field appearance="outline" class="example-chip-list">
   <mat-label>Used {{ chipCategory }}s</mat-label>
-  <mat-chip-list #chipList aria-label="Chip selection">
+  <mat-chip-list #chipList aria-label="Chip selection" 
+  class="example-chip"
+  cdkDropList 
+  cdkDropListOrientation="horizontal"
+  (cdkDropListDropped)="drop($event)">
     <mat-chip
       *ngFor="let chip of chips; let i = index"
+      cdkDrag
       [selectable]="selectable"
       [removable]="removable"
       (removed)="remove(i)"

@@ -6,6 +6,7 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatChipsModule } from '@angular/material/chips';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { MatIconModule } from '@angular/material/icon';
     MatChipsModule,
     ReactiveFormsModule,
     MatIconModule,
+    DragDropModule
   ],
   declarations: [ChipsComponent],
   exports: [ChipsComponent],

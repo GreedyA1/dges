@@ -21,6 +21,7 @@ import { MatChipInputEvent } from '@angular/material/chips';
 import { map, startWith } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { Skill } from '@dges/types/skill';
+import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'dges-chips',
@@ -50,7 +51,7 @@ export class ChipsComponent implements ControlValueAccessor {
     return this._allChips;
   }
   set allChips(allChips: Skill[]) {
-    console.log('chips',allChips)
+    // console.log('chips',allChips)
     this._allChips = allChips;
   }
   _allChips: Skill[] = [];
@@ -69,6 +70,10 @@ export class ChipsComponent implements ControlValueAccessor {
   writeValue(obj: any): void {
     this.chipsControl = new FormArray([]);
     for (const value of obj) this.chipsControl.push(new FormControl(value));
+  }
+
+  drop(event: CdkDragDrop<Skill[]>) {
+    moveItemInArray(this.chips, event.previousIndex, event.currentIndex);
   }
 
   registerOnChange(fn: any): void {
