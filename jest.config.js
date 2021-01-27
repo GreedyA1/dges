@@ -32,5 +32,6 @@ module.exports = {
     '<rootDir>/libs/ui/images-control',
     '<rootDir>/libs/ui/skills-chip',
     '<rootDir>/libs/store/tools/firebase',
+    '<rootDir>/libs/mylib',
   ],
 };

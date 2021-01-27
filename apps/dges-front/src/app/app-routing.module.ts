@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { canActivate, loggedIn } from '@angular/fire/auth-guard';
+import { AdminRoutingModule } from './admin/admin-routing.module';
 
 const adminOnly = () => loggedIn;
 
@@ -46,7 +47,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' })],
+  imports: [RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' }), AdminRoutingModule],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

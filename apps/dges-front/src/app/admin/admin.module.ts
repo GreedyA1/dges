@@ -15,6 +15,9 @@ import { AddSkillComponent } from './add-skill/add-skill.component';
 import { FormsSkillsModule } from '@dges/forms/skills';
 import { UiSkillsChipModule } from '@dges/ui/skills-chip';
 import { AddToolsComponent } from './add-tools/add-tools.component';
+import { SkillsControlPanelComponent } from './skills-control-panel/skills-control-panel.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   imports: [
@@ -29,8 +32,10 @@ import { AddToolsComponent } from './add-tools/add-tools.component';
     UiImagesControlModule,
     FormsSkillsModule,
     UiSkillsChipModule,
+    MatCardModule,
+    MatProgressSpinnerModule
   ],
-  declarations: [AddProjectComponent, AddSkillComponent, AddToolsComponent],
+  declarations: [AddProjectComponent, AddSkillComponent, AddToolsComponent, SkillsControlPanelComponent],
   providers: [
     { provide: 'UploadFacade', useClass: environment.uploadFacade },
     { provide: 'SkillsFacade', useClass: environment.skillsFacade },

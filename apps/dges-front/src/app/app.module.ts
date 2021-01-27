@@ -18,6 +18,7 @@ import { RootStoreModule } from './+store/root-store.module';
 import { MatMenuModule } from '@angular/material/menu';
 import { UiSnackbarModule } from '@dges/ui/snackbar';
 import { UiConfirmDialogModule } from '@dges/ui/confirm-dialog';
+import { AdminModule } from './admin/admin.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -37,6 +38,7 @@ import { UiConfirmDialogModule } from '@dges/ui/confirm-dialog';
     UiSnackbarModule,
     MatMenuModule,
     UiConfirmDialogModule,
+    AdminModule
   ],
   providers: [],
   bootstrap: [AppComponent],

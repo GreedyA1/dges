@@ -9,16 +9,6 @@
   >
     <mat-icon>add</mat-icon>
   </button>
-  <button
-    *ngIf="user$ | async"
-    mat-fab
-    color="primary"
-    class="action-button2"
-    (click)="addSkill()"
-    aria-label="Example icon button with a delete icon"
-  >
-    <mat-icon>add</mat-icon>
-  </button>
 
   <mat-spinner class="absolute-center" *ngIf="loading$ | async"></mat-spinner>
 

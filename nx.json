@@ -122,6 +122,9 @@
     },
     "store-tools-firebase": {
       "tags": []
+    },
+    "mylib": {
+      "tags": []
     }
   }
 }
