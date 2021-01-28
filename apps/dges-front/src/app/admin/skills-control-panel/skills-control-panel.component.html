@@ -1,14 +1,4 @@
 <div class="full-page">
-  <button
-    mat-fab
-    color="primary"
-    class="action-button"
-    (click)="addSkill()"
-    aria-label="Example icon button with a delete icon"
-  >
-    <mat-icon>add</mat-icon>
-  </button>
-
   <mat-card class="example-card">
     <mat-card-header>
       <mat-card-title>Skills</mat-card-title>
@@ -20,6 +10,15 @@
         [showDelete]="false"
       >
       </dges-skills-group-chips>
+      <button
+        mat-fab
+        color="primary"
+        class="action-button"
+        (click)="addSkill()"
+        aria-label="Example icon button with a delete icon"
+      >
+        <mat-icon>add</mat-icon>
+      </button>
     </mat-card-content>
   </mat-card>
 
@@ -34,6 +33,15 @@
         [showDelete]="false"
       >
       </dges-skills-group-chips>
+      <button
+        mat-fab
+        color="primary"
+        class="action-button"
+        (click)="addTools()"
+        aria-label="Example icon button with a delete icon"
+      >
+        <mat-icon>add</mat-icon>
+      </button>
     </mat-card-content>
   </mat-card>
 
