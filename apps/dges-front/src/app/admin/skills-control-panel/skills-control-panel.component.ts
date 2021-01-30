@@ -12,20 +12,20 @@ import { AddToolsComponent } from '../add-tools/add-tools.component';
   styleUrls: ['./skills-control-panel.component.scss'],
 })
 export class SkillsControlPanelComponent implements OnInit {
-
-  
   public skills$: Observable<SkillsEntity[]>;
   public tools$: Observable<ToolsEntity[]>;
   public loadingSkills$: Observable<boolean>;
   public loadingTools$: Observable<boolean>;
 
-  constructor(public dialog: MatDialog, 
+  constructor(
+    public dialog: MatDialog,
     @Inject('SkillsFacade') private skillsFacade: SkillsFacade,
-    @Inject('ToolsFacade') private toolsFacade: ToolsFacade,) {}
+    @Inject('ToolsFacade') private toolsFacade: ToolsFacade
+  ) {}
 
   ngOnInit(): void {
     this.skills$ = this.skillsFacade.allSkills$;
-    this.tools$ = this.toolsFacade.allTools$;    
+    this.tools$ = this.toolsFacade.allTools$;
     this.skillsFacade.init();
     this.toolsFacade.init();
     this.loadingSkills$ = this.skillsFacade.loaded$;
