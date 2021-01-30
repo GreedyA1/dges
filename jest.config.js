@@ -31,6 +31,12 @@ module.exports = {
     '<rootDir>/libs/types/skill',
     '<rootDir>/libs/ui/images-control',
     '<rootDir>/libs/ui/skills-chip',
-    '<rootDir>/libs/store/tools/firebase'
+    '<rootDir>/libs/store/tools/firebase',
+    '<rootDir>/libs/ui/job-card',
+    '<rootDir>/libs/forms/job-form',
+    '<rootDir>/libs/data/jobs',
+    '<rootDir>/libs/api/jobs/firebase',
+    '<rootDir>/libs/store/jobs/firebase',
+    '<rootDir>/libs/types/job',
   ],
 };

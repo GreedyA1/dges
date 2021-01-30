@@ -58,7 +58,13 @@
       "@dges/types/skill": ["libs/types/skill/src/index.ts"],
       "@dges/ui/images-control": ["libs/ui/images-control/src/index.ts"],
       "@dges/ui/skills-chip": ["libs/ui/skills-chip/src/index.ts"],
-      "@dges/store/tools/firebase": ["libs/store/tools/firebase/src/index.ts"]
+      "@dges/store/tools/firebase": ["libs/store/tools/firebase/src/index.ts"],
+      "@dges/ui/job-card": ["libs/ui/job-card/src/index.ts"],
+      "@dges/forms/job-form": ["libs/forms/job-form/src/index.ts"],
+      "@dges/data/jobs": ["libs/data/jobs/src/index.ts"],
+      "@dges/api/jobs/firebase": ["libs/api/jobs/firebase/src/index.ts"],
+      "@dges/store/jobs/firebase": ["libs/store/jobs/firebase/src/index.ts"],
+      "@dges/types/job": ["libs/types/job/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"],

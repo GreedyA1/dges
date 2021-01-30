@@ -122,6 +122,24 @@
     },
     "store-tools-firebase": {
       "tags": []
+    },
+    "ui-job-card": {
+      "tags": []
+    },
+    "forms-job-form": {
+      "tags": []
+    },
+    "data-jobs": {
+      "tags": []
+    },
+    "api-jobs-firebase": {
+      "tags": []
+    },
+    "store-jobs-firebase": {
+      "tags": []
+    },
+    "types-job": {
+      "tags": []
     }
   }
 }

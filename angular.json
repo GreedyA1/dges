@@ -957,6 +957,156 @@
           }
         }
       }
+    },
+    "ui-job-card": {
+      "projectType": "library",
+      "root": "libs/ui/job-card",
+      "sourceRoot": "libs/ui/job-card/src",
+      "prefix": "dges",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/ui/job-card/src/**/*.ts",
+              "libs/ui/job-card/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/ui/job-card"],
+          "options": {
+            "jestConfig": "libs/ui/job-card/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "forms-job-form": {
+      "projectType": "library",
+      "root": "libs/forms/job-form",
+      "sourceRoot": "libs/forms/job-form/src",
+      "prefix": "dges",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/forms/job-form/src/**/*.ts",
+              "libs/forms/job-form/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/forms/job-form"],
+          "options": {
+            "jestConfig": "libs/forms/job-form/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "data-jobs": {
+      "projectType": "library",
+      "root": "libs/data/jobs",
+      "sourceRoot": "libs/data/jobs/src",
+      "prefix": "dges",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/data/jobs/src/**/*.ts",
+              "libs/data/jobs/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/data/jobs"],
+          "options": {
+            "jestConfig": "libs/data/jobs/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "api-jobs-firebase": {
+      "projectType": "library",
+      "root": "libs/api/jobs/firebase",
+      "sourceRoot": "libs/api/jobs/firebase/src",
+      "prefix": "dges",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/api/jobs/firebase/src/**/*.ts",
+              "libs/api/jobs/firebase/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/api/jobs/firebase"],
+          "options": {
+            "jestConfig": "libs/api/jobs/firebase/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "store-jobs-firebase": {
+      "projectType": "library",
+      "root": "libs/store/jobs/firebase",
+      "sourceRoot": "libs/store/jobs/firebase/src",
+      "prefix": "dges",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/store/jobs/firebase/src/**/*.ts",
+              "libs/store/jobs/firebase/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/store/jobs/firebase"],
+          "options": {
+            "jestConfig": "libs/store/jobs/firebase/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "types-job": {
+      "projectType": "library",
+      "root": "libs/types/job",
+      "sourceRoot": "libs/types/job/src",
+      "prefix": "dges",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/types/job/src/**/*.ts",
+              "libs/types/job/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/types/job"],
+          "options": {
+            "jestConfig": "libs/types/job/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {
