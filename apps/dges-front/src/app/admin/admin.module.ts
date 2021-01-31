@@ -18,6 +18,7 @@ import { AddToolsComponent } from './add-tools/add-tools.component';
 import { SkillsControlPanelComponent } from './skills-control-panel/skills-control-panel.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { AddJobComponent } from './add-job/add-job.component';
 
 @NgModule({
   imports: [
@@ -35,11 +36,12 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MatCardModule,
     MatProgressSpinnerModule
   ],
-  declarations: [AddProjectComponent, AddSkillComponent, AddToolsComponent, SkillsControlPanelComponent],
+  declarations: [AddProjectComponent, AddSkillComponent, AddToolsComponent, SkillsControlPanelComponent, AddJobComponent],
   providers: [
     { provide: 'UploadFacade', useClass: environment.uploadFacade },
     { provide: 'SkillsFacade', useClass: environment.skillsFacade },
     { provide: 'ToolsFacade', useClass: environment.toolsFacade },
   ],
+  exports: [AddJobComponent],
 })
 export class AdminModule {}

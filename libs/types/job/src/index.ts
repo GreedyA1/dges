@@ -1,1 +1,1 @@
-export * from './lib/types-job.module';
+export * from './lib/job';
