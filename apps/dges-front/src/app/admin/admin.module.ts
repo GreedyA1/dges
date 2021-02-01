@@ -19,6 +19,7 @@ import { SkillsControlPanelComponent } from './skills-control-panel/skills-contr
 import { MatCardModule } from '@angular/material/card';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { AddJobComponent } from './add-job/add-job.component';
+import { FormsJobFormModule } from '@dges/forms/job-form';
 
 @NgModule({
   imports: [
@@ -29,6 +30,7 @@ import { AddJobComponent } from './add-job/add-job.component';
     ReactiveFormsModule,
     MatIconModule,
     ProjectFormModule,
+    FormsJobFormModule,
     MatDialogModule,
     UiImagesControlModule,
     FormsSkillsModule,
@@ -41,6 +43,7 @@ import { AddJobComponent } from './add-job/add-job.component';
     { provide: 'UploadFacade', useClass: environment.uploadFacade },
     { provide: 'SkillsFacade', useClass: environment.skillsFacade },
     { provide: 'ToolsFacade', useClass: environment.toolsFacade },
+    { provide: 'JobsFacade', useClass: environment.jobsFacade },
   ],
   exports: [AddJobComponent],
 })

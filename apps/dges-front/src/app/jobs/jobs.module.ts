@@ -25,6 +25,7 @@ import { environment } from '../../environments/environment';
   providers: [
     { provide: 'UploadFacade', useClass: environment.uploadFacade },
     { provide: 'JobsFacade', useClass: environment.uploadFacade },
+    { provide: 'JobsFacade', useClass: environment.jobsFacade },
   ],
 })
 export class JobsModule {}

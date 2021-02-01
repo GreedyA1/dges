@@ -33,7 +33,7 @@ export const environment = {
   uploadFacade: FirebaseUploadFacade,
   jobsFacade: JobsFacade,
   skillsFacade: SkillsFacade,
-  toolsFacade: ToolsFacade,
+  toolsFacade: ToolsFacade
 };
 
 /*

@@ -29,8 +29,7 @@ export class JobsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // this.store.dispatch(ProjectsActions.loadProjects());
-    this.jobs$ = this.jobsFacade.allJobs$;
+    this.jobs$ = this.jobsFacade.init();
     this.loading$ = this.jobsFacade.loaded$;
     this.user$ = this.store.select(AuthSelectors.getCurrentUser);
   }

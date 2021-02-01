@@ -28,15 +28,15 @@ export interface JobWithTimestamp {
   id: string | number;
   title: string;
   description: string;
-  achievements: string[];
+  achievements?: string[];
   startDate: unknown;
   endDate: unknown;
   link: string;
   images: string[];
   tools: Skill[];
   skills: Skill[];
-  position: Position[];
-  projects: Project[];
+  position?: Position[];
+  projects?: Project[];
 }
 
 export const EMPTY_JOB: Job = {

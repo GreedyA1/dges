@@ -1,1 +1,30 @@
-<p>add-job works!</p>
+<h1 mat-dialog-title>{{ data ? 'Edit' : 'Add new' }} job</h1>
+<div mat-dialog-content>
+  {{ jobForm.value | json }}
+
+  <dges-jobs-form [formControl]="jobForm" [skills$]="skills$" [tools$]="tools$">
+  </dges-jobs-form>
+
+  <dges-images-control
+    (updateFiles)="updateFiles($event)"
+    (uploaded)="onUploaded($event)"
+    [multi]="true"
+    [uploads$]="uploads$"
+    [images]="jobForm.value.images"
+  >
+  </dges-images-control>
+</div>
+
+{{ jobForm.valid | json }}
+
+<div mat-dialog-actions class="d-flex justify-content-end">
+  <button
+    mat-stroked-button
+    color="primary"
+    [disabled]="!jobForm.valid || !jobForm.touched"
+    (click)="addOrEditJob()"
+  >
+    {{ data ? 'EDIT' : 'ADD' }} PROJECT
+  </button>
+  <button mat-button class="m-1" (click)="onNoClick()">NO THANKS</button>
+</div>

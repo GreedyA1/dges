@@ -30,7 +30,6 @@ import { Observable } from 'rxjs';
   ],
 })
 export class ProjectFormComponent implements ControlValueAccessor {
-  @Input() choiceArray: string[];
 
   @Input()
   get skills$(): Observable<Skill[]> {

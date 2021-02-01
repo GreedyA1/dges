@@ -1,0 +1,22 @@
+.example-card {
+    max-width: 400px;
+    min-width: 270px;
+  }
+  
+  @media only screen and (min-width: 320px) {
+    .example-card {
+      min-width: 270px;
+    }
+  }
+  
+  @media only screen and (min-width: 375px) {
+    .example-card {
+      min-width: 300px;
+    }
+  }
+  
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
+  

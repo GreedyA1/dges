@@ -8,6 +8,7 @@ import { AuthModule } from './auth/auth.module';
 import { StoreStorageFirebaseModule } from '@dges/store/storage/firebase';
 import { StoreSkillsFirebaseModule } from '@dges/store/skills/firebase';
 import { StoreToolsFirebaseModule } from '@dges/store/tools/firebase';
+import { StoreJobsFirebaseModule } from '@dges/store/jobs/firebase';
 
 @NgModule({
   declarations: [],
@@ -18,6 +19,7 @@ import { StoreToolsFirebaseModule } from '@dges/store/tools/firebase';
     StoreStorageFirebaseModule,
     StoreSkillsFirebaseModule,
     StoreToolsFirebaseModule,
+    StoreJobsFirebaseModule,
     StoreModule.forRoot(
       {},
       {

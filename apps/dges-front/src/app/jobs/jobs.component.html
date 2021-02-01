@@ -10,8 +10,8 @@
     <mat-icon>add</mat-icon>
   </button>
 
-  <mat-spinner class="absolute-center" *ngIf="loading$ | async"></mat-spinner>
+  <mat-spinner class="absolute-center" *ngIf="!loading$ | async"></mat-spinner>
 
-  <dges-job-card class="m-3" *ngFor="let project of jobs$ | async">
+  <dges-job-card class="m-3" *ngFor="let job of jobs$ | async" [job]="job">
   </dges-job-card>
 </div>

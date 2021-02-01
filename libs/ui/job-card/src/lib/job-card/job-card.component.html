@@ -1,1 +1,65 @@
-<p>job-card works!</p>
+<mat-card class="example-card m-1">
+  <img
+    class="example-card"
+    *ngIf="this.job?.images[0]"
+    mat-card-image
+    src="{{ this.job?.images[0] }}"
+    alt="Photo of a Shiba Inu"
+  />
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>
+      {{ job.title }}
+    </mat-card-title>
+    <mat-card-subtitle
+      >Date: {{ job.startDate | date }} -
+      {{ job.endDate | date }}</mat-card-subtitle
+    >
+    <span class="flex-grow-1 flex-shrink-0"></span>
+    <button
+      *ngIf="loggedIn"
+      mat-icon-button
+      color="primary"
+      [matMenuTriggerFor]="menu"
+      aria-label="Example icon button with a home icon"
+    >
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button
+        mat-menu-item
+        color="primary"
+        aria-label="Example icon button with a home icon"
+        (click)="onEdit()"
+      >
+        <mat-icon>edit</mat-icon>
+        Edit
+      </button>
+      <button
+        mat-menu-item
+        color="primary"
+        aria-label="Example icon button with a home icon"
+        (click)="onDelete()"
+      >
+        <mat-icon>delete</mat-icon>
+        Delete
+      </button>
+    </mat-menu>
+  </mat-card-header>
+  <mat-card-content>
+    <ng-content></ng-content>
+    <p>
+      {{ job.description }}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <dges-skills-group-chips
+      [skills]="job.skills"
+      [showDelete]="false"
+    ></dges-skills-group-chips>
+    <dges-skills-group-chips
+      [skills]="job.tools"
+      [showDelete]="false"
+    ></dges-skills-group-chips>
+  </mat-card-actions>
+</mat-card>

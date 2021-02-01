@@ -7,7 +7,7 @@ import { SnackbarService } from '@dges/ui/snackbar';
 import * as JobsFeature from './jobs.reducer';
 import * as JobsActions from './jobs.actions';
 import { from, of } from 'rxjs';
-import { switchMap, map, catchError } from 'rxjs/operators';
+import { switchMap, map, catchError, tap } from 'rxjs/operators';
 import { Job, JobWithTimestamp } from '@dges/types/job';
 import firebase from 'firebase';
 
@@ -16,8 +16,9 @@ export class JobsEffects {
   init$ = createEffect(() =>
     this.actions$.pipe(
       ofType(JobsActions.loadJobs),
-      switchMap(() =>
-        this.angularFire.getJobs().pipe(
+      switchMap(() => {
+        console.log('it did get here')
+        return this.angularFire.getJobs().pipe(
           map((jobs: JobWithTimestamp[]) =>
             jobs.map((job: JobWithTimestamp) => {
               return {
@@ -27,27 +28,27 @@ export class JobsEffects {
               };
             })
           ),
-          map((jobs: Job[]) =>
-            JobsActions.loadJobsSuccess({ jobs: jobs })
-          ),
+          map((jobs: Job[]) => JobsActions.loadJobsSuccess({ jobs: jobs })),
           catchError((error) => of(JobsActions.loadJobsFailure(error)))
-        )
-      )
+        );
+      })
     )
   );
 
-  public addJobs$ = this.actions$.pipe(
-    ofType(JobsActions.addJob),
-    switchMap((actionProps) =>
-      from(this.angularFire.addJob(actionProps.job)).pipe(
-        map(() => {
-          return JobsActions.addJobSuccess();
-        }),
-        catchError((error) => {
-          this.snackBar.queueSnackBar(error.message);
-          return of(JobsActions.addJobFailure(error));
-        })
-      )
+  public addJobs$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(JobsActions.addJob),
+      switchMap((actionProps) => {
+        return from(this.angularFire.addJob(actionProps.job)).pipe(
+          map(() => {
+            return JobsActions.addJobSuccess();
+          }),
+          catchError((error) => {
+            this.snackBar.queueSnackBar(error.message);
+            return of(JobsActions.addJobFailure(error));
+          })
+        );
+      })
     )
   );
 

@@ -30,8 +30,6 @@ import { Observable } from 'rxjs';
   ],
 })
 export class JobsFormComponent implements ControlValueAccessor {
-  @Input() choiceArray: string[];
-
   @Input()
   get skills$(): Observable<Skill[]> {
     return this._skills$;
@@ -62,6 +60,15 @@ export class JobsFormComponent implements ControlValueAccessor {
     ]),
     description: new FormControl({ value: '', disabled: this.isDisabled }, [
       Validators.required,
+    ]),
+    position: new FormControl({ value: [], disabled: this.isDisabled }, [
+      Validators.minLength(0),
+    ]),
+    projects: new FormControl({ value: [], disabled: this.isDisabled }, [
+      Validators.minLength(0),
+    ]),
+    achievements: new FormControl({ value: [], disabled: this.isDisabled }, [
+      Validators.minLength(0),
     ]),
     startDate: new FormControl({ value: '', disabled: this.isDisabled }, [
       Validators.required,

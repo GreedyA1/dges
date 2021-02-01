@@ -30,6 +30,7 @@ export class JobsCollectionService {
   }
 
   public addJob(job: any): Promise<DocumentReference<Job>> {
+    console.log('Another test')
     return this.jobsCollection.add(job);
   }
 

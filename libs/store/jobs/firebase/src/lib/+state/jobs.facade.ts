@@ -25,11 +25,13 @@ export class JobsFacade {
    * Use the initialization action to perform one
    * or more tasks in your Effects.
    */
-  init() {
-    this.store.dispatch(JobsActions.init());
+  init(): Observable<Job[]> {
+    this.store.dispatch(JobsActions.loadJobs());
+    return this.allJobs$;
   }
 
   addJob(job: Job) {
+    console.log('yoooooo')
     this.store.dispatch(JobsActions.addJob({ job: job }));
   }
 
