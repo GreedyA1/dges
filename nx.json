@@ -140,6 +140,21 @@
     },
     "types-job": {
       "tags": []
+    },
+    "store-education-firebase": {
+      "tags": []
+    },
+    "type-education": {
+      "tags": []
+    },
+    "forms-education-form": {
+      "tags": []
+    },
+    "types-education": {
+      "tags": []
+    },
+    "api-education-firebase": {
+      "tags": []
     }
   }
 }

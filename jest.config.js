@@ -38,5 +38,10 @@ module.exports = {
     '<rootDir>/libs/api/jobs/firebase',
     '<rootDir>/libs/store/jobs/firebase',
     '<rootDir>/libs/types/job',
+    '<rootDir>/libs/store/education/firebase',
+    '<rootDir>/libs/type/education',
+    '<rootDir>/libs/forms/education-form',
+    '<rootDir>/libs/types/education',
+    '<rootDir>/libs/api/education/firebase',
   ],
 };

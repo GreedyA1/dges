@@ -9,7 +9,6 @@ import { RootStoreModule } from '../../+store/root-store.module';
 import { UploadEntity } from '@dges/store/storage/firebase';
 import { UploadFacade } from '@dges/types/facades/upload-facade';
 import { Observable } from 'rxjs';
-import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { SkillsEntity, SkillsFacade } from '@dges/store/skills/firebase';
 import { ToolsEntity, ToolsFacade } from '@dges/store/tools/firebase';
 
@@ -54,10 +53,6 @@ export class AddProjectComponent implements OnInit {
     this.project = this.data?.project || EMPTY_PROJECT;
     this.projectForm = new FormControl(this.project);
     this.uploaded = this.project.images;
-  }
-
-  drop(event: CdkDragDrop<string[]>) {
-    moveItemInArray(this.uploaded, event.previousIndex, event.currentIndex);
   }
 
   onUploaded(images: string[]) {

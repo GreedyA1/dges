@@ -20,6 +20,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { AddJobComponent } from './add-job/add-job.component';
 import { FormsJobFormModule } from '@dges/forms/job-form';
+import { AddEducationComponent } from './add-education/add-education.component';
+import { FormsEducationFormModule } from '@dges/forms/education-form'
 
 @NgModule({
   imports: [
@@ -31,20 +33,28 @@ import { FormsJobFormModule } from '@dges/forms/job-form';
     MatIconModule,
     ProjectFormModule,
     FormsJobFormModule,
+    FormsEducationFormModule,
     MatDialogModule,
     UiImagesControlModule,
     FormsSkillsModule,
     UiSkillsChipModule,
     MatCardModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
   ],
-  declarations: [AddProjectComponent, AddSkillComponent, AddToolsComponent, SkillsControlPanelComponent, AddJobComponent],
+  declarations: [
+    AddProjectComponent,
+    AddSkillComponent,
+    AddToolsComponent,
+    SkillsControlPanelComponent,
+    AddJobComponent,
+    AddEducationComponent,
+  ],
   providers: [
     { provide: 'UploadFacade', useClass: environment.uploadFacade },
     { provide: 'SkillsFacade', useClass: environment.skillsFacade },
     { provide: 'ToolsFacade', useClass: environment.toolsFacade },
     { provide: 'JobsFacade', useClass: environment.jobsFacade },
   ],
-  exports: [AddJobComponent],
+  exports: [AddJobComponent, AddEducationComponent],
 })
 export class AdminModule {}

@@ -64,7 +64,16 @@
       "@dges/data/jobs": ["libs/data/jobs/src/index.ts"],
       "@dges/api/jobs/firebase": ["libs/api/jobs/firebase/src/index.ts"],
       "@dges/store/jobs/firebase": ["libs/store/jobs/firebase/src/index.ts"],
-      "@dges/types/job": ["libs/types/job/src/index.ts"]
+      "@dges/types/job": ["libs/types/job/src/index.ts"],
+      "@dges/store/education/firebase": [
+        "libs/store/education/firebase/src/index.ts"
+      ],
+      "@dges/type/education": ["libs/type/education/src/index.ts"],
+      "@dges/forms/education-form": ["libs/forms/education-form/src/index.ts"],
+      "@dges/types/education": ["libs/types/education/src/index.ts"],
+      "@dges/api/education/firebase": [
+        "libs/api/education/firebase/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"],

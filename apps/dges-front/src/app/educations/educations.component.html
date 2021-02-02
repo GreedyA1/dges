@@ -1,1 +1,17 @@
-<p>educations works!</p>
+<div class="full-page">
+  <button
+    *ngIf="user$ | async"
+    mat-fab
+    color="primary"
+    class="action-button"
+    (click)="addEducation()"
+    aria-label="Example icon button with a delete icon"
+  >
+    <mat-icon>add</mat-icon>
+  </button>
+
+  <mat-spinner class="absolute-center" *ngIf="!loading$ | async"></mat-spinner>
+
+  <!-- <dges-education-card class="m-3" *ngFor="let education of education$ | async" [education]="education">
+    </dges-education-card> -->
+</div>

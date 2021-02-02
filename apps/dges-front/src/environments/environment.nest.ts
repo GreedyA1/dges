@@ -6,6 +6,12 @@ import {
   ProjectsEffects,
   ProjectsReducers,
 } from '@dges/store/projects/projects-firebase';
+import { AuthEffects, AuthReducers } from '@dges/store/auth/firebase';
+import { FirebaseUploadFacade } from '@dges/store/storage/firebase';
+import { SkillsFacade } from '@dges/store/skills/firebase';
+import { ToolsFacade } from '@dges/store/tools/firebase';
+import { JobsFacade } from '@dges/store/jobs/firebase';
+import { EducationFacade } from '@dges/store/education/firebase';
 
 export const environment = {
   production: false,
@@ -21,6 +27,15 @@ export const environment = {
   },
   projectsReducer: ProjectsReducers.projectsReducer,
   projectsEffect: ProjectsEffects.ProjectsEffects,
+  projectsFeatureKey: ProjectsReducers.projectsFeatureKey,
+  authReducer: AuthReducers.authReducer,
+  authEffect: AuthEffects.AuthEffects,
+  authFeatureKey: AuthReducers.authFeatureKey,
+  uploadFacade: FirebaseUploadFacade,
+  jobsFacade: JobsFacade,
+  skillsFacade: SkillsFacade,
+  toolsFacade: ToolsFacade,
+  educationFacade: EducationFacade
 };
 
 /*

@@ -1107,6 +1107,131 @@
           }
         }
       }
+    },
+    "store-education-firebase": {
+      "projectType": "library",
+      "root": "libs/store/education/firebase",
+      "sourceRoot": "libs/store/education/firebase/src",
+      "prefix": "dges",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/store/education/firebase/src/**/*.ts",
+              "libs/store/education/firebase/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/store/education/firebase"],
+          "options": {
+            "jestConfig": "libs/store/education/firebase/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "type-education": {
+      "projectType": "library",
+      "root": "libs/type/education",
+      "sourceRoot": "libs/type/education/src",
+      "prefix": "dges",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/type/education/src/**/*.ts",
+              "libs/type/education/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/type/education"],
+          "options": {
+            "jestConfig": "libs/type/education/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "forms-education-form": {
+      "projectType": "library",
+      "root": "libs/forms/education-form",
+      "sourceRoot": "libs/forms/education-form/src",
+      "prefix": "dges",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/forms/education-form/src/**/*.ts",
+              "libs/forms/education-form/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/forms/education-form"],
+          "options": {
+            "jestConfig": "libs/forms/education-form/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "types-education": {
+      "projectType": "library",
+      "root": "libs/types/education",
+      "sourceRoot": "libs/types/education/src",
+      "prefix": "dges",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/types/education/src/**/*.ts",
+              "libs/types/education/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/types/education"],
+          "options": {
+            "jestConfig": "libs/types/education/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "api-education-firebase": {
+      "projectType": "library",
+      "root": "libs/api/education/firebase",
+      "sourceRoot": "libs/api/education/firebase/src",
+      "prefix": "dges",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/api/education/firebase/src/**/*.ts",
+              "libs/api/education/firebase/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/api/education/firebase"],
+          "options": {
+            "jestConfig": "libs/api/education/firebase/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {

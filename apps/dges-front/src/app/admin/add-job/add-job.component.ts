@@ -2,12 +2,9 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Actions, ofType } from '@ngrx/effects';
-import { Store } from '@ngrx/store';
-import { RootStoreModule } from '../../+store/root-store.module';
 import { UploadEntity } from '@dges/store/storage/firebase';
 import { UploadFacade } from '@dges/types/facades/upload-facade';
 import { Observable } from 'rxjs';
-import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { SkillsEntity, SkillsFacade } from '@dges/store/skills/firebase';
 import { ToolsEntity, ToolsFacade } from '@dges/store/tools/firebase';
 import { EMPTY_JOB, Job } from '@dges/types/job';
@@ -24,11 +21,10 @@ import {
 })
 export class AddJobComponent implements OnInit {
   constructor(
-    private store: Store<RootStoreModule>,
     private readonly actions$: Actions,
     @Inject('UploadFacade') private uploadFacade: UploadFacade,
     public dialogRef: MatDialogRef<AddJobComponent>,
-    private jobsFacade: JobsFacade,
+    @Inject('JobsFacade') private jobsFacade: JobsFacade,
     @Inject('SkillsFacade') private skillsFacade: SkillsFacade,
     @Inject('ToolsFacade') private toolsFacade: ToolsFacade,
     @Inject(MAT_DIALOG_DATA) public data: { job: Job }
@@ -59,10 +55,6 @@ export class AddJobComponent implements OnInit {
     this.job = this.data?.job || EMPTY_JOB;
     this.jobForm = new FormControl(this.job);
     this.uploaded = this.job.images;
-  }
-
-  drop(event: CdkDragDrop<string[]>) {
-    moveItemInArray(this.uploaded, event.previousIndex, event.currentIndex);
   }
 
   onUploaded(images: string[]) {
