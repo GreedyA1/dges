@@ -1,4 +1,7 @@
-<form class="example-form" [formGroup]="jobForm">
+<form class="example-form" [formGroup]="educationForm">
+
+    {{ educationForm.valid | json }}
+
     <mat-form-field appearance="outline" class="example-full-width">
       <mat-label>Title</mat-label>
       <input
@@ -21,7 +24,7 @@
           cdkFocusInitial
           (blur)="onBlur()"
           placeholder="Placeholder"
-          formControlName="title"
+          formControlName="major"
         />
         <mat-hint>Project Title</mat-hint>
         <mat-error *ngIf="titleFormControl.hasError('required')">
@@ -36,7 +39,7 @@
           cdkFocusInitial
           (blur)="onBlur()"
           placeholder="Placeholder"
-          formControlName="title"
+          formControlName="minor"
         />
         <mat-hint>Project Title</mat-hint>
         <mat-error *ngIf="titleFormControl.hasError('required')">
@@ -51,12 +54,32 @@
           cdkFocusInitial
           (blur)="onBlur()"
           placeholder="Placeholder"
-          formControlName="title"
+          formControlName="educationLevel"
         />
         <mat-hint>Project Title</mat-hint>
         <mat-error *ngIf="titleFormControl.hasError('required')">
           Title is <strong>required</strong>
         </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="example-chip-list">
+        <mat-label>Favorite Fruits</mat-label>
+        <mat-chip-list #chipList aria-label="Fruit selection">
+          <mat-chip
+            *ngFor="let course of coursesFormControl.value; let i = index"
+            [selectable]="selectable"
+            [removable]="removable"
+            (removed)="remove(i)">
+            {{course}}
+            <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+          </mat-chip>
+          <input
+            placeholder="New fruit..."
+            #fruitInput
+            [matChipInputFor]="chipList"
+            [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+            (matChipInputTokenEnd)="add($event)">
+        </mat-chip-list>
       </mat-form-field>
   
     <mat-form-field appearance="outline" class="example-full-width">
@@ -96,7 +119,7 @@
       >
         Date is <strong>required</strong>
       </mat-error>
-      <mat-hint>Enter start and end date of the job</mat-hint>
+      <mat-hint>Enter start and end date of the education</mat-hint>
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-date-range-picker #picker></mat-date-range-picker>
     </mat-form-field>

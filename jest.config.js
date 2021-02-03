@@ -43,5 +43,6 @@ module.exports = {
     '<rootDir>/libs/forms/education-form',
     '<rootDir>/libs/types/education',
     '<rootDir>/libs/api/education/firebase',
+    '<rootDir>/libs/ui/education-card',
   ],
 };

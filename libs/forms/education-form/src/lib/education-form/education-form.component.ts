@@ -1,14 +1,24 @@
-import { Component, forwardRef } from '@angular/core';
+import { Component, ElementRef, forwardRef, ViewChild } from '@angular/core';
 import {
   AbstractControl,
   ControlValueAccessor,
   FormControl,
   FormGroup,
+  FormArray,
   NG_VALIDATORS,
   NG_VALUE_ACCESSOR,
   ValidationErrors,
   Validators,
 } from '@angular/forms';
+import { MatChipInputEvent } from '@angular/material/chips';
+import { Observable } from 'rxjs';
+
+import { COMMA, ENTER } from '@angular/cdk/keycodes';
+import {
+  MatAutocomplete,
+} from '@angular/material/autocomplete';
+import { map, startWith } from 'rxjs/operators';
+
 
 @Component({
   selector: 'dges-education-form',
@@ -34,16 +44,33 @@ export class EducationFormComponent implements ControlValueAccessor  {
     '/(https?://(?:www.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9].[^s]{2,}|www.[a-zA-Z0-9]' +
     '[a-zA-Z0-9-]+[a-zA-Z0-9].[^s]{2,}|https?://(?:www.|(?!www))[a-zA-Z0-9]+.[^s]{2,}|www.[a-zA-Z0-9]+.[^s]{2,})/gi';
 
-  public jobForm = new FormGroup({
+  visible = true;
+  selectable = true;
+  removable = true;
+  separatorKeysCodes: number[] = [ENTER, COMMA];
+  fruitCtrl = new FormControl();
+  filteredFruits: Observable<string[]>;
+  allFruits: string[] = ['Apple', 'Lemon', 'Lime', 'Orange', 'Strawberry'];
+
+  @ViewChild('fruitInput') fruitInput: ElementRef<HTMLInputElement>;
+  @ViewChild('auto') matAutocomplete: MatAutocomplete;
+
+  constructor() {
+    this.filteredFruits = this.fruitCtrl.valueChanges.pipe(
+        startWith(null),
+        map((fruit: string | null) => fruit ? this._filter(fruit) : this.allFruits.slice()));
+  }
+
+  public educationForm = new FormGroup({
     id: new FormControl({ value: null, disabled: this.isDisabled }, []),
     title: new FormControl({ value: '', disabled: this.isDisabled }, [
       Validators.required,
     ]),
     major: new FormControl({ value: '', disabled: this.isDisabled }, [
-      Validators.required,
+      // Validators.required,
     ]),
     minor: new FormControl({ value: '', disabled: this.isDisabled }, [
-      Validators.required,
+      // Validators.required,
     ]),
     educationLevel: new FormControl({ value: '', disabled: this.isDisabled }, [
       Validators.required,
@@ -51,16 +78,14 @@ export class EducationFormComponent implements ControlValueAccessor  {
     description: new FormControl({ value: '', disabled: this.isDisabled }, [
       Validators.required,
     ]),
-    courses: new FormControl({ value: [], disabled: this.isDisabled }, [
-      Validators.minLength(0),
-    ]),
+    courses: new FormArray([]),
     startDate: new FormControl({ value: '', disabled: this.isDisabled }, [
       Validators.required,
     ]),
     endDate: new FormControl({ value: '', disabled: this.isDisabled }, [
       Validators.required,
     ]),
-    images: new FormControl({ value: '', disabled: this.isDisabled }, [
+    image: new FormControl({ value: '', disabled: this.isDisabled }, [
       Validators.minLength(0),
     ]),
   });
@@ -73,12 +98,12 @@ export class EducationFormComponent implements ControlValueAccessor  {
   }
 
   writeValue(val: any): void {
-    val && this.jobForm.setValue(val);
+    val && this.educationForm.setValue(val);
   }
 
   registerOnChange(fn: any): void {
-    this.jobForm.valueChanges.subscribe(() => {
-      fn(this.jobForm.value);
+    this.educationForm.valueChanges.subscribe(() => {
+      fn(this.educationForm.value);
     });
   }
 
@@ -91,7 +116,7 @@ export class EducationFormComponent implements ControlValueAccessor  {
   }
 
   validate(): ValidationErrors | null {
-    return this.jobForm.valid
+    return this.educationForm.valid
       ? null
       : { subformerror: 'Problems in subform!' };
   }
@@ -101,35 +126,67 @@ export class EducationFormComponent implements ControlValueAccessor  {
   // }
 
   get titleFormControl(): AbstractControl {
-    return this.jobForm.controls['title'];
+    return this.educationForm.controls['title'];
   }
 
   get descriptionFormControl(): AbstractControl {
-    return this.jobForm.controls['description'];
+    return this.educationForm.controls['description'];
   }
 
   get startDateFormControl(): AbstractControl {
-    return this.jobForm.controls['startDate'];
+    return this.educationForm.controls['startDate'];
   }
 
   get endDateFormControl(): AbstractControl {
-    return this.jobForm.controls['endDate'];
+    return this.educationForm.controls['endDate'];
   }
 
   get linkFormControl(): AbstractControl {
-    return this.jobForm.controls['link'];
+    return this.educationForm.controls['link'];
   }
 
   get toolsFormControl(): AbstractControl {
-    return this.jobForm.controls['tools'];
+    return this.educationForm.controls['tools'];
   }
 
   get imagesFormControl(): AbstractControl {
-    return this.jobForm.controls['images'];
+    return this.educationForm.controls['images'];
   }
 
   get skillsFormControl(): AbstractControl {
-    return this.jobForm.controls['skills'];
+    return this.educationForm.controls['skills'];
+  }
+
+  get coursesFormControl(): FormArray {
+    return this.educationForm.controls['courses'] as FormArray;
+  }
+
+  add(event: MatChipInputEvent): void {
+    const input = event.input;
+    const value = event.value;
+
+    // Add our fruit
+    if ((value || '').trim()) {
+
+      this.coursesFormControl.push(new FormControl(value.trim()));
+    }
+
+    // Reset the input value
+    if (input) {
+      input.value = '';
+    }
+
+    this.fruitCtrl.setValue(null);
+  }
+
+  remove(index: number): void {
+    index >= 0 && this.coursesFormControl.removeAt(index);
+  }
+
+  private _filter(value: string): string[] {
+    const filterValue = value.toLowerCase();
+
+    return this.allFruits.filter(fruit => fruit.toLowerCase().indexOf(filterValue) === 0);
   }
 
 }

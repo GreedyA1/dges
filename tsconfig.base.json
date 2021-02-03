@@ -73,7 +73,8 @@
       "@dges/types/education": ["libs/types/education/src/index.ts"],
       "@dges/api/education/firebase": [
         "libs/api/education/firebase/src/index.ts"
-      ]
+      ],
+      "@dges/ui/education-card": ["libs/ui/education-card/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"],

@@ -12,6 +12,10 @@
 
   <mat-spinner class="absolute-center" *ngIf="!loading$ | async"></mat-spinner>
 
-  <!-- <dges-education-card class="m-3" *ngFor="let education of education$ | async" [education]="education">
-    </dges-education-card> -->
+  <dges-education-card
+    class="m-3"
+    *ngFor="let education of education$ | async"
+    [education]="education"
+  >
+  </dges-education-card>
 </div>

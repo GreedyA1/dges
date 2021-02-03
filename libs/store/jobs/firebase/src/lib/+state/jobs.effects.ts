@@ -17,7 +17,6 @@ export class JobsEffects {
     this.actions$.pipe(
       ofType(JobsActions.loadJobs),
       switchMap(() => {
-        console.log('it did get here')
         return this.angularFire.getJobs().pipe(
           map((jobs: JobWithTimestamp[]) =>
             jobs.map((job: JobWithTimestamp) => {

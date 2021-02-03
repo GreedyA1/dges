@@ -17,7 +17,6 @@ export class EducationEffects {
     this.actions$.pipe(
       ofType(EducationActions.loadEducation),
       switchMap(() => {
-        console.log('it did get here')
         return this.angularFire.getEducation().pipe(
           map((education: EducationWithTimestamp[]) =>
             education.map((education: EducationWithTimestamp) => {

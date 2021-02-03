@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { EducationsRoutingModule } from './educations-routing.module';
 import { EducationsComponent } from './educations.component';
+import { UiEducationCardModule } from '@dges/ui/education-card'
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
@@ -14,7 +15,7 @@ import { AdminModule } from '../admin/admin.module';
   imports: [
     CommonModule,
     EducationsRoutingModule,
-    // UiEducationCardModule,
+    UiEducationCardModule,
     MatButtonModule,
     MatIconModule,
     AdminModule,

@@ -1,27 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { JobCardComponent } from './job-card/job-card.component';
+import { EducationCardComponent } from './education-card/education-card.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatMenuModule } from '@angular/material/menu';
-import { UiSkillsChipModule } from '@dges/ui/skills-chip'
-import { MatTooltipModule } from '@angular/material/tooltip'
-
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
-  imports: [
-    CommonModule,
+  imports: [CommonModule,
     MatCardModule,
     MatChipsModule,
     MatIconModule,
-    MatButtonModule,
-    MatMenuModule,
     MatTooltipModule,
-    UiSkillsChipModule,
-  ],
-  declarations: [JobCardComponent],
-  exports: [JobCardComponent],
+    MatButtonModule,
+    MatMenuModule,],
+  declarations: [EducationCardComponent],
+  exports: [EducationCardComponent],
 })
-export class UiJobCardModule {}
+export class UiEducationCardModule {}
