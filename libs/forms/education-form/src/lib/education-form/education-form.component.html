@@ -1,0 +1,107 @@
+<form class="example-form" [formGroup]="jobForm">
+    <mat-form-field appearance="outline" class="example-full-width">
+      <mat-label>Title</mat-label>
+      <input
+        matInput
+        cdkFocusInitial
+        (blur)="onBlur()"
+        placeholder="Placeholder"
+        formControlName="title"
+      />
+      <mat-hint>Project Title</mat-hint>
+      <mat-error *ngIf="titleFormControl.hasError('required')">
+        Title is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="example-full-width">
+        <mat-label>Major</mat-label>
+        <input
+          matInput
+          cdkFocusInitial
+          (blur)="onBlur()"
+          placeholder="Placeholder"
+          formControlName="title"
+        />
+        <mat-hint>Project Title</mat-hint>
+        <mat-error *ngIf="titleFormControl.hasError('required')">
+          Title is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="example-full-width">
+        <mat-label>Minor</mat-label>
+        <input
+          matInput
+          cdkFocusInitial
+          (blur)="onBlur()"
+          placeholder="Placeholder"
+          formControlName="title"
+        />
+        <mat-hint>Project Title</mat-hint>
+        <mat-error *ngIf="titleFormControl.hasError('required')">
+          Title is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="example-full-width">
+        <mat-label>Education level</mat-label>
+        <input
+          matInput
+          cdkFocusInitial
+          (blur)="onBlur()"
+          placeholder="Placeholder"
+          formControlName="title"
+        />
+        <mat-hint>Project Title</mat-hint>
+        <mat-error *ngIf="titleFormControl.hasError('required')">
+          Title is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+  
+    <mat-form-field appearance="outline" class="example-full-width">
+      <mat-label>Description</mat-label>
+      <textarea
+        matInput
+        (blur)="onBlur()"
+        formControlName="description"
+      ></textarea>
+      <mat-hint>Describe the Project</mat-hint>
+      <mat-error *ngIf="descriptionFormControl.hasError('required')">
+        Description is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+  
+    <mat-form-field appearance="outline" class="example-full-width">
+      <mat-label>Enter a date range</mat-label>
+      <mat-date-range-input [rangePicker]="picker">
+        <input
+          matStartDate
+          (blur)="onBlur()"
+          placeholder="Start date"
+          formControlName="startDate"
+        />
+        <input
+          matEndDate
+          placeholder="End date"
+          (blur)="onBlur()"
+          formControlName="endDate"
+        />
+      </mat-date-range-input>
+      <mat-error
+        *ngIf="
+          startDateFormControl.hasError('required') ||
+          endDateFormControl.hasError('required')
+        "
+      >
+        Date is <strong>required</strong>
+      </mat-error>
+      <mat-hint>Enter start and end date of the job</mat-hint>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-date-range-picker #picker></mat-date-range-picker>
+    </mat-form-field>
+  
+    <mat-date-range-picker #picker></mat-date-range-picker>
+  
+  </form>
+  

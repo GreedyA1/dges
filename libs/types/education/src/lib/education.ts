@@ -2,6 +2,7 @@ export interface Education {
   id: string | number;
   title: string;
   image: string;
+  description: string;
   educationLevel?: string;
   major?: string;
   minor?: string;
@@ -14,6 +15,7 @@ export interface EducationWithTimestamp {
   id: string | number;
   title: string;
   image: string;
+  description: string;
   educationLevel?: string;
   major?: string;
   minor?: string;
@@ -26,6 +28,7 @@ export const EMPTY_EDUCATION: Education = {
   id: null,
   title: null,
   image: null,
+  description: null,
   educationLevel: null,
   major: null,
   minor: null,

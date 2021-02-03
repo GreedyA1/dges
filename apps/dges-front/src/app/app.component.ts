@@ -32,7 +32,7 @@ export class AppComponent implements OnDestroy {
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addEventListener('change', this._mobileQueryListener);
     this.fillerNav.push(
-      ...router.config.filter((route) => route.path).map((route) => route.path)
+      ...router.config.filter((route) => route.path)
     );
     this.store.dispatch(AuthActions.loadUser());
     this.user$ = this.store.select(AuthSelectors.getCurrentUser);

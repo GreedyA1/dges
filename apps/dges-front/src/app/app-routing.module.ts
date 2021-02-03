@@ -1,9 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { canActivate, loggedIn } from '@angular/fire/auth-guard';
 import { AdminRoutingModule } from './admin/admin-routing.module';
-
-const adminOnly = () => loggedIn;
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'timeline' },
@@ -18,7 +15,6 @@ const routes: Routes = [
   },
   {
     path: 'educations',
-    ...canActivate(adminOnly),
     loadChildren: () =>
       import('./educations/educations.module').then((m) => m.EducationsModule),
   },

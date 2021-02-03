@@ -47,13 +47,15 @@
       fixedTopGap="56"
     >
       <mat-nav-list>
-        <a
+        <ng-container *ngFor="let nav of fillerNav">
+          <a
           mat-list-item
           routerLink="."
-          *ngFor="let nav of fillerNav"
-          [routerLink]="nav"
-          >{{ nav }}</a
+          *ngIf="!(!(user$ | async) && nav?.canActivate)"
+          [routerLink]="nav.path"
+          >{{ nav.path }}</a
         >
+        </ng-container>
       </mat-nav-list>
     </mat-sidenav>
 

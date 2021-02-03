@@ -12,15 +12,16 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 @NgModule({
   imports: [
+    FormsChipsModule,
+    MatAutocompleteModule,
     CommonModule,
     ReactiveFormsModule,
     MatInputModule,
     MatIconModule,
-    MatAutocompleteModule,
     MatDatepickerModule,
-    FormsChipsModule,
     MatNativeDateModule,
-    MatProgressBarModule],
+    MatProgressBarModule
+  ],
   declarations: [JobsFormComponent],
   exports: [JobsFormComponent],
 })

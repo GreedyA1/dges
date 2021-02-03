@@ -1,9 +1,8 @@
 <h1 mat-dialog-title>{{ data ? 'Edit' : 'Add new' }} education</h1>
 <div mat-dialog-content>
-  {{ educationForm.value | json }}
 
-  <!-- <dges-education-form [formControl]="educationForm">
-  </dges-education-form> -->
+  <dges-education-form [formControl]="educationForm">
+  </dges-education-form>
 
   <dges-images-control
     (updateFiles)="updateFiles($event)"
@@ -14,8 +13,6 @@
   >
   </dges-images-control>
 </div>
-
-{{ educationForm.valid | json }}
 
 <div mat-dialog-actions class="d-flex justify-content-end">
   <button
