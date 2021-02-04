@@ -46,12 +46,6 @@ export class ProjectsComponent implements OnInit {
     });
   }
 
-  addSkill(): void {
-    this.dialog.open(AddSkillComponent, {
-      panelClass: 'full-screen-dialog',
-    });
-  }
-
   editProject(project: Project): void {
     this.dialog.open(AddProjectComponent, {
       panelClass: 'full-screen-dialog',

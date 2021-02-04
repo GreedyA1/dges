@@ -12,6 +12,13 @@
 
   <mat-spinner class="absolute-center" *ngIf="!loading$ | async"></mat-spinner>
 
-  <dges-job-card class="m-3" *ngFor="let job of jobs$ | async" [job]="job">
+  <dges-job-card
+    class="m-3"
+    *ngFor="let job of jobs$ | async"
+    [job]="job"
+    [loggedIn]="user$ | async"
+    (edit)="editJob($event)"
+    (delete)="deleteJob($event)"
+  >
   </dges-job-card>
 </div>

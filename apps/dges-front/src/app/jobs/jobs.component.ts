@@ -5,6 +5,7 @@ import { JobsFacade } from '@dges/store/jobs/firebase';
 import { User } from '@dges/types/auth';
 import { UploadFacade } from '@dges/types/facades/upload-facade';
 import { Job } from '@dges/types/job';
+import { ConfirmDialogComponent } from '@dges/ui/confirm-dialog';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { RootStoreModule } from '../+store/root-store.module';
@@ -39,4 +40,24 @@ export class JobsComponent implements OnInit {
       panelClass: 'full-screen-dialog',
     });
   }
+
+  editJob(job: Job): void {
+    this.dialog.open(AddJobComponent, {
+      panelClass: 'full-screen-dialog',
+      data: {
+        job: job,
+      },
+    });
+  }
+
+  deleteJob(job: Job): void {
+    const dialogRef = this.dialog.open(ConfirmDialogComponent, {
+      data: 'Are you sure you want to delete the job',
+    });
+    dialogRef.afterClosed().subscribe((approved) => {
+      this.uploadFacade.cleanUploads();
+      approved && this.jobsFacade.deleteJob(job)
+    });
+  }
+
 }
