@@ -21,4 +21,24 @@
     (delete)="deleteProject($event)"
   >
   </dges-project-card>
+
+  <dges-project-card
+    class="m-3"
+    *ngFor="let project of projects$ | async"
+    [loggedIn]="user$ | async"
+    [project]="project"
+    (edit)="editProject($event)"
+    (delete)="deleteProject($event)"
+  >
+  </dges-project-card>
+
+  <dges-project-card
+    class="m-3 project-card"
+    *ngFor="let project of projects$ | async"
+    [loggedIn]="user$ | async"
+    [project]="project"
+    (edit)="editProject($event)"
+    (delete)="deleteProject($event)"
+  >
+  </dges-project-card>
 </div>
