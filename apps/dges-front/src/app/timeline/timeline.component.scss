@@ -11,7 +11,7 @@ $parallax-ios         : true !default;
   ) {
   @if $element == ".fullPage" {
     .fullPage {
-      width: 100%;
+      width: 100vw;
       height: 100%;
       margin: 0;
       padding: 0;
@@ -52,7 +52,7 @@ $primary: #1586D1;
 
 .container {
   :nth-child(1) {
-    @include parallax(-.4);
+    @include parallax(.4);
     // top: 200px;
   }
   :nth-child(2) {
@@ -68,7 +68,7 @@ $primary: #1586D1;
     top: 240vh;
   }
   :nth-child(5) {
-    @include parallax(-2);
+    @include parallax(2);
     top: 300vh;
   }
   :nth-child(6) {
@@ -76,11 +76,11 @@ $primary: #1586D1;
     top: 360vh;
   }
   :nth-child(7) {
-    @include parallax(-1);
+    @include parallax(1);
     top: 420vh;
   }
   :nth-child(8) {
-    @include parallax(-.4);
+    @include parallax(.4);
     top: 60vh;
   }
   :nth-child(9) {
@@ -88,17 +88,22 @@ $primary: #1586D1;
     top: 60vh;
   }
   :nth-child(10) {
-    @include parallax(-1);
+    @include parallax(1);
     top: 60vh;
   }
   max-width: 100vw;
   min-width: 100vw;
-  max-height: 60vh;
-  min-height: 60vh;
-  margin: auto;
+  // max-height: 60vh;
   > * {
     position: absolute;
   }
+}
+
+.yearBackground{
+  max-width: 100vw;
+  min-width: 99vw;
+  max-height: 60vh;
+  min-height: 60vh;
 }
 
 .fullPage {
