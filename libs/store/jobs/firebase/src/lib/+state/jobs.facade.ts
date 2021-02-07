@@ -31,7 +31,6 @@ export class JobsFacade {
   }
 
   addJob(job: Job) {
-    console.log('yoooooo')
     this.store.dispatch(JobsActions.addJob({ job: job }));
   }
 

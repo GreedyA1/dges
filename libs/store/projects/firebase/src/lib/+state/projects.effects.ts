@@ -1,8 +1,11 @@
 import { Injectable } from '@angular/core';
-import { Actions, createEffect, ofType } from '@ngrx/effects';
+import { createEffect, Actions, ofType } from '@ngrx/effects';
+
+import * as ProjectsFeature from './projects.reducer';
+import * as ProjectsActions from './projects.actions';
+
 import { catchError, map, switchMap } from 'rxjs/operators';
 import { from, of } from 'rxjs';
-import * as ProjectActions from './actions';
 import { ProjectsCollectionService } from '@dges/api/projects/firebase';
 import { Project, ProjectWithTimestamp } from '@dges/types/project';
 import firebase from 'firebase';
@@ -12,7 +15,7 @@ import { SnackbarService } from '@dges/ui/snackbar';
 export class ProjectsEffects {
   public loadProjects$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(ProjectActions.loadProjects),
+      ofType(ProjectsActions.loadProjects),
       switchMap(() =>
         this.angularFire.getProjects().pipe(
           map((projects: ProjectWithTimestamp[]) =>
@@ -25,9 +28,9 @@ export class ProjectsEffects {
             })
           ),
           map((projects: Project[]) =>
-            ProjectActions.loadProjectsSuccess({ projects: projects })
+            ProjectsActions.loadProjectsSuccess({ projects: projects })
           ),
-          catchError((error) => of(ProjectActions.loadProjectsFail(error)))
+          catchError((error) => of(ProjectsActions.loadProjectsFailure(error)))
         )
       )
     )
@@ -35,15 +38,15 @@ export class ProjectsEffects {
 
   public addProject$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(ProjectActions.addProject),
+      ofType(ProjectsActions.addProject),
       switchMap((actionProps) =>
         from(this.angularFire.addProject(actionProps.project)).pipe(
           map(() => {
-            return ProjectActions.addProjectSuccess();
+            return ProjectsActions.addProjectSuccess();
           }),
           catchError((error) => {
             this.snackBar.queueSnackBar(error.message);
-            return of(ProjectActions.addProjectFail(error));
+            return of(ProjectsActions.addProjectFail(error));
           })
         )
       )
@@ -52,15 +55,15 @@ export class ProjectsEffects {
 
   public deleteProject$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(ProjectActions.deleteProject),
+      ofType(ProjectsActions.deleteProject),
       switchMap((actionProps) =>
         from(this.angularFire.deleteProject(actionProps.project)).pipe(
           map(() => {
-            return ProjectActions.deleteProjectSuccess();
+            return ProjectsActions.deleteProjectSuccess();
           }),
           catchError((error) => {
             this.snackBar.queueSnackBar(error.message);
-            return of(ProjectActions.deleteProjectFail(error));
+            return of(ProjectsActions.deleteProjectFail(error));
           })
         )
       )
@@ -69,15 +72,15 @@ export class ProjectsEffects {
 
   public editProject$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(ProjectActions.editProject),
+      ofType(ProjectsActions.editProject),
       switchMap((actionProps) =>
         from(this.angularFire.editProject(actionProps.project)).pipe(
           map(() => {
-            return ProjectActions.editProjectSuccess();
+            return ProjectsActions.editProjectSuccess();
           }),
           catchError((error) => {
             this.snackBar.queueSnackBar(error.message);
-            return of(ProjectActions.editProjectFail(error));
+            return of(ProjectsActions.editProjectFail(error));
           })
         )
       )

@@ -9,9 +9,9 @@ import { environment } from '../../environments/environment';
   declarations: [TimelineComponent],
   imports: [CommonModule, TimelineRoutingModule],
   providers: [
-    { provide: 'UploadFacade', useClass: environment.uploadFacade },
     { provide: 'JobsFacade', useClass: environment.jobsFacade },
     { provide: 'EducationFacade', useClass: environment.educationFacade },
+    { provide: 'ProjectsFacade', useClass: environment.projectsFacade },
   ],
 })
 export class TimelineModule {}

@@ -1257,6 +1257,31 @@
           }
         }
       }
+    },
+    "store-projects-firebase": {
+      "projectType": "library",
+      "root": "libs/store/projects/firebase",
+      "sourceRoot": "libs/store/projects/firebase/src",
+      "prefix": "dges",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/store/projects/firebase/src/**/*.ts",
+              "libs/store/projects/firebase/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/store/projects/firebase"],
+          "options": {
+            "jestConfig": "libs/store/projects/firebase/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {

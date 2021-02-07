@@ -158,6 +158,9 @@
     },
     "ui-education-card": {
       "tags": []
+    },
+    "store-projects-firebase": {
+      "tags": []
     }
   }
 }

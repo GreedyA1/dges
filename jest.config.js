@@ -44,5 +44,6 @@ module.exports = {
     '<rootDir>/libs/types/education',
     '<rootDir>/libs/api/education/firebase',
     '<rootDir>/libs/ui/education-card',
+    '<rootDir>/libs/store/projects/firebase',
   ],
 };

@@ -1,8 +1,8 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { projectsFeatureKey } from './reducers';
-import { ProjectsState } from './state';
+import { PROJECTS_FEATURE_KEY } from './projects.reducers';
+import { ProjectsState } from './projects.state';
 
-const getProjects = createFeatureSelector<ProjectsState>(projectsFeatureKey);
+const getProjects = createFeatureSelector<ProjectsState>(PROJECTS_FEATURE_KEY);
 export const getProjectsData = createSelector(
   getProjects,
   (state: ProjectsState) => state.projects
