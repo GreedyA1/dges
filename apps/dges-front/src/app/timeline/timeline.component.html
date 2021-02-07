@@ -1,14 +1,13 @@
 <div class="fullPage">
-  <div class="container">
-    <!-- <h1>Parallax</h1>
-    <h2>faster</h2>
-    <h2>easier</h2>
-    <h2>sassier</h2> -->
-    <img
-      *ngFor="let img of yo"
-      class="yearBackground"
-      src="https://source.unsplash.com/random?{{ img }}"
-      alt=" "
-    />
+  <div
+    *ngFor="let year of years"
+    class="wrap"
+    [style.background-image]="setStyle(year)"
+  >
+    <div class="second-div">
+      <div class="year">
+        <h1>{{ year }}</h1>
+      </div>
+    </div>
   </div>
 </div>

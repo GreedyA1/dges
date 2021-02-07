@@ -1,40 +1,17 @@
-<main class="main">
-  <section class="section parallax parallax-one"><button
-    *ngIf="user$ | async"
-    mat-fab
-    color="primary"
-    class="action-button"
-    (click)="addProject()"
-    aria-label="Example icon button with a delete icon"
-  >
-    <mat-icon>add</mat-icon>
-  </button>
+<div class="full-page">
+  <button
+      *ngIf="user$ | async"
+      mat-fab
+      color="primary"
+      class="action-button"
+      (click)="addProject()"
+      aria-label="Example icon button with a delete icon"
+    >
+      <mat-icon>add</mat-icon>
+    </button>
 
-  <mat-spinner class="absolute-center" *ngIf="loading$ | async"></mat-spinner>
+    <mat-spinner class="absolute-center" *ngIf="loading$ | async"></mat-spinner>
 
-  <dges-project-card
-    class="m-3"
-    *ngFor="let project of projects$ | async"
-    [loggedIn]="user$ | async"
-    [project]="project"
-    (edit)="editProject($event)"
-    (delete)="deleteProject($event)"
-  >
-  </dges-project-card>
-
-  <dges-project-card
-    class="m-3 project-card"
-    *ngFor="let project of projects$ | async"
-    [loggedIn]="user$ | async"
-    [project]="project"
-    (edit)="editProject($event)"
-    (delete)="deleteProject($event)"
-  >
-  </dges-project-card></section>
-  <section class="section parallax parallax-two"></section>
-  <section class="section parallax parallax-three">Static</section>
-  <section class="section parallax parallax-four"></section>
-  <section class="section parallax parallax-five">
     <dges-project-card
       class="m-3"
       *ngFor="let project of projects$ | async"
@@ -43,10 +20,5 @@
       (edit)="editProject($event)"
       (delete)="deleteProject($event)"
     >
-    </dges-project-card></section>
-</main>
-
-<!-- 
-<div class="full-page">
-  
-</div> -->
+    </dges-project-card>
+</div>

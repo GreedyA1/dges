@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TimelineComponent implements OnInit {
 
-  yo = [1, 2, 3, 4, 5, 6, 7, 8, 9, 11];
+  years = [2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013];
 
   constructor() {
     console.log('');
@@ -17,7 +17,7 @@ export class TimelineComponent implements OnInit {
     console.log('');
   }
 
-  random(){
-    return Math.random(); 
+  setStyle(number: number) {
+    return 'url(\'https://source.unsplash.com/random/' + number + '\')';
   }
 }

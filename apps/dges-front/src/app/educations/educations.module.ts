@@ -23,7 +23,6 @@ import { AdminModule } from '../admin/admin.module';
   ],
   providers: [
     { provide: 'UploadFacade', useClass: environment.uploadFacade },
-    { provide: 'EducationFacade', useClass: environment.uploadFacade },
     { provide: 'EducationFacade', useClass: environment.educationFacade },
   ],
 })
