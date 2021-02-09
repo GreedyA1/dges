@@ -1,24 +1,24 @@
 <div class="full-page">
   <button
-      *ngIf="user$ | async"
-      mat-fab
-      color="primary"
-      class="action-button"
-      (click)="addProject()"
-      aria-label="Example icon button with a delete icon"
-    >
-      <mat-icon>add</mat-icon>
-    </button>
+    *ngIf="user$ | async"
+    mat-fab
+    color="primary"
+    class="action-button"
+    (click)="addProject()"
+    aria-label="Example icon button with a delete icon"
+  >
+    <mat-icon>add</mat-icon>
+  </button>
 
-    <mat-spinner class="absolute-center" *ngIf="loading$ | async"></mat-spinner>
+  <mat-spinner class="absolute-center" *ngIf="loading$ | async"></mat-spinner>
 
-    <dges-project-card
-      class="m-3"
-      *ngFor="let project of projects$ | async"
-      [loggedIn]="user$ | async"
-      [project]="project"
-      (edit)="editProject($event)"
-      (delete)="deleteProject($event)"
-    >
-    </dges-project-card>
+  <dges-project-card
+    class="m-3"
+    *ngFor="let project of projects$ | async"
+    [loggedIn]="user$ | async"
+    [project]="project"
+    (edit)="editProject($event)"
+    (delete)="deleteProject($event)"
+  >
+  </dges-project-card>
 </div>

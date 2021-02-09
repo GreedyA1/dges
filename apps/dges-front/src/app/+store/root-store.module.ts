@@ -9,7 +9,7 @@ import { StoreSkillsFirebaseModule } from '@dges/store/skills/firebase';
 import { StoreToolsFirebaseModule } from '@dges/store/tools/firebase';
 import { StoreJobsFirebaseModule } from '@dges/store/jobs/firebase';
 import { StoreEducationFirebaseModule } from '@dges/store/education/firebase';
-import { StoreProjectsFirebaseModule } from '@dges/store/projects/projects-firebase';
+import { StoreProjectsFirebaseModule } from '@dges/store/projects/firebase';
 
 @NgModule({
   declarations: [],
@@ -20,8 +20,8 @@ import { StoreProjectsFirebaseModule } from '@dges/store/projects/projects-fireb
     StoreSkillsFirebaseModule,
     StoreToolsFirebaseModule,
     StoreJobsFirebaseModule,
-    StoreEducationFirebaseModule,
     StoreProjectsFirebaseModule,
+    StoreEducationFirebaseModule,
     StoreModule.forRoot(
       {},
       {

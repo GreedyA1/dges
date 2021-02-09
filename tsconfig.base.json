@@ -77,7 +77,8 @@
       "@dges/ui/education-card": ["libs/ui/education-card/src/index.ts"],
       "@dges/store/projects/firebase": [
         "libs/store/projects/firebase/src/index.ts"
-      ]
+      ],
+      "@dges/tools/pipes/sort-by": ["libs/tools/pipes/sort-by/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"],

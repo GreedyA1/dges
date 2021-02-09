@@ -1,5 +1,5 @@
 module.exports = {
-  displayName: 'store-projects-projects-firebase',
+  displayName: 'tools-pipes-sort-by',
   preset: '../../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
@@ -14,8 +14,7 @@ module.exports = {
       },
     },
   },
-  coverageDirectory:
-    '../../../../coverage/libs/store/projects/projects-firebase',
+  coverageDirectory: '../../../../coverage/libs/tools/pipes/sort-by',
   snapshotSerializers: [
     'jest-preset-angular/build/AngularNoNgAttributesSnapshotSerializer.js',
     'jest-preset-angular/build/AngularSnapshotSerializer.js',

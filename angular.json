@@ -1282,6 +1282,31 @@
           }
         }
       }
+    },
+    "tools-pipes-sort-by": {
+      "projectType": "library",
+      "root": "libs/tools/pipes/sort-by",
+      "sourceRoot": "libs/tools/pipes/sort-by/src",
+      "prefix": "dges",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/tools/pipes/sort-by/src/**/*.ts",
+              "libs/tools/pipes/sort-by/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/tools/pipes/sort-by"],
+          "options": {
+            "jestConfig": "libs/tools/pipes/sort-by/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {

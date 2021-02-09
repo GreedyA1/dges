@@ -1,5 +1,5 @@
 {
-  "extends": "../../../../.eslintrc.json",
+  "extends": ["../../../../.eslintrc.json"],
   "ignorePatterns": ["!**/*"],
   "overrides": [
     {
@@ -9,24 +9,16 @@
         "plugin:@angular-eslint/template/process-inline-templates"
       ],
       "parserOptions": {
-        "project": ["libs/store/projects/projects-firebase/tsconfig.*?.json"]
+        "project": ["libs/tools/pipes/sort-by/tsconfig.*?.json"]
       },
       "rules": {
         "@angular-eslint/directive-selector": [
           "error",
-          {
-            "type": "attribute",
-            "prefix": "dges",
-            "style": "camelCase"
-          }
+          { "type": "attribute", "prefix": "dges", "style": "camelCase" }
         ],
         "@angular-eslint/component-selector": [
           "error",
-          {
-            "type": "element",
-            "prefix": "dges",
-            "style": "kebab-case"
-          }
+          { "type": "element", "prefix": "dges", "style": "kebab-case" }
         ]
       }
     },

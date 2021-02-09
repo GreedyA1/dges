@@ -1,16 +1,18 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { ProjectsActions } from '@dges/store/projects/projects-firebase';
 import { EMPTY_PROJECT, Project } from '@dges/types/project';
 import { Actions, ofType } from '@ngrx/effects';
-import { Store } from '@ngrx/store';
-import { RootStoreModule } from '../../+store/root-store.module';
 import { UploadEntity } from '@dges/store/storage/firebase';
 import { UploadFacade } from '@dges/types/facades/upload-facade';
 import { Observable } from 'rxjs';
 import { SkillsEntity, SkillsFacade } from '@dges/store/skills/firebase';
 import { ToolsEntity, ToolsFacade } from '@dges/store/tools/firebase';
+import {
+  addProjectSuccess,
+  editProjectSuccess,
+  ProjectsFacade,
+} from '@dges/store/projects/firebase';
 
 @Component({
   selector: 'dges-add-project',
@@ -19,9 +21,9 @@ import { ToolsEntity, ToolsFacade } from '@dges/store/tools/firebase';
 })
 export class AddProjectComponent implements OnInit {
   constructor(
-    private store: Store<RootStoreModule>,
     private readonly actions$: Actions,
     @Inject('UploadFacade') private uploadFacade: UploadFacade,
+    @Inject('ProjectsFacade') private projectsFacade: ProjectsFacade,
     public dialogRef: MatDialogRef<AddProjectComponent>,
     @Inject('SkillsFacade') private skillsFacade: SkillsFacade,
     @Inject('ToolsFacade') private toolsFacade: ToolsFacade,
@@ -47,7 +49,7 @@ export class AddProjectComponent implements OnInit {
 
   ngOnInit(): void {
     this.skills$ = this.skillsFacade.allSkills$;
-    this.tools$ = this.toolsFacade.allTools$;    
+    this.tools$ = this.toolsFacade.allTools$;
     this.skillsFacade.init();
     this.toolsFacade.init();
     this.project = this.data?.project || EMPTY_PROJECT;
@@ -60,23 +62,18 @@ export class AddProjectComponent implements OnInit {
   }
 
   public addOrEditProject(): void {
-    this.store.dispatch(
-      this.data
-        ? ProjectsActions.editProject({
-            project: { ...this.projectForm.value, images: this.uploaded },
-          })
-        : ProjectsActions.addProject({
-            project: { ...this.projectForm.value, images: this.uploaded },
-          })
-    );
+    this.data
+      ? this.projectsFacade.editProject({
+          ...this.projectForm.value,
+          images: this.uploaded,
+        })
+      : this.projectsFacade.addProject({
+          ...this.projectForm.value,
+          images: this.uploaded,
+        });
 
     this.actions$
-      .pipe(
-        ofType(
-          ProjectsActions.addProjectSuccess,
-          ProjectsActions.editProjectSuccess
-        )
-      )
+      .pipe(ofType(addProjectSuccess, editProjectSuccess))
       .subscribe(() => this.dialogRef.close(this.projectForm.value));
   }
 }

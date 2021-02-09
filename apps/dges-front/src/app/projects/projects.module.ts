@@ -23,6 +23,9 @@ import { environment } from '../../environments/environment';
     MatProgressSpinnerModule,
   ],
   declarations: [ProjectsComponent],
-  providers: [{ provide: 'UploadFacade', useClass: environment.uploadFacade }],
+  providers: [
+    { provide: 'UploadFacade', useClass: environment.uploadFacade },
+    { provide: 'ProjectsFacade', useClass: environment.projectsFacade },
+  ],
 })
 export class ProjectsModule {}

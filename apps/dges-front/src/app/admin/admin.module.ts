@@ -54,6 +54,7 @@ import { FormsEducationFormModule } from '@dges/forms/education-form'
     { provide: 'SkillsFacade', useClass: environment.skillsFacade },
     { provide: 'ToolsFacade', useClass: environment.toolsFacade },
     { provide: 'JobsFacade', useClass: environment.jobsFacade },
+    { provide: 'ProjectsFacade', useClass: environment.projectsFacade },
   ],
   exports: [AddJobComponent, AddEducationComponent],
 })
