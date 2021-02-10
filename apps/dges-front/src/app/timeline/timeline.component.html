@@ -8,34 +8,38 @@
       <div class="year">
         <h1>{{ year }}</h1>
       </div>
-      <ng-container *ngFor="let card of allCards$ | async | sortBy: 'endDate'">
-        <ng-container [ngSwitch]="card.type">
-          <ng-container *ngSwitchCase="'job'">
-            <dges-project-card
-              *ngIf="isInYear(year, card.endDate)"
-              class="m-3"
-              [project]="card"
-            >
-            </dges-project-card>
-          </ng-container>
-          <ng-container *ngSwitchCase="'project'">
-            <dges-job-card
-              *ngIf="isInYear(year, card.endDate)"
-              class="m-3"
-              [job]="card"
-            >
-            </dges-job-card>
-          </ng-container>
-          <ng-container *ngSwitchCase="'education'">
-            <dges-education-card
-              *ngIf="isInYear(year, card.endDate)"
-              class="m-3"
-              [education]="card"
-            >
-            </dges-education-card>
+      <div class="timeline">
+        <ng-container
+          *ngFor="let card of allCards$ | async | sortBy: 'endDate'"
+        >
+          <ng-container [ngSwitch]="card.type">
+            <ng-container *ngSwitchCase="'job'">
+              <dges-project-card
+                *ngIf="isInYear(year, card.endDate)"
+                class="card"
+                [project]="card"
+              >
+              </dges-project-card>
+            </ng-container>
+            <ng-container *ngSwitchCase="'project'">
+              <dges-job-card
+                *ngIf="isInYear(year, card.endDate)"
+                class="card"
+                [job]="card"
+              >
+              </dges-job-card>
+            </ng-container>
+            <ng-container *ngSwitchCase="'education'">
+              <dges-education-card
+                *ngIf="isInYear(year, card.endDate)"
+                class="card"
+                [education]="card"
+              >
+              </dges-education-card>
+            </ng-container>
           </ng-container>
         </ng-container>
-      </ng-container>
+      </div>
     </div>
   </div>
 </div>
