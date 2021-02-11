@@ -73,6 +73,6 @@ export class TimelineComponent implements OnInit {
   }
 
   setStyle(number: number) {
-    return "url('https://source.unsplash.com/random/" + number + "')";
+    return "url('https://source.unsplash.com/random/" + number + "/?wallpapers')";
   }
 }
