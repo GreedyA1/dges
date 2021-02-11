@@ -1,7 +1,8 @@
 <div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
   <mat-toolbar color="primary" class="example-toolbar">
     <button mat-icon-button (click)="snav.toggle()">
-      <mat-icon>menu</mat-icon>
+      <!-- <mat-icon>menu</mat-icon> -->
+      📜
     </button>
     <h1 class="example-app-name">{{ title }}</h1>
     <span class="spacer"></span>
@@ -11,7 +12,8 @@
         [matMenuTriggerFor]="menu"
         aria-label="Example icon-button with a menu"
       >
-        <mat-icon>arrow_drop_down</mat-icon>
+      🦾
+        <!-- <mat-icon>arrow_drop_down</mat-icon> -->
       </button>
       <mat-menu #menu="matMenu">
         <button mat-menu-item disabled>

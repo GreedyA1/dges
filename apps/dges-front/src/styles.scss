@@ -62,7 +62,7 @@ $dges-dark-theme: mat-dark-theme(
 html,
 body {
   height: 100%;
-  overflow: scroll;
+  overflow: auto;
   -webkit-overflow-scrolling: touch;
 }
 body {

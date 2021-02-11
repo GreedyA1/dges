@@ -1,6 +1,7 @@
 .fullPage {
   height: 100%;
-  overflow: auto;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
 
   .wrap {
     min-height: 100vh;
