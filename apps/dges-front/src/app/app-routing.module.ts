@@ -19,13 +19,6 @@ const routes: Routes = [
       import('./educations/educations.module').then((m) => m.EducationsModule),
   },
   {
-    path: 'certificates',
-    loadChildren: () =>
-      import('./certificates/certificates.module').then(
-        (m) => m.CertificatesModule
-      ),
-  },
-  {
     path: 'resume',
     loadChildren: () =>
       import('./resume/resume.module').then((m) => m.ResumeModule),

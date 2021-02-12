@@ -1,41 +1,44 @@
 <div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
-  <mat-toolbar color="primary" class="example-toolbar">
-    <button mat-icon-button (click)="snav.toggle()">
-      <!-- <mat-icon>menu</mat-icon> -->
-      📜
-    </button>
-    <h1 class="example-app-name">{{ title }}</h1>
-    <span class="spacer"></span>
-    <div *ngIf="user$ | async as user; else showLogin">
-      <button
-        mat-icon-button
-        [matMenuTriggerFor]="menu"
-        aria-label="Example icon-button with a menu"
-      >
-      🦾
-        <!-- <mat-icon>arrow_drop_down</mat-icon> -->
-      </button>
-      <mat-menu #menu="matMenu">
-        <button mat-menu-item disabled>
-          <mat-icon>person</mat-icon>
-          <span>{{ user.email }}</span>
+  <mat-toolbar color="primary" class="toolbar">
+    <div class="example-toolbar">
+      <div>
+        <button mat-icon-button (click)="snav.toggle()">
+          <!-- <mat-icon>menu</mat-icon> -->
+          📜
         </button>
-        <button mat-menu-item (click)="logout()">
-          <mat-icon>undo</mat-icon>
-          <span>Log out</span>
+        <h1 class="example-app-name">{{ title }}</h1>
+      </div>
+      <div *ngIf="user$ | async as user; else showLogin">
+        <button
+          mat-icon-button
+          [matMenuTriggerFor]="menu"
+          aria-label="Example icon-button with a menu"
+        >
+          🦾
+          <!-- <mat-icon>arrow_drop_down</mat-icon> -->
         </button>
-      </mat-menu>
-    </div>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item disabled>
+            <mat-icon>person</mat-icon>
+            <span>{{ user.email }}</span>
+          </button>
+          <button mat-menu-item (click)="logout()">
+            <mat-icon>undo</mat-icon>
+            <span>Log out</span>
+          </button>
+        </mat-menu>
+      </div>
 
-    <ng-template #showLogin>
-      <button
-        (click)="openLogin()"
-        mat-icon-button
-        aria-label="Example icon button with a home icon"
-      >
-        <mat-icon>login</mat-icon>
-      </button>
-    </ng-template>
+      <ng-template #showLogin>
+        <button
+          (click)="openLogin()"
+          mat-icon-button
+          aria-label="Example icon button with a home icon"
+        >
+          <mat-icon>login</mat-icon>
+        </button>
+      </ng-template>
+    </div>
   </mat-toolbar>
 
   <mat-sidenav-container
@@ -51,12 +54,12 @@
       <mat-nav-list>
         <ng-container *ngFor="let nav of fillerNav">
           <a
-          mat-list-item
-          routerLink="."
-          *ngIf="!(!(user$ | async) && nav?.canActivate)"
-          [routerLink]="nav.path"
-          >{{ nav.path }}</a
-        >
+            mat-list-item
+            routerLink="."
+            *ngIf="!(!(user$ | async) && nav?.canActivate)"
+            [routerLink]="nav.path"
+            >{{ nav.path }}</a
+          >
         </ng-container>
       </mat-nav-list>
     </mat-sidenav>

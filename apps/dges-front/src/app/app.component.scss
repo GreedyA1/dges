@@ -8,6 +8,45 @@
   right: 0;
 }
 
+@media (min-width: 576px) {
+  .example-toolbar {
+    max-width: 576px;
+  }
+}
+
+@media (min-width: 768px) {
+  .example-toolbar {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 992px) {
+  .example-toolbar {
+    max-width: 992px;
+  }
+}
+
+@media (min-width: 1152px) {
+  .example-toolbar {
+    max-width: 1152px;
+  }
+}
+
+.example-toolbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.toolbar {
+  width: 100%;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .no-overflow {
   overflow: hidden;
 }
@@ -16,15 +55,6 @@
   position: fixed;
   /* Make sure the toolbar will stay on top of the content as it scrolls past. */
   z-index: 2;
-}
-
-.example-toolbar {
-  display: flex;
-  flex-direction: row;
-}
-
-.spacer {
-  flex: 1 1 auto;
 }
 
 h1.example-app-name {
