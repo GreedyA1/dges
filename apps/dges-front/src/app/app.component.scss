@@ -36,22 +36,26 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 100%;
-}
-
-.toolbar {
-  width: 100%;
+  width: calc(100vw - 54px);
   padding-left: 2rem;
   padding-right: 2rem;
   margin-left: auto;
   margin-right: auto;
 }
 
+.toolbar {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  width: 100vw;
+}
+
 .no-overflow {
   overflow: hidden;
 }
 
-.example-is-mobile .example-toolbar {
+.example-is-mobile .example-toolbar, .example-is-mobile .toolbar {
+  padding-left: 1rem;
+  padding-right: 1rem;
   position: fixed;
   /* Make sure the toolbar will stay on top of the content as it scrolls past. */
   z-index: 2;

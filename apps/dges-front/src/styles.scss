@@ -51,10 +51,10 @@ $dges-dark-theme: mat-dark-theme(
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-@include angular-material-theme($dges-theme);
+@include angular-material-theme($dges-dark-theme);
 // @include angular-material-color($dges-dark-theme);
 .dges-dark-theme {
-  @include angular-material-color($dges-dark-theme);
+  @include angular-material-color($dges-theme);
 }
 
 /* You can add global styles to this file, and also import other style files */
@@ -62,6 +62,8 @@ $dges-dark-theme: mat-dark-theme(
 html,
 body {
   height: 100%;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
 }
 body {
   //for PWA we want to get rid of scroll on body
