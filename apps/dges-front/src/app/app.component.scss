@@ -41,16 +41,14 @@
   padding-right: 2rem;
   margin-left: auto;
   margin-right: auto;
+  z-index: 2;
 }
 
 .toolbar {
   padding-left: 2rem;
   padding-right: 2rem;
   width: 100vw;
-}
-
-.no-overflow {
-  overflow: hidden;
+  z-index: 2;
 }
 
 .example-is-mobile .example-toolbar, .example-is-mobile .toolbar {

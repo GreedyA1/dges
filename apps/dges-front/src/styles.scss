@@ -62,8 +62,8 @@ $dges-dark-theme: mat-dark-theme(
 html,
 body {
   height: 100%;
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
+  // overflow: auto;
+  // -webkit-overflow-scrolling: touch;
 }
 body {
   //for PWA we want to get rid of scroll on body

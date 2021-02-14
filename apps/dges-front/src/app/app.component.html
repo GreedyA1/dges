@@ -1,28 +1,42 @@
 <div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
   <mat-toolbar color="white" class="toolbar">
     <div class="example-toolbar">
-      <div class="d-flex" (click)="snav.toggle()">
-        📜
-        <h1 class="example-app-name">{{ title }}</h1>
-      </div>
-      <div *ngIf="user$ | async as user; else showLogin">
-        <button
-          mat-icon-button
-          [matMenuTriggerFor]="menu"
-          aria-label="Example icon-button with a menu"
-        >
-          🦾
-        </button>
-        <mat-menu #menu="matMenu">
-          <button mat-menu-item disabled>
-            <mat-icon>person</mat-icon>
-            <span>{{ user.email }}</span>
+      
+      <button mat-button routerLink="." [routerLink]="'timeline'">
+        📜{{ title }}
+      </button>
+
+      <div>
+        <ng-container *ngFor="let nav of fillerNav">
+          <button
+            mat-button
+            routerLink="."
+            *ngIf="!(!(user$ | async) && nav?.canActivate)"
+            [routerLink]="nav.path"
+          >
+            {{ nav.path }}
           </button>
-          <button mat-menu-item (click)="logout()">
-            <mat-icon>undo</mat-icon>
-            <span>Log out</span>
+        </ng-container>
+
+        <div *ngIf="user$ | async as user; else showLogin">
+          <button
+            mat-icon-button
+            [matMenuTriggerFor]="menu"
+            aria-label="Example icon-button with a menu"
+          >
+            🦾
           </button>
-        </mat-menu>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item disabled>
+              <mat-icon>person</mat-icon>
+              <span>{{ user.email }}</span>
+            </button>
+            <button mat-menu-item (click)="logout()">
+              <mat-icon>undo</mat-icon>
+              <span>Log out</span>
+            </button>
+          </mat-menu>
+        </div>
       </div>
 
       <ng-template #showLogin>
@@ -41,26 +55,7 @@
     class="example-sidenav-container"
     [style.marginTop.px]="mobileQuery.matches ? 56 : 0"
   >
-    <mat-sidenav
-      #snav
-      [mode]="mobileQuery.matches ? 'over' : 'side'"
-      [fixedInViewport]="mobileQuery.matches"
-      fixedTopGap="56"
-    >
-      <mat-nav-list>
-        <ng-container *ngFor="let nav of fillerNav">
-          <a
-            mat-list-item
-            routerLink="."
-            *ngIf="!(!(user$ | async) && nav?.canActivate)"
-            [routerLink]="nav.path"
-            >{{ nav.path }}</a
-          >
-        </ng-container>
-      </mat-nav-list>
-    </mat-sidenav>
-
-    <mat-sidenav-content class="no-overflow">
+    <mat-sidenav-content>
       <router-outlet></router-outlet>
     </mat-sidenav-content>
   </mat-sidenav-container>
