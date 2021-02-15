@@ -1307,6 +1307,56 @@
           }
         }
       }
+    },
+    "ui-full-length-menu": {
+      "projectType": "library",
+      "root": "libs/ui/full-length-menu",
+      "sourceRoot": "libs/ui/full-length-menu/src",
+      "prefix": "dges",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/ui/full-length-menu/src/**/*.ts",
+              "libs/ui/full-length-menu/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/ui/full-length-menu"],
+          "options": {
+            "jestConfig": "libs/ui/full-length-menu/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "ui-drop-down-menu": {
+      "projectType": "library",
+      "root": "libs/ui/drop-down-menu",
+      "sourceRoot": "libs/ui/drop-down-menu/src",
+      "prefix": "dges",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/ui/drop-down-menu/src/**/*.ts",
+              "libs/ui/drop-down-menu/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/ui/drop-down-menu"],
+          "options": {
+            "jestConfig": "libs/ui/drop-down-menu/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {

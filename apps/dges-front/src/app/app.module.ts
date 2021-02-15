@@ -19,6 +19,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { UiSnackbarModule } from '@dges/ui/snackbar';
 import { UiConfirmDialogModule } from '@dges/ui/confirm-dialog';
 import { AdminModule } from './admin/admin.module';
+import { UiDropDownMenuModule } from '@dges/ui/drop-down-menu'
 
 @NgModule({
   declarations: [AppComponent],
@@ -38,6 +39,7 @@ import { AdminModule } from './admin/admin.module';
     UiSnackbarModule,
     MatMenuModule,
     UiConfirmDialogModule,
+    UiDropDownMenuModule,
     AdminModule
   ],
   providers: [],

@@ -78,7 +78,9 @@
       "@dges/store/projects/firebase": [
         "libs/store/projects/firebase/src/index.ts"
       ],
-      "@dges/tools/pipes/sort-by": ["libs/tools/pipes/sort-by/src/index.ts"]
+      "@dges/tools/pipes/sort-by": ["libs/tools/pipes/sort-by/src/index.ts"],
+      "@dges/ui/full-length-menu": ["libs/ui/full-length-menu/src/index.ts"],
+      "@dges/ui/drop-down-menu": ["libs/ui/drop-down-menu/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"],

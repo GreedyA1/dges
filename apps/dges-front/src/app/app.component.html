@@ -1,24 +1,31 @@
 <div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
   <mat-toolbar color="white" class="toolbar">
     <div class="example-toolbar">
-      
       <button mat-button routerLink="." [routerLink]="'timeline'">
         📜{{ title }}
       </button>
 
       <div>
-        <ng-container *ngFor="let nav of fillerNav">
-          <button
-            mat-button
-            routerLink="."
-            *ngIf="!(!(user$ | async) && nav?.canActivate)"
-            [routerLink]="nav.path"
-          >
-            {{ nav.path }}
-          </button>
+        <ng-container *ngIf="showFullMenu; else showDropDownMenu">
+          <ng-container *ngFor="let nav of fillerNav">
+            <button
+              mat-button
+              routerLink="."
+              *ngIf="!(!(user$ | async) && nav?.canActivate)"
+              [routerLink]="nav.path"
+            >
+              {{ nav.path }}
+            </button>
+          </ng-container>
         </ng-container>
 
-        <div *ngIf="user$ | async as user; else showLogin">
+        <dges-drop-down-menu
+          #showDropDownMenu
+          [fillerNav]="fillerNav"
+          [user$]="user$"
+        ></dges-drop-down-menu>
+
+        <ng-container *ngIf="user$ | async as user; else showLogin">
           <button
             mat-icon-button
             [matMenuTriggerFor]="menu"
@@ -36,7 +43,7 @@
               <span>Log out</span>
             </button>
           </mat-menu>
-        </div>
+        </ng-container>
       </div>
 
       <ng-template #showLogin>

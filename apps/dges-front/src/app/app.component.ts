@@ -1,4 +1,4 @@
-import { MediaMatcher } from '@angular/cdk/layout';
+import { BreakpointObserver, BreakpointState, MediaMatcher } from '@angular/cdk/layout';
 import { ChangeDetectorRef, Component, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
@@ -20,13 +20,15 @@ export class AppComponent implements OnDestroy {
   private _mobileQueryListener: () => void;
   public fillerNav = [];
   public user$: Observable<User>;
+  public showFullMenu: boolean;
 
   constructor(
     changeDetectorRef: ChangeDetectorRef,
     media: MediaMatcher,
     public dialog: MatDialog,
     router: Router,
-    private store: Store<RootStoreModule>
+    private store: Store<RootStoreModule>,
+    public breakpointObserver: BreakpointObserver
   ) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
@@ -36,6 +38,12 @@ export class AppComponent implements OnDestroy {
     );
     this.store.dispatch(AuthActions.loadUser());
     this.user$ = this.store.select(AuthSelectors.getCurrentUser);
+
+    this.breakpointObserver
+      .observe(['(min-width: 850px)'])
+      .subscribe((state: BreakpointState) => {
+          this.showFullMenu = state.matches;
+      });
   }
 
   openLogin(): void {

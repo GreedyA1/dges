@@ -1,0 +1,19 @@
+<button
+  mat-icon-button
+  [matMenuTriggerFor]="routeMenu"
+  aria-label="Example icon-button with a menu"
+>
+  🌌
+</button>
+<mat-menu #routeMenu="matMenu">
+  <ng-container *ngFor="let nav of fillerNav">
+    <button
+      mat-menu-item
+      routerLink="."
+      *ngIf="!(!(user$ | async) && nav?.canActivate)"
+      [routerLink]="nav.path"
+    >
+      {{ nav.path }}
+    </button>
+  </ng-container>
+</mat-menu>

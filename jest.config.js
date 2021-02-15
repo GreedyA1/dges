@@ -46,5 +46,7 @@ module.exports = {
     '<rootDir>/libs/ui/education-card',
     '<rootDir>/libs/store/projects/firebase',
     '<rootDir>/libs/tools/pipes/sort-by',
+    '<rootDir>/libs/ui/full-length-menu',
+    '<rootDir>/libs/ui/drop-down-menu',
   ],
 };
