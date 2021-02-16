@@ -20,6 +20,7 @@ import { UiSnackbarModule } from '@dges/ui/snackbar';
 import { UiConfirmDialogModule } from '@dges/ui/confirm-dialog';
 import { AdminModule } from './admin/admin.module';
 import { UiDropDownMenuModule } from '@dges/ui/drop-down-menu'
+import { UiFullLengthMenuModule } from '@dges/ui/full-length-menu'
 
 @NgModule({
   declarations: [AppComponent],
@@ -39,6 +40,7 @@ import { UiDropDownMenuModule } from '@dges/ui/drop-down-menu'
     UiSnackbarModule,
     MatMenuModule,
     UiConfirmDialogModule,
+    UiFullLengthMenuModule,
     UiDropDownMenuModule,
     AdminModule
   ],

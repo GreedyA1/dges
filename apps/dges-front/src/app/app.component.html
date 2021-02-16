@@ -6,24 +6,19 @@
       </button>
 
       <div>
-        <ng-container *ngIf="showFullMenu; else showDropDownMenu">
-          <ng-container *ngFor="let nav of fillerNav">
-            <button
-              mat-button
-              routerLink="."
-              *ngIf="!(!(user$ | async) && nav?.canActivate)"
-              [routerLink]="nav.path"
-            >
-              {{ nav.path }}
-            </button>
-          </ng-container>
-        </ng-container>
-
-        <dges-drop-down-menu
-          #showDropDownMenu
+        <dges-full-length-menu
+          *ngIf="showFullMenu; else showDropDownMenu"
           [fillerNav]="fillerNav"
           [user$]="user$"
-        ></dges-drop-down-menu>
+        >
+        </dges-full-length-menu>
+
+        <ng-template #showDropDownMenu>
+          <dges-drop-down-menu
+            [fillerNav]="fillerNav"
+            [user$]="user$"
+          ></dges-drop-down-menu>
+        </ng-template>
 
         <ng-container *ngIf="user$ | async as user; else showLogin">
           <button
