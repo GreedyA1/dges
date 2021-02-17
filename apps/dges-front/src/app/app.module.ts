@@ -19,8 +19,9 @@ import { MatMenuModule } from '@angular/material/menu';
 import { UiSnackbarModule } from '@dges/ui/snackbar';
 import { UiConfirmDialogModule } from '@dges/ui/confirm-dialog';
 import { AdminModule } from './admin/admin.module';
-import { UiDropDownMenuModule } from '@dges/ui/drop-down-menu'
-import { UiFullLengthMenuModule } from '@dges/ui/full-length-menu'
+import { UiDropDownMenuModule } from '@dges/ui/drop-down-menu';
+import { UiFullLengthMenuModule } from '@dges/ui/full-length-menu';
+import { MatRippleModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [AppComponent],
@@ -42,7 +43,8 @@ import { UiFullLengthMenuModule } from '@dges/ui/full-length-menu'
     UiConfirmDialogModule,
     UiFullLengthMenuModule,
     UiDropDownMenuModule,
-    AdminModule
+    AdminModule,
+    MatRippleModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

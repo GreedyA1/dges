@@ -51,7 +51,34 @@
   z-index: 2;
 }
 
-.example-is-mobile .example-toolbar, .example-is-mobile .toolbar {
+.example-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: calc(100vw - 54px);
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 2;
+}
+
+.footer {
+  bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.paddingDiv:focus {
+  outline: 0;
+}
+
+.example-is-mobile .example-toolbar,
+.example-is-mobile .toolbar {
   padding-left: 1rem;
   padding-right: 1rem;
   position: fixed;
@@ -72,5 +99,12 @@ h1.example-app-name {
 .example-is-mobile .example-sidenav-container {
   /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
      `<body>` to be our scrolling element for mobile layouts. */
-  flex: 1 0 auto;
+  // flex: 1 0 auto;
+}
+
+.bottom-nav-child {
+  flex: 1 1 auto;
+  text-align: center;
+  height: 64px;
+  line-height: 64px;
 }

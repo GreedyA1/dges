@@ -1,9 +1,14 @@
 <div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
-  <mat-toolbar color="white" class="toolbar">
+  <mat-toolbar color="white" class="toolbar" *ngIf="!mobileQuery.matches">
     <div class="example-toolbar">
-      <button mat-button routerLink="." [routerLink]="'timeline'">
-        📜{{ title }}
-      </button>
+      <div
+        matRipple
+        routerLink="."
+        [routerLink]="'timeline'"
+        class="paddingDiv"
+      >
+        ⛩️ {{ title }}
+      </div>
 
       <div>
         <dges-full-length-menu
@@ -53,12 +58,55 @@
     </div>
   </mat-toolbar>
 
-  <mat-sidenav-container
-    class="example-sidenav-container"
-    [style.marginTop.px]="mobileQuery.matches ? 56 : 0"
-  >
+  <mat-sidenav-container class="example-sidenav-container">
     <mat-sidenav-content>
       <router-outlet></router-outlet>
     </mat-sidenav-content>
   </mat-sidenav-container>
+  <mat-menu #routeMenu="matMenu">
+    <ng-container *ngFor="let nav of fillerNav">
+      <button
+        mat-menu-item
+        routerLink="."
+        *ngIf="!(!(user$ | async) && nav?.canActivate)"
+        [routerLink]="nav.path"
+      >
+        {{ nav.path }}
+      </button>
+    </ng-container>
+  </mat-menu>
+  <mat-toolbar *ngIf="mobileQuery.matches" color="white" class="footer">
+    <div
+      class="bottom-nav-child"
+      matRipple
+      *ngIf="user$ | async as user; else showLogin"
+      [matMenuTriggerFor]="menu"
+    >
+      ⏏️
+    </div>
+    <div
+      matRipple
+      routerLink="."
+      [routerLink]="'timeline'"
+      class="paddingDiv bottom-nav-child"
+    >
+      ⛩️ {{ title }}
+    </div>
+    <div matRipple [matMenuTriggerFor]="routeMenu" class="bottom-nav-child">
+      🏠
+    </div>
+  </mat-toolbar>
 </div>
+<ng-template #showLogin>
+  <div class="bottom-nav-child" matRipple (click)="openLogin()">⏏️</div>
+</ng-template>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item disabled>
+    <mat-icon>person</mat-icon>
+    <span *ngIf="user$ | async as user">{{ user.email }}</span>
+  </button>
+  <button mat-menu-item (click)="logout()">
+    <mat-icon>undo</mat-icon>
+    <span>Log out</span>
+  </button>
+</mat-menu>
