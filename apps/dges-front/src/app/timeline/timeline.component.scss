@@ -28,20 +28,25 @@
         text-align: center;
         overflow-x: visible !important;
 
+        @media only screen and (max-width: 650px) {
+          top: 1rem;
+        }
+
         h1 {
           text-transform: uppercase;
           margin: 0;
           font-size: 20rem;
+          text-align: center;
           opacity: 0.5;
           white-space: nowrap;
           overflow-x: visible !important;
 
           @media only screen and (max-width: 850px) {
-            font-size: 12rem;
+            font-size: 18rem;
           }
 
           @media only screen and (max-width: 650px) {
-            font-size: 8rem;
+            font-size: 4rem;
           }
         }
       }
@@ -53,12 +58,19 @@
         justify-content: space-around;
         // align-items: baseline;
 
+        @media only screen and (max-width: 830px) {
+          justify-content: center;
+        }
+        @media only screen and (max-width: 650px) {
+          margin-top: 10%;
+        }
+        @media only screen and (max-width: 400px) {
+          margin-top: 15%;
+        }
         @media only screen and (max-width: 320px) {
           max-width: 300px;
           margin: auto;
-        }
-        @media only screen and (max-width: 830px) {
-          justify-content: center;
+          margin-top: 15%;
         }
         @media only screen and (min-width: 900px) {
           max-width: 90%;
