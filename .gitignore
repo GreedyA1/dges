@@ -20,6 +20,9 @@
 # Lighthouse CI
 /.lighthouseci
 
+#firebase
+/.firebase
+
 # IDE - VSCode
 .vscode/*
 !.vscode/settings.json
