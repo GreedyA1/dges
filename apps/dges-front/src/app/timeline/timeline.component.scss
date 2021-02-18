@@ -29,6 +29,9 @@
         overflow-x: visible !important;
 
         @media only screen and (max-width: 650px) {
+          top: 1.5rem;
+        }
+        @media only screen and (max-width: 450px) {
           top: 1rem;
         }
 
@@ -62,7 +65,7 @@
           justify-content: center;
         }
         @media only screen and (max-width: 650px) {
-          margin-top: 10%;
+          margin-top: 15%;
         }
         @media only screen and (max-width: 400px) {
           margin-top: 15%;

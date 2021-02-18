@@ -8,13 +8,14 @@
   height: 300px;
   border: 2px dashed #f16624;
   border-radius: 5px;
-  background: white;
+  background: transparent;
   margin: 10px 0;
   cursor: pointer;
 
   &.hovering {
     border: 2px solid #f16624;
     color: #dadada !important;
+    opacity: .4  !important;
   }
 
   .file-label {

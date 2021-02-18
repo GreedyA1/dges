@@ -4,6 +4,9 @@
       "hosting": {
         "dges-front": [
           "dges-ed94f"
+        ],
+        "dges-admin": [
+          "dges-admin"
         ]
       }
     }

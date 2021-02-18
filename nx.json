@@ -170,6 +170,13 @@
     },
     "ui-drop-down-menu": {
       "tags": []
+    },
+    "dges-admin": {
+      "tags": []
+    },
+    "dges-admin-e2e": {
+      "tags": [],
+      "implicitDependencies": ["dges-admin"]
     }
   }
 }

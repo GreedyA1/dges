@@ -48,5 +48,6 @@ module.exports = {
     '<rootDir>/libs/tools/pipes/sort-by',
     '<rootDir>/libs/ui/full-length-menu',
     '<rootDir>/libs/ui/drop-down-menu',
+    '<rootDir>/apps/dges-admin',
   ],
 };

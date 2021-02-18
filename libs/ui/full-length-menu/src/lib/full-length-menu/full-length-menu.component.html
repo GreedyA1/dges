@@ -1,5 +1,6 @@
 <ng-container *ngFor="let nav of fillerNav">
   <button
+    class="text"
     mat-button
     routerLink="."
     *ngIf="
@@ -7,6 +8,6 @@
     "
     [routerLink]="nav.path"
   >
-    {{ nav.path | titlecase}}
+    {{ nav.path | uppercase }}
   </button>
 </ng-container>

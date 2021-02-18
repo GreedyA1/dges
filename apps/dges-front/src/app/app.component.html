@@ -5,7 +5,7 @@
         matRipple
         routerLink="."
         [routerLink]="'timeline'"
-        class="paddingDiv"
+        class="paddingDiv text"
       >
         ⛩️ {{ title }}
       </div>
@@ -24,7 +24,7 @@
             [user$]="user$"
           ></dges-drop-down-menu>
         </ng-template>
-
+        
         <ng-container *ngIf="user$ | async as user; else showLogin">
           <button
             mat-icon-button
