@@ -10,9 +10,9 @@ import { MatButtonModule } from '@angular/material/button';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    FormsLoginFormModule,
-    MatCardModule,
     MatButtonModule,
+    MatCardModule,
+    FormsLoginFormModule,
   ],
   declarations: [LoginDialogComponent],
   exports: [LoginDialogComponent],

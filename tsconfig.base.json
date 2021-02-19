@@ -80,8 +80,13 @@
       ],
       "@dges/tools/pipes/sort-by": ["libs/tools/pipes/sort-by/src/index.ts"],
       "@dges/ui/full-length-menu": ["libs/ui/full-length-menu/src/index.ts"],
-      "@dges/ui/drop-down-menu": ["libs/ui/drop-down-menu/src/index.ts"]
+      "@dges/ui/drop-down-menu": ["libs/ui/drop-down-menu/src/index.ts"],
+      "@dges/ui/login-page": ["libs/ui/login-page/src/index.ts"]
     }
+  },
+  "angularCompilerOptions": {
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true
   },
   "exclude": ["node_modules", "tmp"],
   "include": ["**/*.ts"]

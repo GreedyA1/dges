@@ -49,5 +49,6 @@ module.exports = {
     '<rootDir>/libs/ui/full-length-menu',
     '<rootDir>/libs/ui/drop-down-menu',
     '<rootDir>/apps/dges-admin',
+    '<rootDir>/libs/ui/login-page',
   ],
 };

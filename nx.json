@@ -177,6 +177,9 @@
     "dges-admin-e2e": {
       "tags": [],
       "implicitDependencies": ["dges-admin"]
+    },
+    "ui-login-page": {
+      "tags": []
     }
   }
 }
