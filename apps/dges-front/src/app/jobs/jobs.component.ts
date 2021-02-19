@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { AuthSelectors } from '@dges/store/auth/firebase';
+import {AuthFacade} from '@dges/store/auth/firebase';
 import { JobsFacade } from '@dges/store/jobs/firebase';
 import { User } from '@dges/types/auth';
 import { UploadFacade } from '@dges/types/facades/upload-facade';
@@ -8,7 +8,7 @@ import { Job } from '@dges/types/job';
 import { ConfirmDialogComponent } from '@dges/ui/confirm-dialog';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { RootStoreModule } from '../+store/root-store.module';
+import { RootStoreModule } from '../root-store.module';
 import { AddJobComponent } from '../admin/add-job/add-job.component';
 
 @Component({
@@ -23,7 +23,7 @@ export class JobsComponent implements OnInit {
 
 
   constructor(
-    private store: Store<RootStoreModule>,
+    private authFacade: AuthFacade,
     public dialog: MatDialog,
     @Inject('UploadFacade') private uploadFacade: UploadFacade,
     @Inject('JobsFacade') private jobsFacade: JobsFacade
@@ -32,7 +32,7 @@ export class JobsComponent implements OnInit {
   ngOnInit(): void {
     this.jobs$ = this.jobsFacade.init();
     this.loading$ = this.jobsFacade.loaded$;
-    this.user$ = this.store.select(AuthSelectors.getCurrentUser);
+    this.user$ = this.authFacade.loadUser();
   }
 
   addJob(): void {

@@ -2,7 +2,7 @@
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
-import { AuthEffects, AuthReducers } from '@dges/store/auth/firebase';
+import { AuthFacade } from '@dges/store/auth/firebase';
 import { FirebaseUploadFacade } from '@dges/store/storage/firebase';
 import { SkillsFacade } from '@dges/store/skills/firebase';
 import { ToolsFacade } from '@dges/store/tools/firebase';
@@ -22,15 +22,13 @@ export const environment = {
     appId: '1:1038181456176:web:689079ec60a04d665d90f5',
     measurementId: 'G-3MHENET84P',
   },
-  authReducer: AuthReducers.authReducer,
-  authEffect: AuthEffects.AuthEffects,
-  authFeatureKey: AuthReducers.authFeatureKey,
   uploadFacade: FirebaseUploadFacade,
   jobsFacade: JobsFacade,
   skillsFacade: SkillsFacade,
   toolsFacade: ToolsFacade,
   projectsFacade: ProjectsFacade,
   educationFacade: EducationFacade,
+  authFacade: AuthFacade,
 };
 
 /*

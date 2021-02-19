@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { AuthSelectors } from '@dges/store/auth/firebase';
+import {AuthFacade} from '@dges/store/auth/firebase';
 import { UploadFacade } from '@dges/types/facades/upload-facade';
 import { User } from '@dges/types/auth';
 import { Project } from '@dges/types/project';
 import { ConfirmDialogComponent } from '@dges/ui/confirm-dialog';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { RootStoreModule } from '../+store/root-store.module';
+import { RootStoreModule } from '../root-store.module';
 import { AddProjectComponent } from '../admin/add-project/add-project.component';
 import { Inject } from '@angular/core';
 import { ProjectsFacade } from '@dges/store/projects/firebase';
@@ -24,7 +24,7 @@ export class ProjectsComponent implements OnInit {
   loaded$: Observable<boolean>;
 
   constructor(
-    private store: Store<RootStoreModule>,
+    private authFacade: AuthFacade,
     public dialog: MatDialog,
     @Inject('UploadFacade') private uploadFacade: UploadFacade,
     @Inject('ProjectsFacade') private projectsFacade: ProjectsFacade
@@ -33,7 +33,7 @@ export class ProjectsComponent implements OnInit {
   ngOnInit(): void {
     this.projectsFacade.loadProjects();
     this.projects$ = this.projectsFacade.allProjects$;
-    this.user$ = this.store.select(AuthSelectors.getCurrentUser);
+    this.user$ = this.authFacade.loadUser();
     this.loading$ = this.projectsFacade.loaded$;
   }
 

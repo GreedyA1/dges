@@ -3,7 +3,7 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { catchError, map, switchMap } from 'rxjs/operators';
 import { from, of } from 'rxjs';
 import { FirebaseAuthService } from '@dges/api/auth/firebase';
-import * as AuthActions from './actions';
+import * as AuthActions from './auth.actions';
 import firebase from 'firebase';
 import UserCredential = firebase.auth.UserCredential;
 import AuthError = firebase.auth.Error;

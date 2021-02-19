@@ -10,18 +10,19 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatRippleModule } from '@angular/material/core';
+
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
-import { MatDialogModule } from '@angular/material/dialog';
-import { UiLoginDialogModule } from '@dges/ui/login-dialog';
-import { RootStoreModule } from './+store/root-store.module';
-import { MatMenuModule } from '@angular/material/menu';
 import { UiSnackbarModule } from '@dges/ui/snackbar';
+import { RootStoreModule } from './root-store.module';
+import { UiLoginDialogModule } from '@dges/ui/login-dialog';
 import { UiConfirmDialogModule } from '@dges/ui/confirm-dialog';
-import { AdminModule } from './admin/admin.module';
 import { UiDropDownMenuModule } from '@dges/ui/drop-down-menu';
 import { UiFullLengthMenuModule } from '@dges/ui/full-length-menu';
-import { MatRippleModule } from '@angular/material/core';
+import { AdminModule } from './admin/admin.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -30,21 +31,23 @@ import { MatRippleModule } from '@angular/material/core';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatSidenavModule,
-    MatIconModule,
     MatButtonModule,
     MatToolbarModule,
     MatListModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
     MatDialogModule,
-    UiLoginDialogModule,
-    RootStoreModule,
-    UiSnackbarModule,
     MatMenuModule,
+    MatRippleModule,
+    MatIconModule,
+
+    UiSnackbarModule,
+
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    RootStoreModule,
+    UiLoginDialogModule,
     UiConfirmDialogModule,
     UiFullLengthMenuModule,
     UiDropDownMenuModule,
     AdminModule,
-    MatRippleModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
