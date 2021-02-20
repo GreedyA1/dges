@@ -84,10 +84,10 @@
       "@dges/ui/login-page": ["libs/ui/login-page/src/index.ts"]
     }
   },
-  "angularCompilerOptions": {
-    "fullTemplateTypeCheck": true,
-    "strictInjectionParameters": true
-  },
+  // "angularCompilerOptions": {
+  //   "fullTemplateTypeCheck": true,
+  //   "strictInjectionParameters": true
+  // },
   "exclude": ["node_modules", "tmp"],
   "include": ["**/*.ts"]
 }

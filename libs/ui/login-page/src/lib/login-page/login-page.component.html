@@ -1,1 +1,10 @@
-<p>login-page works!</p>
+<div
+  [formGroup]="form"
+  class="d-flex flex-column align-items-center justify-content-center full-height"
+>
+  <dges-login-form formControlName="loginForm"></dges-login-form>
+  <div class="login-dialog-actions">
+    <button mat-raised-button (click)="login()">Login</button>
+    <button mat-raised-button (click)="cancel()">Cancel</button>
+  </div>
+</div>

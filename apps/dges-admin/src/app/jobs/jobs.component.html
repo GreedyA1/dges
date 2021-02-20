@@ -1,0 +1,24 @@
+<div class="full-page">
+  <button
+    *ngIf="user$ | async"
+    mat-fab
+    color="primary"
+    class="action-button"
+    (click)="addJob()"
+    aria-label="Example icon button with a delete icon"
+  >
+    <mat-icon>add</mat-icon>
+  </button>
+
+  <mat-spinner class="absolute-center" *ngIf="!loading$ | async"></mat-spinner>
+
+  <dges-job-card
+    class="m-3"
+    *ngFor="let job of jobs$ | async"
+    [job]="job"
+    [loggedIn]="user$ | async"
+    (edit)="editJob($event)"
+    (delete)="deleteJob($event)"
+  >
+  </dges-job-card>
+</div>

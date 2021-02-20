@@ -11,20 +11,6 @@
       </div>
 
       <div>
-        <dges-full-length-menu
-          *ngIf="showFullMenu; else showDropDownMenu"
-          [fillerNav]="fillerNav"
-          [user$]="user$"
-        >
-        </dges-full-length-menu>
-
-        <ng-template #showDropDownMenu>
-          <dges-drop-down-menu
-            [fillerNav]="fillerNav"
-            [user$]="user$"
-          ></dges-drop-down-menu>
-        </ng-template>
-
         <ng-container *ngIf="user$ | async as user; else showLogin">
           <button
             mat-icon-button

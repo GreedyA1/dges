@@ -1,15 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'dges-login-page',
   templateUrl: './login-page.component.html',
-  styleUrls: ['./login-page.component.scss']
+  styleUrls: ['./login-page.component.scss'],
 })
-export class LoginPageComponent implements OnInit {
+export class LoginPageComponent {
+  form = new FormGroup({
+    loginForm: new FormControl({
+      emailFormControl: '',
+      passwordFormControl: '',
+    }),
+  });
 
-  constructor() { }
+  login() {}
 
-  ngOnInit(): void {
-  }
-
+  cancel() {}
 }
