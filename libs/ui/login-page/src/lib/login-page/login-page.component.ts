@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { AuthFacade } from '@dges/store/auth/firebase'
+import { AuthFacade } from '@dges/store/auth/firebase';
+import { Router } from '@angular/router';
+import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'dges-login-page',
@@ -15,10 +17,13 @@ export class LoginPageComponent {
     }),
   });
 
-  constructor(private authFacade: AuthFacade) {}
+  constructor(private authFacade: AuthFacade, private router: Router) {}
 
   login() {
-    this.authFacade.login(this.emailFormControlValue, this.passwordFormControlValue);
+    this.authFacade.login(
+      this.emailFormControlValue,
+      this.passwordFormControlValue
+    );
   }
 
   get emailFormControlValue() {

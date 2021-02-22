@@ -33,6 +33,24 @@ export class AuthEffects {
     )
   );
 
+  loginSuccess$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(AuthActions.login),
+      switchMap(() =>
+        from(this.authFire.logout()).pipe(
+          map(() => {
+            
+            return AuthActions.logoutSuccess();
+          }),
+          catchError((error: AuthError) => {
+            this.snackBar.queueSnackBar(error.message);
+            return of(AuthActions.logoutFail({ error: error }));
+          })
+        )
+      )
+    )
+  );
+
   logout$ = createEffect(() =>
     this.actions$.pipe(
       ofType(AuthActions.logout),

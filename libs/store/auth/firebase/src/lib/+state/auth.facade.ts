@@ -21,8 +21,9 @@ export class AuthFacade {
     return this.user$;
   }
 
-  login(email: string, password: string): void {
+  login(email: string, password: string): Observable<User> {
     this.store.dispatch(AuthActions.login({ email, password }));
+    return this.user$;
   }
 
   logout(): void {
