@@ -28,3 +28,6 @@ export const logoutFail = createAction(
   '[auth] LOGOUT_FAIL',
   props<{ error: AuthError }>()
 );
+
+export const redirectOnLogin = createAction('[auth] redirectOnLogin');
+export const redirectOnLoginSuccess = createAction('[auth] redirectOnLogin');

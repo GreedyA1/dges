@@ -9,6 +9,7 @@ import UserCredential = firebase.auth.UserCredential;
 import AuthError = firebase.auth.Error;
 import { User } from '@dges/types/auth';
 import { SnackbarService } from '@dges/ui/snackbar';
+import { Router } from '@angular/router';
 
 @Injectable()
 export class AuthEffects {
@@ -35,16 +36,14 @@ export class AuthEffects {
 
   loginSuccess$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(AuthActions.login),
+      ofType(AuthActions.loginSuccess),
       switchMap(() =>
-        from(this.authFire.logout()).pipe(
-          map(() => {
-            
-            return AuthActions.logoutSuccess();
+        from(this.router.navigateByUrl('')).pipe(
+          map((user) => {
+            return AuthActions.redirectOnLogin();
           }),
           catchError((error: AuthError) => {
-            this.snackBar.queueSnackBar(error.message);
-            return of(AuthActions.logoutFail({ error: error }));
+            return of(AuthActions.loginFail({ error: error }));
           })
         )
       )
@@ -57,7 +56,7 @@ export class AuthEffects {
       switchMap(() =>
         from(this.authFire.logout()).pipe(
           map(() => {
-            return AuthActions.logoutSuccess();
+            return AuthActions.redirectOnLogin();
           }),
           catchError((error: AuthError) => {
             this.snackBar.queueSnackBar(error.message);
@@ -88,9 +87,26 @@ export class AuthEffects {
     )
   );
 
+  logoutSuccess$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(AuthActions.redirectOnLogin),
+      switchMap(() =>
+        from(this.router.navigateByUrl('')).pipe(
+          map((user) => {
+            return AuthActions.redirectOnLoginSuccess();
+          }),
+          catchError((error: AuthError) => {
+            return of(AuthActions.loginFail({ error: error }));
+          })
+        )
+      )
+    )
+  );
+
   constructor(
     private actions$: Actions,
     private authFire: FirebaseAuthService,
-    private snackBar: SnackbarService
+    private snackBar: SnackbarService,
+    private router: Router
   ) {}
 }
