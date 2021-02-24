@@ -14,36 +14,12 @@
         <dges-full-length-menu
           *ngIf="showFullMenu; else showDropDownMenu"
           [fillerNav]="fillerNav"
-          [user$]="user$"
         >
         </dges-full-length-menu>
 
         <ng-template #showDropDownMenu>
-          <dges-drop-down-menu
-            [fillerNav]="fillerNav"
-            [user$]="user$"
-          ></dges-drop-down-menu>
+          <dges-drop-down-menu [fillerNav]="fillerNav"></dges-drop-down-menu>
         </ng-template>
-
-        <ng-container *ngIf="user$ | async as user; else showLogin">
-          <button
-            mat-icon-button
-            [matMenuTriggerFor]="menu"
-            aria-label="Example icon-button with a menu"
-          >
-            🦾
-          </button>
-          <mat-menu #menu="matMenu">
-            <button mat-menu-item disabled>
-              <mat-icon>person</mat-icon>
-              <span>{{ user.email }}</span>
-            </button>
-            <button mat-menu-item (click)="logout()">
-              <mat-icon>undo</mat-icon>
-              <span>Log out</span>
-            </button>
-          </mat-menu>
-        </ng-container>
       </div>
 
       <ng-template #showLogin>
@@ -65,25 +41,12 @@
   </mat-sidenav-container>
   <mat-menu #routeMenu="matMenu">
     <ng-container *ngFor="let nav of fillerNav">
-      <button
-        mat-menu-item
-        routerLink="."
-        *ngIf="!(!(user$ | async) && nav?.canActivate)"
-        [routerLink]="nav.path"
-      >
+      <button mat-menu-item routerLink="." [routerLink]="nav.path">
         {{ nav.path }}
       </button>
     </ng-container>
   </mat-menu>
   <mat-toolbar *ngIf="mobileQuery.matches" color="white" class="footer">
-    <div
-      class="bottom-nav-child"
-      matRipple
-      *ngIf="user$ | async as user; else showLogin"
-      [matMenuTriggerFor]="menu"
-    >
-      ⏏️
-    </div>
     <div
       matRipple
       routerLink="."
@@ -100,13 +63,3 @@
 <ng-template #showLogin>
   <div class="bottom-nav-child" matRipple (click)="openLogin()">⏏️</div>
 </ng-template>
-<mat-menu #menu="matMenu">
-  <button mat-menu-item disabled>
-    <mat-icon>person</mat-icon>
-    <span *ngIf="user$ | async as user">{{ user.email }}</span>
-  </button>
-  <button mat-menu-item (click)="logout()">
-    <mat-icon>undo</mat-icon>
-    <span>Log out</span>
-  </button>
-</mat-menu>

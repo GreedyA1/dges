@@ -2,7 +2,6 @@
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
-import { AuthFacade } from '@dges/store/auth/firebase';
 import { FirebaseUploadFacade } from '@dges/store/storage/firebase';
 import { SkillsFacade } from '@dges/store/skills/firebase';
 import { ToolsFacade } from '@dges/store/tools/firebase';
@@ -28,7 +27,6 @@ export const environment = {
   toolsFacade: ToolsFacade,
   projectsFacade: ProjectsFacade,
   educationFacade: EducationFacade,
-  authFacade: AuthFacade,
 };
 
 /*

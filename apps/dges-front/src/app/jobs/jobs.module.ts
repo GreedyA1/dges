@@ -8,7 +8,6 @@ import { UiJobCardModule } from '@dges/ui/job-card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { AdminModule } from '../admin/admin.module';
 import { environment } from '../../environments/environment';
 
 @NgModule({
@@ -19,7 +18,6 @@ import { environment } from '../../environments/environment';
     UiJobCardModule,
     MatButtonModule,
     MatIconModule,
-    AdminModule,
     MatProgressSpinnerModule,
   ],
   providers: [

@@ -8,7 +8,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { environment } from '../../environments/environment';
-import { AdminModule } from '../admin/admin.module';
 
 @NgModule({
   declarations: [EducationsComponent],
@@ -18,7 +17,6 @@ import { AdminModule } from '../admin/admin.module';
     UiEducationCardModule,
     MatButtonModule,
     MatIconModule,
-    AdminModule,
     MatProgressSpinnerModule,
   ],
   providers: [

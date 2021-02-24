@@ -22,7 +22,6 @@ import { UiLoginDialogModule } from '@dges/ui/login-dialog';
 import { UiConfirmDialogModule } from '@dges/ui/confirm-dialog';
 import { UiDropDownMenuModule } from '@dges/ui/drop-down-menu';
 import { UiFullLengthMenuModule } from '@dges/ui/full-length-menu';
-import { AdminModule } from './admin/admin.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -47,7 +46,6 @@ import { AdminModule } from './admin/admin.module';
     UiConfirmDialogModule,
     UiFullLengthMenuModule,
     UiDropDownMenuModule,
-    AdminModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
