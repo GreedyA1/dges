@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { catchError, map, switchMap } from 'rxjs/operators';
+import { catchError, map, switchMap, tap } from 'rxjs/operators';
 import { from, of } from 'rxjs';
 import { FirebaseAuthService } from '@dges/api/auth/firebase';
 import * as AuthActions from './auth.actions';
@@ -34,28 +34,13 @@ export class AuthEffects {
     )
   );
 
-  loginSuccess$ = createEffect(() =>
-    this.actions$.pipe(
-      ofType(AuthActions.loginSuccess),
-      switchMap(() =>
-        from(this.router.navigateByUrl('')).pipe(
-          map((user) => {
-            return AuthActions.redirectOnLogin();
-          }),
-          catchError((error: AuthError) => {
-            return of(AuthActions.loginFail({ error: error }));
-          })
-        )
-      )
-    )
-  );
-
   logout$ = createEffect(() =>
     this.actions$.pipe(
       ofType(AuthActions.logout),
       switchMap(() =>
         from(this.authFire.logout()).pipe(
           map(() => {
+            console.log('YIPPIE YOOO')
             return AuthActions.redirectOnLogin();
           }),
           catchError((error: AuthError) => {
@@ -77,23 +62,8 @@ export class AuthEffects {
               email: user.email,
               displayName: user.displayName,
             };
+            
             return AuthActions.loadUserSuccess({ user: a });
-          }),
-          catchError((error: AuthError) => {
-            return of(AuthActions.loginFail({ error: error }));
-          })
-        )
-      )
-    )
-  );
-
-  logoutSuccess$ = createEffect(() =>
-    this.actions$.pipe(
-      ofType(AuthActions.redirectOnLogin),
-      switchMap(() =>
-        from(this.router.navigateByUrl('')).pipe(
-          map((user) => {
-            return AuthActions.redirectOnLoginSuccess();
           }),
           catchError((error: AuthError) => {
             return of(AuthActions.loginFail({ error: error }));
