@@ -20,13 +20,18 @@
             "main": "apps/dges-front/src/main.ts",
             "polyfills": "apps/dges-front/src/polyfills.ts",
             "tsConfig": "apps/dges-front/tsconfig.app.json",
-            "aot": true,
             "assets": [
               "apps/dges-front/src/favicon.ico",
               "apps/dges-front/src/assets"
             ],
             "styles": ["apps/dges-front/src/styles.scss"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -57,7 +62,8 @@
               ]
             }
           },
-          "outputs": ["{options.outputPath}"]
+          "outputs": ["{options.outputPath}"],
+          "defaultConfiguration": ""
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -1372,13 +1378,18 @@
             "main": "apps/dges-admin/src/main.ts",
             "polyfills": "apps/dges-admin/src/polyfills.ts",
             "tsConfig": "apps/dges-admin/tsconfig.app.json",
-            "aot": true,
             "assets": [
               "apps/dges-admin/src/favicon.ico",
               "apps/dges-admin/src/assets"
             ],
             "styles": ["apps/dges-admin/src/styles.scss"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -1408,7 +1419,8 @@
                 }
               ]
             }
-          }
+          },
+          "defaultConfiguration": ""
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
