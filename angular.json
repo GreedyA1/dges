@@ -1,6 +1,348 @@
 {
   "version": 1,
   "projects": {
+    "api-auth-firebase": {
+      "projectType": "library",
+      "root": "libs/api/auth/firebase",
+      "sourceRoot": "libs/api/auth/firebase/src",
+      "prefix": "dges",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/api/auth/firebase/src/**/*.ts",
+              "libs/api/auth/firebase/src/**/*.html"
+            ]
+          },
+          "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/api/auth/firebase/jest.config.js",
+            "passWithNoTests": true
+          },
+          "outputs": ["coverage/libs/api/auth/firebase"]
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "api-education-firebase": {
+      "projectType": "library",
+      "root": "libs/api/education/firebase",
+      "sourceRoot": "libs/api/education/firebase/src",
+      "prefix": "dges",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/api/education/firebase/src/**/*.ts",
+              "libs/api/education/firebase/src/**/*.html"
+            ]
+          },
+          "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/api/education/firebase"],
+          "options": {
+            "jestConfig": "libs/api/education/firebase/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "api-jobs-firebase": {
+      "projectType": "library",
+      "root": "libs/api/jobs/firebase",
+      "sourceRoot": "libs/api/jobs/firebase/src",
+      "prefix": "dges",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/api/jobs/firebase/src/**/*.ts",
+              "libs/api/jobs/firebase/src/**/*.html"
+            ]
+          },
+          "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/api/jobs/firebase"],
+          "options": {
+            "jestConfig": "libs/api/jobs/firebase/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "api-projects-firebase": {
+      "projectType": "library",
+      "root": "libs/api/projects/firebase",
+      "sourceRoot": "libs/api/projects/firebase/src",
+      "prefix": "dges",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/api/projects/firebase/src/**/*.ts",
+              "libs/api/projects/firebase/src/**/*.html"
+            ]
+          },
+          "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/api/projects/firebase/jest.config.js",
+            "passWithNoTests": true
+          },
+          "outputs": ["coverage/libs/api/projects/firebase"]
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "api-skills-firebase": {
+      "projectType": "library",
+      "root": "libs/api/skills/firebase",
+      "sourceRoot": "libs/api/skills/firebase/src",
+      "prefix": "dges",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/api/skills/firebase/src/**/*.ts",
+              "libs/api/skills/firebase/src/**/*.html"
+            ]
+          },
+          "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/api/skills/firebase"],
+          "options": {
+            "jestConfig": "libs/api/skills/firebase/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "api-storage-firebase": {
+      "projectType": "library",
+      "root": "libs/api/storage/firebase",
+      "sourceRoot": "libs/api/storage/firebase/src",
+      "prefix": "dges",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/api/storage/firebase/src/**/*.ts",
+              "libs/api/storage/firebase/src/**/*.html"
+            ]
+          },
+          "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/api/storage/firebase"],
+          "options": {
+            "jestConfig": "libs/api/storage/firebase/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "data-jobs": {
+      "projectType": "library",
+      "root": "libs/data/jobs",
+      "sourceRoot": "libs/data/jobs/src",
+      "prefix": "dges",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/data/jobs/src/**/*.ts",
+              "libs/data/jobs/src/**/*.html"
+            ]
+          },
+          "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/data/jobs"],
+          "options": {
+            "jestConfig": "libs/data/jobs/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "data-projects": {
+      "projectType": "library",
+      "root": "libs/data/projects",
+      "sourceRoot": "libs/data/projects/src",
+      "prefix": "dges",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/data/projects/src/**/*.ts"]
+          },
+          "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/data/projects/jest.config.js",
+            "passWithNoTests": true
+          },
+          "outputs": ["coverage/libs/data/projects"]
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "dges-admin": {
+      "projectType": "application",
+      "root": "apps/dges-admin",
+      "sourceRoot": "apps/dges-admin/src",
+      "prefix": "dges",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/dges-admin",
+            "index": "apps/dges-admin/src/index.html",
+            "main": "apps/dges-admin/src/main.ts",
+            "polyfills": "apps/dges-admin/src/polyfills.ts",
+            "tsConfig": "apps/dges-admin/tsconfig.app.json",
+            "assets": [
+              "apps/dges-admin/src/favicon.ico",
+              "apps/dges-admin/src/assets"
+            ],
+            "styles": ["apps/dges-admin/src/styles.scss"],
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/dges-admin/src/environments/environment.ts",
+                  "with": "apps/dges-admin/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          },
+          "defaultConfiguration": ""
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "dges-admin:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "dges-admin:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "dges-admin:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/dges-admin/src/**/*.ts",
+              "apps/dges-admin/src/**/*.html"
+            ]
+          },
+          "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/dges-admin"],
+          "options": {
+            "jestConfig": "apps/dges-admin/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "dges-admin-e2e": {
+      "root": "apps/dges-admin-e2e",
+      "sourceRoot": "apps/dges-admin-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/dges-admin-e2e/cypress.json",
+            "tsConfig": "apps/dges-admin-e2e/tsconfig.e2e.json",
+            "devServerTarget": "dges-admin:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "dges-admin:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/dges-admin-e2e/**/*.{js,ts}"]
+          },
+          "outputs": ["{options.outputFile}"]
+        }
+      }
+    },
     "dges-front": {
       "projectType": "application",
       "schematics": {
@@ -89,7 +431,8 @@
               "apps/dges-front/src/**/*.ts",
               "apps/dges-front/src/**/*.html"
             ]
-          }
+          },
+          "outputs": ["{options.outputFile}"]
         },
         "test": {
           "builder": "@nrwl/jest:jest",
@@ -129,6 +472,868 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["apps/dges-front-e2e/**/*.{js,ts}"]
+          },
+          "outputs": ["{options.outputFile}"]
+        }
+      }
+    },
+    "forms-chips": {
+      "projectType": "library",
+      "root": "libs/forms/chips",
+      "sourceRoot": "libs/forms/chips/src",
+      "prefix": "dges",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/forms/chips/src/**/*.ts",
+              "libs/forms/chips/src/**/*.html"
+            ]
+          },
+          "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/forms/chips/jest.config.js",
+            "passWithNoTests": true
+          },
+          "outputs": ["coverage/libs/forms/chips"]
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "forms-education-form": {
+      "projectType": "library",
+      "root": "libs/forms/education-form",
+      "sourceRoot": "libs/forms/education-form/src",
+      "prefix": "dges",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/forms/education-form/src/**/*.ts",
+              "libs/forms/education-form/src/**/*.html"
+            ]
+          },
+          "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/forms/education-form"],
+          "options": {
+            "jestConfig": "libs/forms/education-form/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "forms-job-form": {
+      "projectType": "library",
+      "root": "libs/forms/job-form",
+      "sourceRoot": "libs/forms/job-form/src",
+      "prefix": "dges",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/forms/job-form/src/**/*.ts",
+              "libs/forms/job-form/src/**/*.html"
+            ]
+          },
+          "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/forms/job-form"],
+          "options": {
+            "jestConfig": "libs/forms/job-form/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "forms-login-form": {
+      "projectType": "library",
+      "root": "libs/forms/login-form",
+      "sourceRoot": "libs/forms/login-form/src",
+      "prefix": "dges",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/forms/login-form/src/**/*.ts",
+              "libs/forms/login-form/src/**/*.html"
+            ]
+          },
+          "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/forms/login-form/jest.config.js",
+            "passWithNoTests": true
+          },
+          "outputs": ["coverage/libs/forms/login-form"]
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "forms-project-form": {
+      "root": "libs/forms/project-form",
+      "sourceRoot": "libs/forms/project-form/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/forms/project-form/**/*.ts",
+              "libs/forms/project-form/src/**/*.html"
+            ]
+          },
+          "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/forms/project-form/jest.config.js",
+            "passWithNoTests": true
+          },
+          "outputs": ["coverage/libs/forms/project-form"]
+        }
+      }
+    },
+    "forms-skills": {
+      "projectType": "library",
+      "root": "libs/forms/skills",
+      "sourceRoot": "libs/forms/skills/src",
+      "prefix": "dges",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/forms/skills/src/**/*.ts",
+              "libs/forms/skills/src/**/*.html"
+            ]
+          },
+          "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/forms/skills"],
+          "options": {
+            "jestConfig": "libs/forms/skills/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "forms-upload-images": {
+      "projectType": "library",
+      "root": "libs/forms/upload-images",
+      "sourceRoot": "libs/forms/upload-images/src",
+      "prefix": "dges",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/forms/upload-images/src/**/*.ts",
+              "libs/forms/upload-images/src/**/*.html"
+            ]
+          },
+          "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/forms/upload-images"],
+          "options": {
+            "jestConfig": "libs/forms/upload-images/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "forms-upload-task": {
+      "projectType": "library",
+      "root": "libs/forms/upload-task",
+      "sourceRoot": "libs/forms/upload-task/src",
+      "prefix": "dges",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/forms/upload-task/src/**/*.ts",
+              "libs/forms/upload-task/src/**/*.html"
+            ]
+          },
+          "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/forms/upload-task"],
+          "options": {
+            "jestConfig": "libs/forms/upload-task/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "store-auth-firebase": {
+      "projectType": "library",
+      "root": "libs/store/auth/firebase",
+      "sourceRoot": "libs/store/auth/firebase/src",
+      "prefix": "dges",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/store/auth/firebase/src/**/*.ts",
+              "libs/store/auth/firebase/src/**/*.html"
+            ]
+          },
+          "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/store/auth/firebase/jest.config.js",
+            "passWithNoTests": true
+          },
+          "outputs": ["coverage/libs/store/auth/firebase"]
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "store-education-firebase": {
+      "projectType": "library",
+      "root": "libs/store/education/firebase",
+      "sourceRoot": "libs/store/education/firebase/src",
+      "prefix": "dges",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/store/education/firebase/src/**/*.ts",
+              "libs/store/education/firebase/src/**/*.html"
+            ]
+          },
+          "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/store/education/firebase"],
+          "options": {
+            "jestConfig": "libs/store/education/firebase/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "store-jobs-firebase": {
+      "projectType": "library",
+      "root": "libs/store/jobs/firebase",
+      "sourceRoot": "libs/store/jobs/firebase/src",
+      "prefix": "dges",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/store/jobs/firebase/src/**/*.ts",
+              "libs/store/jobs/firebase/src/**/*.html"
+            ]
+          },
+          "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/store/jobs/firebase"],
+          "options": {
+            "jestConfig": "libs/store/jobs/firebase/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "store-projects-firebase": {
+      "projectType": "library",
+      "root": "libs/store/projects/firebase",
+      "sourceRoot": "libs/store/projects/firebase/src",
+      "prefix": "dges",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/store/projects/firebase/src/**/*.ts",
+              "libs/store/projects/firebase/src/**/*.html"
+            ]
+          },
+          "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/store/projects/firebase"],
+          "options": {
+            "jestConfig": "libs/store/projects/firebase/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "store-projects-projects-api": {
+      "projectType": "library",
+      "root": "libs/store/projects/projects-api",
+      "sourceRoot": "libs/store/projects/projects-api/src",
+      "prefix": "dges",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/store/projects/projects-api/src/**/*.ts",
+              "libs/store/projects/projects-api/src/**/*.html"
+            ]
+          },
+          "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/store/projects/projects-api/jest.config.js",
+            "passWithNoTests": true
+          },
+          "outputs": ["coverage/libs/store/projects/projects-api"]
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "store-skills-firebase": {
+      "projectType": "library",
+      "root": "libs/store/skills/firebase",
+      "sourceRoot": "libs/store/skills/firebase/src",
+      "prefix": "dges",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/store/skills/firebase/src/**/*.ts",
+              "libs/store/skills/firebase/src/**/*.html"
+            ]
+          },
+          "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/store/skills/firebase"],
+          "options": {
+            "jestConfig": "libs/store/skills/firebase/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "store-storage-firebase": {
+      "projectType": "library",
+      "root": "libs/store/storage/firebase",
+      "sourceRoot": "libs/store/storage/firebase/src",
+      "prefix": "dges",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/store/storage/firebase/src/**/*.ts",
+              "libs/store/storage/firebase/src/**/*.html"
+            ]
+          },
+          "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/store/storage/firebase"],
+          "options": {
+            "jestConfig": "libs/store/storage/firebase/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "store-tools-firebase": {
+      "projectType": "library",
+      "root": "libs/store/tools/firebase",
+      "sourceRoot": "libs/store/tools/firebase/src",
+      "prefix": "dges",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/store/tools/firebase/src/**/*.ts",
+              "libs/store/tools/firebase/src/**/*.html"
+            ]
+          },
+          "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/store/tools/firebase"],
+          "options": {
+            "jestConfig": "libs/store/tools/firebase/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "tools-pipes-sort-by": {
+      "projectType": "library",
+      "root": "libs/tools/pipes/sort-by",
+      "sourceRoot": "libs/tools/pipes/sort-by/src",
+      "prefix": "dges",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/tools/pipes/sort-by/src/**/*.ts",
+              "libs/tools/pipes/sort-by/src/**/*.html"
+            ]
+          },
+          "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/tools/pipes/sort-by"],
+          "options": {
+            "jestConfig": "libs/tools/pipes/sort-by/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "types-auth": {
+      "projectType": "library",
+      "root": "libs/types/auth",
+      "sourceRoot": "libs/types/auth/src",
+      "prefix": "dges",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/types/auth/src/**/*.ts"]
+          },
+          "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/types/auth/jest.config.js",
+            "passWithNoTests": true
+          },
+          "outputs": ["coverage/libs/types/auth"]
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "types-education": {
+      "projectType": "library",
+      "root": "libs/types/education",
+      "sourceRoot": "libs/types/education/src",
+      "prefix": "dges",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/types/education/src/**/*.ts",
+              "libs/types/education/src/**/*.html"
+            ]
+          },
+          "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/types/education"],
+          "options": {
+            "jestConfig": "libs/types/education/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "types-facades-upload-facade": {
+      "projectType": "library",
+      "root": "libs/types/facades/upload-facade",
+      "sourceRoot": "libs/types/facades/upload-facade/src",
+      "prefix": "dges",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/types/facades/upload-facade/src/**/*.ts",
+              "libs/types/facades/upload-facade/src/**/*.html"
+            ]
+          },
+          "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/types/facades/upload-facade"],
+          "options": {
+            "jestConfig": "libs/types/facades/upload-facade/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "types-job": {
+      "projectType": "library",
+      "root": "libs/types/job",
+      "sourceRoot": "libs/types/job/src",
+      "prefix": "dges",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/types/job/src/**/*.ts",
+              "libs/types/job/src/**/*.html"
+            ]
+          },
+          "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/types/job"],
+          "options": {
+            "jestConfig": "libs/types/job/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "types-project": {
+      "projectType": "library",
+      "root": "libs/types/project",
+      "sourceRoot": "libs/types/project/src",
+      "prefix": "dges",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/types/project/src/**/*.ts"]
+          },
+          "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/types/project/jest.config.js",
+            "passWithNoTests": true
+          },
+          "outputs": ["coverage/libs/types/project"]
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "types-skill": {
+      "projectType": "library",
+      "root": "libs/types/skill",
+      "sourceRoot": "libs/types/skill/src",
+      "prefix": "dges",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/types/skill/src/**/*.ts",
+              "libs/types/skill/src/**/*.html"
+            ]
+          },
+          "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/types/skill"],
+          "options": {
+            "jestConfig": "libs/types/skill/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "ui-confirm-dialog": {
+      "projectType": "library",
+      "root": "libs/ui/confirm-dialog",
+      "sourceRoot": "libs/ui/confirm-dialog/src",
+      "prefix": "dges",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/ui/confirm-dialog/src/**/*.ts",
+              "libs/ui/confirm-dialog/src/**/*.html"
+            ]
+          },
+          "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/ui/confirm-dialog"],
+          "options": {
+            "jestConfig": "libs/ui/confirm-dialog/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "ui-drop-down-menu": {
+      "projectType": "library",
+      "root": "libs/ui/drop-down-menu",
+      "sourceRoot": "libs/ui/drop-down-menu/src",
+      "prefix": "dges",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/ui/drop-down-menu/src/**/*.ts",
+              "libs/ui/drop-down-menu/src/**/*.html"
+            ]
+          },
+          "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/ui/drop-down-menu"],
+          "options": {
+            "jestConfig": "libs/ui/drop-down-menu/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "ui-drop-zone": {
+      "projectType": "library",
+      "root": "libs/ui/drop-zone",
+      "sourceRoot": "libs/ui/drop-zone/src",
+      "prefix": "dges",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/ui/drop-zone/src/**/*.ts",
+              "libs/ui/drop-zone/src/**/*.html"
+            ]
+          },
+          "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/ui/drop-zone"],
+          "options": {
+            "jestConfig": "libs/ui/drop-zone/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "ui-education-card": {
+      "projectType": "library",
+      "root": "libs/ui/education-card",
+      "sourceRoot": "libs/ui/education-card/src",
+      "prefix": "dges",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/ui/education-card/src/**/*.ts",
+              "libs/ui/education-card/src/**/*.html"
+            ]
+          },
+          "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/ui/education-card"],
+          "options": {
+            "jestConfig": "libs/ui/education-card/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "ui-full-length-menu": {
+      "projectType": "library",
+      "root": "libs/ui/full-length-menu",
+      "sourceRoot": "libs/ui/full-length-menu/src",
+      "prefix": "dges",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/ui/full-length-menu/src/**/*.ts",
+              "libs/ui/full-length-menu/src/**/*.html"
+            ]
+          },
+          "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/ui/full-length-menu"],
+          "options": {
+            "jestConfig": "libs/ui/full-length-menu/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "ui-images-control": {
+      "projectType": "library",
+      "root": "libs/ui/images-control",
+      "sourceRoot": "libs/ui/images-control/src",
+      "prefix": "dges",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/ui/images-control/src/**/*.ts",
+              "libs/ui/images-control/src/**/*.html"
+            ]
+          },
+          "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/ui/images-control"],
+          "options": {
+            "jestConfig": "libs/ui/images-control/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "ui-job-card": {
+      "projectType": "library",
+      "root": "libs/ui/job-card",
+      "sourceRoot": "libs/ui/job-card/src",
+      "prefix": "dges",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/ui/job-card/src/**/*.ts",
+              "libs/ui/job-card/src/**/*.html"
+            ]
+          },
+          "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/ui/job-card"],
+          "options": {
+            "jestConfig": "libs/ui/job-card/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "ui-login-dialog": {
+      "projectType": "library",
+      "root": "libs/ui/login-dialog",
+      "sourceRoot": "libs/ui/login-dialog/src",
+      "prefix": "dges",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/ui/login-dialog/src/**/*.ts",
+              "libs/ui/login-dialog/src/**/*.html"
+            ]
+          },
+          "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ui/login-dialog/jest.config.js",
+            "passWithNoTests": true
+          },
+          "outputs": ["coverage/libs/ui/login-dialog"]
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "ui-login-page": {
+      "projectType": "library",
+      "root": "libs/ui/login-page",
+      "sourceRoot": "libs/ui/login-page/src",
+      "prefix": "dges",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/ui/login-page/src/**/*.ts",
+              "libs/ui/login-page/src/**/*.html"
+            ]
+          },
+          "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/ui/login-page"],
+          "options": {
+            "jestConfig": "libs/ui/login-page/jest.config.js",
+            "passWithNoTests": true
           }
         }
       }
@@ -146,7 +1351,8 @@
               "libs/ui/project-card/src/**/*.ts",
               "libs/ui/project-card/src/**/*.html"
             ]
-          }
+          },
+          "outputs": ["{options.outputFile}"]
         },
         "test": {
           "builder": "@nrwl/jest:jest",
@@ -176,7 +1382,8 @@
               "libs/ui/project-details/src/**/*.ts",
               "libs/ui/project-details/src/**/*.html"
             ]
-          }
+          },
+          "outputs": ["{options.outputFile}"]
         },
         "test": {
           "builder": "@nrwl/jest:jest",
@@ -193,349 +1400,29 @@
         }
       }
     },
-    "store-projects-projects-firebase": {
+    "ui-skills-chip": {
       "projectType": "library",
-      "root": "libs/store/projects/projects-firebase",
-      "sourceRoot": "libs/store/projects/projects-firebase/src",
+      "root": "libs/ui/skills-chip",
+      "sourceRoot": "libs/ui/skills-chip/src",
       "prefix": "dges",
       "architect": {
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "libs/store/projects/projects-firebase/src/**/*.ts",
-              "libs/store/projects/projects-firebase/src/**/*.html"
+              "libs/ui/skills-chip/src/**/*.ts",
+              "libs/ui/skills-chip/src/**/*.html"
             ]
-          }
+          },
+          "outputs": ["{options.outputFile}"]
         },
         "test": {
           "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/ui/skills-chip"],
           "options": {
-            "jestConfig": "libs/store/projects/projects-firebase/jest.config.js",
+            "jestConfig": "libs/ui/skills-chip/jest.config.js",
             "passWithNoTests": true
-          },
-          "outputs": ["coverage/libs/store/projects/projects-firebase"]
-        }
-      },
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        }
-      }
-    },
-    "store-projects-projects-api": {
-      "projectType": "library",
-      "root": "libs/store/projects/projects-api",
-      "sourceRoot": "libs/store/projects/projects-api/src",
-      "prefix": "dges",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/store/projects/projects-api/src/**/*.ts",
-              "libs/store/projects/projects-api/src/**/*.html"
-            ]
           }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/store/projects/projects-api/jest.config.js",
-            "passWithNoTests": true
-          },
-          "outputs": ["coverage/libs/store/projects/projects-api"]
-        }
-      },
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        }
-      }
-    },
-    "types-project": {
-      "projectType": "library",
-      "root": "libs/types/project",
-      "sourceRoot": "libs/types/project/src",
-      "prefix": "dges",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["libs/types/project/src/**/*.ts"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/types/project/jest.config.js",
-            "passWithNoTests": true
-          },
-          "outputs": ["coverage/libs/types/project"]
-        }
-      },
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        }
-      }
-    },
-    "data-projects": {
-      "projectType": "library",
-      "root": "libs/data/projects",
-      "sourceRoot": "libs/data/projects/src",
-      "prefix": "dges",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["libs/data/projects/src/**/*.ts"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/data/projects/jest.config.js",
-            "passWithNoTests": true
-          },
-          "outputs": ["coverage/libs/data/projects"]
-        }
-      },
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        }
-      }
-    },
-    "api-projects-firebase": {
-      "projectType": "library",
-      "root": "libs/api/projects/firebase",
-      "sourceRoot": "libs/api/projects/firebase/src",
-      "prefix": "dges",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/api/projects/firebase/src/**/*.ts",
-              "libs/api/projects/firebase/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/api/projects/firebase/jest.config.js",
-            "passWithNoTests": true
-          },
-          "outputs": ["coverage/libs/api/projects/firebase"]
-        }
-      },
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        }
-      }
-    },
-    "forms-project-form": {
-      "root": "libs/forms/project-form",
-      "sourceRoot": "libs/forms/project-form/src",
-      "projectType": "library",
-      "schematics": {},
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/forms/project-form/**/*.ts",
-              "libs/forms/project-form/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/forms/project-form/jest.config.js",
-            "passWithNoTests": true
-          },
-          "outputs": ["coverage/libs/forms/project-form"]
-        }
-      }
-    },
-    "forms-login-form": {
-      "projectType": "library",
-      "root": "libs/forms/login-form",
-      "sourceRoot": "libs/forms/login-form/src",
-      "prefix": "dges",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/forms/login-form/src/**/*.ts",
-              "libs/forms/login-form/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/forms/login-form/jest.config.js",
-            "passWithNoTests": true
-          },
-          "outputs": ["coverage/libs/forms/login-form"]
-        }
-      },
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        }
-      }
-    },
-    "ui-login-dialog": {
-      "projectType": "library",
-      "root": "libs/ui/login-dialog",
-      "sourceRoot": "libs/ui/login-dialog/src",
-      "prefix": "dges",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/ui/login-dialog/src/**/*.ts",
-              "libs/ui/login-dialog/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/ui/login-dialog/jest.config.js",
-            "passWithNoTests": true
-          },
-          "outputs": ["coverage/libs/ui/login-dialog"]
-        }
-      },
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        }
-      }
-    },
-    "api-auth-firebase": {
-      "projectType": "library",
-      "root": "libs/api/auth/firebase",
-      "sourceRoot": "libs/api/auth/firebase/src",
-      "prefix": "dges",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/api/auth/firebase/src/**/*.ts",
-              "libs/api/auth/firebase/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/api/auth/firebase/jest.config.js",
-            "passWithNoTests": true
-          },
-          "outputs": ["coverage/libs/api/auth/firebase"]
-        }
-      },
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        }
-      }
-    },
-    "store-auth-firebase": {
-      "projectType": "library",
-      "root": "libs/store/auth/firebase",
-      "sourceRoot": "libs/store/auth/firebase/src",
-      "prefix": "dges",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/store/auth/firebase/src/**/*.ts",
-              "libs/store/auth/firebase/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/store/auth/firebase/jest.config.js",
-            "passWithNoTests": true
-          },
-          "outputs": ["coverage/libs/store/auth/firebase"]
-        }
-      },
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        }
-      }
-    },
-    "types-auth": {
-      "projectType": "library",
-      "root": "libs/types/auth",
-      "sourceRoot": "libs/types/auth/src",
-      "prefix": "dges",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["libs/types/auth/src/**/*.ts"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/types/auth/jest.config.js",
-            "passWithNoTests": true
-          },
-          "outputs": ["coverage/libs/types/auth"]
-        }
-      },
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        }
-      }
-    },
-    "forms-chips": {
-      "projectType": "library",
-      "root": "libs/forms/chips",
-      "sourceRoot": "libs/forms/chips/src",
-      "prefix": "dges",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/forms/chips/src/**/*.ts",
-              "libs/forms/chips/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/forms/chips/jest.config.js",
-            "passWithNoTests": true
-          },
-          "outputs": ["coverage/libs/forms/chips"]
-        }
-      },
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
         }
       }
     },
@@ -552,88 +1439,14 @@
               "libs/ui/snackbar/src/**/*.ts",
               "libs/ui/snackbar/src/**/*.html"
             ]
-          }
+          },
+          "outputs": ["{options.outputFile}"]
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "outputs": ["coverage/libs/ui/snackbar"],
           "options": {
             "jestConfig": "libs/ui/snackbar/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "ui-confirm-dialog": {
-      "projectType": "library",
-      "root": "libs/ui/confirm-dialog",
-      "sourceRoot": "libs/ui/confirm-dialog/src",
-      "prefix": "dges",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/ui/confirm-dialog/src/**/*.ts",
-              "libs/ui/confirm-dialog/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/ui/confirm-dialog"],
-          "options": {
-            "jestConfig": "libs/ui/confirm-dialog/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "api-storage-firebase": {
-      "projectType": "library",
-      "root": "libs/api/storage/firebase",
-      "sourceRoot": "libs/api/storage/firebase/src",
-      "prefix": "dges",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/api/storage/firebase/src/**/*.ts",
-              "libs/api/storage/firebase/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/api/storage/firebase"],
-          "options": {
-            "jestConfig": "libs/api/storage/firebase/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "ui-drop-zone": {
-      "projectType": "library",
-      "root": "libs/ui/drop-zone",
-      "sourceRoot": "libs/ui/drop-zone/src",
-      "prefix": "dges",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/ui/drop-zone/src/**/*.ts",
-              "libs/ui/drop-zone/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/ui/drop-zone"],
-          "options": {
-            "jestConfig": "libs/ui/drop-zone/jest.config.js",
             "passWithNoTests": true
           }
         }
@@ -652,7 +1465,8 @@
               "libs/ui/upload-images/src/**/*.ts",
               "libs/ui/upload-images/src/**/*.html"
             ]
-          }
+          },
+          "outputs": ["{options.outputFile}"]
         },
         "test": {
           "builder": "@nrwl/jest:jest",
@@ -677,833 +1491,14 @@
               "libs/ui/upload-task/src/**/*.ts",
               "libs/ui/upload-task/src/**/*.html"
             ]
-          }
+          },
+          "outputs": ["{options.outputFile}"]
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "outputs": ["coverage/libs/ui/upload-task"],
           "options": {
             "jestConfig": "libs/ui/upload-task/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "forms-upload-task": {
-      "projectType": "library",
-      "root": "libs/forms/upload-task",
-      "sourceRoot": "libs/forms/upload-task/src",
-      "prefix": "dges",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/forms/upload-task/src/**/*.ts",
-              "libs/forms/upload-task/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/forms/upload-task"],
-          "options": {
-            "jestConfig": "libs/forms/upload-task/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "forms-upload-images": {
-      "projectType": "library",
-      "root": "libs/forms/upload-images",
-      "sourceRoot": "libs/forms/upload-images/src",
-      "prefix": "dges",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/forms/upload-images/src/**/*.ts",
-              "libs/forms/upload-images/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/forms/upload-images"],
-          "options": {
-            "jestConfig": "libs/forms/upload-images/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "store-storage-firebase": {
-      "projectType": "library",
-      "root": "libs/store/storage/firebase",
-      "sourceRoot": "libs/store/storage/firebase/src",
-      "prefix": "dges",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/store/storage/firebase/src/**/*.ts",
-              "libs/store/storage/firebase/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/store/storage/firebase"],
-          "options": {
-            "jestConfig": "libs/store/storage/firebase/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "types-facades-upload-facade": {
-      "projectType": "library",
-      "root": "libs/types/facades/upload-facade",
-      "sourceRoot": "libs/types/facades/upload-facade/src",
-      "prefix": "dges",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/types/facades/upload-facade/src/**/*.ts",
-              "libs/types/facades/upload-facade/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/types/facades/upload-facade"],
-          "options": {
-            "jestConfig": "libs/types/facades/upload-facade/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "forms-skills": {
-      "projectType": "library",
-      "root": "libs/forms/skills",
-      "sourceRoot": "libs/forms/skills/src",
-      "prefix": "dges",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/forms/skills/src/**/*.ts",
-              "libs/forms/skills/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/forms/skills"],
-          "options": {
-            "jestConfig": "libs/forms/skills/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "store-skills-firebase": {
-      "projectType": "library",
-      "root": "libs/store/skills/firebase",
-      "sourceRoot": "libs/store/skills/firebase/src",
-      "prefix": "dges",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/store/skills/firebase/src/**/*.ts",
-              "libs/store/skills/firebase/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/store/skills/firebase"],
-          "options": {
-            "jestConfig": "libs/store/skills/firebase/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "api-skills-firebase": {
-      "projectType": "library",
-      "root": "libs/api/skills/firebase",
-      "sourceRoot": "libs/api/skills/firebase/src",
-      "prefix": "dges",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/api/skills/firebase/src/**/*.ts",
-              "libs/api/skills/firebase/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/api/skills/firebase"],
-          "options": {
-            "jestConfig": "libs/api/skills/firebase/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "types-skill": {
-      "projectType": "library",
-      "root": "libs/types/skill",
-      "sourceRoot": "libs/types/skill/src",
-      "prefix": "dges",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/types/skill/src/**/*.ts",
-              "libs/types/skill/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/types/skill"],
-          "options": {
-            "jestConfig": "libs/types/skill/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "ui-images-control": {
-      "projectType": "library",
-      "root": "libs/ui/images-control",
-      "sourceRoot": "libs/ui/images-control/src",
-      "prefix": "dges",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/ui/images-control/src/**/*.ts",
-              "libs/ui/images-control/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/ui/images-control"],
-          "options": {
-            "jestConfig": "libs/ui/images-control/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "ui-skills-chip": {
-      "projectType": "library",
-      "root": "libs/ui/skills-chip",
-      "sourceRoot": "libs/ui/skills-chip/src",
-      "prefix": "dges",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/ui/skills-chip/src/**/*.ts",
-              "libs/ui/skills-chip/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/ui/skills-chip"],
-          "options": {
-            "jestConfig": "libs/ui/skills-chip/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "store-tools-firebase": {
-      "projectType": "library",
-      "root": "libs/store/tools/firebase",
-      "sourceRoot": "libs/store/tools/firebase/src",
-      "prefix": "dges",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/store/tools/firebase/src/**/*.ts",
-              "libs/store/tools/firebase/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/store/tools/firebase"],
-          "options": {
-            "jestConfig": "libs/store/tools/firebase/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "ui-job-card": {
-      "projectType": "library",
-      "root": "libs/ui/job-card",
-      "sourceRoot": "libs/ui/job-card/src",
-      "prefix": "dges",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/ui/job-card/src/**/*.ts",
-              "libs/ui/job-card/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/ui/job-card"],
-          "options": {
-            "jestConfig": "libs/ui/job-card/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "forms-job-form": {
-      "projectType": "library",
-      "root": "libs/forms/job-form",
-      "sourceRoot": "libs/forms/job-form/src",
-      "prefix": "dges",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/forms/job-form/src/**/*.ts",
-              "libs/forms/job-form/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/forms/job-form"],
-          "options": {
-            "jestConfig": "libs/forms/job-form/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "data-jobs": {
-      "projectType": "library",
-      "root": "libs/data/jobs",
-      "sourceRoot": "libs/data/jobs/src",
-      "prefix": "dges",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/data/jobs/src/**/*.ts",
-              "libs/data/jobs/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/data/jobs"],
-          "options": {
-            "jestConfig": "libs/data/jobs/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "api-jobs-firebase": {
-      "projectType": "library",
-      "root": "libs/api/jobs/firebase",
-      "sourceRoot": "libs/api/jobs/firebase/src",
-      "prefix": "dges",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/api/jobs/firebase/src/**/*.ts",
-              "libs/api/jobs/firebase/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/api/jobs/firebase"],
-          "options": {
-            "jestConfig": "libs/api/jobs/firebase/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "store-jobs-firebase": {
-      "projectType": "library",
-      "root": "libs/store/jobs/firebase",
-      "sourceRoot": "libs/store/jobs/firebase/src",
-      "prefix": "dges",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/store/jobs/firebase/src/**/*.ts",
-              "libs/store/jobs/firebase/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/store/jobs/firebase"],
-          "options": {
-            "jestConfig": "libs/store/jobs/firebase/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "types-job": {
-      "projectType": "library",
-      "root": "libs/types/job",
-      "sourceRoot": "libs/types/job/src",
-      "prefix": "dges",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/types/job/src/**/*.ts",
-              "libs/types/job/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/types/job"],
-          "options": {
-            "jestConfig": "libs/types/job/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "store-education-firebase": {
-      "projectType": "library",
-      "root": "libs/store/education/firebase",
-      "sourceRoot": "libs/store/education/firebase/src",
-      "prefix": "dges",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/store/education/firebase/src/**/*.ts",
-              "libs/store/education/firebase/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/store/education/firebase"],
-          "options": {
-            "jestConfig": "libs/store/education/firebase/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "type-education": {
-      "projectType": "library",
-      "root": "libs/type/education",
-      "sourceRoot": "libs/type/education/src",
-      "prefix": "dges",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/type/education/src/**/*.ts",
-              "libs/type/education/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/type/education"],
-          "options": {
-            "jestConfig": "libs/type/education/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "forms-education-form": {
-      "projectType": "library",
-      "root": "libs/forms/education-form",
-      "sourceRoot": "libs/forms/education-form/src",
-      "prefix": "dges",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/forms/education-form/src/**/*.ts",
-              "libs/forms/education-form/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/forms/education-form"],
-          "options": {
-            "jestConfig": "libs/forms/education-form/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "types-education": {
-      "projectType": "library",
-      "root": "libs/types/education",
-      "sourceRoot": "libs/types/education/src",
-      "prefix": "dges",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/types/education/src/**/*.ts",
-              "libs/types/education/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/types/education"],
-          "options": {
-            "jestConfig": "libs/types/education/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "api-education-firebase": {
-      "projectType": "library",
-      "root": "libs/api/education/firebase",
-      "sourceRoot": "libs/api/education/firebase/src",
-      "prefix": "dges",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/api/education/firebase/src/**/*.ts",
-              "libs/api/education/firebase/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/api/education/firebase"],
-          "options": {
-            "jestConfig": "libs/api/education/firebase/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "ui-education-card": {
-      "projectType": "library",
-      "root": "libs/ui/education-card",
-      "sourceRoot": "libs/ui/education-card/src",
-      "prefix": "dges",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/ui/education-card/src/**/*.ts",
-              "libs/ui/education-card/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/ui/education-card"],
-          "options": {
-            "jestConfig": "libs/ui/education-card/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "store-projects-firebase": {
-      "projectType": "library",
-      "root": "libs/store/projects/firebase",
-      "sourceRoot": "libs/store/projects/firebase/src",
-      "prefix": "dges",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/store/projects/firebase/src/**/*.ts",
-              "libs/store/projects/firebase/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/store/projects/firebase"],
-          "options": {
-            "jestConfig": "libs/store/projects/firebase/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "tools-pipes-sort-by": {
-      "projectType": "library",
-      "root": "libs/tools/pipes/sort-by",
-      "sourceRoot": "libs/tools/pipes/sort-by/src",
-      "prefix": "dges",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/tools/pipes/sort-by/src/**/*.ts",
-              "libs/tools/pipes/sort-by/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/tools/pipes/sort-by"],
-          "options": {
-            "jestConfig": "libs/tools/pipes/sort-by/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "ui-full-length-menu": {
-      "projectType": "library",
-      "root": "libs/ui/full-length-menu",
-      "sourceRoot": "libs/ui/full-length-menu/src",
-      "prefix": "dges",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/ui/full-length-menu/src/**/*.ts",
-              "libs/ui/full-length-menu/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/ui/full-length-menu"],
-          "options": {
-            "jestConfig": "libs/ui/full-length-menu/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "ui-drop-down-menu": {
-      "projectType": "library",
-      "root": "libs/ui/drop-down-menu",
-      "sourceRoot": "libs/ui/drop-down-menu/src",
-      "prefix": "dges",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/ui/drop-down-menu/src/**/*.ts",
-              "libs/ui/drop-down-menu/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/ui/drop-down-menu"],
-          "options": {
-            "jestConfig": "libs/ui/drop-down-menu/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "dges-admin": {
-      "projectType": "application",
-      "root": "apps/dges-admin",
-      "sourceRoot": "apps/dges-admin/src",
-      "prefix": "dges",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:browser",
-          "options": {
-            "outputPath": "dist/apps/dges-admin",
-            "index": "apps/dges-admin/src/index.html",
-            "main": "apps/dges-admin/src/main.ts",
-            "polyfills": "apps/dges-admin/src/polyfills.ts",
-            "tsConfig": "apps/dges-admin/tsconfig.app.json",
-            "assets": [
-              "apps/dges-admin/src/favicon.ico",
-              "apps/dges-admin/src/assets"
-            ],
-            "styles": ["apps/dges-admin/src/styles.scss"],
-            "scripts": [],
-            "vendorChunk": true,
-            "extractLicenses": false,
-            "buildOptimizer": false,
-            "sourceMap": true,
-            "optimization": false,
-            "namedChunks": true
-          },
-          "configurations": {
-            "production": {
-              "fileReplacements": [
-                {
-                  "replace": "apps/dges-admin/src/environments/environment.ts",
-                  "with": "apps/dges-admin/src/environments/environment.prod.ts"
-                }
-              ],
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "namedChunks": false,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "6kb",
-                  "maximumError": "10kb"
-                }
-              ]
-            }
-          },
-          "defaultConfiguration": ""
-        },
-        "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
-          "options": {
-            "browserTarget": "dges-admin:build"
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "dges-admin:build:production"
-            }
-          }
-        },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "dges-admin:build"
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "apps/dges-admin/src/**/*.ts",
-              "apps/dges-admin/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/dges-admin"],
-          "options": {
-            "jestConfig": "apps/dges-admin/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "dges-admin-e2e": {
-      "root": "apps/dges-admin-e2e",
-      "sourceRoot": "apps/dges-admin-e2e/src",
-      "projectType": "application",
-      "architect": {
-        "e2e": {
-          "builder": "@nrwl/cypress:cypress",
-          "options": {
-            "cypressConfig": "apps/dges-admin-e2e/cypress.json",
-            "tsConfig": "apps/dges-admin-e2e/tsconfig.e2e.json",
-            "devServerTarget": "dges-admin:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "dges-admin:serve:production"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["apps/dges-admin-e2e/**/*.{js,ts}"]
-          }
-        }
-      }
-    },
-    "ui-login-page": {
-      "projectType": "library",
-      "root": "libs/ui/login-page",
-      "sourceRoot": "libs/ui/login-page/src",
-      "prefix": "dges",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/ui/login-page/src/**/*.ts",
-              "libs/ui/login-page/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/ui/login-page"],
-          "options": {
-            "jestConfig": "libs/ui/login-page/jest.config.js",
             "passWithNoTests": true
           }
         }

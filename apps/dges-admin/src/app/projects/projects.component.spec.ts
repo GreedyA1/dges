@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MockStore } from '@ngrx/store/testing';
 
 import { ProjectsComponent } from './projects.component';
-import { ProjectsState } from '@dges/store/projects/projects-firebase';
+import { ProjectsState } from '@dges/store/projects/firebase';
 // import { ProjectsCollectionService } from '@dges/api/projects/firebase';
 import { MockComponent } from 'ng-mocks';
 import { ProjectCardComponent } from '@dges/ui/project-card';

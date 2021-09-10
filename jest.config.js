@@ -1,9 +1,12 @@
+const { getJestProjects } = require('@nrwl/jest');
+
 module.exports = {
   projects: [
+    ...getJestProjects(),
     '<rootDir>/apps/dges-front',
     '<rootDir>/libs/ui/project-card',
     '<rootDir>/libs/ui/project-details',
-    '<rootDir>/libs/store/projects/projects-firebase',
+    '<rootDir>/libs/store/projects/firebase',
     '<rootDir>/libs/store/projects/projects-api',
     '<rootDir>/libs/types/project',
     '<rootDir>/libs/data/projects',
@@ -39,12 +42,10 @@ module.exports = {
     '<rootDir>/libs/store/jobs/firebase',
     '<rootDir>/libs/types/job',
     '<rootDir>/libs/store/education/firebase',
-    '<rootDir>/libs/type/education',
     '<rootDir>/libs/forms/education-form',
     '<rootDir>/libs/types/education',
     '<rootDir>/libs/api/education/firebase',
     '<rootDir>/libs/ui/education-card',
-    '<rootDir>/libs/store/projects/firebase',
     '<rootDir>/libs/tools/pipes/sort-by',
     '<rootDir>/libs/ui/full-length-menu',
     '<rootDir>/libs/ui/drop-down-menu',

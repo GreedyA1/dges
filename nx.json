@@ -23,152 +23,28 @@
     }
   },
   "projects": {
-    "dges-front": {
-      "tags": []
-    },
-    "dges-front-e2e": {
-      "tags": [],
-      "implicitDependencies": ["dges-front"]
-    },
-    "ui-project-card": {
-      "tags": []
-    },
-    "ui-project-details": {
-      "tags": []
-    },
-    "store-projects-projects-firebase": {
-      "tags": []
-    },
-    "store-projects-projects-api": {
-      "tags": []
-    },
-    "types-project": {
-      "tags": []
-    },
-    "data-projects": {
-      "tags": []
-    },
-    "api-projects-firebase": {
-      "tags": []
-    },
-    "forms-project-form": {
-      "tags": []
-    },
-    "forms-login-form": {
-      "tags": []
-    },
-    "ui-login-dialog": {
-      "tags": []
-    },
     "api-auth-firebase": {
-      "tags": []
-    },
-    "store-auth-firebase": {
-      "tags": []
-    },
-    "types-auth": {
-      "tags": []
-    },
-    "forms-chips": {
-      "tags": []
-    },
-    "ui-snackbar": {
-      "tags": []
-    },
-    "ui-confirm-dialog": {
-      "tags": []
-    },
-    "api-storage-firebase": {
-      "tags": []
-    },
-    "ui-drop-zone": {
-      "tags": []
-    },
-    "ui-upload-images": {
-      "tags": []
-    },
-    "ui-upload-task": {
-      "tags": []
-    },
-    "forms-upload-task": {
-      "tags": []
-    },
-    "forms-upload-images": {
-      "tags": []
-    },
-    "store-storage-firebase": {
-      "tags": []
-    },
-    "types-facades-upload-facade": {
-      "tags": []
-    },
-    "forms-skills": {
-      "tags": []
-    },
-    "store-skills-firebase": {
-      "tags": []
-    },
-    "api-skills-firebase": {
-      "tags": []
-    },
-    "types-skill": {
-      "tags": []
-    },
-    "ui-images-control": {
-      "tags": []
-    },
-    "ui-skills-chip": {
-      "tags": []
-    },
-    "store-tools-firebase": {
-      "tags": []
-    },
-    "ui-job-card": {
-      "tags": []
-    },
-    "forms-job-form": {
-      "tags": []
-    },
-    "data-jobs": {
-      "tags": []
-    },
-    "api-jobs-firebase": {
-      "tags": []
-    },
-    "store-jobs-firebase": {
-      "tags": []
-    },
-    "types-job": {
-      "tags": []
-    },
-    "store-education-firebase": {
-      "tags": []
-    },
-    "type-education": {
-      "tags": []
-    },
-    "forms-education-form": {
-      "tags": []
-    },
-    "types-education": {
       "tags": []
     },
     "api-education-firebase": {
       "tags": []
     },
-    "ui-education-card": {
+    "api-jobs-firebase": {
       "tags": []
     },
-    "store-projects-firebase": {
+    "api-projects-firebase": {
       "tags": []
     },
-    "tools-pipes-sort-by": {
+    "api-skills-firebase": {
       "tags": []
     },
-    "ui-full-length-menu": {
+    "api-storage-firebase": {
       "tags": []
     },
-    "ui-drop-down-menu": {
+    "data-jobs": {
+      "tags": []
+    },
+    "data-projects": {
       "tags": []
     },
     "dges-admin": {
@@ -178,8 +54,137 @@
       "tags": [],
       "implicitDependencies": ["dges-admin"]
     },
+    "dges-front": {
+      "tags": []
+    },
+    "dges-front-e2e": {
+      "tags": [],
+      "implicitDependencies": ["dges-front"]
+    },
+    "forms-chips": {
+      "tags": []
+    },
+    "forms-education-form": {
+      "tags": []
+    },
+    "forms-job-form": {
+      "tags": []
+    },
+    "forms-login-form": {
+      "tags": []
+    },
+    "forms-project-form": {
+      "tags": []
+    },
+    "forms-skills": {
+      "tags": []
+    },
+    "forms-upload-images": {
+      "tags": []
+    },
+    "forms-upload-task": {
+      "tags": []
+    },
+    "store-auth-firebase": {
+      "tags": []
+    },
+    "store-education-firebase": {
+      "tags": []
+    },
+    "store-jobs-firebase": {
+      "tags": []
+    },
+    "store-projects-firebase": {
+      "tags": []
+    },
+    "store-projects-projects-api": {
+      "tags": []
+    },
+    "store-skills-firebase": {
+      "tags": []
+    },
+    "store-storage-firebase": {
+      "tags": []
+    },
+    "store-tools-firebase": {
+      "tags": []
+    },
+    "tools-pipes-sort-by": {
+      "tags": []
+    },
+    "type-education": {
+      "tags": []
+    },
+    "types-auth": {
+      "tags": []
+    },
+    "types-education": {
+      "tags": []
+    },
+    "types-facades-upload-facade": {
+      "tags": []
+    },
+    "types-job": {
+      "tags": []
+    },
+    "types-project": {
+      "tags": []
+    },
+    "types-skill": {
+      "tags": []
+    },
+    "ui-confirm-dialog": {
+      "tags": []
+    },
+    "ui-drop-down-menu": {
+      "tags": []
+    },
+    "ui-drop-zone": {
+      "tags": []
+    },
+    "ui-education-card": {
+      "tags": []
+    },
+    "ui-full-length-menu": {
+      "tags": []
+    },
+    "ui-images-control": {
+      "tags": []
+    },
+    "ui-job-card": {
+      "tags": []
+    },
+    "ui-login-dialog": {
+      "tags": []
+    },
     "ui-login-page": {
       "tags": []
+    },
+    "ui-project-card": {
+      "tags": []
+    },
+    "ui-project-details": {
+      "tags": []
+    },
+    "ui-skills-chip": {
+      "tags": []
+    },
+    "ui-snackbar": {
+      "tags": []
+    },
+    "ui-upload-images": {
+      "tags": []
+    },
+    "ui-upload-task": {
+      "tags": []
     }
+  },
+  "targetDependencies": {
+    "build": [
+      {
+        "target": "build",
+        "projects": "dependencies"
+      }
+    ]
   }
 }
