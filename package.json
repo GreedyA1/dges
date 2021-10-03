@@ -49,6 +49,7 @@
     "@nrwl/angular": "12.9.0",
     "@schematics/angular": "11.0.1",
     "bootstrap": "^5.0.0-beta1",
+    "date-fns": "^2.24.0",
     "firebase": "^7.0 || ^8.0",
     "ng-mocks": "^11.2.0",
     "rxjs": "~6.5.5",

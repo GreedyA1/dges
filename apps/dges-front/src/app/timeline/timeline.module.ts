@@ -8,6 +8,7 @@ import { UiJobCardModule } from '@dges/ui/job-card';
 import { UiEducationCardModule } from '@dges/ui/education-card';
 import { UiProjectCardModule } from '@dges/ui/project-card';
 import { ToolsPipesSortByModule } from '@dges/tools/pipes/sort-by';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 @NgModule({
   declarations: [TimelineComponent],
@@ -18,6 +19,7 @@ import { ToolsPipesSortByModule } from '@dges/tools/pipes/sort-by';
     UiEducationCardModule,
     UiProjectCardModule,
     ToolsPipesSortByModule,
+    ScrollingModule
   ],
   providers: [
     { provide: 'JobsFacade', useClass: environment.jobsFacade },

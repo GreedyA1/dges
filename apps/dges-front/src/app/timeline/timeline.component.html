@@ -1,4 +1,44 @@
-<div class="fullPage">
+<div class="now">
+  <ng-container
+  *ngFor="let card of allCards$ | async | sortBy: 'endDate'"
+>
+  <ng-container [ngSwitch]="card.type">
+    <ng-container *ngSwitchCase="'job'">
+      <dges-project-card
+        *ngIf="isInYear(dateVisible, card)"
+        class="card"
+        [@inOutAnimation]
+        [project]="card"
+      >
+      </dges-project-card>
+    </ng-container>
+    <ng-container *ngSwitchCase="'project'">
+      <dges-job-card
+        *ngIf="isInYear(dateVisible, card)"
+        class="card"
+        [@inOutAnimation]
+        [job]="card"
+      >
+      </dges-job-card>
+    </ng-container>
+    <ng-container *ngSwitchCase="'education'">
+      <dges-education-card
+        *ngIf="isInYear(dateVisible, card)"
+        class="card"
+        [@inOutAnimation]
+        [education]="card"
+      >
+      </dges-education-card>
+    </ng-container>
+  </ng-container>
+</ng-container>
+</div>
+<div class="dateVisible">
+  {{dateVisible | date}}
+</div>
+<cdk-virtual-scroll-viewport [itemSize]="viewPortHeight" class="fullPage" 
+cdkScrollable
+(scrolledIndexChange)="isInViewPort($event)">
   <div
     *ngFor="let year of years"
     class="wrap"
@@ -8,38 +48,52 @@
       <div class="year">
         <h1>{{ year }}</h1>
       </div>
-      <div class="timeline">
+      <div class="months" *ngIf="false">
+        <div class="month">Dec</div>
+        <div class="month">Nov</div>
+        <div class="month">Oct</div>
+        <div class="month">Sep</div>
+        <div class="month">Aug</div>
+        <div class="month">Jul</div>
+        <div class="month">Jun</div>
+        <div class="month">May</div>
+        <div class="month">Apr</div>
+        <div class="month">Mar</div>
+        <div class="month">Feb</div>
+        <div class="month">Jan</div>
+      </div>
+      <div class="timeline" *ngIf="false">
         <ng-container
-          *ngFor="let card of allCards$ | async | sortBy: 'endDate'"
-        >
-          <ng-container [ngSwitch]="card.type">
-            <ng-container *ngSwitchCase="'job'">
-              <dges-project-card
-                *ngIf="isInYear(year, card.endDate)"
-                class="card"
-                [project]="card"
-              >
-              </dges-project-card>
-            </ng-container>
-            <ng-container *ngSwitchCase="'project'">
-              <dges-job-card
-                *ngIf="isInYear(year, card.endDate)"
-                class="card"
-                [job]="card"
-              >
-              </dges-job-card>
-            </ng-container>
-            <ng-container *ngSwitchCase="'education'">
-              <dges-education-card
-                *ngIf="isInYear(year, card.endDate)"
-                class="card"
-                [education]="card"
-              >
-              </dges-education-card>
-            </ng-container>
+        *ngFor="let card of allCards$ | async | sortBy: 'endDate'"
+      >
+        <ng-container [ngSwitch]="card.type">
+          <ng-container *ngSwitchCase="'job'">
+            <dges-project-card
+              *ngIf="isInYear(year, card)"
+              class="card"
+              [project]="card"
+            >
+            </dges-project-card>
+          </ng-container>
+          <ng-container *ngSwitchCase="'project'">
+            <dges-job-card
+              *ngIf="isInYear(year, card)"
+              class="card"
+              [job]="card"
+            >
+            </dges-job-card>
+          </ng-container>
+          <ng-container *ngSwitchCase="'education'">
+            <dges-education-card
+              *ngIf="isInYear(year, card)"
+              class="card"
+              [education]="card"
+            >
+            </dges-education-card>
           </ng-container>
         </ng-container>
+      </ng-container>
       </div>
     </div>
   </div>
-</div>
+</cdk-virtual-scroll-viewport>
