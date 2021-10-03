@@ -15,7 +15,7 @@ to generate lib
 to generate ngrx defaults in module in lib.
 
 ```
-ng g @nrwl/angular:ngrx skills --module=libs/store/skills/firebase/src/lib/store-skills-firebase.module.ts --directory +state --defaults
+ng g @nrwl/angular:ngrx skills --module=libs/store/skills/firebase/src/lib/store-skills-firebase.module.ts --directory +state --defaults --facade
 ```
 
 generate dependancy graph
