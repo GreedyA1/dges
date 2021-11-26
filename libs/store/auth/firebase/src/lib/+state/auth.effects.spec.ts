@@ -6,10 +6,10 @@ import { provideMockActions } from '@ngrx/effects/testing';
 import { provideMockStore } from '@ngrx/store/testing';
 
 import { NxModule, DataPersistence } from '@nrwl/angular';
-import { hot } from '@nrwl/angular/testing';
 
 import { AuthEffects } from './auth.effects';
 import * as AuthActions from './auth.actions';
+import { hot } from 'jasmine-marbles';
 
 describe('AuthEffects', () => {
   let actions: Observable<any>;

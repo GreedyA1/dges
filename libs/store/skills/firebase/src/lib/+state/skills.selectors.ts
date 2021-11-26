@@ -7,7 +7,7 @@ import {
 } from './skills.reducer';
 
 // Lookup the 'Skills' feature state managed by NgRx
-export const getSkillsState = createFeatureSelector<SkillsPartialState, State>(
+export const getSkillsState = createFeatureSelector< State>(
   SKILLS_FEATURE_KEY
 );
 

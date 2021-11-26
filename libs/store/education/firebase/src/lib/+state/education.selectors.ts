@@ -8,7 +8,6 @@ import {
 
 // Lookup the 'Education' feature state managed by NgRx
 export const getEducationState = createFeatureSelector<
-  EducationPartialState,
   State
 >(EDUCATION_FEATURE_KEY);
 

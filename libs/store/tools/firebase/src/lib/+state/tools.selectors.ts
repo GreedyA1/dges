@@ -7,7 +7,7 @@ import {
 } from './tools.reducer';
 
 // Lookup the 'Tools' feature state managed by NgRx
-export const getToolsState = createFeatureSelector<ToolsPartialState, State>(
+export const getToolsState = createFeatureSelector< State>(
   TOOLS_FEATURE_KEY
 );
 

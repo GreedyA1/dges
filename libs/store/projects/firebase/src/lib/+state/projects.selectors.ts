@@ -8,7 +8,6 @@ import {
 
 // Lookup the 'Projects' feature state managed by NgRx
 export const getProjectsState = createFeatureSelector<
-  ProjectsPartialState,
   State
 >(PROJECTS_FEATURE_KEY);
 

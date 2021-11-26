@@ -30,7 +30,8 @@
         "@schematics/angular:component": {
           "style": "scss"
         }
-      }
+      },
+      "tags": []
     },
     "api-education-firebase": {
       "projectType": "library",
@@ -56,7 +57,8 @@
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": []
     },
     "api-jobs-firebase": {
       "projectType": "library",
@@ -82,7 +84,8 @@
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": []
     },
     "api-projects-firebase": {
       "projectType": "library",
@@ -113,7 +116,8 @@
         "@schematics/angular:component": {
           "style": "scss"
         }
-      }
+      },
+      "tags": []
     },
     "api-skills-firebase": {
       "projectType": "library",
@@ -139,7 +143,8 @@
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": []
     },
     "api-storage-firebase": {
       "projectType": "library",
@@ -165,7 +170,8 @@
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": []
     },
     "data-jobs": {
       "projectType": "library",
@@ -191,7 +197,8 @@
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": []
     },
     "data-projects": {
       "projectType": "library",
@@ -219,7 +226,8 @@
         "@schematics/angular:component": {
           "style": "scss"
         }
-      }
+      },
+      "tags": []
     },
     "dges-admin": {
       "projectType": "application",
@@ -314,7 +322,8 @@
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": []
     },
     "dges-admin-e2e": {
       "root": "apps/dges-admin-e2e",
@@ -341,7 +350,9 @@
           },
           "outputs": ["{options.outputFile}"]
         }
-      }
+      },
+      "tags": [],
+      "implicitDependencies": ["dges-admin"]
     },
     "dges-front": {
       "projectType": "application",
@@ -448,7 +459,8 @@
             "token": "${FIREBASE_TOKEN}"
           }
         }
-      }
+      },
+      "tags": []
     },
     "dges-front-e2e": {
       "root": "apps/dges-front-e2e",
@@ -475,7 +487,9 @@
           },
           "outputs": ["{options.outputFile}"]
         }
-      }
+      },
+      "tags": [],
+      "implicitDependencies": ["dges-front"]
     },
     "forms-chips": {
       "projectType": "library",
@@ -506,7 +520,8 @@
         "@schematics/angular:component": {
           "style": "scss"
         }
-      }
+      },
+      "tags": []
     },
     "forms-education-form": {
       "projectType": "library",
@@ -532,7 +547,8 @@
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": []
     },
     "forms-job-form": {
       "projectType": "library",
@@ -558,7 +574,8 @@
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": []
     },
     "forms-login-form": {
       "projectType": "library",
@@ -589,7 +606,8 @@
         "@schematics/angular:component": {
           "style": "scss"
         }
-      }
+      },
+      "tags": []
     },
     "forms-project-form": {
       "root": "libs/forms/project-form",
@@ -615,7 +633,8 @@
           },
           "outputs": ["coverage/libs/forms/project-form"]
         }
-      }
+      },
+      "tags": []
     },
     "forms-skills": {
       "projectType": "library",
@@ -641,7 +660,8 @@
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": []
     },
     "forms-upload-images": {
       "projectType": "library",
@@ -667,7 +687,8 @@
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": []
     },
     "forms-upload-task": {
       "projectType": "library",
@@ -693,7 +714,8 @@
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": []
     },
     "store-auth-firebase": {
       "projectType": "library",
@@ -724,7 +746,8 @@
         "@schematics/angular:component": {
           "style": "scss"
         }
-      }
+      },
+      "tags": []
     },
     "store-education-firebase": {
       "projectType": "library",
@@ -750,7 +773,8 @@
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": []
     },
     "store-jobs-firebase": {
       "projectType": "library",
@@ -776,7 +800,8 @@
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": []
     },
     "store-projects-firebase": {
       "projectType": "library",
@@ -802,7 +827,8 @@
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": []
     },
     "store-projects-projects-api": {
       "projectType": "library",
@@ -833,7 +859,8 @@
         "@schematics/angular:component": {
           "style": "scss"
         }
-      }
+      },
+      "tags": []
     },
     "store-skills-firebase": {
       "projectType": "library",
@@ -859,7 +886,8 @@
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": []
     },
     "store-storage-firebase": {
       "projectType": "library",
@@ -885,7 +913,8 @@
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": []
     },
     "store-tools-firebase": {
       "projectType": "library",
@@ -911,7 +940,8 @@
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": []
     },
     "tools-pipes-sort-by": {
       "projectType": "library",
@@ -937,7 +967,8 @@
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": []
     },
     "types-auth": {
       "projectType": "library",
@@ -965,7 +996,8 @@
         "@schematics/angular:component": {
           "style": "scss"
         }
-      }
+      },
+      "tags": []
     },
     "types-education": {
       "projectType": "library",
@@ -991,7 +1023,8 @@
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": []
     },
     "types-facades-upload-facade": {
       "projectType": "library",
@@ -1017,7 +1050,8 @@
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": []
     },
     "types-job": {
       "projectType": "library",
@@ -1043,7 +1077,8 @@
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": []
     },
     "types-project": {
       "projectType": "library",
@@ -1071,7 +1106,8 @@
         "@schematics/angular:component": {
           "style": "scss"
         }
-      }
+      },
+      "tags": []
     },
     "types-skill": {
       "projectType": "library",
@@ -1097,7 +1133,8 @@
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": []
     },
     "ui-confirm-dialog": {
       "projectType": "library",
@@ -1123,7 +1160,8 @@
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": []
     },
     "ui-drop-down-menu": {
       "projectType": "library",
@@ -1149,7 +1187,8 @@
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": []
     },
     "ui-drop-zone": {
       "projectType": "library",
@@ -1175,7 +1214,8 @@
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": []
     },
     "ui-education-card": {
       "projectType": "library",
@@ -1201,7 +1241,8 @@
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": []
     },
     "ui-full-length-menu": {
       "projectType": "library",
@@ -1227,7 +1268,8 @@
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": []
     },
     "ui-images-control": {
       "projectType": "library",
@@ -1253,7 +1295,8 @@
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": []
     },
     "ui-job-card": {
       "projectType": "library",
@@ -1279,7 +1322,8 @@
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": []
     },
     "ui-login-dialog": {
       "projectType": "library",
@@ -1310,7 +1354,8 @@
         "@schematics/angular:component": {
           "style": "scss"
         }
-      }
+      },
+      "tags": []
     },
     "ui-login-page": {
       "projectType": "library",
@@ -1336,7 +1381,8 @@
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": []
     },
     "ui-project-card": {
       "projectType": "library",
@@ -1367,7 +1413,8 @@
         "@schematics/angular:component": {
           "style": "scss"
         }
-      }
+      },
+      "tags": []
     },
     "ui-project-details": {
       "projectType": "library",
@@ -1398,7 +1445,8 @@
         "@schematics/angular:component": {
           "style": "scss"
         }
-      }
+      },
+      "tags": []
     },
     "ui-skills-chip": {
       "projectType": "library",
@@ -1424,7 +1472,8 @@
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": []
     },
     "ui-snackbar": {
       "projectType": "library",
@@ -1450,7 +1499,8 @@
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": []
     },
     "ui-upload-images": {
       "projectType": "library",
@@ -1476,7 +1526,8 @@
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": []
     },
     "ui-upload-task": {
       "projectType": "library",
@@ -1502,35 +1553,8 @@
             "passWithNoTests": true
           }
         }
-      }
-    }
-  },
-  "cli": {
-    "defaultCollection": "@nrwl/angular",
-    "analytics": "acaac004-cb9f-4dd3-a9f6-26afef75d747"
-  },
-  "schematics": {
-    "@nrwl/angular": {
-      "application": {
-        "linter": "eslint"
       },
-      "library": {
-        "linter": "eslint"
-      },
-      "storybook-configuration": {
-        "linter": "eslint"
-      }
-    },
-    "@nrwl/angular:application": {
-      "unitTestRunner": "jest",
-      "e2eTestRunner": "cypress"
-    },
-    "@nrwl/angular:library": {
-      "unitTestRunner": "jest"
-    },
-    "@nrwl/angular:component": {
-      "style": "scss"
+      "tags": []
     }
-  },
-  "defaultProject": "dges-front"
+  }
 }

@@ -7,7 +7,7 @@ import {
 } from './jobs.reducer';
 
 // Lookup the 'Jobs' feature state managed by NgRx
-export const getJobsState = createFeatureSelector<JobsPartialState, State>(
+export const getJobsState = createFeatureSelector< State>(
   JOBS_FEATURE_KEY
 );
 

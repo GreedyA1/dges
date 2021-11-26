@@ -7,7 +7,7 @@ import {
 } from './upload.reducer';
 
 // Lookup the 'Upload' feature state managed by NgRx
-export const getUploadState = createFeatureSelector<UploadPartialState, State>(
+export const getUploadState = createFeatureSelector< State>(
   UPLOAD_FEATURE_KEY
 );
 
