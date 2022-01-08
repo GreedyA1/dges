@@ -31,13 +31,13 @@ describe('AuthEffects', () => {
 
   describe('init$', () => {
     it('should work', () => {
-      actions = hot('-a-|', { a: AuthActions.init() });
+      actions = hot('-a-|', { a: AuthActions.login({ email: 'string', password: 'string' }) });
 
       const expected = hot('-a-|', {
-        a: AuthActions.loadAuthSuccess({ auth: [] }),
+        // a: AuthActions.loginSuccess({ user:  }),
       });
 
-      expect(effects.init$).toBeObservable(expected);
+      expect(effects.login$).toBeObservable(expected);
     });
   });
 });
